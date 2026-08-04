@@ -1,6 +1,6 @@
 # Security Policy for NIC Info — Sri Lankan NIC Decoder
 
-Contact: pubudutharanga476@gmail.com
+Contact: pubudutharange@gmail.com
 Expires: 2027-12-31T23:59:59.000Z
 Preferred-Languages: en
 Canonical: https://nicinfo.vercel.app/.well-known/security.txt
