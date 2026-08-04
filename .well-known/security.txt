@@ -1,0 +1,18 @@
+# Security Policy for NIC Info — Sri Lankan NIC Decoder
+
+Contact: pubudutharanga476@gmail.com
+Expires: 2027-12-31T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://nicinfo.vercel.app/.well-known/security.txt
+
+# Thank you for helping keep NIC Info secure.
+# This tool processes NIC data entirely client-side and does not store any user data.
+# If you discover a security vulnerability, please report it responsibly.
+
+Policy: https://nicinfo.vercel.app/policy.html
+
+# Acknowledgments
+Acknowledgments: https://nicinfo.vercel.app/policy.html
+
+# Developer
+Hiring: https://pubudu-tharanga.vercel.app

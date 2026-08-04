@@ -1,0 +1,140 @@
+# NIC Info — Sri Lankan NIC Decoder
+
+> A free, privacy-first tool to extract birthday, gender, and age from Sri Lankan National Identity Card (NIC) numbers. Developed by [Pubudu Tharanga](https://pubudu-tharanga.vercel.app).
+
+## Links
+
+- [NIC Info — Sri Lankan NIC Decoder](https://nicinfo.vercel.app/) — Main application & NIC decoder tool
+- [Usage Guidelines & Verification Standards](https://nicinfo.vercel.app/guidelines.html) — NIC format specifications & conversion protocols
+- [Privacy Notice & Data Protection](https://nicinfo.vercel.app/privacy.html) — Zero-data retention policy
+- [Terms of Service & Operating Policy](https://nicinfo.vercel.app/policy.html) — Terms of use
+- [Developer Portfolio](https://pubudu-tharanga.vercel.app) — Pubudu Tharanga
+- [Department for Registration of Persons (DRP)](https://www.drp.gov.lk) — Official Sri Lankan authority
+
+## Overview
+
+[NIC Info](https://nicinfo.vercel.app/) is a free web application that decodes Sri Lankan National Identity Card (NIC) numbers to extract encoded personal information. It works entirely in the browser using client-side JavaScript, ensuring 100% privacy — no data is ever sent to any server or stored.
+
+## Purpose
+
+This tool decodes Sri Lankan NIC numbers to reveal encoded personal information:
+
+- **Date of Birth (NIC to DOB)**: Extracted from the day-of-year encoding within the NIC number
+- **Gender**: Determined by the day value (1–366 for male, 501–866 for female)
+- **Age**: Calculated precisely from birthday to current date (years, months, days)
+
+## NIC Decoding Formula
+
+### Old Format (9 digits + letter)
+- Structure: `YYDDDNNNNC`
+- Example: `941234567V`
+- `YY` → Birth year (e.g., 94 → 1994)
+- `DDD` → Day of year (001–366 = male, 501–866 = female; subtract 500 for females to get actual day)
+- `NNNN` → Unique serial number
+- `C` → Check character: V = eligible voter, X = non-voter
+
+### New Format (12 digits)
+- Structure: `YYYYDDDNNNNN`
+- Example: `199412345678`
+- `YYYY` → Full 4-digit birth year
+- `DDD` → Day of year (001–366 = male, 501–866 = female; subtract 500 for females)
+- `NNNNN` → Unique serial number (5 digits)
+
+### Gender Determination
+- Day values 1–366 → **Male**
+- Day values 501–866 → **Female** (subtract 500 to get actual calendar day)
+
+### Day-of-Year to Calendar Date
+- Day 1 = January 1
+- Day 32 = February 1
+- Day 60 = March 1 (non-leap year) or February 29 (leap year)
+- Day 366 = December 31 (leap year only)
+
+## Old NIC vs New NIC Comparison
+
+| Feature | Old NIC (9-digit) | New NIC (12-digit) |
+|---------|-------------------|---------------------|
+| Length | 9 digits + V/X | 12 digits |
+| Year Format | 2 digits (e.g., 95) | 4 digits (e.g., 1995) |
+| Structure | YYDDDNNNNC | YYYYDDDNNNNN |
+| Gender Encoding | Day + 500 for females | Same as old |
+| Check Character | V (voter) or X | Numeric |
+| Issued Since | 1972 | 2016 |
+
+## Key Features
+
+1. **Instant Decoding**: Results appear as you type — auto-decodes when a valid NIC length is reached
+2. **Dual Format Support**: Supports both old (9 digits + V/X) and new (12 digits) NIC formats
+3. **Privacy-First**: 100% client-side processing, zero server requests, no data storage
+4. **Precise Age Calculation**: Calculates years, months, and days from birth date
+5. **Dark/Light Mode**: Automatic (system preference) and manual theme switching
+6. **Share Results**: Easy sharing via WhatsApp, Facebook, X/Twitter, and copy link
+7. **Responsive Design**: Works on all devices (mobile, tablet, desktop)
+
+## How to Use
+
+1. Visit [nicinfo.vercel.app](https://nicinfo.vercel.app/)
+2. Enter your NIC number in the input field (old or new format)
+3. View your extracted birthday, gender, and precise age instantly
+4. Click "Decode another" to check additional NIC numbers
+5. Share the tool with friends using the share buttons
+
+## Privacy & Security
+
+This tool guarantees complete privacy:
+
+- All calculations happen in your browser (client-side JavaScript)
+- No NIC data is sent to any server
+- No cookies are used to store NIC data
+- No analytics tracking on NIC inputs
+- No data logging or storage of any kind
+
+## Technical Information
+
+- **Stack**: Static HTML, CSS, and vanilla JavaScript
+- **Processing**: 100% client-side — no server-side logic
+- **Hosting**: [Vercel Edge Network](https://vercel.com)
+- **Source**: [GitHub Repository](https://github.com/pubudutharanga/NIC-Info)
+
+## Frequently Asked Questions
+
+### How do I find my birthday from NIC number?
+Enter your NIC number at [nicinfo.vercel.app](https://nicinfo.vercel.app/). The tool extracts the encoded birth date automatically from the day-of-year digits embedded in the NIC number.
+
+### Is this tool safe to use?
+Yes, 100% safe. Your NIC never leaves your device. All processing is done locally in your browser using client-side JavaScript.
+
+### What's the difference between old and new NIC?
+Old format has 9 digits + V/X letter (issued 1972–2015). New format has 12 digits only with a 4-digit year (issued since 2016 as Smart NIC).
+
+### How does the NIC determine gender?
+Day values 1–366 indicate male. Day values 501–866 indicate female (500 is added to the actual day-of-year for female citizens).
+
+### What does V mean in a Sri Lanka NIC number?
+The letter V at the end of an old-format (9-digit) NIC indicates the holder is an eligible voter. The letter X indicates the holder is not registered as a voter.
+
+### Can I find a NIC number from a birthday?
+No. Multiple people share the same birth date, and each gets a unique serial number. You cannot determine a specific NIC number from a birthday alone.
+
+### How to convert old NIC to new NIC format?
+Prepend "19" to the 2-digit year, keep the 3-digit day code, insert a "0" before the serial number, and remove the V/X suffix. Example: `852140123V` → `198521400123`.
+
+## Data Source
+
+NIC format specifications are based on the official numbering scheme defined by the [Department for Registration of Persons (DRP)](https://www.drp.gov.lk) of Sri Lanka.
+
+## About
+
+Developed by [Pubudu Tharanga](https://pubudu-tharanga.vercel.app), Software Developer based in Sri Lanka.
+
+## Disclaimer
+
+This tool is for informational and educational purposes only. It is not affiliated with, endorsed by, or connected to the Department for Registration of Persons or any other Sri Lankan government body. For official documents and services, please contact the [DRP](https://www.drp.gov.lk).
+
+---
+
+**Website**: [nicinfo.vercel.app](https://nicinfo.vercel.app/)
+**Developer**: [pubudu-tharanga.vercel.app](https://pubudu-tharanga.vercel.app)
+**Source Code**: [github.com/pubudutharanga/NIC-Info](https://github.com/pubudutharanga/NIC-Info)
+
+**Last Updated**: August 2026

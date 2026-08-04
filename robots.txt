@@ -1,0 +1,42 @@
+# https://www.robotstxt.org/robotstxt.html
+
+User-agent: *
+Allow: /
+Disallow: /.well-known/
+
+# Allow Google full access
+User-agent: Googlebot
+Allow: /
+
+# Allow Bing full access
+User-agent: Bingbot
+Allow: /
+
+# Allow AI search engines (SearchGPT, Perplexity, etc.)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Block only training-only scrapers (no search benefit)
+User-agent: CCBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+Sitemap: https://nicinfo.vercel.app/sitemap.xml
+Host: https://nicinfo.vercel.app
