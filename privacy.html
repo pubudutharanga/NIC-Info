@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Notice & Data Protection Policy — NIC Info</title>
+  <meta name="description"
+    content="Our industry-standard privacy notice detailing zero-data retention, local client-side processing, and compliance with personal data protection frameworks." />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Inline theme init: prevents flash of wrong theme on load -->
+  <script>
+    (function () {
+      var stored = localStorage.getItem('nic-theme');
+      if (stored === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      } else if (!stored && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+
+<body>
+
+  <div class="page-wrapper">
+    <!-- Guilloché background texture (Light mode) -->
+    <div class="guilloche" aria-hidden="true"></div>
+
+    <!-- Animated Background Lines (Dark mode only) -->
+    <div class="background-lines" aria-hidden="true">
+      <svg class="background-lines__svg" viewBox="0 0 1440 800" fill="none" xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="glow-beam-1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#C9A15C" stop-opacity="0" />
+            <stop offset="50%" stop-color="#C9A15C" stop-opacity="1" />
+            <stop offset="100%" stop-color="#C9A15C" stop-opacity="0" />
+          </linearGradient>
+          <linearGradient id="glow-beam-2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#4F8B82" stop-opacity="0" />
+            <stop offset="50%" stop-color="#4F8B82" stop-opacity="1" />
+            <stop offset="100%" stop-color="#4F8B82" stop-opacity="0" />
+          </linearGradient>
+          <linearGradient id="glow-beam-3" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#EDE9DD" stop-opacity="0" />
+            <stop offset="50%" stop-color="#EDE9DD" stop-opacity="0.75" />
+            <stop offset="100%" stop-color="#EDE9DD" stop-opacity="0" />
+          </linearGradient>
+        </defs>
+
+        <!-- Static subtle base frequency curves -->
+        <g class="bg-lines-group" stroke="currentColor" stroke-width="1">
+          <path d="M-100,600 C300,550 600,200 900,250 C1200,300 1500,650 1700,500" />
+          <path d="M-100,550 C280,500 580,180 880,220 C1180,260 1480,580 1700,440" />
+          <path d="M-100,500 C260,450 560,160 860,190 C1160,220 1460,510 1700,380" />
+          <path d="M-100,450 C240,400 540,140 840,160 C1140,180 1440,440 1700,320" />
+          <path d="M-100,400 C220,350 520,120 820,130 C1120,140 1420,370 1700,260" />
+          <path d="M-100,350 C200,300 500,100 800,100 C1100,100 1400,300 1700,200" />
+          <path d="M-100,300 C180,250 480,80 780,70 C1080,60 1380,230 1700,140" />
+          <path d="M-100,250 C160,200 460,60 760,40 C1060,20 1360,160 1700,80" />
+        </g>
+
+        <!-- Animated Luminous Gliding Beams -->
+        <g stroke-width="2" fill="none">
+          <path class="beam beam-1" stroke="url(#glow-beam-1)"
+            d="M-100,550 C280,500 580,180 880,220 C1180,260 1480,580 1700,440" />
+          <path class="beam beam-2" stroke="url(#glow-beam-2)"
+            d="M-100,450 C240,400 540,140 840,160 C1140,180 1440,440 1700,320" />
+          <path class="beam beam-3" stroke="url(#glow-beam-3)"
+            d="M-100,350 C200,300 500,100 800,100 C1100,100 1400,300 1700,200" />
+          <path class="beam beam-4" stroke="url(#glow-beam-1)"
+            d="M-100,250 C160,200 460,60 760,40 C1060,20 1360,160 1700,80" />
+        </g>
+      </svg>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════
+         HEADER
+         ═══════════════════════════════════════════════════ -->
+    <header class="site-header" id="site-header">
+      <div class="header-inner">
+        <a href="index.html" class="logo-link" aria-label="NIC Decoder Home">
+          <img src="nicinfo-logo.webp" alt="NIC Decoder Logo" class="header-logo" width="56" height="28"
+            decoding="async" />
+        </a>
+        <nav class="header-nav">
+          <a href="index.html#how-it-works">How it works</a>
+          <!-- Share Dropdown -->
+          <div class="share-dropdown-wrapper">
+            <button class="share-btn" id="share-toggle-btn" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Share this website">
+              <span>Share</span>
+              <svg class="share-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="share-menu" id="share-menu" role="menu" aria-hidden="true">
+              <a href="#" class="share-menu__item" data-share-platform="whatsapp" role="menuitem" target="_blank" rel="noopener noreferrer">
+                <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                </svg>
+                <span>WhatsApp</span>
+              </a>
+              <a href="#" class="share-menu__item" data-share-platform="facebook" role="menuitem" target="_blank" rel="noopener noreferrer">
+                <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+                <span>Facebook</span>
+              </a>
+              <a href="#" class="share-menu__item" data-share-platform="x" role="menuitem" target="_blank" rel="noopener noreferrer">
+                <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+                <span>X / Twitter</span>
+              </a>
+              <button type="button" class="share-menu__item" id="share-copy-btn" role="menuitem">
+                <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span id="share-copy-text">Copy Link</span>
+              </button>
+            </div>
+          </div>
+          <!-- Theme toggle -->
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light mode"
+            title="Toggle light / dark mode">
+            <!-- Sun icon: visible in dark mode -->
+            <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+            <!-- Moon icon: visible in light mode -->
+            <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════════════════
+         MAIN PRIVACY NOTICE CONTENT
+         ═══════════════════════════════════════════════════ -->
+    <main class="policy-page">
+      <div class="policy-header animate-fade-in">
+        <a href="index.html" class="policy-back-link">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M11 8H5M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          Back to Decoder
+        </a>
+        <h1 class="policy-title">Privacy Notice &amp; Data Protection Policy</h1>
+        <div class="policy-subtitle">
+          <span>Effective Date: August 4, 2026</span>
+          <span>&middot;</span>
+          <span>Aligned with Sri Lanka PDPA (No. 9 of 2022) &amp; GDPR Standards</span>
+        </div>
+      </div>
+
+      <!-- Shield Highlight Callout -->
+      <div class="policy-badge-shield animate-fact-0">
+        <div class="policy-badge-icon" aria-hidden="true">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            <path d="M9 12l2 2 4-4" />
+          </svg>
+        </div>
+        <div class="policy-badge-text">
+          <h3>100% Zero-Data Retention Guarantee</h3>
+          <p>
+            NIC Info is designed from the ground up with strict <strong>Privacy by Design</strong> principles. When you input an identification number into our tool, it is neither transmitted across the internet nor recorded in any database. All calculations happen solely inside your web browser&apos;s memory and disappear instantly when you clear the input or navigate away.
+          </p>
+        </div>
+      </div>
+
+      <!-- Sections -->
+      <section class="policy-section animate-fact-1">
+        <h2>1. Purpose &amp; Overview</h2>
+        <p>
+          This Privacy Notice outlines how <strong>NIC Info</strong> (&ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;) safeguards personal privacy and ensures data security for visitors utilizing our browser-based identification analysis tool. We treat identity credentials with the utmost sensitivity and have structured our technology so that we never handle, collect, or possess your personal data.
+        </p>
+        <p>
+          By using our service, you benefit from a completely decentralized, zero-trust architecture that prevents unauthorized data profiling and ensures total user privacy.
+        </p>
+      </section>
+
+      <section class="policy-section animate-fact-2">
+        <h2>2. Information We Do Not Collect</h2>
+        <p>
+          Unlike traditional web services that submit user form inputs to cloud backends for computation, our service operates without backend processing servers. Specifically, we enforce the following exclusions:
+        </p>
+        <ul class="policy-list">
+          <li><strong>No Identification Credentials:</strong> National Identity Card (NIC) numbers, dates of birth, age outputs, and gender determinations are never stored, logged, or retained in any server log, system cache, or persistent database.</li>
+          <li><strong>No Keystroke or Input Logging:</strong> We deploy no third-party session replay tools, key-loggers, or behavioral tracking scripts that inspect what you type in real time.</li>
+          <li><strong>No Profiling or Advertising ID Tracking:</strong> We do not set cross-site profiling cookies, tracking pixel fingerprints, or programmatic ad-retargeting beacons.</li>
+          <li><strong>No Personal Attribution:</strong> We do not collect names, phone numbers, email addresses, or geocoord location data when you use the decoding interface.</li>
+        </ul>
+      </section>
+
+      <section class="policy-section">
+        <h2>3. Local Client-Side Architecture</h2>
+        <p>
+          To provide verifiable mathematical accuracy without jeopardizing confidentiality, NIC Info leverages modern TypeScript/JavaScript offline browser computation.
+        </p>
+        <ul class="policy-list">
+          <li><strong>Local Execution:</strong> When you access this webpage, your device downloads a lightweight, immutable logic script. When you press &ldquo;Decode&rdquo; or press Enter, your computer&apos;s local processor runs the mathematical day-of-year parsing algorithm locally in volatile RAM.</li>
+          <li><strong>Zero Network Payloads:</strong> You can verify our security model by opening your web browser&apos;s Developer Tools (F12) and monitoring the &ldquo;Network&rdquo; tab during a decode operation. You will observe zero outgoing HTTP POST requests or WebSocket transmissions containing your input.</li>
+          <li><strong>Offline Usability:</strong> Once loaded, our decoding tool can be operated fully offline without internet access, further confirming that zero remote infrastructure is involved in processing your sensitive inputs.</li>
+        </ul>
+      </section>
+
+      <section class="policy-section">
+        <h2>4. Local Preferences (Local Storage)</h2>
+        <p>
+          We utilize standard HTML5 Web Storage (<code>localStorage</code>) strictly for non-intrusive UI preference customization:
+        </p>
+        <ul class="policy-list">
+          <li><strong>Theme Preference:</strong> We store a simple text token (<code>"nic-theme"</code> set to either <code>"light"</code> or <code>"dark"</code>) on your local hard drive so your preferred color scheme persists across visits. This token contains zero tracking timestamps or identifying metrics, and can be cleared at any time via your browser settings.</li>
+        </ul>
+      </section>
+
+      <section class="policy-section">
+        <h2>5. Third-Party CDNs &amp; External Assets</h2>
+        <p>
+          To deliver a modern, resilient visual UI and credit attribution, our static interface connects to industry-standard Content Delivery Networks (CDNs):
+        </p>
+        <ul class="policy-list">
+          <li><strong>Typography &amp; Icons:</strong> Google Fonts and standard open-source icon libraries may receive basic, anonymous HTTP request headers (such as user-agent and IP routing protocols) solely for the purpose of transmitting stylesheet and font asset files to your screen.</li>
+          <li><strong>Developer Showcase &amp; Previews:</strong> Our footer features an attribution link to our lead architect, Pubudu Tharanga, enhanced by an automated thumbnail preview card powered by <code>image.thum.io</code>. These preview image endpoints serve only static presentation graphics and have no access to the identification inputs typed into our tool.</li>
+          <li><strong>Partner Logos:</strong> Our corporate showcase marquee renders static SVG emblems from open-source repository mirrors (PrebuiltUI/GitHub CDN), which operate entirely decoupled from our application logic.</li>
+        </ul>
+      </section>
+
+      <section class="policy-section">
+        <h2>6. Your Regulatory Data Protection Rights</h2>
+        <p>
+          Under statutory privacy regulations—including Sri Lanka&apos;s Personal Data Protection Act No. 9 of 2022 (PDPA), the European Union General Data Protection Regulation (GDPR), and the California Consumer Privacy Act (CCPA)—citizens are granted fundamental rights regarding data modification, restriction, disclosure, and erasure (&ldquo;the right to be forgotten&rdquo;).
+        </p>
+        <p>
+          Because our zero-retention system architecturally precludes us from possessing or storing any user credentials or processing history, there are no database records to retrieve, export, or delete. Your data privacy rights are fully honored by our foundational technical refusal to collect personal information in the first place.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h2>7. Policy Updates &amp; Inquiries</h2>
+        <p>
+          We may update this Privacy Notice periodically to accommodate advancements in Web Security protocols or emerging legal mandates. Any revisions will take effect immediately upon deployment to this webpage, reflected by the effective timestamp above.
+        </p>
+        <p>
+          If you are a security researcher, compliance auditor, or visitor with clarifying inquiries regarding our zero-data protection architecture, you may contact our engineering leadership:
+        </p>
+        <p>
+          <strong>Lead Developer:</strong> Pubudu Tharanga<br />
+          <strong>Portfolio &amp; Direct Contact:</strong> <a href="https://pubudu-tharanga.vercel.app/" target="_blank" rel="noopener noreferrer" class="policy-contact-link">https://pubudu-tharanga.vercel.app/</a>
+        </p>
+      </section>
+    </main>
+
+    <!-- ═══════════════════════════════════════════════════
+         FOOTER
+         ═══════════════════════════════════════════════════ -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <a href="index.html" class="footer-logo-link" aria-label="NIC Decoder Home">
+          <img src="nicinfo-logo.webp" alt="NIC to DOB Logo" class="footer-logo" width="72" height="36"
+            decoding="async" />
+        </a>
+
+        <p class="footer-description">
+          A free browser tool for decoding Sri Lankan National Identity Card numbers.<br />
+        </p>
+
+        <p class="footer-copyright">
+          Copyright &copy;
+          <script>document.write(new Date().getFullYear())</script> <strong class="footer-brand">NIC Info</strong>.
+          All rights reserved.
+        </p>
+
+        <p class="footer-developed">
+          Developed by 
+          <span class="link-preview-wrapper">
+            <a href="https://pubudu-tharanga.vercel.app/" target="_blank" rel="noopener noreferrer" class="developer-link link-preview-trigger">Pubudu Tharanga</a>
+            <span class="link-preview-popover" role="tooltip" aria-hidden="true">
+              <span class="link-preview-card">
+                <img src="https://image.thum.io/get/width/1280/crop/720/wait/8/noanimate/https://pubudu-tharanga.vercel.app/" alt="Pubudu Tharanga Portfolio Preview" class="link-preview-image" width="320" height="180" loading="eager" decoding="async" />
+              </span>
+            </span>
+          </span>
+        </p>
+
+        <div class="footer-nav">
+          <a href="privacy.html" class="footer-link">Privacy Notice</a>
+          <span class="footer-divider" aria-hidden="true"></span>
+          <a href="guidelines.html" class="footer-link">Guidelines</a>
+          <span class="footer-divider" aria-hidden="true"></span>
+          <a href="policy.html" class="footer-link">Policy</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       JAVASCRIPT — Theme toggle & interactions
+       ═══════════════════════════════════════════════════════ -->
+  <script>
+    (function () {
+      var html = document.documentElement;
+      var themeToggle = document.getElementById('theme-toggle');
+      var STORAGE_KEY = 'nic-theme';
+      var header = document.getElementById('site-header');
+
+      function applyTheme(theme) {
+        if (theme === 'light') {
+          html.setAttribute('data-theme', 'light');
+          themeToggle.setAttribute('aria-label', 'Switch to dark mode');
+        } else {
+          html.removeAttribute('data-theme');
+          themeToggle.setAttribute('aria-label', 'Switch to light mode');
+        }
+      }
+
+      // Initialize Theme
+      var stored = localStorage.getItem(STORAGE_KEY);
+      if (stored === 'light' || stored === 'dark') {
+        applyTheme(stored);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        applyTheme('light');
+      }
+
+      themeToggle.addEventListener('click', function () {
+        var currentlyLight = html.getAttribute('data-theme') === 'light';
+        var next = currentlyLight ? 'dark' : 'light';
+        applyTheme(next);
+        try { localStorage.setItem(STORAGE_KEY, next); } catch (_) { }
+      });
+
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 40) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      }, { passive: true });
+        // ── Share Dropdown & Web Share Protocols ──────────────
+        var shareBtn = document.getElementById('share-toggle-btn');
+        var shareMenu = document.getElementById('share-menu');
+        if (shareBtn && shareMenu) {
+          shareBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            var isOpen = shareMenu.classList.contains('open');
+            if (isOpen) {
+              shareMenu.classList.remove('open');
+              shareBtn.setAttribute('aria-expanded', 'false');
+              shareMenu.setAttribute('aria-hidden', 'true');
+            } else {
+              shareMenu.classList.add('open');
+              shareBtn.setAttribute('aria-expanded', 'true');
+              shareMenu.setAttribute('aria-hidden', 'false');
+            }
+          });
+
+          document.addEventListener('click', function (e) {
+            if (!shareMenu.contains(e.target) && e.target !== shareBtn) {
+              shareMenu.classList.remove('open');
+              shareBtn.setAttribute('aria-expanded', 'false');
+              shareMenu.setAttribute('aria-hidden', 'true');
+            }
+          });
+
+          document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+              shareMenu.classList.remove('open');
+              shareBtn.setAttribute('aria-expanded', 'false');
+              shareMenu.setAttribute('aria-hidden', 'true');
+            }
+          });
+
+          var shareUrl = encodeURIComponent(window.location.origin + window.location.pathname);
+          var shareText = encodeURIComponent("Check out NIC Info - A free browser tool for decoding Sri Lankan National Identity Card numbers and revealing birth dates & gender! ");
+          
+          var waBtn = shareMenu.querySelector('[data-share-platform="whatsapp"]');
+          var fbBtn = shareMenu.querySelector('[data-share-platform="facebook"]');
+          var xBtn = shareMenu.querySelector('[data-share-platform="x"]');
+          var copyBtn = document.getElementById('share-copy-btn');
+          var copyText = document.getElementById('share-copy-text');
+
+          if (waBtn) waBtn.href = "https://api.whatsapp.com/send?text=" + shareText + shareUrl;
+          if (fbBtn) fbBtn.href = "https://www.facebook.com/sharer/sharer.php?u=" + shareUrl;
+          if (xBtn) xBtn.href = "https://twitter.com/intent/tweet?text=" + shareText + "&url=" + shareUrl;
+
+          if (copyBtn) {
+            copyBtn.addEventListener('click', function (e) {
+              e.stopPropagation();
+              var targetUrl = window.location.origin + window.location.pathname;
+              navigator.clipboard.writeText(targetUrl).then(function () {
+                var originalText = copyText ? copyText.innerText : 'Copy Link';
+                if (copyText) copyText.innerText = 'Copied!';
+                copyBtn.style.color = '#25D366';
+                setTimeout(function () {
+                  if (copyText) copyText.innerText = originalText;
+                  copyBtn.style.color = '';
+                }, 2000);
+              }).catch(function () {
+                // Fallback
+              });
+            });
+          }
+        }
+    })();
+  </script>
+</body>
+</html>

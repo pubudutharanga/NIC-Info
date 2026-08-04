@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NIC Decoder — Decode Sri Lankan National Identity Card Numbers</title>
+  <meta name="description"
+    content="A free browser tool that decodes Sri Lankan NIC numbers into date of birth, age, and gender. Nothing is stored — everything runs in your browser." />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Inline theme init: prevents flash of wrong theme on load -->
+  <script>
+    (function () {
+      var stored = localStorage.getItem('nic-theme');
+      if (stored === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      } else if (!stored && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+
+<body>
+
+  <div class="page-wrapper">
+    <!-- Guilloché background texture (Light mode) -->
+    <div class="guilloche" aria-hidden="true"></div>
+
+    <!-- Animated Background Lines (Dark mode only) -->
+    <div class="background-lines" aria-hidden="true">
+      <svg class="background-lines__svg" viewBox="0 0 1440 800" fill="none" xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="glow-beam-1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#C9A15C" stop-opacity="0" />
+            <stop offset="50%" stop-color="#C9A15C" stop-opacity="1" />
+            <stop offset="100%" stop-color="#C9A15C" stop-opacity="0" />
+          </linearGradient>
+          <linearGradient id="glow-beam-2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#4F8B82" stop-opacity="0" />
+            <stop offset="50%" stop-color="#4F8B82" stop-opacity="1" />
+            <stop offset="100%" stop-color="#4F8B82" stop-opacity="0" />
+          </linearGradient>
+          <linearGradient id="glow-beam-3" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#EDE9DD" stop-opacity="0" />
+            <stop offset="50%" stop-color="#EDE9DD" stop-opacity="0.75" />
+            <stop offset="100%" stop-color="#EDE9DD" stop-opacity="0" />
+          </linearGradient>
+        </defs>
+
+        <!-- Static subtle base frequency curves -->
+        <g class="bg-lines-group" stroke="currentColor" stroke-width="1">
+          <path d="M-100,600 C300,550 600,200 900,250 C1200,300 1500,650 1700,500" />
+          <path d="M-100,550 C280,500 580,180 880,220 C1180,260 1480,580 1700,440" />
+          <path d="M-100,500 C260,450 560,160 860,190 C1160,220 1460,510 1700,380" />
+          <path d="M-100,450 C240,400 540,140 840,160 C1140,180 1440,440 1700,320" />
+          <path d="M-100,400 C220,350 520,120 820,130 C1120,140 1420,370 1700,260" />
+          <path d="M-100,350 C200,300 500,100 800,100 C1100,100 1400,300 1700,200" />
+          <path d="M-100,300 C180,250 480,80 780,70 C1080,60 1380,230 1700,140" />
+          <path d="M-100,250 C160,200 460,60 760,40 C1060,20 1360,160 1700,80" />
+          <path d="M-100,200 C140,150 440,40 740,10 C1040,-20 1340,90 1700,20" />
+          <path d="M-100,150 C120,100 420,20 720,-20 C1020,-60 1320,20 1700,-40" />
+        </g>
+
+        <!-- Animated Luminous Gliding Beams -->
+        <g stroke-width="2" fill="none">
+          <path class="beam beam-1" stroke="url(#glow-beam-1)"
+            d="M-100,550 C280,500 580,180 880,220 C1180,260 1480,580 1700,440" />
+          <path class="beam beam-2" stroke="url(#glow-beam-2)"
+            d="M-100,450 C240,400 540,140 840,160 C1140,180 1440,440 1700,320" />
+          <path class="beam beam-3" stroke="url(#glow-beam-3)"
+            d="M-100,350 C200,300 500,100 800,100 C1100,100 1400,300 1700,200" />
+          <path class="beam beam-4" stroke="url(#glow-beam-1)"
+            d="M-100,250 C160,200 460,60 760,40 C1060,20 1360,160 1700,80" />
+        </g>
+      </svg>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════
+         HEADER
+         ═══════════════════════════════════════════════════ -->
+    <header class="site-header" id="site-header">
+      <div class="header-inner">
+        <a href="#" class="logo-link" aria-label="NIC Decoder Home">
+          <img src="nicinfo-logo.webp" alt="NIC Decoder Logo" class="header-logo" width="56" height="28"
+            decoding="async" />
+        </a>
+        <nav class="header-nav">
+          <a href="#how-it-works">How it works</a>
+          <!-- Share Dropdown -->
+          <div class="share-dropdown-wrapper">
+            <button class="share-btn" id="share-toggle-btn" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Share this website">
+              <span>Share</span>
+              <svg class="share-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="share-menu" id="share-menu" role="menu" aria-hidden="true">
+              <a href="#" class="share-menu__item" data-share-platform="whatsapp" role="menuitem" target="_blank" rel="noopener noreferrer">
+                <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                </svg>
+                <span>WhatsApp</span>
+              </a>
+              <a href="#" class="share-menu__item" data-share-platform="facebook" role="menuitem" target="_blank" rel="noopener noreferrer">
+                <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+                <span>Facebook</span>
+              </a>
+              <a href="#" class="share-menu__item" data-share-platform="x" role="menuitem" target="_blank" rel="noopener noreferrer">
+                <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+                <span>X / Twitter</span>
+              </a>
+              <button type="button" class="share-menu__item" id="share-copy-btn" role="menuitem">
+                <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span id="share-copy-text">Copy Link</span>
+              </button>
+            </div>
+          </div>
+          <!-- Theme toggle -->
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light mode"
+            title="Toggle light / dark mode">
+            <!-- Sun icon: visible in dark mode -->
+            <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+            <!-- Moon icon: visible in light mode -->
+            <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="content-wrapper">
+
+      <!-- ═══════════════════════════════════════════════
+           HERO
+           ═══════════════════════════════════════════════ -->
+      <section class="hero" id="hero">
+
+        <!-- ── Empty State ────────────────────────── -->
+        <div class="hero-empty" id="hero-empty">
+          <h1 class="hero-title">Every NIC number hides a birthday.</h1>
+          <p class="hero-subtitle">
+            Sri Lankan NIC numbers encode a birth date and gender.
+            Paste yours below to see what&apos;s hidden.
+          </p>
+
+          <div class="input-group">
+            <label for="nic-input" class="sr-only">Enter your NIC number</label>
+            <div class="input-row">
+              <input type="text" id="nic-input" class="nic-input" placeholder="199906731234" autocomplete="off"
+                aria-describedby="nic-error" />
+              <button class="decode-btn" id="decode-btn" aria-label="Decode NIC number" type="button">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M4 10h12M12 6l4 4-4 4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+            <p class="error-message" id="nic-error" role="alert">
+              That&apos;s not a valid NIC number. Check the digit count and try again.
+            </p>
+            <p class="input-helper">old and new formats both work</p>
+          </div>
+        </div>
+
+        <!-- ── Revealed State ─────────────────────── -->
+        <div class="hero-revealed" id="hero-revealed">
+
+          <!-- Decoded badge -->
+          <div class="decoded-badge animate-fact-0">
+            <span class="decoded-badge__label">Decoded</span>
+            <span class="decoded-badge__divider"></span>
+            <span class="decoded-badge__number" id="decoded-nic-display">199906731234</span>
+          </div>
+
+          <!-- Brass rule -->
+          <div class="reveal-rule animate-rule"></div>
+
+          <!-- Result card -->
+          <div class="result-card">
+            <div class="result-grid">
+              <div class="result-fact animate-fact-0">
+                <p class="result-fact__label">Date of Birth</p>
+                <p class="result-fact__value" id="result-dob">22 June 1999</p>
+              </div>
+              <div class="result-fact animate-fact-1">
+                <p class="result-fact__label">Age</p>
+                <p class="result-fact__value" id="result-age">27</p>
+                <p class="result-fact__age-detail" id="result-age-detail"></p>
+              </div>
+              <div class="result-fact animate-fact-2">
+                <p class="result-fact__label">Gender</p>
+                <p class="result-fact__value" id="result-gender">Female</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Decode another -->
+          <div class="decode-another-wrap animate-fact-2">
+            <button class="decode-another-btn" id="decode-another-btn" type="button">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M13 8H3M7 4l-4 4 4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              Decode another
+            </button>
+          </div>
+        </div>
+
+        <!-- Adsterra Banner Slot (Reserved 320x50 zero CLS container) -->
+        <div class="hero-ad-slot" aria-label="Advertisement">
+          <script>
+            atOptions = {
+              'key' : '26a1ef2b6e466470c96200365f14deff',
+              'format' : 'iframe',
+              'height' : 50,
+              'width' : 320,
+              'params' : {}
+            };
+          </script>
+          <script src="https://chalkedwhiningromance.com/26a1ef2b6e466470c96200365f14deff/invoke.js"></script>
+        </div>
+
+        <!-- Trust line (always visible) -->
+        <p class="trust-line">Runs in your browser. Never stored.</p>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════
+           HOW IT WORKS
+           ═══════════════════════════════════════════════ -->
+      <section class="how-it-works" id="how-it-works">
+        <h2 class="section-title">How the number works</h2>
+        <ol class="steps-list">
+          <li class="step">
+            <span class="step__number">1.</span>
+            <div>
+              <p class="step__title">Read the birth year</p>
+              <p class="step__body">
+                The first four digits on a new-format card (or first two on an old one) encode the birth year.
+                New: 1999 from 1999…. Old: 90 from 90….
+              </p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="step__number">2.</span>
+            <div>
+              <p class="step__title">Decode day-of-year and gender</p>
+              <p class="step__body">
+                The next three digits are the day of the year — 1 for 1 January, 365 for 31 December.
+                If the number exceeds 366, subtract 500 to get the actual day, and that means the cardholder is female.
+              </p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="step__number">3.</span>
+            <div>
+              <p class="step__title">Serial number and check digit</p>
+              <p class="step__body">
+                What remains is a serial number assigned at registration. New-format cards (12 digits) end with a single
+                check digit;
+                old-format cards (9 digits + a letter) end with V or X.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════
+           ADSTERRA 300x250 MEDIUM RECTANGLE AD SLOT
+           ═══════════════════════════════════════════════ -->
+      <section class="ad-section-medium" aria-label="Sponsor Advertisement">
+        <div class="ad-slot-300x250">
+          <script>
+            atOptions = {
+              'key' : '89bf45c2a0844f31cb3eaf8d4601ca48',
+              'format' : 'iframe',
+              'height' : 250,
+              'width' : 300,
+              'params' : {}
+            };
+          </script>
+          <script src="https://chalkedwhiningromance.com/89bf45c2a0844f31cb3eaf8d4601ca48/invoke.js"></script>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════
+           OLD vs NEW FORMAT
+           ═══════════════════════════════════════════════ -->
+      <section class="format-comparison">
+        <div class="section-divider"></div>
+        <h2 class="section-title">Old format vs. new format</h2>
+        <div class="format-grid">
+
+          <!-- OLD FORMAT -->
+          <div class="format-card">
+            <span class="format-card__badge">OLD · 10 characters</span>
+            <p class="format-card__number">90 &nbsp; 673 &nbsp; 1234 &nbsp; V</p>
+            <div class="format-card__segments">
+              <div class="segment segment--brass">
+                <span class="segment__value">90</span>
+                <span class="segment__label">Year</span>
+                <span class="segment__sublabel">2 digits</span>
+              </div>
+              <div class="segment segment--teal">
+                <span class="segment__value">673</span>
+                <span class="segment__label">Day</span>
+                <span class="segment__sublabel">+ gender</span>
+              </div>
+              <div class="segment segment--muted">
+                <span class="segment__value">1234</span>
+                <span class="segment__label">Serial</span>
+              </div>
+              <div class="segment segment--dim">
+                <span class="segment__value">V</span>
+                <span class="segment__label">Check</span>
+                <span class="segment__sublabel">V or X</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- NEW FORMAT -->
+          <div class="format-card">
+            <span class="format-card__badge">NEW · 12 digits</span>
+            <p class="format-card__number">1999 &nbsp; 673 &nbsp; 1234 &nbsp; 0</p>
+            <div class="format-card__segments">
+              <div class="segment segment--brass">
+                <span class="segment__value">1999</span>
+                <span class="segment__label">Year</span>
+                <span class="segment__sublabel">4 digits</span>
+              </div>
+              <div class="segment segment--teal">
+                <span class="segment__value">673</span>
+                <span class="segment__label">Day</span>
+                <span class="segment__sublabel">+ gender</span>
+              </div>
+              <div class="segment segment--muted">
+                <span class="segment__value">1234</span>
+                <span class="segment__label">Serial</span>
+              </div>
+              <div class="segment segment--dim">
+                <span class="segment__value">0</span>
+                <span class="segment__label">Check</span>
+                <span class="segment__sublabel">digit</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════
+           PRIVACY
+           ═══════════════════════════════════════════════ -->
+      <section class="privacy">
+        <div class="privacy-card">
+          <h2>We never see your NIC number.</h2>
+          <p>
+            Decoding happens entirely within your browser — no data leaves your device.
+            Nothing is transmitted to a server, logged, or stored in any form.
+          </p>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════
+           PARTNERS MARQUEE
+           ═══════════════════════════════════════════════ -->
+      <section class="partners-marquee" aria-label="Trusted by engineering teams worldwide">
+        <div class="marquee-wrapper">
+          <div class="marquee-track" id="marquee-track">
+            <!-- Populated dynamically via JS for seamless infinite loop -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════
+           FAQ
+           ═══════════════════════════════════════════════ -->
+      <section class="faq" id="faq">
+        <div class="section-divider"></div>
+        <h2 class="section-title">FAQ</h2>
+        <div class="faq-list" id="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false" type="button">
+              <span class="faq-trigger__text">What is a NIC number?</span>
+              <span class="faq-trigger__icon" aria-hidden="true">+</span>
+            </button>
+            <p class="faq-answer">
+              A National Identity Card (NIC) number is the unique identifier issued by Sri Lanka&apos;s
+              Department for Registration of Persons to every citizen. It appears on the physical identity card
+              and is used for most official purposes.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false" type="button">
+              <span class="faq-trigger__text">Do you store the numbers people enter?</span>
+              <span class="faq-trigger__icon" aria-hidden="true">+</span>
+            </button>
+            <p class="faq-answer">
+              No. The entire decoding process runs in JavaScript inside your browser.
+              No NIC number is ever sent to a server or recorded in any way.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false" type="button">
+              <span class="faq-trigger__text">What&apos;s the difference between the old and new format?</span>
+              <span class="faq-trigger__icon" aria-hidden="true">+</span>
+            </button>
+            <p class="faq-answer">
+              Old-format NICs have 9 digits followed by a letter (V or X) — 10 characters total.
+              The year is encoded in just 2 digits. New-format NICs (issued from around 2016) use 12 digits,
+              with the full 4-digit birth year and a numeric check digit instead of a letter.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false" type="button">
+              <span class="faq-trigger__text">Is this an official government site?</span>
+              <span class="faq-trigger__icon" aria-hidden="true">+</span>
+            </button>
+            <p class="faq-answer">
+              No. This is an independent tool and is not affiliated with, endorsed by, or connected to
+              the Department for Registration of Persons or any other Sri Lankan government body.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════
+           ADSTERRA 728x90 LEADERBOARD AD SLOT
+           ═══════════════════════════════════════════════ -->
+      <section class="ad-section-leaderboard" aria-label="Sponsor Advertisement">
+        <div class="ad-slot-728x90">
+          <script>
+            atOptions = {
+              'key' : '1d991944a38fcba3be08497212b58c82',
+              'format' : 'iframe',
+              'height' : 90,
+              'width' : 728,
+              'params' : {}
+            };
+          </script>
+          <script src="https://chalkedwhiningromance.com/1d991944a38fcba3be08497212b58c82/invoke.js"></script>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ═══════════════════════════════════════════════════
+         FOOTER
+         ═══════════════════════════════════════════════════ -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <a href="#" class="footer-logo-link" aria-label="NIC Decoder Home">
+          <img src="nicinfo-logo.webp" alt="NIC to DOB Logo" class="footer-logo" width="72" height="36"
+            decoding="async" />
+        </a>
+
+        <p class="footer-description">
+          A free browser tool for decoding Sri Lankan National Identity Card numbers.<br />
+
+        </p>
+
+        <p class="footer-copyright">
+          Copyright &copy;
+          <script>document.write(new Date().getFullYear())</script> <strong class="footer-brand">NIC Info</strong>.
+          All rights reserved.
+        </p>
+
+        <p class="footer-developed">
+          Developed by 
+          <span class="link-preview-wrapper">
+            <a href="https://pubudu-tharanga.vercel.app/" target="_blank" rel="noopener noreferrer" class="developer-link link-preview-trigger">Pubudu Tharanga</a>
+            <span class="link-preview-popover" role="tooltip" aria-hidden="true">
+              <span class="link-preview-card">
+                <img src="https://image.thum.io/get/width/1280/crop/720/wait/8/noanimate/https://pubudu-tharanga.vercel.app/" alt="Pubudu Tharanga Portfolio Preview" class="link-preview-image" width="320" height="180" loading="eager" decoding="async" />
+              </span>
+            </span>
+          </span>
+        </p>
+
+        <div class="footer-nav">
+          <a href="privacy.html" class="footer-link">Privacy Notice</a>
+          <span class="footer-divider" aria-hidden="true"></span>
+          <a href="guidelines.html" class="footer-link">Guidelines</a>
+          <span class="footer-divider" aria-hidden="true"></span>
+          <a href="policy.html" class="footer-link">Policy</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       JAVASCRIPT — UI interactions only (no NIC parsing logic)
+       ═══════════════════════════════════════════════════════ -->
+  <script>
+      (function () {
+        // ── Theme Toggle ───────────────────────────────────
+        var html = document.documentElement;
+        var themeToggle = document.getElementById('theme-toggle');
+        var STORAGE_KEY = 'nic-theme';
+
+        function applyTheme(theme) {
+          if (theme === 'light') {
+            html.setAttribute('data-theme', 'light');
+            themeToggle.setAttribute('aria-label', 'Switch to dark mode');
+          } else {
+            html.removeAttribute('data-theme');
+            themeToggle.setAttribute('aria-label', 'Switch to light mode');
+          }
+        }
+
+        // Initialise: stored preference > system preference > dark (default)
+        (function initTheme() {
+          var stored = localStorage.getItem(STORAGE_KEY);
+          if (stored === 'light' || stored === 'dark') {
+            applyTheme(stored);
+          } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+            applyTheme('light');
+          }
+          // else: stay dark (default CSS)
+        })();
+
+        themeToggle.addEventListener('click', function () {
+          var currentlyLight = html.getAttribute('data-theme') === 'light';
+          var next = currentlyLight ? 'dark' : 'light';
+          applyTheme(next);
+          try { localStorage.setItem(STORAGE_KEY, next); } catch (_) { }
+        });
+
+        // ── Elements ──────────────────────────────────────
+        var header = document.getElementById('site-header');
+
+        const heroEmpty = document.getElementById('hero-empty');
+        const heroRevealed = document.getElementById('hero-revealed');
+        const nicInput = document.getElementById('nic-input');
+        const decodeBtn = document.getElementById('decode-btn');
+        const decodeAnotherBtn = document.getElementById('decode-another-btn');
+        const errorMsg = document.getElementById('nic-error');
+        const decodedNicDisplay = document.getElementById('decoded-nic-display');
+
+        // Result elements (will be populated by parsing logic later)
+        const resultDob = document.getElementById('result-dob');
+        const resultAge = document.getElementById('result-age');
+        const resultGender = document.getElementById('result-gender');
+
+        // ── Header scroll effect ──────────────────────────
+        window.addEventListener('scroll', function () {
+          if (window.scrollY > 40) {
+            header.classList.add('scrolled');
+          } else {
+            header.classList.remove('scrolled');
+          }
+        }, { passive: true });
+
+        // ── Decode button ─────────────────────────────────
+        decodeBtn.addEventListener('click', handleDecode);
+
+        // ── Enter key on input ────────────────────────────
+        nicInput.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter') handleDecode();
+        });
+
+        // ── Clear error on input & auto-decode on complete NIC ─
+        nicInput.addEventListener('input', function () {
+          nicInput.classList.remove('error');
+          errorMsg.classList.remove('visible');
+          nicInput.removeAttribute('aria-invalid');
+
+          // Auto-decode when input reaches a valid NIC length
+          var val = nicInput.value.trim();
+          if (val.length === 10 && /[VvXx]$/.test(val)) {
+            handleDecode();
+          } else if (val.length === 12 && /^[0-9]{12}$/.test(val)) {
+            handleDecode();
+          }
+        });
+
+        // ── NIC Parsing Logic ─────────────────────────────
+        // Implements the Sri Lankan NIC day-numbering convention:
+        // - Uses leap-year-based 366-day table so March 1 is always day 61
+        // - Day 60 is skipped in non-leap years for consistency
+        // - Females have 500 added to their day-of-year value
+
+        var MONTH_NAMES = [
+          '', 'January', 'February', 'March', 'April', 'May', 'June',
+          'July', 'August', 'September', 'October', 'November', 'December'
+        ];
+
+        /** Regular expressions for NIC formats */
+        var OLD_NIC_REGEX = /^[0-9]{9}[VvXx]$/;
+        var NEW_NIC_REGEX = /^[0-9]{12}$/;
+
+        /** Gender offset added to day of year for females */
+        var FEMALE_DAY_OFFSET = 500;
+
+        /** Cumulative days at end of each month — LEAP year (1-indexed) */
+        var CUMULATIVE_DAYS_LEAP = [0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366];
+
+        /** Cumulative days at end of each month — NON-LEAP year (1-indexed) */
+        var CUMULATIVE_DAYS_NON_LEAP = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365];
+
+        /** Days in each month (1-indexed, index 0 unused) */
+        var DAYS_IN_MONTH = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+        function isLeapYear(y) {
+          return (y % 4 === 0 && y % 100 !== 0) || (y % 400 === 0);
+        }
+
+        /**
+         * Validates if a day-of-year value is valid for NIC.
+         * Valid ranges: Males 1-366 (leap) / 1-365 (non-leap)
+         *              Females 501-866 (leap) / 501-865 (non-leap)
+         */
+        function isValidDayOfYear(dayOfYear, year) {
+          var baseDay = dayOfYear > FEMALE_DAY_OFFSET ? dayOfYear - FEMALE_DAY_OFFSET : dayOfYear;
+          if (baseDay < 1) return false;
+          var maxDay = (year !== undefined && !isLeapYear(year)) ? 365 : 366;
+          return baseDay <= maxDay;
+        }
+
+        /**
+         * Validates a NIC number string.
+         * Returns { isValid, format, errorKey }
+         */
+        function validateNIC(nic) {
+          var trimmed = nic.trim();
+          if (!trimmed) {
+            return { isValid: false, errorKey: 'Required' };
+          }
+
+          // Old format: 9 digits + V/X
+          if (OLD_NIC_REGEX.test(trimmed)) {
+            var dayOld = parseInt(trimmed.substring(2, 5), 10);
+            if (!isValidDayOfYear(dayOld)) {
+              return { isValid: false, errorKey: 'Invalid day-of-year in NIC' };
+            }
+            return { isValid: true, format: 'old' };
+          }
+
+          // New format: 12 digits
+          if (NEW_NIC_REGEX.test(trimmed)) {
+            var dayNew = parseInt(trimmed.substring(4, 7), 10);
+            if (!isValidDayOfYear(dayNew)) {
+              return { isValid: false, errorKey: 'Invalid day-of-year in NIC' };
+            }
+            return { isValid: true, format: 'new' };
+          }
+
+          // Specific error feedback
+          if (trimmed.length === 10 && /[VvXx]$/.test(trimmed)) {
+            return { isValid: false, errorKey: 'Old format must be 9 digits + V or X' };
+          }
+          if (trimmed.length === 12) {
+            return { isValid: false, errorKey: 'New format must be exactly 12 digits' };
+          }
+
+          return { isValid: false, errorKey: 'Not a valid NIC format' };
+        }
+
+        /**
+         * Determines gender from NIC day-of-year value.
+         * Returns 'Male', 'Female', or null if invalid.
+         */
+        function getGenderFromDay(nicDayOfYear, year) {
+          var leap = isLeapYear(year);
+          var maxMaleDay = leap ? 366 : 365;
+          var maxFemaleDay = FEMALE_DAY_OFFSET + maxMaleDay;
+
+          if (nicDayOfYear >= 1 && nicDayOfYear <= maxMaleDay) return 'Male';
+          if (nicDayOfYear >= FEMALE_DAY_OFFSET + 1 && nicDayOfYear <= maxFemaleDay) return 'Female';
+          return null;
+        }
+
+        /**
+         * Converts NIC day-of-year to actual calendar date (month, day).
+         *
+         * Handles the Sri Lankan NIC special rule for non-leap years:
+         * - Day 60 is skipped to keep day numbers consistent from March onwards
+         * - NIC day 61+ in non-leap year → actual calendar day 60+
+         */
+        function nicDayToDate(nicDayOfYear, year) {
+          // Remove female offset if present
+          var dayOfYear = nicDayOfYear > FEMALE_DAY_OFFSET
+            ? nicDayOfYear - FEMALE_DAY_OFFSET
+            : nicDayOfYear;
+
+          var leap = isLeapYear(year);
+          var maxDay = leap ? 366 : 365;
+
+          if (dayOfYear < 1 || dayOfYear > maxDay) return null;
+
+          // For non-leap years, adjust for the skipped day 60
+          // NIC day 61+ in non-leap year corresponds to actual day 60+
+          if (!leap && dayOfYear >= 60) {
+            dayOfYear -= 1;
+          }
+
+          // Use cumulative days array to find the month
+          var cumDays = leap ? CUMULATIVE_DAYS_LEAP : CUMULATIVE_DAYS_NON_LEAP;
+          var month = 1;
+          while (month <= 12 && dayOfYear > cumDays[month]) {
+            month++;
+          }
+
+          var day = dayOfYear - cumDays[month - 1];
+          return { month: month, day: day };
+        }
+
+        /**
+         * Extracts the birth year from the NIC string.
+         * Old format: 2-digit year (assumes 1900s)
+         * New format: full 4-digit year
+         */
+        function extractBirthYear(nic, format) {
+          if (format === 'old') {
+            return parseInt(nic.substring(0, 2), 10) + 1900;
+          }
+          return parseInt(nic.substring(0, 4), 10);
+        }
+
+        /**
+         * Extracts the raw day-of-year from the NIC string (includes female offset).
+         */
+        function extractRawDayOfYear(nic, format) {
+          var startIndex = format === 'old' ? 2 : 4;
+          return parseInt(nic.substring(startIndex, startIndex + 3), 10);
+        }
+
+        /**
+         * Calculates precise age from birth date to current date.
+         * Returns { years, months, days }.
+         */
+        function calculatePreciseAge(birthYear, birthMonth, birthDay, curYear, curMonth, curDay) {
+          var years = curYear - birthYear;
+          var months = curMonth - birthMonth;
+          var days = curDay - birthDay;
+
+          // Adjust if days are negative (borrow from previous month)
+          if (days < 0) {
+            months--;
+            var prevMonth = curMonth - 1;
+            var prevMonthYear = curYear;
+            if (prevMonth === 0) {
+              prevMonth = 12;
+              prevMonthYear--;
+            }
+            var daysInPrevMonth = (prevMonth === 2 && isLeapYear(prevMonthYear))
+              ? 29
+              : DAYS_IN_MONTH[prevMonth];
+            days += daysInPrevMonth;
+          }
+
+          // Adjust if months are negative (borrow from previous year)
+          if (months < 0) {
+            years--;
+            months += 12;
+          }
+
+          return { years: years, months: months, days: days };
+        }
+
+        /**
+         * Parses a validated NIC and returns all decoded information.
+         * Returns null on failure.
+         */
+        function parseNIC(nic) {
+          var validation = validateNIC(nic);
+          if (!validation.isValid || !validation.format) return null;
+
+          var format = validation.format;
+          var trimmed = nic.trim();
+          var year = extractBirthYear(trimmed, format);
+          var rawDayOfYear = extractRawDayOfYear(trimmed, format);
+
+          var gender = getGenderFromDay(rawDayOfYear, year);
+          if (!gender) return null;
+
+          var dateInfo = nicDayToDate(rawDayOfYear, year);
+          if (!dateInfo) return null;
+
+          var now = new Date();
+          var age = calculatePreciseAge(
+            year, dateInfo.month, dateInfo.day,
+            now.getFullYear(), now.getMonth() + 1, now.getDate()
+          );
+
+          var dayOfYear = rawDayOfYear > FEMALE_DAY_OFFSET
+            ? rawDayOfYear - FEMALE_DAY_OFFSET
+            : rawDayOfYear;
+
+          return {
+            birthday: new Date(year, dateInfo.month - 1, dateInfo.day),
+            gender: gender,
+            age: age,
+            format: format,
+            year: year,
+            month: dateInfo.month,
+            day: dateInfo.day,
+            dayOfYear: dayOfYear
+          };
+        }
+
+        /**
+         * Formats the months+days part of age as a compact subtitle.
+         * e.g. "1 mo · 13 d"
+         */
+        function formatAgeDetail(age) {
+          var parts = [];
+          if (age.months > 0) parts.push(age.months + (age.months === 1 ? ' mo' : ' mo'));
+          if (age.days > 0) parts.push(age.days + (age.days === 1 ? ' d' : ' d'));
+          return parts.join(' · ');
+        }
+
+        // ── Decode handler ────────────────────────────────
+        function handleDecode() {
+          var val = nicInput.value.trim();
+
+          var result = parseNIC(val);
+
+          if (!result) {
+            nicInput.classList.add('error');
+            errorMsg.classList.add('visible');
+            nicInput.setAttribute('aria-invalid', 'true');
+            return;
+          }
+
+          // Populate results
+          var resultAgeDetail = document.getElementById('result-age-detail');
+          decodedNicDisplay.textContent = val;
+          resultDob.textContent = result.day + ' ' + MONTH_NAMES[result.month] + ' ' + result.year;
+          resultAge.textContent = result.age.years;
+          resultAgeDetail.textContent = formatAgeDetail(result.age);
+          resultGender.textContent = result.gender;
+
+          // Switch states
+          showRevealed();
+        }
+
+        // ── Decode another ────────────────────────────────
+        decodeAnotherBtn.addEventListener('click', function () {
+          showEmpty();
+          nicInput.value = '';
+          nicInput.classList.remove('error');
+          errorMsg.classList.remove('visible');
+          nicInput.removeAttribute('aria-invalid');
+          setTimeout(function () { nicInput.focus(); }, 50);
+        });
+
+        // ── State switchers ───────────────────────────────
+        function showRevealed() {
+          heroEmpty.classList.add('hidden');
+          heroRevealed.classList.add('active');
+
+          // Re-trigger animations by cloning the revealed section
+          replayAnimations(heroRevealed);
+        }
+
+        function showEmpty() {
+          heroRevealed.classList.remove('active');
+          heroEmpty.classList.remove('hidden');
+        }
+
+        // Re-trigger CSS animations by removing and re-adding classes
+        function replayAnimations(container) {
+          var animatedEls = container.querySelectorAll(
+            '.animate-rule, .animate-fact-0, .animate-fact-1, .animate-fact-2'
+          );
+          animatedEls.forEach(function (el) {
+            var classes = [];
+            ['animate-rule', 'animate-fact-0', 'animate-fact-1', 'animate-fact-2'].forEach(function (cls) {
+              if (el.classList.contains(cls)) {
+                classes.push(cls);
+                el.classList.remove(cls);
+              }
+            });
+            // Force reflow
+            void el.offsetWidth;
+            classes.forEach(function (cls) {
+              el.classList.add(cls);
+            });
+          });
+        }
+
+        // ── FAQ accordion ─────────────────────────────────
+        var faqList = document.getElementById('faq-list');
+        faqList.addEventListener('click', function (e) {
+          var trigger = e.target.closest('.faq-trigger');
+          if (!trigger) return;
+
+          var item = trigger.closest('.faq-item');
+          var isOpen = item.classList.contains('open');
+
+          // Close all
+          var allItems = faqList.querySelectorAll('.faq-item');
+          allItems.forEach(function (faqItem) {
+            faqItem.classList.remove('open');
+            faqItem.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+          });
+
+          // Toggle clicked
+          if (!isOpen) {
+            item.classList.add('open');
+            trigger.setAttribute('aria-expanded', 'true');
+          }
+        });
+
+        // ── Infinite Marquee ──────────────────────────────
+        var marqueeTrack = document.getElementById('marquee-track');
+        if (marqueeTrack) {
+          var logos = ["slack", "framer", "netflix", "google", "linkedin", "instagram", "facebook"];
+          // Repeat array 4 times to ensure sufficient track width on widescreen monitors for a flawless loop
+          var repeatedLogos = logos.concat(logos, logos, logos);
+          repeatedLogos.forEach(function (name) {
+            var item = document.createElement('div');
+            item.className = 'marquee-item';
+            var img = document.createElement('img');
+            img.className = 'marquee-logo';
+            img.src = 'https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/companyLogo/' + name + '.svg';
+            img.alt = name.charAt(0).toUpperCase() + name.slice(1) + ' Logo';
+            img.loading = 'lazy';
+            img.decoding = 'async';
+            img.setAttribute('draggable', 'false');
+            item.appendChild(img);
+            marqueeTrack.appendChild(item);
+          });
+        }
+
+        // ── Share Dropdown & Web Share Protocols ──────────────
+        var shareBtn = document.getElementById('share-toggle-btn');
+        var shareMenu = document.getElementById('share-menu');
+        if (shareBtn && shareMenu) {
+          shareBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            var isOpen = shareMenu.classList.contains('open');
+            if (isOpen) {
+              shareMenu.classList.remove('open');
+              shareBtn.setAttribute('aria-expanded', 'false');
+              shareMenu.setAttribute('aria-hidden', 'true');
+            } else {
+              shareMenu.classList.add('open');
+              shareBtn.setAttribute('aria-expanded', 'true');
+              shareMenu.setAttribute('aria-hidden', 'false');
+            }
+          });
+
+          document.addEventListener('click', function (e) {
+            if (!shareMenu.contains(e.target) && e.target !== shareBtn) {
+              shareMenu.classList.remove('open');
+              shareBtn.setAttribute('aria-expanded', 'false');
+              shareMenu.setAttribute('aria-hidden', 'true');
+            }
+          });
+
+          document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+              shareMenu.classList.remove('open');
+              shareBtn.setAttribute('aria-expanded', 'false');
+              shareMenu.setAttribute('aria-hidden', 'true');
+            }
+          });
+
+          var shareUrl = encodeURIComponent(window.location.origin + window.location.pathname);
+          var shareText = encodeURIComponent("Check out NIC Info - A free browser tool for decoding Sri Lankan National Identity Card numbers and revealing birth dates & gender! ");
+          
+          var waBtn = shareMenu.querySelector('[data-share-platform="whatsapp"]');
+          var fbBtn = shareMenu.querySelector('[data-share-platform="facebook"]');
+          var xBtn = shareMenu.querySelector('[data-share-platform="x"]');
+          var copyBtn = document.getElementById('share-copy-btn');
+          var copyText = document.getElementById('share-copy-text');
+
+          if (waBtn) waBtn.href = "https://api.whatsapp.com/send?text=" + shareText + shareUrl;
+          if (fbBtn) fbBtn.href = "https://www.facebook.com/sharer/sharer.php?u=" + shareUrl;
+          if (xBtn) xBtn.href = "https://twitter.com/intent/tweet?text=" + shareText + "&url=" + shareUrl;
+
+          if (copyBtn) {
+            copyBtn.addEventListener('click', function (e) {
+              e.stopPropagation();
+              var targetUrl = window.location.origin + window.location.pathname;
+              navigator.clipboard.writeText(targetUrl).then(function () {
+                var originalText = copyText ? copyText.innerText : 'Copy Link';
+                if (copyText) copyText.innerText = 'Copied!';
+                copyBtn.style.color = '#25D366';
+                setTimeout(function () {
+                  if (copyText) copyText.innerText = originalText;
+                  copyBtn.style.color = '';
+                }, 2000);
+              }).catch(function () {
+                // Fallback
+              });
+            });
+          }
+        }
+
+      })();
+  </script>
+
+</body>
+
+</html>

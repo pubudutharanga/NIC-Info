@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service & Operating Policy — NIC Info</title>
+  <meta name="description"
+    content="Official terms of service, operating policies, software warranty disclaimers, and intellectual property rights governing the use of NIC Info." />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Inline theme init: prevents flash of wrong theme on load -->
+  <script>
+    (function () {
+      var stored = localStorage.getItem('nic-theme');
+      if (stored === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      } else if (!stored && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+
+<body>
+
+  <div class="page-wrapper">
+    <!-- Guilloché background texture (Light mode) -->
+    <div class="guilloche" aria-hidden="true"></div>
+
+    <!-- Animated Background Lines (Dark mode only) -->
+    <div class="background-lines" aria-hidden="true">
+      <svg class="background-lines__svg" viewBox="0 0 1440 800" fill="none" xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="glow-beam-1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#C9A15C" stop-opacity="0" />
+            <stop offset="50%" stop-color="#C9A15C" stop-opacity="1" />
+            <stop offset="100%" stop-color="#C9A15C" stop-opacity="0" />
+          </linearGradient>
+          <linearGradient id="glow-beam-2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#4F8B82" stop-opacity="0" />
+            <stop offset="50%" stop-color="#4F8B82" stop-opacity="1" />
+            <stop offset="100%" stop-color="#4F8B82" stop-opacity="0" />
+          </linearGradient>
+          <linearGradient id="glow-beam-3" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#EDE9DD" stop-opacity="0" />
+            <stop offset="50%" stop-color="#EDE9DD" stop-opacity="0.75" />
+            <stop offset="100%" stop-color="#EDE9DD" stop-opacity="0" />
+          </linearGradient>
+        </defs>
+
+        <!-- Static subtle base frequency curves -->
+        <g class="bg-lines-group" stroke="currentColor" stroke-width="1">
+          <path d="M-100,600 C300,550 600,200 900,250 C1200,300 1500,650 1700,500" />
+          <path d="M-100,550 C280,500 580,180 880,220 C1180,260 1480,580 1700,440" />
+          <path d="M-100,500 C260,450 560,160 860,190 C1160,220 1460,510 1700,380" />
+          <path d="M-100,450 C240,400 540,140 840,160 C1140,180 1440,440 1700,320" />
+          <path d="M-100,400 C220,350 520,120 820,130 C1120,140 1420,370 1700,260" />
+          <path d="M-100,350 C200,300 500,100 800,100 C1100,100 1400,300 1700,200" />
+          <path d="M-100,300 C180,250 480,80 780,70 C1080,60 1380,230 1700,140" />
+          <path d="M-100,250 C160,200 460,60 760,40 C1060,20 1360,160 1700,80" />
+        </g>
+
+        <!-- Animated Luminous Gliding Beams -->
+        <g stroke-width="2" fill="none">
+          <path class="beam beam-1" stroke="url(#glow-beam-1)"
+            d="M-100,550 C280,500 580,180 880,220 C1180,260 1480,580 1700,440" />
+          <path class="beam beam-2" stroke="url(#glow-beam-2)"
+            d="M-100,450 C240,400 540,140 840,160 C1140,180 1440,440 1700,320" />
+          <path class="beam beam-3" stroke="url(#glow-beam-3)"
+            d="M-100,350 C200,300 500,100 800,100 C1100,100 1400,300 1700,200" />
+          <path class="beam beam-4" stroke="url(#glow-beam-1)"
+            d="M-100,250 C160,200 460,60 760,40 C1060,20 1360,160 1700,80" />
+        </g>
+      </svg>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════
+         HEADER
+         ═══════════════════════════════════════════════════ -->
+    <header class="site-header" id="site-header">
+      <div class="header-inner">
+        <a href="index.html" class="logo-link" aria-label="NIC Decoder Home">
+          <img src="nicinfo-logo.webp" alt="NIC Decoder Logo" class="header-logo" width="56" height="28"
+            decoding="async" />
+        </a>
+        <nav class="header-nav">
+          <a href="index.html#how-it-works">How it works</a>
+          <!-- Share Dropdown -->
+          <div class="share-dropdown-wrapper">
+            <button class="share-btn" id="share-toggle-btn" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Share this website">
+              <span>Share</span>
+              <svg class="share-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="share-menu" id="share-menu" role="menu" aria-hidden="true">
+              <a href="#" class="share-menu__item" data-share-platform="whatsapp" role="menuitem" target="_blank" rel="noopener noreferrer">
+                <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                </svg>
+                <span>WhatsApp</span>
+              </a>
+              <a href="#" class="share-menu__item" data-share-platform="facebook" role="menuitem" target="_blank" rel="noopener noreferrer">
+                <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+                <span>Facebook</span>
+              </a>
+              <a href="#" class="share-menu__item" data-share-platform="x" role="menuitem" target="_blank" rel="noopener noreferrer">
+                <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+                <span>X / Twitter</span>
+              </a>
+              <button type="button" class="share-menu__item" id="share-copy-btn" role="menuitem">
+                <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span id="share-copy-text">Copy Link</span>
+              </button>
+            </div>
+          </div>
+          <!-- Theme toggle -->
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light mode"
+            title="Toggle light / dark mode">
+            <!-- Sun icon: visible in dark mode -->
+            <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+            <!-- Moon icon: visible in light mode -->
+            <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════════════════
+         MAIN OPERATING POLICY CONTENT
+         ═══════════════════════════════════════════════════ -->
+    <main class="policy-page">
+      <div class="policy-header animate-fade-in">
+        <a href="index.html" class="policy-back-link">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M11 8H5M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          Back to Decoder
+        </a>
+        <h1 class="policy-title">Terms of Service &amp; Operating Policy</h1>
+        <div class="policy-subtitle">
+          <span>Effective Date: August 4, 2026</span>
+          <span>&middot;</span>
+          <span>Governing Terms, Software Disclaimers &amp; Licensing</span>
+        </div>
+      </div>
+
+      <!-- Shield Highlight Callout (Inherited gold signature border & verified contrast) -->
+      <div class="policy-badge-shield animate-fact-0">
+        <div class="policy-badge-icon" aria-hidden="true">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+            <polyline points="14 2 14 8 20 8" />
+            <line x1="16" y1="13" x2="8" y2="13" />
+            <line x1="16" y1="17" x2="8" y2="17" />
+            <polyline points="10 9 9 9 8 9" />
+          </svg>
+        </div>
+        <div class="policy-badge-text">
+          <h3>Open Access &amp; Transparent Operational Commitment</h3>
+          <p>
+            NIC Info is a free, decentralized digital utility engineered solely as an educational and operational analysis assistant. By loading, accessing, or executing this client-side software interface, you signify your unreserved agreement to the operating conditions, copyright terms, and legal warranty disclaimers codified below.
+          </p>
+        </div>
+      </div>
+
+      <!-- Section 1: Acceptance of Terms & Nature of Service -->
+      <section class="policy-section animate-fact-1">
+        <h2>1. Acceptance of Terms &amp; Nature of Service</h2>
+        <p>
+          This document establishes a binding agreement between visitors (&ldquo;User&rdquo;, &ldquo;Operator&rdquo;, or &ldquo;You&rdquo;) and the leadership of <strong>NIC Info</strong> regarding your utilization of this browser-based analytical interface. Our tool functions without requiring subscription payments, user accounts, or cloud database onboarding.
+        </p>
+        <p>
+          If you do not agree with any stipulation within this Terms of Service or our complementary <a href="privacy.html" class="policy-contact-link">Privacy Notice</a>, you must cease accessing this tool and navigate away from the interface immediately.
+        </p>
+      </section>
+
+      <!-- Section 2: Intellectual Property & Architecture -->
+      <section class="policy-section animate-fact-2">
+        <h2>2. Intellectual Property &amp; Software Ownership</h2>
+        <p>
+          The architecture, graphical design system, custom CSS token styling, dynamic interface scripts, and brand wordmark (&ldquo;NIC Info&rdquo;) embodied on this website represent the intellectual labor of our engineering team, protected under applicable intellectual property laws and international copyright treaties.
+        </p>
+        <ul class="policy-list">
+          <li><strong>UI &amp; Code Asset Protections:</strong> While the website is made freely accessible for browser decoding, visitors are not authorized to clone, repackage, commercially redistribute, or monetize our proprietary UI layouts, animations, or styling scripts without explicit written authorization.</li>
+          <li><strong>Public Algorithmic Conventions:</strong> The mathematical parsing routines used to extract dates of birth and gender determinations represent implementations of Sri Lanka's Department for Registration of Persons (DRP) publicly available numbering syntax, which exists in the public domain for civic and organizational utility.</li>
+        </ul>
+      </section>
+
+      <!-- Section 3: Comprehensive Warranty Disclaimers (As-Is Provision) -->
+      <section class="policy-section">
+        <h2>3. Disclaimer of Warranties (&ldquo;As-Is&rdquo; Provision)</h2>
+        <p>
+          To the maximum extent permitted by applicable statutory legislation, this client-side web application is provided on an strictly <strong>&ldquo;AS IS&rdquo;</strong> and <strong>&ldquo;AS AVAILABLE&rdquo;</strong> basis without warranties of any kind, whether express, implied, or statutory.
+        </p>
+        <ul class="policy-list">
+          <li><strong>Absence of Official Endorsement:</strong> NIC Info is an independent software engineering initiative designed for public utility. It does NOT constitute an official portal, branch, or affiliate of the Government of Sri Lanka or the Department for Registration of Persons (DRP).</li>
+          <li><strong>No Legal Verification Replacement:</strong> Output metrics generated by our offline calculation algorithm should serve exclusively as syntax guidance and initial date checking. For critical financial underwriting, government identity verification, or courtroom proceedings, organizations must obtain and inspect the physical identity document or consult official government verification channels.</li>
+          <li><strong>No Guarantee of Continuous Uptime:</strong> Because static web hosting relies on global telecommunications infrastructure and third-party CDNs, we make no warranty that interface loading will remain uninterrupted, error-free, or fully accessible across every device network.</li>
+        </ul>
+      </section>
+
+      <!-- Section 4: Limitation of Liability -->
+      <section class="policy-section">
+        <h2>4. Limitation of Liability</h2>
+        <p>
+          Under no circumstances—including but not limited to negligence, software incompatibilities, or reliance on generated date calculations—shall the lead developer, site contributors, hosting mirrors (e.g., Vercel), or Content Delivery Networks be held legally or financially responsible for direct, indirect, incidental, consequential, or punitive damages.
+        </p>
+        <p>
+          This comprehensive liability shield applies to any loss of profits, enterprise data interruption, algorithmic edge-case misinterpretation, or downstream compliance discrepancies arising out of your decision to execute our browser-based utility within your organizational workflows.
+        </p>
+      </section>
+
+      <!-- Section 5: Acceptable Use & System Integrity -->
+      <section class="policy-section">
+        <h2>5. Acceptable Use &amp; System Integrity</h2>
+        <p>
+          To safeguard our infrastructure and uphold web engineering ethics, visitors agree to adhere strictly to operational etiquette when interacting with our site:
+        </p>
+        <ul class="policy-list">
+          <li><strong>Prohibition of Script Injection &amp; Interference:</strong> Users are prohibited from attempting to deploy malicious automated routines, Distributed Denial of Service (DDoS) requests, or framing techniques designed to disguise our identity tool under deceptive domain branding.</li>
+          <li><strong>Respect for Zero-Retention Principles:</strong> Operators utilizing our interface for organizational checking agree to abide by our foundational data ethics: never attempt to reverse-engineer browser memory states to capture or record unencrypted identification data belonging to external visitors.</li>
+        </ul>
+      </section>
+
+      <!-- Section 6: Governing Law & Jurisdiction -->
+      <section class="policy-section">
+        <h2>6. Governing Law &amp; Dispute Resolution</h2>
+        <p>
+          These operational policies, alongside any claims arising from the execution of our software interface, shall be interpreted, governed, and enforced in accordance with the substantive laws and statutes of the <strong>Democratic Socialist Republic of Sri Lanka</strong>, without giving effect to conflicts of law methodologies or foreign arbitration frameworks.
+        </p>
+      </section>
+
+      <!-- Section 7: Legal Administration & Contact -->
+      <section class="policy-section">
+        <h2>7. Administrative Contact &amp; Legal Notices</h2>
+        <p>
+          Should you require formal contractual authorization for enterprise integration, licensing permissions for our UI design architecture, or wish to present formal administrative feedback regarding these operating terms, you may communicate directly with our engineering leadership:
+        </p>
+        <p>
+          <strong>Lead Developer:</strong> Pubudu Tharanga<br />
+          <strong>Developer Portfolio &amp; Direct Channel:</strong> <a href="https://pubudu-tharanga.vercel.app/" target="_blank" rel="noopener noreferrer" class="policy-contact-link">https://pubudu-tharanga.vercel.app/</a>
+        </p>
+      </section>
+    </main>
+
+    <!-- ═══════════════════════════════════════════════════
+         FOOTER
+         ═══════════════════════════════════════════════════ -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <a href="index.html" class="footer-logo-link" aria-label="NIC Decoder Home">
+          <img src="nicinfo-logo.webp" alt="NIC to DOB Logo" class="footer-logo" width="72" height="36"
+            decoding="async" />
+        </a>
+
+        <p class="footer-description">
+          A free browser tool for decoding Sri Lankan National Identity Card numbers.<br />
+        </p>
+
+        <p class="footer-copyright">
+          Copyright &copy;
+          <script>document.write(new Date().getFullYear())</script> <strong class="footer-brand">NIC Info</strong>.
+          All rights reserved.
+        </p>
+
+        <p class="footer-developed">
+          Developed by 
+          <span class="link-preview-wrapper">
+            <a href="https://pubudu-tharanga.vercel.app/" target="_blank" rel="noopener noreferrer" class="developer-link link-preview-trigger">Pubudu Tharanga</a>
+            <span class="link-preview-popover" role="tooltip" aria-hidden="true">
+              <span class="link-preview-card">
+                <img src="https://image.thum.io/get/width/1280/crop/720/wait/8/noanimate/https://pubudu-tharanga.vercel.app/" alt="Pubudu Tharanga Portfolio Preview" class="link-preview-image" width="320" height="180" loading="eager" decoding="async" />
+              </span>
+            </span>
+          </span>
+        </p>
+
+        <div class="footer-nav">
+          <a href="privacy.html" class="footer-link">Privacy Notice</a>
+          <span class="footer-divider" aria-hidden="true"></span>
+          <a href="guidelines.html" class="footer-link">Guidelines</a>
+          <span class="footer-divider" aria-hidden="true"></span>
+          <a href="policy.html" class="footer-link">Policy</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       JAVASCRIPT — Theme toggle & interactions
+       ═══════════════════════════════════════════════════════ -->
+  <script>
+    (function () {
+      var html = document.documentElement;
+      var themeToggle = document.getElementById('theme-toggle');
+      var STORAGE_KEY = 'nic-theme';
+      var header = document.getElementById('site-header');
+
+      function applyTheme(theme) {
+        if (theme === 'light') {
+          html.setAttribute('data-theme', 'light');
+          themeToggle.setAttribute('aria-label', 'Switch to dark mode');
+        } else {
+          html.removeAttribute('data-theme');
+          themeToggle.setAttribute('aria-label', 'Switch to light mode');
+        }
+      }
+
+      // Initialize Theme
+      var stored = localStorage.getItem(STORAGE_KEY);
+      if (stored === 'light' || stored === 'dark') {
+        applyTheme(stored);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        applyTheme('light');
+      }
+
+      themeToggle.addEventListener('click', function () {
+        var currentlyLight = html.getAttribute('data-theme') === 'light';
+        var next = currentlyLight ? 'dark' : 'light';
+        applyTheme(next);
+        try { localStorage.setItem(STORAGE_KEY, next); } catch (_) { }
+      });
+
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 40) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      }, { passive: true });
+        // ── Share Dropdown & Web Share Protocols ──────────────
+        var shareBtn = document.getElementById('share-toggle-btn');
+        var shareMenu = document.getElementById('share-menu');
+        if (shareBtn && shareMenu) {
+          shareBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            var isOpen = shareMenu.classList.contains('open');
+            if (isOpen) {
+              shareMenu.classList.remove('open');
+              shareBtn.setAttribute('aria-expanded', 'false');
+              shareMenu.setAttribute('aria-hidden', 'true');
+            } else {
+              shareMenu.classList.add('open');
+              shareBtn.setAttribute('aria-expanded', 'true');
+              shareMenu.setAttribute('aria-hidden', 'false');
+            }
+          });
+
+          document.addEventListener('click', function (e) {
+            if (!shareMenu.contains(e.target) && e.target !== shareBtn) {
+              shareMenu.classList.remove('open');
+              shareBtn.setAttribute('aria-expanded', 'false');
+              shareMenu.setAttribute('aria-hidden', 'true');
+            }
+          });
+
+          document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+              shareMenu.classList.remove('open');
+              shareBtn.setAttribute('aria-expanded', 'false');
+              shareMenu.setAttribute('aria-hidden', 'true');
+            }
+          });
+
+          var shareUrl = encodeURIComponent(window.location.origin + window.location.pathname);
+          var shareText = encodeURIComponent("Check out NIC Info - A free browser tool for decoding Sri Lankan National Identity Card numbers and revealing birth dates & gender! ");
+          
+          var waBtn = shareMenu.querySelector('[data-share-platform="whatsapp"]');
+          var fbBtn = shareMenu.querySelector('[data-share-platform="facebook"]');
+          var xBtn = shareMenu.querySelector('[data-share-platform="x"]');
+          var copyBtn = document.getElementById('share-copy-btn');
+          var copyText = document.getElementById('share-copy-text');
+
+          if (waBtn) waBtn.href = "https://api.whatsapp.com/send?text=" + shareText + shareUrl;
+          if (fbBtn) fbBtn.href = "https://www.facebook.com/sharer/sharer.php?u=" + shareUrl;
+          if (xBtn) xBtn.href = "https://twitter.com/intent/tweet?text=" + shareText + "&url=" + shareUrl;
+
+          if (copyBtn) {
+            copyBtn.addEventListener('click', function (e) {
+              e.stopPropagation();
+              var targetUrl = window.location.origin + window.location.pathname;
+              navigator.clipboard.writeText(targetUrl).then(function () {
+                var originalText = copyText ? copyText.innerText : 'Copy Link';
+                if (copyText) copyText.innerText = 'Copied!';
+                copyBtn.style.color = '#25D366';
+                setTimeout(function () {
+                  if (copyText) copyText.innerText = originalText;
+                  copyBtn.style.color = '';
+                }, 2000);
+              }).catch(function () {
+                // Fallback
+              });
+            });
+          }
+        }
+    })();
+  </script>
+</body>
+</html>
