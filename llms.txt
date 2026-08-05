@@ -1,6 +1,6 @@
-# NIC Info — Sri Lankan NIC Decoder
+# NIC Info — NIC to DOB Converter & Sri Lanka ID Card Details Online
 
-> A free, privacy-first tool to extract birthday, gender, and age from Sri Lankan National Identity Card (NIC) numbers. Developed by [Pubudu Tharanga](https://pubudu-tharanga.vercel.app).
+> Free NIC to DOB converter — check Sri Lanka ID card details online. Instantly find birthday, age & gender from old (9-digit) and new (12-digit) NIC numbers. Developed by [Pubudu Tharanga](https://pubudu-tharanga.vercel.app).
 
 ## Links
 
@@ -13,15 +13,22 @@
 
 ## Overview
 
-[NIC Info](https://nicinfo.vercel.app/) is a free web application that decodes Sri Lankan National Identity Card (NIC) numbers to extract encoded personal information. It works entirely in the browser using client-side JavaScript, ensuring 100% privacy — no data is ever sent to any server or stored.
+[NIC Info — NIC to DOB Converter & Sri Lanka ID Card Details](https://nicinfo.vercel.app/) is a free web application that converts NIC numbers to date of birth (DOB). Check Sri Lankan ID card details online — extract birthday, age, and gender from any NIC number. Works entirely in the browser using client-side JavaScript, ensuring 100% privacy.
 
 ## Purpose
 
 This tool decodes Sri Lankan NIC numbers to reveal encoded personal information:
 
-- **Date of Birth (NIC to DOB)**: Extracted from the day-of-year encoding within the NIC number
+- **Date of Birth / NIC to DOB**: Extracted from the day-of-year encoding within the NIC number. Converts any NIC number to birthday instantly.
 - **Gender**: Determined by the day value (1–366 for male, 501–866 for female)
 - **Age**: Calculated precisely from birthday to current date (years, months, days)
+
+### Top Use Cases
+- **NIC to DOB**: Convert NIC number to date of birth
+- **NIC number detail online**: Check NIC number details online
+- **ID number to birthday**: Find birthday from Sri Lankan ID number
+- **Sri Lanka ID card check online**: Verify ID card information online
+- **ID number details check**: Check encoded details from NIC/ID number
 
 ## NIC Decoding Formula
 
@@ -118,6 +125,15 @@ No. Multiple people share the same birth date, and each gets a unique serial num
 
 ### How to convert old NIC to new NIC format?
 Prepend "19" to the 2-digit year, keep the 3-digit day code, insert a "0" before the serial number, and remove the V/X suffix. Example: `852140123V` → `198521400123`.
+
+### Can I check ID number details or find an NIC number by name?
+This tool decodes details from an NIC number you already have — enter any old (9-digit + V/X) or new (12-digit) Sri Lankan ID number to instantly see the birthday, age, and gender encoded in it. It cannot search for an NIC number using a person's name, as that data is held only by the Department for Registration of Persons.
+
+### How can I check Sri Lanka ID card details online?
+Visit [nicinfo.vercel.app](https://nicinfo.vercel.app/) and enter any Sri Lankan NIC number (old or new format). The tool runs entirely in your browser and instantly shows the date of birth, gender, and precise age encoded in the NIC number — no registration or downloads required.
+
+### How do I convert an ID number or NIC to a birthday (DOB)?
+Paste your Sri Lankan NIC number into the decoder at [nicinfo.vercel.app](https://nicinfo.vercel.app/). The tool reads the 3-digit day-of-year code embedded in every NIC — whether it's an old 9-digit card or a new 12-digit card — and converts it to an exact birth date (day, month, year) instantly.
 
 ## Data Source
 
