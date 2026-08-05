@@ -55,6 +55,7 @@
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
+    "@id": "https://nicinfo.vercel.app/privacy.html#breadcrumb",
     "itemListElement": [
       {
         "@type": "ListItem",
@@ -77,18 +78,18 @@
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
+    "@id": "https://nicinfo.vercel.app/privacy.html#webpage",
     "name": "Privacy Notice & Data Protection Policy",
     "description": "NIC Info privacy notice: zero-data retention, 100% local client-side processing, and compliance with personal data protection frameworks.",
     "url": "https://nicinfo.vercel.app/privacy.html",
+    "datePublished": "2026-01-17",
+    "dateModified": "2026-08-05",
+    "inLanguage": "en",
     "isPartOf": {
-      "@type": "WebSite",
-      "name": "NIC Info",
-      "url": "https://nicinfo.vercel.app/"
+      "@id": "https://nicinfo.vercel.app/#website"
     },
     "author": {
-      "@type": "Person",
-      "name": "Pubudu Tharanga",
-      "url": "https://pubudu-tharanga.vercel.app/"
+      "@id": "https://nicinfo.vercel.app/#author"
     }
   }
   </script>
@@ -103,6 +104,24 @@
         document.documentElement.setAttribute('data-theme', 'light');
       }
     })();
+  </script>
+
+  <!-- Speculation Rules API — 2026 standard for instant page loads -->
+  <script type="speculationrules">
+  {
+    "prerender": [{
+      "where": {
+        "href_matches": ["/", "/guidelines.html", "/policy.html"]
+      },
+      "eagerness": "moderate"
+    }],
+    "prefetch": [{
+      "where": {
+        "href_matches": ["/", "/guidelines.html", "/policy.html"]
+      },
+      "eagerness": "moderate"
+    }]
+  }
   </script>
 </head>
 

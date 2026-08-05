@@ -33,10 +33,9 @@ User-agent: CCBot
 Disallow: /
 
 User-agent: Google-Extended
-Disallow: /
+Allow: /
 
 User-agent: FacebookBot
-Disallow: /
+Allow: /
 
 Sitemap: https://nicinfo.vercel.app/sitemap.xml
-Host: https://nicinfo.vercel.app

@@ -60,12 +60,16 @@
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
+    "@id": "https://nicinfo.vercel.app/#webapp",
     "name": "NIC Info — Sri Lankan NIC Decoder",
     "url": "https://nicinfo.vercel.app/",
     "description": "Free online tool to decode Sri Lankan National Identity Card numbers. Extract date of birth, age, and gender from old (9-digit) and new (12-digit) NIC formats. All processing is 100% client-side for complete privacy.",
     "applicationCategory": "UtilityApplication",
     "operatingSystem": "Any",
     "browserRequirements": "Requires JavaScript",
+    "inLanguage": "en",
+    "datePublished": "2026-01-17",
+    "dateModified": "2026-08-05",
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -73,11 +77,16 @@
     },
     "author": {
       "@type": "Person",
+      "@id": "https://nicinfo.vercel.app/#author",
       "name": "Pubudu Tharanga",
-      "url": "https://pubudu-tharanga.vercel.app/"
+      "url": "https://pubudu-tharanga.vercel.app/",
+      "sameAs": [
+        "https://pubudu-tharanga.vercel.app/"
+      ]
     },
     "publisher": {
       "@type": "Organization",
+      "@id": "https://nicinfo.vercel.app/#organization",
       "name": "NIC Info",
       "url": "https://nicinfo.vercel.app/",
       "logo": {
@@ -86,6 +95,9 @@
         "width": 1200,
         "height": 630
       }
+    },
+    "isPartOf": {
+      "@id": "https://nicinfo.vercel.app/#website"
     },
     "image": "https://nicinfo.vercel.app/og-image.png",
     "screenshot": "https://nicinfo.vercel.app/og-image.png",
@@ -102,11 +114,15 @@
   }
   </script>
 
-  <!-- JSON-LD: FAQPage Schema -->
+  <!-- JSON-LD: FAQPage Schema (visual rich results deprecated May 2026, retained for AI Overviews & LLM comprehension) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    "@id": "https://nicinfo.vercel.app/#faq",
+    "mainEntityOfPage": {
+      "@id": "https://nicinfo.vercel.app/#webapp"
+    },
     "mainEntity": [
       {
         "@type": "Question",
@@ -181,6 +197,7 @@
   {
     "@context": "https://schema.org",
     "@type": "HowTo",
+    "@id": "https://nicinfo.vercel.app/#howto",
     "name": "How to Decode a Sri Lankan NIC Number",
     "description": "Learn how to extract date of birth, age, and gender from a Sri Lankan National Identity Card (NIC) number using the day-of-year encoding system.",
     "totalTime": "PT1M",
@@ -219,6 +236,7 @@
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
+    "@id": "https://nicinfo.vercel.app/#breadcrumb",
     "itemListElement": [
       {
         "@type": "ListItem",
@@ -227,6 +245,41 @@
         "item": "https://nicinfo.vercel.app/"
       }
     ]
+  }
+  </script>
+
+  <!-- JSON-LD: WebSite Schema — Foundational entity for Google Knowledge Graph -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://nicinfo.vercel.app/#website",
+    "name": "NIC Info",
+    "alternateName": "NIC Info — Sri Lankan NIC Decoder",
+    "url": "https://nicinfo.vercel.app/",
+    "description": "Free online tool to decode Sri Lankan NIC numbers. Extract date of birth, age, and gender instantly. Supports old (9-digit) and new (12-digit) formats.",
+    "inLanguage": "en",
+    "publisher": {
+      "@id": "https://nicinfo.vercel.app/#organization"
+    }
+  }
+  </script>
+
+  <!-- Speculation Rules API — 2026 standard for instant page loads via browser-native prerendering -->
+  <script type="speculationrules">
+  {
+    "prerender": [{
+      "where": {
+        "href_matches": ["/privacy.html", "/guidelines.html", "/policy.html"]
+      },
+      "eagerness": "moderate"
+    }],
+    "prefetch": [{
+      "where": {
+        "href_matches": ["/privacy.html", "/guidelines.html", "/policy.html"]
+      },
+      "eagerness": "moderate"
+    }]
   }
   </script>
 

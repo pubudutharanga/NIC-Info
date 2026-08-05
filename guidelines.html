@@ -56,6 +56,7 @@
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
+    "@id": "https://nicinfo.vercel.app/guidelines.html#breadcrumb",
     "itemListElement": [
       {
         "@type": "ListItem",
@@ -78,18 +79,18 @@
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
+    "@id": "https://nicinfo.vercel.app/guidelines.html#webpage",
     "name": "NIC Decoder Usage Guidelines & Verification Standards",
     "description": "Official technical specifications, format conversion protocols, and acceptable usage framework for decoding Sri Lankan National Identity Card numbers.",
     "url": "https://nicinfo.vercel.app/guidelines.html",
+    "datePublished": "2026-01-17",
+    "dateModified": "2026-08-05",
+    "inLanguage": "en",
     "isPartOf": {
-      "@type": "WebSite",
-      "name": "NIC Info",
-      "url": "https://nicinfo.vercel.app/"
+      "@id": "https://nicinfo.vercel.app/#website"
     },
     "author": {
-      "@type": "Person",
-      "name": "Pubudu Tharanga",
-      "url": "https://pubudu-tharanga.vercel.app/"
+      "@id": "https://nicinfo.vercel.app/#author"
     }
   }
   </script>
@@ -104,6 +105,24 @@
         document.documentElement.setAttribute('data-theme', 'light');
       }
     })();
+  </script>
+
+  <!-- Speculation Rules API — 2026 standard for instant page loads -->
+  <script type="speculationrules">
+  {
+    "prerender": [{
+      "where": {
+        "href_matches": ["/", "/privacy.html", "/policy.html"]
+      },
+      "eagerness": "moderate"
+    }],
+    "prefetch": [{
+      "where": {
+        "href_matches": ["/", "/privacy.html", "/policy.html"]
+      },
+      "eagerness": "moderate"
+    }]
+  }
   </script>
 </head>
 
