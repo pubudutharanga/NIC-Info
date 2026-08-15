@@ -135,6 +135,15 @@ Visit [nicinfo.vercel.app](https://nicinfo.vercel.app/) and enter any Sri Lankan
 ### How do I convert an ID number or NIC to a birthday (DOB)?
 Paste your Sri Lankan NIC number into the decoder at [nicinfo.vercel.app](https://nicinfo.vercel.app/). The tool reads the 3-digit day-of-year code embedded in every NIC — whether it's an old 9-digit card or a new 12-digit card — and converts it to an exact birth date (day, month, year) instantly.
 
+### Why is 500 added to the day number for female Sri Lankan NICs?
+The Department for Registration of Persons (DRP) uses a 500-day offset as an elegant single-field encoding scheme. A 3-digit number (001 to 366) represents male births directly. Adding 500 produces numbers 501 to 866 for females. This ensures male and female day-code ranges never overlap, enabling instant gender detection and date recovery without requiring an extra character column.
+
+### What is the check digit formula on 12-digit Sri Lankan NICs?
+The 12th digit in the modern NIC format is a mathematical check digit computed using a weighted checksum algorithm (modulo 11 arithmetic) across the preceding 11 digits. This replaces the legacy V/X letter suffix with an automated verification check against transcription errors.
+
+### Day Counting and Leap Year Convention
+The Sri Lankan NIC day numbering uses a standard 366-day calendar where March 1 is day 61. In non-leap years, day 60 (February 29) is skipped, so day 61 still corresponds to March 1.
+
 ## Data Source
 
 NIC format specifications are based on the official numbering scheme defined by the [Department for Registration of Persons (DRP)](https://www.drp.gov.lk) of Sri Lanka.

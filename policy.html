@@ -10,11 +10,13 @@
   <!-- Primary Meta Tags -->
   <title>Terms of Service & Operating Policy — NIC Info</title>
   <meta name="description"
-    content="Official terms of service, operating policies, software warranty disclaimers, and intellectual property rights governing the use of NIC Info Sri Lankan NIC decoder tool." />
+    content="Official terms of service, operating policies, and software warranty disclaimers governing the use of the NIC Info Sri Lankan NIC decoder utility." />
   <meta name="author" content="Pubudu Tharanga" />
 
-  <!-- Canonical -->
+  <!-- Canonical & Internationalization -->
   <link rel="canonical" href="https://nicinfo.vercel.app/policy.html" />
+  <link rel="alternate" hreflang="en" href="https://nicinfo.vercel.app/policy.html" />
+  <link rel="alternate" hreflang="x-default" href="https://nicinfo.vercel.app/policy.html" />
 
   <!-- Theme Color -->
   <meta name="theme-color" content="#0F172A" media="(prefers-color-scheme: dark)" />
@@ -26,6 +28,8 @@
   <meta property="og:title" content="Terms of Service & Operating Policy — NIC Info" />
   <meta property="og:description" content="Official terms of service, operating policies, software warranty disclaimers, and intellectual property rights governing the use of NIC Info." />
   <meta property="og:image" content="https://nicinfo.vercel.app/og-image.png" />
+  <meta property="og:image:secure_url" content="https://nicinfo.vercel.app/og-image.png" />
+  <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="NIC Info — Terms of Service & Operating Policy" />
@@ -34,6 +38,8 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:domain" content="nicinfo.vercel.app" />
+  <meta name="twitter:url" content="https://nicinfo.vercel.app/policy.html" />
   <meta name="twitter:title" content="Terms of Service & Operating Policy — NIC Info" />
   <meta name="twitter:description" content="Official terms of service and operating policies governing the use of NIC Info." />
   <meta name="twitter:image" content="https://nicinfo.vercel.app/og-image.png" />
@@ -50,47 +56,74 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- JSON-LD: BreadcrumbList Schema -->
+  <!-- Unified JSON-LD Knowledge Graph -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "@id": "https://nicinfo.vercel.app/policy.html#breadcrumb",
-    "itemListElement": [
+    "@graph": [
       {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://nicinfo.vercel.app/"
+        "@type": "WebSite",
+        "@id": "https://nicinfo.vercel.app/#website",
+        "name": "NIC Info",
+        "url": "https://nicinfo.vercel.app/",
+        "publisher": {
+          "@id": "https://nicinfo.vercel.app/#organization"
+        }
       },
       {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Policy",
-        "item": "https://nicinfo.vercel.app/policy.html"
+        "@type": "Organization",
+        "@id": "https://nicinfo.vercel.app/#organization",
+        "name": "NIC Info",
+        "url": "https://nicinfo.vercel.app/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://nicinfo.vercel.app/og-image.png"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://nicinfo.vercel.app/#author",
+        "name": "Pubudu Tharanga",
+        "url": "https://pubudu-tharanga.vercel.app/"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://nicinfo.vercel.app/policy.html#webpage",
+        "name": "Terms of Service & Operating Policy",
+        "description": "Official terms of service, operating policies, software warranty disclaimers, and intellectual property rights governing the use of NIC Info.",
+        "url": "https://nicinfo.vercel.app/policy.html",
+        "datePublished": "2026-01-17",
+        "dateModified": "2026-08-15",
+        "inLanguage": "en",
+        "isPartOf": {
+          "@id": "https://nicinfo.vercel.app/#website"
+        },
+        "author": {
+          "@id": "https://nicinfo.vercel.app/#author"
+        },
+        "publisher": {
+          "@id": "https://nicinfo.vercel.app/#organization"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://nicinfo.vercel.app/policy.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://nicinfo.vercel.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Terms of Service",
+            "item": "https://nicinfo.vercel.app/policy.html"
+          }
+        ]
       }
     ]
-  }
-  </script>
-
-  <!-- JSON-LD: WebPage Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "@id": "https://nicinfo.vercel.app/policy.html#webpage",
-    "name": "Terms of Service & Operating Policy",
-    "description": "Official terms of service, operating policies, software warranty disclaimers, and intellectual property rights governing the use of NIC Info.",
-    "url": "https://nicinfo.vercel.app/policy.html",
-    "datePublished": "2026-01-17",
-    "dateModified": "2026-08-05",
-    "inLanguage": "en",
-    "isPartOf": {
-      "@id": "https://nicinfo.vercel.app/#website"
-    },
-    "author": {
-      "@id": "https://nicinfo.vercel.app/#author"
-    }
   }
   </script>
 
@@ -184,12 +217,15 @@
          ═══════════════════════════════════════════════════ -->
     <header class="site-header" id="site-header">
       <div class="header-inner">
-        <a href="index.html" class="logo-link" aria-label="NIC Decoder Home">
+        <a href="/" class="logo-link" aria-label="NIC Decoder Home">
           <img src="nicinfo-logo.webp" alt="NIC Decoder Logo" class="header-logo" width="56" height="28"
             decoding="async" />
         </a>
         <nav class="header-nav">
-          <a href="index.html#how-it-works">How it works</a>
+          <a href="/#how-it-works">How it works</a>
+          <a href="/#nic-format-comparison">Format Guide</a>
+          <a href="/#faq">FAQ</a>
+          <a href="guidelines.html">Guidelines</a>
           <!-- Share Dropdown -->
           <div class="share-dropdown-wrapper">
             <button class="share-btn" id="share-toggle-btn" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Share this website">
@@ -257,11 +293,11 @@
          ═══════════════════════════════════════════════════ -->
     <main class="policy-page">
       <div class="policy-header animate-fade-in">
-        <a href="index.html" class="policy-back-link">
+        <a href="/" class="policy-back-link">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
             <path d="M11 8H5M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
-          Back to Decoder
+          Back to NIC Decoder
         </a>
         <h1 class="policy-title">Terms of Service &amp; Operating Policy</h1>
         <div class="policy-subtitle">
@@ -375,7 +411,7 @@
          ═══════════════════════════════════════════════════ -->
     <footer class="site-footer">
       <div class="footer-inner">
-        <a href="index.html" class="footer-logo-link" aria-label="NIC Decoder Home">
+        <a href="/" class="footer-logo-link" aria-label="NIC Decoder Home">
           <img src="nicinfo-logo.webp" alt="NIC Info Logo" class="footer-logo" width="72" height="36"
             decoding="async" />
         </a>

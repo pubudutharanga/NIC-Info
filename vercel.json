@@ -22,11 +22,20 @@
       ]
     },
     {
-      "source": "/(.*)\\.html",
+      "source": "/(index\\.html|guidelines\\.html|privacy\\.html|policy\\.html|$)",
       "headers": [
         {
           "key": "X-Robots-Tag",
           "value": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        }
+      ]
+    },
+    {
+      "source": "/404(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
         }
       ]
     },

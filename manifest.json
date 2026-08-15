@@ -1,7 +1,7 @@
 {
-    "name": "NIC Info — Sri Lankan NIC Decoder",
+    "name": "NIC Info — NIC to DOB Converter & Sri Lanka ID Card Decoder",
     "short_name": "NIC Info",
-    "description": "Free online tool to decode Sri Lankan NIC numbers. Extract date of birth, age, and gender instantly. 100% private — runs entirely in your browser.",
+    "description": "Free NIC to DOB converter — check Sri Lanka ID card details online. Instantly find birthday, age & gender from any NIC number. 100% private, browser-based.",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#0F172A",
@@ -24,6 +24,7 @@
     "categories": [
         "utilities",
         "productivity",
+        "tools",
         "education"
     ],
     "lang": "en",
@@ -32,9 +33,9 @@
     "id": "nic-info",
     "shortcuts": [
         {
-            "name": "Decode NIC Number",
-            "short_name": "Decode",
-            "description": "Open NIC decoder to extract birthday, gender, and age from Sri Lankan NIC",
+            "name": "Convert NIC to DOB",
+            "short_name": "NIC to DOB",
+            "description": "Open Sri Lanka NIC decoder to convert ID number to birthday, gender, and age",
             "url": "/",
             "icons": [
                 {
@@ -50,7 +51,7 @@
             "sizes": "1200x630",
             "type": "image/png",
             "form_factor": "wide",
-            "label": "NIC Info — Decode Sri Lankan NIC numbers to find birthday, age, and gender"
+            "label": "NIC Info — Convert Sri Lankan NIC numbers to date of birth, age, and gender"
         }
     ],
     "prefer_related_applications": false,
