@@ -42,45 +42,33 @@ NIC Info enforces strict client-side data isolation. Identity strings input by t
 
 ```mermaid
 flowchart TD
-    A[User Input: NIC String] --> B[Client-Side Sanitization & Normalization]
-    B --> C{Format & Length Validator}
-    
-    C -->|9-Character Legacy| D[Legacy Format Processor]
-    C -->|12-Digit Modern| E[Modern Format Processor]
-    C -->|Invalid String| F[Error Boundary & Visual Feedback]
-    
-    D --> G[Client Runtime Parser]
-    E --> G
-    
-    G --> H[Demographic Synthesis Engine]
-    H --> I[Date of Birth Extraction]
-    H --> J[Precise Age Chronology]
-    H --> K[Gender & Voter Status Resolution]
-    
-    I --> L[Dynamic Card Presentation Layer]
-    J --> L
-    K --> L
-    
-    subgraph Browser Sandbox [Air-Gapped Client Process]
-        B
-        C
-        D
-        E
-        F
-        G
-        H
-        I
-        J
-        K
-        L
+    subgraph ClientRuntime ["🔒 Air-Gapped Client Runtime (Browser Memory)"]
+        direction TB
+        A["User Input: NIC String"] --> B["Sanitize & Structure Validation"]
+        B --> C{"Format Classification"}
+        
+        C -->|"9-Character Legacy"| D["Legacy Format Processor"]
+        C -->|"12-Digit Modern"| E["Modern Format Processor"]
+        C -->|"Invalid Format"| F["Inline Error Boundary"]
+        
+        D --> G["Demographic Synthesis Engine"]
+        E --> G
+        
+        G --> H["Date of Birth Extraction"]
+        G --> I["Precise Age Chronology"]
+        G --> J["Gender & Voter Status"]
+        
+        H --> K["Presentation & Result Card"]
+        I --> K
+        J --> K
     end
-    
-    subgraph Network Isolation [Zero Outbound Payload]
-        M[(No Remote Server)]
-        N[(No Identity Databases)]
+
+    subgraph ExternalNetwork ["🚫 Isolated External Network"]
+        L[("No Backend Servers")]
+        M[("No Remote Databases")]
     end
-    
-    Browser Sandbox -.x|Zero Data Egress| Network Isolation
+
+    K -.->|"Zero Data Egress (100% Client-Side)"| L
 ```
 
 ---
