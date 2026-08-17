@@ -1,0 +1,416 @@
+- generic [ref=e2]:
+  - generic:
+    - img
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "NIC Decoder Home" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "NIC Decoder Logo" [ref=e6]
+      - navigation [ref=e7]:
+        - link "How it works" [ref=e8] [cursor=pointer]:
+          - /url: "#how-it-works"
+        - link "Format Guide" [ref=e9] [cursor=pointer]:
+          - /url: "#nic-format-comparison"
+        - link "FAQ" [ref=e10] [cursor=pointer]:
+          - /url: "#faq"
+        - link "Guidelines" [ref=e11] [cursor=pointer]:
+          - /url: guidelines.html
+        - generic [ref=e12]:
+          - button "Share this website" [ref=e13] [cursor=pointer]:
+            - generic [ref=e14]: Share
+            - img [ref=e15]
+          - menu:
+            - menuitem:
+              - img
+              - generic: WhatsApp
+            - menuitem:
+              - img
+              - generic: Facebook
+            - menuitem:
+              - img
+              - generic: X / Twitter
+            - menuitem:
+              - img
+              - generic: Copy Link
+        - button "Switch to light mode" [ref=e17] [cursor=pointer]:
+          - img [ref=e18]
+  - main [ref=e24]:
+    - generic [ref=e25]:
+      - generic [ref=e26]:
+        - heading "NIC to DOB — Every ID Number Hides a Birthday" [level=1] [ref=e27]
+        - paragraph [ref=e28]: Check Sri Lankan NIC number details online — birth date, age & gender are encoded inside. Paste yours below to decode instantly.
+        - generic [ref=e29]:
+          - generic [ref=e30]: Enter your NIC number
+          - generic [ref=e31]:
+            - textbox "Enter your NIC number" [ref=e32]:
+              - /placeholder: "199906731234"
+            - button "Decode NIC number" [ref=e33] [cursor=pointer]:
+              - img [ref=e34]
+          - paragraph [ref=e36]: old and new formats both work
+      - generic "Advertisement" [ref=e37]:
+        - iframe [ref=e38]:
+          - link [ref=f8e3] [cursor=pointer]:
+            - /url: https://clicks.pipaffiliates.com/c?c=873073&l=en&p=0
+      - paragraph [ref=e39]: Runs in your browser. Never stored.
+    - generic [ref=e40]:
+      - heading "How to Convert NIC to DOB — Sri Lankan ID Number to Birthday Decoder" [level=2] [ref=e41]
+      - list [ref=e42]:
+        - listitem [ref=e43]:
+          - generic [ref=e44]: "1."
+          - generic [ref=e45]:
+            - paragraph [ref=e46]: Read the birth year
+            - paragraph [ref=e47]: "The first four digits on a new-format card (or first two on an old one) encode the birth year. New: 1999 from 1999…. Old: 90 from 90…."
+        - listitem [ref=e48]:
+          - generic [ref=e49]: "2."
+          - generic [ref=e50]:
+            - paragraph [ref=e51]: Decode day-of-year and gender
+            - paragraph [ref=e52]: The next three digits are the day of the year — 1 for 1 January, 365 for 31 December. If the number exceeds 366, subtract 500 to get the actual day, and that means the cardholder is female.
+        - listitem [ref=e53]:
+          - generic [ref=e54]: "3."
+          - generic [ref=e55]:
+            - paragraph [ref=e56]: Serial number and check digit
+            - paragraph [ref=e57]: What remains is a serial number assigned at registration. New-format cards (12 digits) end with a single check digit; old-format cards (9 digits + a letter) end with V or X.
+    - region "Sponsor Advertisement" [ref=e58]:
+      - iframe [ref=e60]:
+        - link [ref=f10e3] [cursor=pointer]:
+          - /url: https://clicks.pipaffiliates.com/c?c=873073&l=en&p=0
+    - generic [ref=e61]:
+      - heading "Old format vs. new format" [level=2] [ref=e63]
+      - generic [ref=e64]:
+        - generic [ref=e65]:
+          - generic [ref=e66]: OLD · 10 characters
+          - paragraph [ref=e67]: 90 673 1234 V
+          - generic [ref=e68]:
+            - generic [ref=e69]:
+              - generic [ref=e70]: "90"
+              - generic [ref=e71]: Year
+              - generic [ref=e72]: 2 digits
+            - generic [ref=e73]:
+              - generic [ref=e74]: "673"
+              - generic [ref=e75]: Day
+              - generic [ref=e76]: + gender
+            - generic [ref=e77]:
+              - generic [ref=e78]: "1234"
+              - generic [ref=e79]: Serial
+            - generic [ref=e80]:
+              - generic [ref=e81]: V
+              - generic [ref=e82]: Check
+              - generic [ref=e83]: V or X
+        - generic [ref=e84]:
+          - generic [ref=e85]: NEW · 12 digits
+          - paragraph [ref=e86]: 1999 673 1234 0
+          - generic [ref=e87]:
+            - generic [ref=e88]:
+              - generic [ref=e89]: "1999"
+              - generic [ref=e90]: Year
+              - generic [ref=e91]: 4 digits
+            - generic [ref=e92]:
+              - generic [ref=e93]: "673"
+              - generic [ref=e94]: Day
+              - generic [ref=e95]: + gender
+            - generic [ref=e96]:
+              - generic [ref=e97]: "1234"
+              - generic [ref=e98]: Serial
+            - generic [ref=e99]:
+              - generic [ref=e100]: "0"
+              - generic [ref=e101]: Check
+              - generic [ref=e102]: digit
+    - generic [ref=e103]:
+      - generic [ref=e105]:
+        - heading "Sri Lanka NIC Quick Reference Matrix" [level=2] [ref=e106]
+        - paragraph [ref=e107]: Side-by-side comparison of technical specifications between legacy 10-character and modern 12-digit identity formats.
+      - generic [ref=e108]:
+        - generic [ref=e109]:
+          - generic [ref=e110]:
+            - tablist "Format view modes" [ref=e111]:
+              - tab "All Specs" [selected] [ref=e112] [cursor=pointer]:
+                - generic [ref=e113]: All Specs
+              - tab "Old (9-Digit)" [ref=e114] [cursor=pointer]:
+                - generic [ref=e115]: Old (9-Digit)
+              - tab "New (12-Digit)" [ref=e116] [cursor=pointer]:
+                - generic [ref=e117]: New (12-Digit)
+              - tab "Key Differences" [ref=e118] [cursor=pointer]:
+                - generic [ref=e119]: Key Differences
+            - generic [ref=e120]: 7 Specifications
+          - generic [ref=e121]:
+            - generic [ref=e122]:
+              - img
+              - searchbox "Filter reference specifications" [ref=e123]
+            - button "Copy reference matrix as Markdown" [ref=e124] [cursor=pointer]:
+              - img [ref=e125]
+              - generic [ref=e127]: Copy Table
+        - table "Sri Lanka NIC format comparison table" [ref=e129]:
+          - rowgroup [ref=e130]:
+            - row "Feature / Specification Old Format 1972 – 2015 · 10 Chars New Format 2016 – Present · 12 Digits" [ref=e131]:
+              - columnheader "Feature / Specification" [ref=e132]:
+                - generic [ref=e134]: Feature / Specification
+              - columnheader "Old Format 1972 – 2015 · 10 Chars" [ref=e135]:
+                - generic [ref=e136]:
+                  - generic [ref=e137]: Old Format
+                  - generic [ref=e138]: 1972 – 2015 · 10 Chars
+              - columnheader "New Format 2016 – Present · 12 Digits" [ref=e139]:
+                - generic [ref=e140]:
+                  - generic [ref=e141]: New Format
+                  - generic [ref=e142]: 2016 – Present · 12 Digits
+          - rowgroup [ref=e143]:
+            - row "Issuance Era Active issuance validity period 1972 – 2015 Legacy Pre-digital biometric era 2016 – Present Standard Current national registry standard" [ref=e144]:
+              - cell "Issuance Era Active issuance validity period" [ref=e145]:
+                - generic [ref=e146]:
+                  - img [ref=e148]
+                  - generic [ref=e150]:
+                    - generic [ref=e151]: Issuance Era
+                    - generic [ref=e152]: Active issuance validity period
+              - cell "1972 – 2015 Legacy Pre-digital biometric era" [ref=e153]:
+                - generic [ref=e154]: 1972 – 2015
+                - generic [ref=e155]: Legacy
+                - generic [ref=e156]: Pre-digital biometric era
+              - cell "2016 – Present Standard Current national registry standard" [ref=e157]:
+                - generic [ref=e158]: 2016 – Present
+                - generic [ref=e159]: Standard
+                - generic [ref=e160]: Current national registry standard
+            - row "Total Length Character & numeral count 10 characters 9 decimal digits + 1 alphabetic suffix 12 numerical digits Purely numerical integer string" [ref=e161]:
+              - cell "Total Length Character & numeral count" [ref=e162]:
+                - generic [ref=e163]:
+                  - img [ref=e165]
+                  - generic [ref=e167]:
+                    - generic [ref=e168]: Total Length
+                    - generic [ref=e169]: Character & numeral count
+              - cell "10 characters 9 decimal digits + 1 alphabetic suffix" [ref=e170]:
+                - strong [ref=e171]: 10 characters
+                - generic [ref=e172]: 9 decimal digits + 1 alphabetic suffix
+              - cell "12 numerical digits Purely numerical integer string" [ref=e173]:
+                - strong [ref=e174]: 12 numerical digits
+                - generic [ref=e175]: Purely numerical integer string
+            - row "Birth Year Syntax Century representation First 2 digits (e.g. 90 = 1990) Assumes 1900s century prefix First 4 digits (e.g. 1990 or 2002) Explicit 4-digit Gregorian year (Y2K+ clean)" [ref=e176]:
+              - cell "Birth Year Syntax Century representation" [ref=e177]:
+                - generic [ref=e178]:
+                  - img [ref=e180]
+                  - generic [ref=e182]:
+                    - generic [ref=e183]: Birth Year Syntax
+                    - generic [ref=e184]: Century representation
+              - cell "First 2 digits (e.g. 90 = 1990) Assumes 1900s century prefix" [ref=e185]:
+                - text: First
+                - strong [ref=e186]: 2 digits
+                - text: (e.g.
+                - code [ref=e187]: "90"
+                - text: = 1990)
+                - generic [ref=e188]: Assumes 1900s century prefix
+              - cell "First 4 digits (e.g. 1990 or 2002) Explicit 4-digit Gregorian year (Y2K+ clean)" [ref=e189]:
+                - text: First
+                - strong [ref=e190]: 4 digits
+                - text: (e.g.
+                - code [ref=e191]: "1990"
+                - text: or
+                - code [ref=e192]: "2002"
+                - text: )
+                - generic [ref=e193]: Explicit 4-digit Gregorian year (Y2K+ clean)
+            - row "Day & Gender Code Sequential day-of-year integer Digits 3–5 Positions 3, 4, 5 (Day 1–366 / 501–866) Digits 5–7 Positions 5, 6, 7 (Day 1–366 / 501–866)" [ref=e194]:
+              - cell "Day & Gender Code Sequential day-of-year integer" [ref=e195]:
+                - generic [ref=e196]:
+                  - img [ref=e198]
+                  - generic [ref=e200]:
+                    - generic [ref=e201]: Day & Gender Code
+                    - generic [ref=e202]: Sequential day-of-year integer
+              - cell "Digits 3–5 Positions 3, 4, 5 (Day 1–366 / 501–866)" [ref=e203]:
+                - text: Digits
+                - strong [ref=e204]: 3–5
+                - generic [ref=e205]: Positions 3, 4, 5 (Day 1–366 / 501–866)
+              - cell "Digits 5–7 Positions 5, 6, 7 (Day 1–366 / 501–866)" [ref=e206]:
+                - text: Digits
+                - strong [ref=e207]: 5–7
+                - generic [ref=e208]: Positions 5, 6, 7 (Day 1–366 / 501–866)
+            - 'row "Gender Formula Day-of-year offset algorithm ♂ Male: 001–366 ♀ Female: +500 (501–866) ♂ Male: 001–366 ♀ Female: +500 (501–866)" [ref=e209]':
+              - cell "Gender Formula Day-of-year offset algorithm" [ref=e210]:
+                - generic [ref=e211]:
+                  - img [ref=e213]
+                  - generic [ref=e215]:
+                    - generic [ref=e216]: Gender Formula
+                    - generic [ref=e217]: Day-of-year offset algorithm
+              - 'cell "♂ Male: 001–366 ♀ Female: +500 (501–866)" [ref=e218]':
+                - generic [ref=e219]:
+                  - generic [ref=e220]:
+                    - text: "♂ Male:"
+                    - code [ref=e221]: 001–366
+                  - generic [ref=e222]:
+                    - text: "♀ Female:"
+                    - code [ref=e223]: "+500"
+                    - text: (501–866)
+              - 'cell "♂ Male: 001–366 ♀ Female: +500 (501–866)" [ref=e224]':
+                - generic [ref=e225]:
+                  - generic [ref=e226]:
+                    - text: "♂ Male:"
+                    - code [ref=e227]: 001–366
+                  - generic [ref=e228]:
+                    - text: "♀ Female:"
+                    - code [ref=e229]: "+500"
+                    - text: (501–866)
+            - row "Serial Identifier Departmental birth-order sequence 4-digit sequence Digits 6–9 (Cap of 9,999 daily births) 5-digit sequence Digits 8–12 (Expanded cap of 99,999)" [ref=e230]:
+              - cell "Serial Identifier Departmental birth-order sequence" [ref=e231]:
+                - generic [ref=e232]:
+                  - img [ref=e234]
+                  - generic [ref=e236]:
+                    - generic [ref=e237]: Serial Identifier
+                    - generic [ref=e238]: Departmental birth-order sequence
+              - cell "4-digit sequence Digits 6–9 (Cap of 9,999 daily births)" [ref=e239]:
+                - strong [ref=e240]: 4-digit sequence
+                - generic [ref=e241]: Digits 6–9 (Cap of 9,999 daily births)
+              - cell "5-digit sequence Digits 8–12 (Expanded cap of 99,999)" [ref=e242]:
+                - strong [ref=e243]: 5-digit sequence
+                - generic [ref=e244]: Digits 8–12 (Expanded cap of 99,999)
+            - row "Suffix / Checksum Electoral right or check digit V (Voter) or X (Non-voter) Terminal alphabetic electoral status flag 1-digit checksum Mathematical modulus verification digit" [ref=e245]:
+              - cell "Suffix / Checksum Electoral right or check digit" [ref=e246]:
+                - generic [ref=e247]:
+                  - img [ref=e249]
+                  - generic [ref=e251]:
+                    - generic [ref=e252]: Suffix / Checksum
+                    - generic [ref=e253]: Electoral right or check digit
+              - cell "V (Voter) or X (Non-voter) Terminal alphabetic electoral status flag" [ref=e254]:
+                - code [ref=e255]: V
+                - text: (Voter) or
+                - code [ref=e256]: X
+                - text: (Non-voter)
+                - generic [ref=e257]: Terminal alphabetic electoral status flag
+              - cell "1-digit checksum Mathematical modulus verification digit" [ref=e258]:
+                - strong [ref=e259]: 1-digit checksum
+                - generic [ref=e260]: Mathematical modulus verification digit
+        - generic [ref=e261]:
+          - generic [ref=e262]:
+            - img [ref=e263]
+            - text: "Click any sample to test in live decoder:"
+          - generic [ref=e265]:
+            - 'button "Test Old: 906731234V" [ref=e266] [cursor=pointer]':
+              - generic [ref=e267]:
+                - text: "Test Old:"
+                - code [ref=e268]: 906731234V
+            - 'button "Test New: 199967312340" [ref=e269] [cursor=pointer]':
+              - generic [ref=e270]:
+                - text: "Test New:"
+                - code [ref=e271]: "199967312340"
+    - generic [ref=e273]:
+      - heading "We never see your NIC number." [level=2] [ref=e274]
+      - paragraph [ref=e275]: Decoding happens entirely within your browser — no data leaves your device. Nothing is transmitted to a server, logged, or stored in any form.
+    - region "Trusted by engineering teams worldwide" [ref=e276]:
+      - generic [ref=e278]:
+        - generic:
+          - img "Slack Logo"
+        - generic:
+          - img "Framer Logo"
+        - generic:
+          - img "Netflix Logo"
+        - generic:
+          - img "Google Logo"
+        - generic:
+          - img "Linkedin Logo"
+        - generic:
+          - img "Instagram Logo"
+        - generic:
+          - img "Facebook Logo"
+        - generic:
+          - img "Slack Logo"
+        - generic:
+          - img "Framer Logo"
+        - generic:
+          - img "Netflix Logo"
+        - generic:
+          - img "Google Logo"
+        - generic:
+          - img "Linkedin Logo"
+        - generic:
+          - img "Instagram Logo"
+        - generic:
+          - img "Facebook Logo"
+        - generic:
+          - img "Slack Logo"
+        - generic:
+          - img "Framer Logo"
+        - generic:
+          - img "Netflix Logo"
+        - generic:
+          - img "Google Logo"
+        - generic:
+          - img "Linkedin Logo"
+        - generic:
+          - img "Instagram Logo"
+        - generic:
+          - img "Facebook Logo"
+        - generic:
+          - img "Slack Logo"
+        - generic:
+          - img "Framer Logo"
+        - generic:
+          - img "Netflix Logo"
+        - generic:
+          - img "Google Logo"
+        - generic:
+          - img "Linkedin Logo"
+        - generic:
+          - img "Instagram Logo"
+        - generic:
+          - img "Facebook Logo"
+    - generic [ref=e279]:
+      - heading "NIC Number Details & ID Card Check — Frequently Asked Questions" [level=2] [ref=e281]
+      - generic [ref=e282]:
+        - button "What is a NIC number?" [ref=e284] [cursor=pointer]:
+          - generic [ref=e285]: What is a NIC number?
+          - generic [ref=e286]: +
+        - button "Do you store the numbers people enter?" [ref=e288] [cursor=pointer]:
+          - generic [ref=e289]: Do you store the numbers people enter?
+          - generic [ref=e290]: +
+        - button "What's the difference between the old and new format?" [ref=e292] [cursor=pointer]:
+          - generic [ref=e293]: What's the difference between the old and new format?
+          - generic [ref=e294]: +
+        - button "Is this an official government site?" [ref=e296] [cursor=pointer]:
+          - generic [ref=e297]: Is this an official government site?
+          - generic [ref=e298]: +
+        - button "How do I find my birthday from a Sri Lankan NIC number?" [ref=e300] [cursor=pointer]:
+          - generic [ref=e301]: How do I find my birthday from a Sri Lankan NIC number?
+          - generic [ref=e302]: +
+        - button "What does V or X mean at the end of a Sri Lankan NIC?" [ref=e304] [cursor=pointer]:
+          - generic [ref=e305]: What does V or X mean at the end of a Sri Lankan NIC?
+          - generic [ref=e306]: +
+        - button "How do I convert an old NIC to the new 12-digit format?" [ref=e308] [cursor=pointer]:
+          - generic [ref=e309]: How do I convert an old NIC to the new 12-digit format?
+          - generic [ref=e310]: +
+        - button "How is gender determined from a NIC number?" [ref=e312] [cursor=pointer]:
+          - generic [ref=e313]: How is gender determined from a NIC number?
+          - generic [ref=e314]: +
+        - button "Why is 500 added to the day number for female Sri Lankan NICs?" [ref=e316] [cursor=pointer]:
+          - generic [ref=e317]: Why is 500 added to the day number for female Sri Lankan NICs?
+          - generic [ref=e318]: +
+        - button "What is the check digit formula on 12-digit Sri Lankan NICs?" [ref=e320] [cursor=pointer]:
+          - generic [ref=e321]: What is the check digit formula on 12-digit Sri Lankan NICs?
+          - generic [ref=e322]: +
+        - button "Can I check ID number details or find an NIC number by name?" [ref=e324] [cursor=pointer]:
+          - generic [ref=e325]: Can I check ID number details or find an NIC number by name?
+          - generic [ref=e326]: +
+        - button "How can I check Sri Lanka ID card details online?" [ref=e328] [cursor=pointer]:
+          - generic [ref=e329]: How can I check Sri Lanka ID card details online?
+          - generic [ref=e330]: +
+        - button "How do I convert an ID number or NIC to a birthday (DOB)?" [ref=e332] [cursor=pointer]:
+          - generic [ref=e333]: How do I convert an ID number or NIC to a birthday (DOB)?
+          - generic [ref=e334]: +
+    - region "Sponsor Advertisement" [ref=e335]:
+      - iframe [ref=e337]:
+        - link [ref=f9e3] [cursor=pointer]:
+          - /url: https://clicks.pipaffiliates.com/c?c=873073&l=en&p=0
+  - contentinfo [ref=e338]:
+    - generic [ref=e339]:
+      - link "NIC Decoder Home" [ref=e340] [cursor=pointer]:
+        - /url: /
+        - img "NIC Info Logo" [ref=e341]
+      - paragraph [ref=e342]: A free browser tool for decoding Sri Lankan National Identity Card numbers.
+      - paragraph [ref=e343]:
+        - text: Copyright © 2026
+        - strong [ref=e344]: NIC Info
+        - text: . All rights reserved.
+      - paragraph [ref=e345]:
+        - text: Developed by
+        - link "Pubudu Tharanga" [ref=e347] [cursor=pointer]:
+          - /url: https://pubudu-tharanga.vercel.app/
+      - generic [ref=e348]:
+        - link "Privacy Notice" [ref=e349] [cursor=pointer]:
+          - /url: privacy.html
+        - link "Guidelines" [ref=e351] [cursor=pointer]:
+          - /url: guidelines.html
+        - link "Policy" [ref=e353] [cursor=pointer]:
+          - /url: policy.html

@@ -364,31 +364,69 @@
         <p>
           Regardless of card generation, digits following the birth year field represent a standardized 3-digit day-of-year numerical integer that encodes both birth date and legal gender according to an explicit numerical shift:
         </p>
-        <div class="guidelines-table-wrap">
-          <table class="guidelines-table" aria-label="Gender encoding offsets">
-            <thead>
-              <tr>
-                <th>Gender Category</th>
-                <th>Numerical Range</th>
-                <th>Offset Formula</th>
-                <th>Example (Born Feb 1)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Male Citizens</strong></td>
-                <td><code>001</code> &ndash; <code>366</code></td>
-                <td>Day of Year &plus; 000</td>
-                <td><code>032</code> (31 Jan days &plus; 1)</td>
-              </tr>
-              <tr>
-                <td><strong>Female Citizens</strong></td>
-                <td><code>501</code> &ndash; <code>866</code></td>
-                <td>Day of Year &plus; 500</td>
-                <td><code>532</code> (32 &plus; 500 offset)</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="matrix-card" style="margin: 20px 0 28px;">
+          <div class="guidelines-table-wrap">
+            <table class="guidelines-table" aria-label="Gender encoding offsets">
+              <thead>
+                <tr>
+                  <th scope="col" style="min-width: 180px;">Gender Category</th>
+                  <th scope="col" style="min-width: 170px;">Numerical Range</th>
+                  <th scope="col" style="min-width: 190px;">Offset Formula</th>
+                  <th scope="col" style="min-width: 200px;">Example (Born Feb 1)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="feature-cell">
+                      <div class="feature-icon" style="background: rgba(79, 139, 130, 0.15); color: #67b8ad;" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+                      </div>
+                      <div class="feature-meta">
+                        <span class="feature-name">Male Citizens</span>
+                        <span class="feature-desc">Standard calendar integer</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="gender-chip gender-chip--male"><code>001</code> &ndash; <code>366</code></span>
+                  </td>
+                  <td>
+                    <strong>Day of Year &plus; 000</strong>
+                    <div class="cell-subtext">Direct 1-to-1 day mapping</div>
+                  </td>
+                  <td>
+                    <code>032</code>
+                    <div class="cell-subtext">31 Jan days &plus; 1 Feb day</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="feature-cell">
+                      <div class="feature-icon" style="background: rgba(201, 161, 92, 0.15); color: var(--brass);" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+                      </div>
+                      <div class="feature-meta">
+                        <span class="feature-name">Female Citizens</span>
+                        <span class="feature-desc">&plus;500 offset applied</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="gender-chip gender-chip--female"><code>501</code> &ndash; <code>866</code></span>
+                  </td>
+                  <td>
+                    <strong>Day of Year &plus; 500</strong>
+                    <div class="cell-subtext">500 added to day-of-year</div>
+                  </td>
+                  <td>
+                    <code>532</code>
+                    <div class="cell-subtext">32 &plus; 500 offset</div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
         <p>
           <strong>Leap Year Reconciliation:</strong> According to traditional DRP sequencing conventions, calculations presume a 366-day cycle for indexing purposes. Day integer <code>366</code> (or <code>866</code> for females) corresponds to December 31 in leap year cycles, ensuring mathematical consistency across all annual calendars.

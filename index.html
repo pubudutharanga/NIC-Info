@@ -723,54 +723,276 @@
            ═══════════════════════════════════════════════ -->
       <section class="reference-matrix" id="nic-quick-reference">
         <div class="section-divider"></div>
-        <h2 class="section-title">Sri Lanka NIC Quick Reference Matrix</h2>
-        <div class="guidelines-table-wrap">
-          <table class="guidelines-table" aria-label="Sri Lanka NIC format comparison table">
-            <thead>
-              <tr>
-                <th>Feature / Field</th>
-                <th>Old Format (9 Digits + V/X)</th>
-                <th>New Format (12 Digits)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Issuance Era</strong></td>
-                <td>1972 &ndash; 2015</td>
-                <td>2016 &ndash; Present</td>
-              </tr>
-              <tr>
-                <td><strong>Total Length</strong></td>
-                <td>10 characters (9 digits + 1 letter)</td>
-                <td>12 numerical digits</td>
-              </tr>
-              <tr>
-                <td><strong>Birth Year Syntax</strong></td>
-                <td>First 2 digits (e.g. <code>90</code> = 1990)</td>
-                <td>First 4 digits (e.g. <code>1990</code> or <code>2002</code>)</td>
-              </tr>
-              <tr>
-                <td><strong>Day &amp; Gender Code</strong></td>
-                <td>Digits 3&ndash;5 (Day 1&ndash;366 / 501&ndash;866)</td>
-                <td>Digits 5&ndash;7 (Day 1&ndash;366 / 501&ndash;866)</td>
-              </tr>
-              <tr>
-                <td><strong>Gender Formula</strong></td>
-                <td>Male: 1&ndash;366 | Female: +500 (501&ndash;866)</td>
-                <td>Male: 1&ndash;366 | Female: +500 (501&ndash;866)</td>
-              </tr>
-              <tr>
-                <td><strong>Serial Identifier</strong></td>
-                <td>4-digit departmental sequence</td>
-                <td>5-digit departmental sequence</td>
-              </tr>
-              <tr>
-                <td><strong>Suffix Character</strong></td>
-                <td><code>V</code> (Voter) or <code>X</code> (Non-voter)</td>
-                <td>1-digit mathematical checksum</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="matrix-header">
+          <h2 class="section-title">Sri Lanka NIC Quick Reference Matrix</h2>
+          <p class="matrix-subtitle">
+            Side-by-side comparison of technical specifications between legacy 10-character and modern 12-digit identity formats.
+          </p>
+        </div>
+
+        <div class="matrix-card" id="matrix-card" data-matrix-view="all">
+          <!-- Interactive Toolbar -->
+          <div class="matrix-toolbar">
+            <div class="matrix-toolbar__left">
+              <div class="matrix-tabs" role="tablist" aria-label="Format view modes">
+                <button type="button" class="matrix-tab-btn active" data-view="all" role="tab" aria-selected="true">
+                  <span>All Specs</span>
+                </button>
+                <button type="button" class="matrix-tab-btn" data-view="old" role="tab" aria-selected="false">
+                  <span>Old (9-Digit)</span>
+                </button>
+                <button type="button" class="matrix-tab-btn" data-view="new" role="tab" aria-selected="false">
+                  <span>New (12-Digit)</span>
+                </button>
+                <button type="button" class="matrix-tab-btn" data-view="diff" role="tab" aria-selected="false">
+                  <span>Key Differences</span>
+                </button>
+              </div>
+              <span class="matrix-count-badge" id="matrix-count-badge">7 Specifications</span>
+            </div>
+
+            <div class="matrix-toolbar__right">
+              <div class="matrix-search-wrap">
+                <svg class="matrix-search-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                </svg>
+                <input type="search" id="matrix-search" class="matrix-search-input" placeholder="Filter specs (e.g. year, gender, suffix)..." aria-label="Filter reference specifications">
+                <button type="button" class="matrix-search-clear" id="matrix-search-clear" aria-label="Clear filter" title="Clear filter">&times;</button>
+              </div>
+
+              <button type="button" class="matrix-action-btn" id="matrix-copy-btn" title="Copy table data as Markdown" aria-label="Copy reference matrix as Markdown">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+                </svg>
+                <span id="matrix-copy-text">Copy Table</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Table Container -->
+          <div class="guidelines-table-wrap" id="matrix-table-wrap">
+            <table class="guidelines-table" id="reference-matrix-table" aria-label="Sri Lanka NIC format comparison table">
+              <thead>
+                <tr>
+                  <th scope="col" class="th-feature">
+                    <div class="th-header-inner">
+                      <span class="th-title">Feature / Specification</span>
+                    </div>
+                  </th>
+                  <th scope="col" class="th-old">
+                    <div class="th-header-inner">
+                      <div class="th-title">Old Format</div>
+                      <span class="th-tag th-tag--old">1972 &ndash; 2015 &middot; 10 Chars</span>
+                    </div>
+                  </th>
+                  <th scope="col" class="th-new">
+                    <div class="th-header-inner">
+                      <div class="th-title">New Format</div>
+                      <span class="th-tag th-tag--new">2016 &ndash; Present &middot; 12 Digits</span>
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody id="matrix-tbody">
+                <!-- Row 1: Era -->
+                <tr data-feature="issuance-era" data-diff="true" data-keywords="issuance era period dates timeline years history 1972 2015 2016 present active legacy">
+                  <td>
+                    <div class="feature-cell">
+                      <div class="feature-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg>
+                      </div>
+                      <div class="feature-meta">
+                        <span class="feature-name">Issuance Era</span>
+                        <span class="feature-desc">Active issuance validity period</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="cell-old">
+                    <span class="badge-era">1972 &ndash; 2015</span>
+                    <span class="tag-status tag-status--legacy">Legacy</span>
+                    <div class="cell-subtext">Pre-digital biometric era</div>
+                  </td>
+                  <td class="cell-new">
+                    <span class="badge-era">2016 &ndash; Present</span>
+                    <span class="tag-status tag-status--active">Standard</span>
+                    <div class="cell-subtext">Current national registry standard</div>
+                  </td>
+                </tr>
+
+                <!-- Row 2: Length -->
+                <tr data-feature="total-length" data-diff="true" data-keywords="total length characters digits count numbers 10 12 format alphanumeric numerical">
+                  <td>
+                    <div class="feature-cell">
+                      <div class="feature-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M20 10V8h-4V4h-2v4h-4V4H8v4H4v2h4v4H4v2h4v4h2v-4h4v4h2v-4h4v-2h-4v-4h4zm-6 4h-4v-4h4v4z"/></svg>
+                      </div>
+                      <div class="feature-meta">
+                        <span class="feature-name">Total Length</span>
+                        <span class="feature-desc">Character &amp; numeral count</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="cell-old">
+                    <strong>10 characters</strong>
+                    <div class="cell-subtext">9 decimal digits &plus; 1 alphabetic suffix</div>
+                  </td>
+                  <td class="cell-new">
+                    <strong>12 numerical digits</strong>
+                    <div class="cell-subtext">Purely numerical integer string</div>
+                  </td>
+                </tr>
+
+                <!-- Row 3: Birth Year -->
+                <tr data-feature="birth-year" data-diff="true" data-keywords="birth year syntax century 2 digits 4 digits y2k 1900 2000 millennium mapping">
+                  <td>
+                    <div class="feature-cell">
+                      <div class="feature-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                      </div>
+                      <div class="feature-meta">
+                        <span class="feature-name">Birth Year Syntax</span>
+                        <span class="feature-desc">Century representation</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="cell-old">
+                    First <strong>2 digits</strong> (e.g. <code>90</code> = 1990)
+                    <div class="cell-subtext">Assumes 1900s century prefix</div>
+                  </td>
+                  <td class="cell-new">
+                    First <strong>4 digits</strong> (e.g. <code>1990</code> or <code>2002</code>)
+                    <div class="cell-subtext">Explicit 4-digit Gregorian year (Y2K+ clean)</div>
+                  </td>
+                </tr>
+
+                <!-- Row 4: Day & Gender Code -->
+                <tr data-feature="day-code" data-diff="true" data-keywords="day gender code position digits offset 3-5 5-7 calendar days 366 866 integer">
+                  <td>
+                    <div class="feature-cell">
+                      <div class="feature-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z"/></svg>
+                      </div>
+                      <div class="feature-meta">
+                        <span class="feature-name">Day &amp; Gender Code</span>
+                        <span class="feature-desc">Sequential day-of-year integer</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="cell-old">
+                    Digits <strong>3&ndash;5</strong>
+                    <div class="cell-subtext">Positions 3, 4, 5 (Day 1&ndash;366 / 501&ndash;866)</div>
+                  </td>
+                  <td class="cell-new">
+                    Digits <strong>5&ndash;7</strong>
+                    <div class="cell-subtext">Positions 5, 6, 7 (Day 1&ndash;366 / 501&ndash;866)</div>
+                  </td>
+                </tr>
+
+                <!-- Row 5: Gender Formula -->
+                <tr data-feature="gender-formula" data-diff="false" data-keywords="gender formula male female calculation +500 offset women men 501 866 sex">
+                  <td>
+                    <div class="feature-cell">
+                      <div class="feature-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                      </div>
+                      <div class="feature-meta">
+                        <span class="feature-name">Gender Formula</span>
+                        <span class="feature-desc">Day-of-year offset algorithm</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="cell-old">
+                    <div class="gender-pill-wrap">
+                      <span class="gender-chip gender-chip--male">&#9794; Male: <code>001&ndash;366</code></span>
+                      <span class="gender-chip gender-chip--female">&#9792; Female: <code>&plus;500</code> (501&ndash;866)</span>
+                    </div>
+                  </td>
+                  <td class="cell-new">
+                    <div class="gender-pill-wrap">
+                      <span class="gender-chip gender-chip--male">&#9794; Male: <code>001&ndash;366</code></span>
+                      <span class="gender-chip gender-chip--female">&#9792; Female: <code>&plus;500</code> (501&ndash;866)</span>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- Row 6: Serial Identifier -->
+                <tr data-feature="serial-identifier" data-diff="true" data-keywords="serial identifier sequence departmental registry numbers 4-digit 5-digit capacity">
+                  <td>
+                    <div class="feature-cell">
+                      <div class="feature-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M7 14c-1.66 0-3 1.34-3 3 0 1.31.84 2.41 2 2.83V21h2v-1.17c1.16-.42 2-1.52 2-2.83 0-1.66-1.34-3-3-3zm13.71-9.71a.996.996 0 0 0-1.41 0L17 6.59V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.59l2.29 2.3a.996.996 0 1 0 1.41-1.41l-7.06-7.07 7.07-7.07c.39-.38.39-1.02 0-1.41z"/></svg>
+                      </div>
+                      <div class="feature-meta">
+                        <span class="feature-name">Serial Identifier</span>
+                        <span class="feature-desc">Departmental birth-order sequence</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="cell-old">
+                    <strong>4-digit sequence</strong>
+                    <div class="cell-subtext">Digits 6&ndash;9 (Cap of 9,999 daily births)</div>
+                  </td>
+                  <td class="cell-new">
+                    <strong>5-digit sequence</strong>
+                    <div class="cell-subtext">Digits 8&ndash;12 (Expanded cap of 99,999)</div>
+                  </td>
+                </tr>
+
+                <!-- Row 7: Suffix Character / Checksum -->
+                <tr data-feature="suffix-checksum" data-diff="true" data-keywords="suffix checksum character letter v x voter non-voter validation check digit integrity">
+                  <td>
+                    <div class="feature-cell">
+                      <div class="feature-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                      </div>
+                      <div class="feature-meta">
+                        <span class="feature-name">Suffix / Checksum</span>
+                        <span class="feature-desc">Electoral right or check digit</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="cell-old">
+                    <code>V</code> (Voter) or <code>X</code> (Non-voter)
+                    <div class="cell-subtext">Terminal alphabetic electoral status flag</div>
+                  </td>
+                  <td class="cell-new">
+                    <strong>1-digit checksum</strong>
+                    <div class="cell-subtext">Mathematical modulus verification digit</div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Empty State (when search filter returns 0 results) -->
+          <div class="matrix-empty-state" id="matrix-empty-state">
+            <svg class="matrix-empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.35-4.35"></path>
+            </svg>
+            <p class="matrix-empty-text">No specifications match your search query.</p>
+            <button type="button" class="matrix-reset-btn" id="matrix-reset-search">Reset Filter</button>
+          </div>
+
+          <!-- Interactive Sample Bar Footer -->
+          <div class="matrix-footer">
+            <span class="matrix-footer-hint">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+              </svg>
+              Click any sample to test in live decoder:
+            </span>
+            <div class="matrix-sample-triggers">
+              <button type="button" class="matrix-sample-btn" data-sample-nic="906731234V" title="Test 906731234V in decoder">
+                <span>Test Old: <code>906731234V</code></span>
+              </button>
+              <button type="button" class="matrix-sample-btn" data-sample-nic="199967312340" title="Test 199967312340 in decoder">
+                <span>Test New: <code>199967312340</code></span>
+              </button>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -1548,6 +1770,213 @@
             });
           }
         }
+
+        // ── Quick Reference Matrix Modern UI & UX Controller ──
+        (function initReferenceMatrix() {
+          var matrixCard = document.getElementById('matrix-card');
+          if (!matrixCard) return;
+
+          var tabBtns = matrixCard.querySelectorAll('.matrix-tab-btn');
+          var countBadge = document.getElementById('matrix-count-badge');
+          var searchInput = document.getElementById('matrix-search');
+          var searchClearBtn = document.getElementById('matrix-search-clear');
+          var resetSearchBtn = document.getElementById('matrix-reset-search');
+          var emptyState = document.getElementById('matrix-empty-state');
+          var tableWrap = document.getElementById('matrix-table-wrap');
+          var tbody = document.getElementById('matrix-tbody');
+          var rows = tbody ? Array.from(tbody.querySelectorAll('tr')) : [];
+          var copyMatrixBtn = document.getElementById('matrix-copy-btn');
+          var copyMatrixText = document.getElementById('matrix-copy-text');
+          var sampleBtns = matrixCard.querySelectorAll('.matrix-sample-btn');
+
+          var currentView = 'all';
+          var currentQuery = '';
+
+          function updateMatrixDisplay() {
+            var visibleCount = 0;
+            var q = currentQuery.trim().toLowerCase();
+
+            rows.forEach(function (row) {
+              var isDiff = row.getAttribute('data-diff') === 'true';
+              var keywords = (row.getAttribute('data-keywords') || '').toLowerCase();
+              var rowText = row.innerText.toLowerCase();
+
+              // Check view filter
+              var passesView = true;
+              if (currentView === 'diff' && !isDiff) {
+                passesView = false;
+              }
+
+              // Check search filter
+              var passesSearch = true;
+              if (q.length > 0) {
+                passesSearch = keywords.indexOf(q) !== -1 || rowText.indexOf(q) !== -1;
+              }
+
+              if (passesView && passesSearch) {
+                row.style.display = '';
+                visibleCount++;
+              } else {
+                row.style.display = 'none';
+              }
+            });
+
+            // Update counter badge
+            if (countBadge) {
+              if (currentQuery.length > 0 || currentView === 'diff') {
+                countBadge.textContent = visibleCount + ' of ' + rows.length + ' Specs';
+              } else {
+                countBadge.textContent = rows.length + ' Specifications';
+              }
+            }
+
+            // Empty state handling
+            if (visibleCount === 0) {
+              if (emptyState) emptyState.classList.add('visible');
+              if (tableWrap) tableWrap.style.display = 'none';
+            } else {
+              if (emptyState) emptyState.classList.remove('visible');
+              if (tableWrap) tableWrap.style.display = '';
+            }
+
+            // Search clear button
+            if (searchClearBtn) {
+              if (q.length > 0) {
+                searchClearBtn.classList.add('visible');
+              } else {
+                searchClearBtn.classList.remove('visible');
+              }
+            }
+          }
+
+          // Tab View Switching
+          tabBtns.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+              var view = btn.getAttribute('data-view') || 'all';
+              currentView = view;
+
+              tabBtns.forEach(function (b) {
+                b.classList.remove('active');
+                b.setAttribute('aria-selected', 'false');
+              });
+              btn.classList.add('active');
+              btn.setAttribute('aria-selected', 'true');
+
+              matrixCard.setAttribute('data-matrix-view', view);
+              updateMatrixDisplay();
+            });
+          });
+
+          // Live Search Filter
+          if (searchInput) {
+            searchInput.addEventListener('input', function () {
+              currentQuery = searchInput.value;
+              updateMatrixDisplay();
+            });
+
+            searchInput.addEventListener('keydown', function (e) {
+              if (e.key === 'Escape') {
+                searchInput.value = '';
+                currentQuery = '';
+                updateMatrixDisplay();
+                searchInput.blur();
+              }
+            });
+          }
+
+          if (searchClearBtn) {
+            searchClearBtn.addEventListener('click', function () {
+              if (searchInput) searchInput.value = '';
+              currentQuery = '';
+              updateMatrixDisplay();
+              if (searchInput) searchInput.focus();
+            });
+          }
+
+          if (resetSearchBtn) {
+            resetSearchBtn.addEventListener('click', function () {
+              if (searchInput) searchInput.value = '';
+              currentQuery = '';
+              currentView = 'all';
+              tabBtns.forEach(function (b) {
+                if (b.getAttribute('data-view') === 'all') {
+                  b.classList.add('active');
+                  b.setAttribute('aria-selected', 'true');
+                } else {
+                  b.classList.remove('active');
+                  b.setAttribute('aria-selected', 'false');
+                }
+              });
+              matrixCard.setAttribute('data-matrix-view', 'all');
+              updateMatrixDisplay();
+            });
+          }
+
+          // Copy Table as Markdown
+          if (copyMatrixBtn) {
+            copyMatrixBtn.addEventListener('click', function () {
+              var md = [
+                '| Feature / Specification | Old Format (1972–2015) | New Format (2016–Present) |',
+                '|:---|:---|:---|',
+                '| Issuance Era | 1972 – 2015 (Legacy) | 2016 – Present (Current Standard) |',
+                '| Total Length | 10 characters (9 digits + 1 letter) | 12 numerical digits |',
+                '| Birth Year Syntax | First 2 digits (e.g. 90 = 1990) | First 4 digits (e.g. 1990 or 2002) |',
+                '| Day & Gender Code | Digits 3–5 (Day 1–366 / 501–866) | Digits 5–7 (Day 1–366 / 501–866) |',
+                '| Gender Formula | Male: 1–366 | Female: +500 (501–866) | Male: 1–366 | Female: +500 (501–866) |',
+                '| Serial Identifier | 4-digit departmental sequence (Digits 6–9) | 5-digit departmental sequence (Digits 8–12) |',
+                '| Suffix Character / Checksum | V (Voter) or X (Non-voter) letter | 1-digit mathematical checksum digit |'
+              ].join('\n');
+
+              function markCopied() {
+                var origText = copyMatrixText ? copyMatrixText.innerText : 'Copy Table';
+                if (copyMatrixText) copyMatrixText.innerText = 'Copied!';
+                copyMatrixBtn.classList.add('copied');
+                setTimeout(function () {
+                  if (copyMatrixText) copyMatrixText.innerText = origText;
+                  copyMatrixBtn.classList.remove('copied');
+                }, 2000);
+              }
+
+              if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(md).then(markCopied).catch(function () {
+                  fallbackCopyText(md);
+                  markCopied();
+                });
+              } else {
+                fallbackCopyText(md);
+                markCopied();
+              }
+
+              function fallbackCopyText(text) {
+                var ta = document.createElement('textarea');
+                ta.value = text;
+                ta.style.position = 'fixed';
+                ta.style.left = '-999999px';
+                document.body.appendChild(ta);
+                ta.focus();
+                ta.select();
+                try { document.execCommand('copy'); } catch (e) {}
+                document.body.removeChild(ta);
+              }
+            });
+          }
+
+          // Interactive Sample NIC Clicks
+          sampleBtns.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+              var sampleNic = btn.getAttribute('data-sample-nic');
+              if (sampleNic && nicInput) {
+                nicInput.value = sampleNic;
+                nicInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                nicInput.focus();
+                setTimeout(function () {
+                  handleDecode();
+                }, 250);
+              }
+            });
+          });
+
+        })();
 
       })();
   </script>

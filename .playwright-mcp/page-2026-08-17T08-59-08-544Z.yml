@@ -1,0 +1,218 @@
+- generic [ref=e2]:
+  - generic:
+    - img
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "NIC Decoder Home" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "NIC Decoder Logo" [ref=e6]
+      - navigation [ref=e7]:
+        - link "How it works" [ref=e8] [cursor=pointer]:
+          - /url: /#how-it-works
+        - link "Format Guide" [ref=e9] [cursor=pointer]:
+          - /url: /#nic-format-comparison
+        - link "FAQ" [ref=e10] [cursor=pointer]:
+          - /url: /#faq
+        - link "Guidelines" [ref=e11] [cursor=pointer]:
+          - /url: guidelines.html
+        - generic [ref=e12]:
+          - button "Share this website" [ref=e13] [cursor=pointer]:
+            - generic [ref=e14]: Share
+            - img [ref=e15]
+          - menu:
+            - menuitem:
+              - img
+              - generic: WhatsApp
+            - menuitem:
+              - img
+              - generic: Facebook
+            - menuitem:
+              - img
+              - generic: X / Twitter
+            - menuitem:
+              - img
+              - generic: Copy Link
+        - button "Switch to light mode" [ref=e17] [cursor=pointer]:
+          - img [ref=e18]
+  - main [ref=e24]:
+    - generic [ref=e25]:
+      - link "Back to NIC Decoder" [ref=e26] [cursor=pointer]:
+        - /url: /
+        - img [ref=e27]
+        - text: Back to NIC Decoder
+      - heading "Usage Guidelines & Verification Protocols" [level=1] [ref=e29]
+      - generic [ref=e30]:
+        - generic [ref=e31]: "Technical Reference: Standard NIC Formats"
+        - generic [ref=e32]: ·
+        - generic [ref=e33]: Department for Registration of Persons (DRP) Syntax
+    - generic [ref=e34]:
+      - img [ref=e36]
+      - generic [ref=e40]:
+        - heading "Official Algorithmic Verification & Compliance Framework" [level=3] [ref=e41]
+        - paragraph [ref=e42]: NIC Info provides mathematically sound cryptographic syntax validation and demographic data extraction in compliance with Sri Lanka's standardized identity numbering system. This document outlines the official format architecture, migration rules between legacy and modern cards, and ethical usage parameters.
+    - generic [ref=e43]:
+      - heading "1. Number Format Specifications" [level=2] [ref=e44]
+      - paragraph [ref=e45]: Sri Lankan National Identity Cards follow two official number architectures. Our parsing algorithm instantly detects and distinguishes between legacy printed credentials and modernized digital smart cards without requiring manual formatting selection.
+      - generic [ref=e46]:
+        - generic [ref=e47]:
+          - generic [ref=e48]:
+            - heading "Old Format (9 Digits)" [level=3] [ref=e49]
+            - generic [ref=e50]: Pre-2016
+          - paragraph [ref=e51]:
+            - strong [ref=e52]: "Example Syntax:"
+            - code [ref=e53]: 852140123V
+          - paragraph [ref=e54]:
+            - strong [ref=e55]: "Structure:"
+            - text: Comprises 9 sequential decimal numerals followed by a required terminal control letter (
+            - strong [ref=e56]: V
+            - text: for registered voter or
+            - strong [ref=e57]: X
+            - text: for exceptional status).
+          - paragraph [ref=e58]:
+            - strong [ref=e59]: "Year Encoding:"
+            - text: Represents only the last 2 digits of the birth year (e.g.,
+            - code [ref=e60]: "85"
+            - text: corresponds to 1985).
+        - generic [ref=e61]:
+          - generic [ref=e62]:
+            - heading "New Format (12 Digits)" [level=3] [ref=e63]
+            - generic [ref=e64]: Post-2016
+          - paragraph [ref=e65]:
+            - strong [ref=e66]: "Example Syntax:"
+            - code [ref=e67]: "198521400123"
+          - paragraph [ref=e68]:
+            - strong [ref=e69]: "Structure:"
+            - text: Comprises 12 sequential decimal numerals with all alphabetic suffix characters completely removed.
+          - paragraph [ref=e70]:
+            - strong [ref=e71]: "Year Encoding:"
+            - text: Explicitly features the full 4-digit Gregorian birth year (e.g.,
+            - code [ref=e72]: "1985"
+            - text: ), future-proofing digital database index compatibility.
+    - generic [ref=e73]:
+      - heading "2. Gender & Day-of-Year Encoding Algorithm" [level=2] [ref=e74]
+      - paragraph [ref=e75]: "Regardless of card generation, digits following the birth year field represent a standardized 3-digit day-of-year numerical integer that encodes both birth date and legal gender according to an explicit numerical shift:"
+      - table "Gender encoding offsets" [ref=e78]:
+        - rowgroup [ref=e79]:
+          - row "Gender Category Numerical Range Offset Formula Example (Born Feb 1)" [ref=e80]:
+            - columnheader "Gender Category" [ref=e81]
+            - columnheader "Numerical Range" [ref=e82]
+            - columnheader "Offset Formula" [ref=e83]
+            - columnheader "Example (Born Feb 1)" [ref=e84]
+        - rowgroup [ref=e85]:
+          - row "Male Citizens Standard calendar integer 001 – 366 Day of Year + 000 Direct 1-to-1 day mapping 032 31 Jan days + 1 Feb day" [ref=e86]:
+            - cell "Male Citizens Standard calendar integer" [ref=e87]:
+              - generic [ref=e88]:
+                - img [ref=e90]
+                - generic [ref=e92]:
+                  - generic [ref=e93]: Male Citizens
+                  - generic [ref=e94]: Standard calendar integer
+            - cell "001 – 366" [ref=e95]:
+              - generic [ref=e96]:
+                - code [ref=e97]: "001"
+                - text: –
+                - code [ref=e98]: "366"
+            - cell "Day of Year + 000 Direct 1-to-1 day mapping" [ref=e99]:
+              - strong [ref=e100]: Day of Year + 000
+              - generic [ref=e101]: Direct 1-to-1 day mapping
+            - cell "032 31 Jan days + 1 Feb day" [ref=e102]:
+              - code [ref=e103]: "032"
+              - generic [ref=e104]: 31 Jan days + 1 Feb day
+          - row "Female Citizens +500 offset applied 501 – 866 Day of Year + 500 500 added to day-of-year 532 32 + 500 offset" [ref=e105]:
+            - cell "Female Citizens +500 offset applied" [ref=e106]:
+              - generic [ref=e107]:
+                - img [ref=e109]
+                - generic [ref=e111]:
+                  - generic [ref=e112]: Female Citizens
+                  - generic [ref=e113]: +500 offset applied
+            - cell "501 – 866" [ref=e114]:
+              - generic [ref=e115]:
+                - code [ref=e116]: "501"
+                - text: –
+                - code [ref=e117]: "866"
+            - cell "Day of Year + 500 500 added to day-of-year" [ref=e118]:
+              - strong [ref=e119]: Day of Year + 500
+              - generic [ref=e120]: 500 added to day-of-year
+            - cell "532 32 + 500 offset" [ref=e121]:
+              - code [ref=e122]: "532"
+              - generic [ref=e123]: 32 + 500 offset
+      - paragraph [ref=e124]:
+        - strong [ref=e125]: "Leap Year Reconciliation:"
+        - text: According to traditional DRP sequencing conventions, calculations presume a 366-day cycle for indexing purposes. Day integer
+        - code [ref=e126]: "366"
+        - text: (or
+        - code [ref=e127]: "866"
+        - text: for females) corresponds to December 31 in leap year cycles, ensuring mathematical consistency across all annual calendars.
+    - generic [ref=e128]:
+      - heading "3. Algorithmic Record Migration (9 to 12 Digits)" [level=2] [ref=e129]
+      - paragraph [ref=e130]: "For system architects, enterprise KYC pipelines, and database administrators upgrading user registries from legacy 9-digit records to standardized 12-digit format, follow this precise 4-step transformation protocol:"
+      - list [ref=e131]:
+        - listitem [ref=e132]:
+          - strong [ref=e133]: "Step 1 (Year Expansion):"
+          - text: Prepend the century identifier
+          - code [ref=e134]: "19"
+          - text: directly preceding the initial 2 digits of the legacy number (applicable for all 20th-century issuances).
+        - listitem [ref=e135]:
+          - strong [ref=e136]: "Step 2 (Date Preservation):"
+          - text: Maintain the sequential 3-digit day and gender integer directly following the expanded year without modification.
+        - listitem [ref=e137]:
+          - strong [ref=e138]: "Step 3 (Zero Insertion):"
+          - text: Insert a single zero (
+          - code [ref=e139]: "0"
+          - text: ) immediately preceding the 4-digit serial check number to expand the serial identifier from 4 to 5 decimal digits.
+        - listitem [ref=e140]:
+          - strong [ref=e141]: "Step 4 (Suffix Deprecation):"
+          - text: Strip and discard the terminal control character (
+          - code [ref=e142]: V
+          - text: or
+          - code [ref=e143]: X
+          - text: ).
+      - paragraph [ref=e144]:
+        - emphasis [ref=e145]: "Transformation Demonstration:"
+        - text: Legacy record
+        - code [ref=e146]: 852140123V
+        - text: successfully converts to digital standard
+        - code [ref=e147]: "198521400123"
+        - text: .
+    - generic [ref=e148]:
+      - heading "4. Acceptable Usage & Ethics Policy" [level=2] [ref=e149]
+      - paragraph [ref=e150]: "To maintain ethical computing standards and uphold statutory data privacy regulations, all operators utilizing this tool must strictly observe the following acceptable use protocols:"
+      - list [ref=e151]:
+        - listitem [ref=e152]:
+          - strong [ref=e153]: "Authorized Processing Only:"
+          - text: Only process National Identity Card credentials belonging to yourself, consenting clients, or individuals undergoing legitimate organizational onboarding and verification workflows.
+        - listitem [ref=e154]:
+          - strong [ref=e155]: "Prohibition of Batch Harvesting:"
+          - text: Automated scraping, scripted dictionary generation, or brute-force sequential parsing for public directory harvesting or unauthorized demographic profiling is explicitly prohibited.
+        - listitem [ref=e156]:
+          - strong [ref=e157]: "Zero Inference Boundary:"
+          - text: Do not attempt to infer socioeconomic status, ethnicity, regional origin, or unrepresented attributes from the serial checksum digits, as these numbers represent solely randomized departmental issuance quotas.
+    - generic [ref=e158]:
+      - heading "5. Technical Consultation & Developer Support" [level=2] [ref=e159]
+      - paragraph [ref=e160]: "For custom KYC software integrations, backend verification API architecture, or clarifying inquiries regarding algorithmic formatting standards, you may contact our engineering leadership directly:"
+      - paragraph [ref=e161]:
+        - strong [ref=e162]: "Lead Architect:"
+        - text: Pubudu Tharanga
+        - strong [ref=e163]: "Developer Portfolio:"
+        - link "https://pubudu-tharanga.vercel.app/" [ref=e164] [cursor=pointer]:
+          - /url: https://pubudu-tharanga.vercel.app/
+  - contentinfo [ref=e165]:
+    - generic [ref=e166]:
+      - link "NIC Decoder Home" [ref=e167] [cursor=pointer]:
+        - /url: /
+        - img "NIC Info Logo" [ref=e168]
+      - paragraph [ref=e169]: A free browser tool for decoding Sri Lankan National Identity Card numbers.
+      - paragraph [ref=e170]:
+        - text: Copyright © 2026
+        - strong [ref=e171]: NIC Info
+        - text: . All rights reserved.
+      - paragraph [ref=e172]:
+        - text: Developed by
+        - link "Pubudu Tharanga" [ref=e174] [cursor=pointer]:
+          - /url: https://pubudu-tharanga.vercel.app/
+      - generic [ref=e175]:
+        - link "Privacy Notice" [ref=e176] [cursor=pointer]:
+          - /url: privacy.html
+        - link "Guidelines" [ref=e178] [cursor=pointer]:
+          - /url: guidelines.html
+        - link "Policy" [ref=e180] [cursor=pointer]:
+          - /url: policy.html
