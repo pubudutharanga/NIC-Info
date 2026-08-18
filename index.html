@@ -933,8 +933,8 @@
                     <div class="cell-subtext">Digits 6&ndash;9 (Cap of 9,999 daily births)</div>
                   </td>
                   <td class="cell-new">
-                    <strong>5-digit sequence</strong>
-                    <div class="cell-subtext">Digits 8&ndash;12 (Expanded cap of 99,999)</div>
+                    <strong>4-digit sequence &amp; 1 check digit</strong>
+                    <div class="cell-subtext">Digits 8&ndash;11 serial, Digit 12 checksum</div>
                   </td>
                 </tr>
 
@@ -1922,8 +1922,8 @@
                 '| Total Length | 10 characters (9 digits + 1 letter) | 12 numerical digits |',
                 '| Birth Year Syntax | First 2 digits (e.g. 90 = 1990) | First 4 digits (e.g. 1990 or 2002) |',
                 '| Day & Gender Code | Digits 3–5 (Day 1–366 / 501–866) | Digits 5–7 (Day 1–366 / 501–866) |',
-                '| Gender Formula | Male: 1–366 | Female: +500 (501–866) | Male: 1–366 | Female: +500 (501–866) |',
-                '| Serial Identifier | 4-digit departmental sequence (Digits 6–9) | 5-digit departmental sequence (Digits 8–12) |',
+                '| Gender Formula | Male: 1–366, Female: +500 (501–866) | Male: 1–366, Female: +500 (501–866) |',
+                '| Serial Identifier | 4-digit departmental sequence (Digits 6–9) | 4-digit sequence (Digits 8–11) & 1 check digit |',
                 '| Suffix Character / Checksum | V (Voter) or X (Non-voter) letter | 1-digit mathematical checksum digit |'
               ].join('\n');
 
