@@ -225,7 +225,9 @@
           <img src="nicinfo-logo.webp" alt="NIC Decoder Logo" class="header-logo" width="56" height="28"
             decoding="async" />
         </a>
-        <nav class="header-nav">
+
+        <!-- Desktop Navigation Links -->
+        <nav class="header-nav" aria-label="Main Navigation">
           <a href="/#how-it-works">How it works</a>
           <a href="/#nic-format-comparison">Format Guide</a>
           <a href="/#faq">FAQ</a>
@@ -289,7 +291,115 @@
             </svg>
           </button>
         </nav>
+
+        <!-- Mobile Controls (Theme Toggle + Hamburger) -->
+        <div class="header-mobile-controls">
+          <button class="theme-toggle" id="mobile-theme-toggle" type="button" aria-label="Switch to light mode"
+            title="Toggle light / dark mode">
+            <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+            <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </button>
+          <button class="mobile-menu-toggle" id="mobile-menu-toggle" type="button" aria-expanded="false"
+            aria-controls="mobile-nav-drawer" aria-label="Toggle navigation menu">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>
+        </div>
       </div>
+
+      <!-- Mobile Navigation Drawer -->
+      <div class="mobile-nav-drawer" id="mobile-nav-drawer" aria-hidden="true">
+        <nav class="mobile-nav-links" aria-label="Mobile Navigation">
+          <a href="/#how-it-works" class="mobile-nav-link">
+            <span>How it works</span>
+            <svg class="mobile-nav-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+          <a href="/#nic-format-comparison" class="mobile-nav-link">
+            <span>Format Guide</span>
+            <svg class="mobile-nav-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+          <a href="/#faq" class="mobile-nav-link">
+            <span>FAQ</span>
+            <svg class="mobile-nav-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+          <a href="guidelines.html" class="mobile-nav-link">
+            <span>Guidelines</span>
+            <svg class="mobile-nav-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+        </nav>
+
+        <div class="mobile-nav-divider"></div>
+
+        <!-- Mobile Share Section -->
+        <div class="mobile-share-section">
+          <div class="mobile-share-title">Share NIC Info</div>
+          <div class="mobile-share-grid">
+            <a href="#" class="mobile-share-btn" data-share-platform="whatsapp" target="_blank"
+              rel="noopener noreferrer">
+              <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                </path>
+              </svg>
+              <span>WhatsApp</span>
+            </a>
+            <a href="#" class="mobile-share-btn" data-share-platform="facebook" target="_blank"
+              rel="noopener noreferrer">
+              <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+              <span>Facebook</span>
+            </a>
+            <a href="#" class="mobile-share-btn" data-share-platform="x" target="_blank"
+              rel="noopener noreferrer">
+              <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+              <span>X</span>
+            </a>
+            <button type="button" class="mobile-share-btn" id="mobile-share-copy-btn">
+              <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span id="mobile-share-copy-text">Copy Link</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Mobile Backdrop Overlay -->
+      <div class="mobile-nav-backdrop" id="mobile-nav-backdrop" aria-hidden="true"></div>
     </header>
 
     <!-- ═══════════════════════════════════════════════════
@@ -526,17 +636,21 @@
   <script>
     (function () {
       var html = document.documentElement;
-      var themeToggle = document.getElementById('theme-toggle');
+      var themeToggles = document.querySelectorAll('.theme-toggle');
       var STORAGE_KEY = 'nic-theme';
       var header = document.getElementById('site-header');
 
       function applyTheme(theme) {
         if (theme === 'light') {
           html.setAttribute('data-theme', 'light');
-          themeToggle.setAttribute('aria-label', 'Switch to dark mode');
+          themeToggles.forEach(function (btn) {
+            btn.setAttribute('aria-label', 'Switch to dark mode');
+          });
         } else {
           html.removeAttribute('data-theme');
-          themeToggle.setAttribute('aria-label', 'Switch to light mode');
+          themeToggles.forEach(function (btn) {
+            btn.setAttribute('aria-label', 'Switch to light mode');
+          });
         }
       }
 
@@ -548,11 +662,13 @@
         applyTheme('light');
       }
 
-      themeToggle.addEventListener('click', function () {
-        var currentlyLight = html.getAttribute('data-theme') === 'light';
-        var next = currentlyLight ? 'dark' : 'light';
-        applyTheme(next);
-        try { localStorage.setItem(STORAGE_KEY, next); } catch (_) { }
+      themeToggles.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var currentlyLight = html.getAttribute('data-theme') === 'light';
+          var next = currentlyLight ? 'dark' : 'light';
+          applyTheme(next);
+          try { localStorage.setItem(STORAGE_KEY, next); } catch (_) { }
+        });
       });
 
       window.addEventListener('scroll', function () {
@@ -562,71 +678,170 @@
           header.classList.remove('scrolled');
         }
       }, { passive: true });
-        // ── Share Dropdown & Web Share Protocols ──────────────
-        var shareBtn = document.getElementById('share-toggle-btn');
-        var shareMenu = document.getElementById('share-menu');
-        if (shareBtn && shareMenu) {
-          shareBtn.addEventListener('click', function (e) {
-            e.stopPropagation();
-            var isOpen = shareMenu.classList.contains('open');
-            if (isOpen) {
-              shareMenu.classList.remove('open');
-              shareBtn.setAttribute('aria-expanded', 'false');
-              shareMenu.setAttribute('aria-hidden', 'true');
-            } else {
-              shareMenu.classList.add('open');
-              shareBtn.setAttribute('aria-expanded', 'true');
-              shareMenu.setAttribute('aria-hidden', 'false');
-            }
-          });
 
-          document.addEventListener('click', function (e) {
-            if (!shareMenu.contains(e.target) && e.target !== shareBtn) {
-              shareMenu.classList.remove('open');
-              shareBtn.setAttribute('aria-expanded', 'false');
-              shareMenu.setAttribute('aria-hidden', 'true');
-            }
-          });
+      // ── Share Dropdown & Web Share Protocols (Desktop) ───
+      var shareBtn = document.getElementById('share-toggle-btn');
+      var shareMenu = document.getElementById('share-menu');
+      var shareUrl = encodeURIComponent(window.location.origin + window.location.pathname);
+      var shareText = encodeURIComponent("Check out NIC Info - A free browser tool for decoding Sri Lankan National Identity Card numbers and revealing birth dates & gender! ");
 
-          document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape') {
-              shareMenu.classList.remove('open');
-              shareBtn.setAttribute('aria-expanded', 'false');
-              shareMenu.setAttribute('aria-hidden', 'true');
-            }
-          });
-
-          var shareUrl = encodeURIComponent(window.location.origin + window.location.pathname);
-          var shareText = encodeURIComponent("Check out NIC Info - A free browser tool for decoding Sri Lankan National Identity Card numbers and revealing birth dates & gender! ");
-          
-          var waBtn = shareMenu.querySelector('[data-share-platform="whatsapp"]');
-          var fbBtn = shareMenu.querySelector('[data-share-platform="facebook"]');
-          var xBtn = shareMenu.querySelector('[data-share-platform="x"]');
-          var copyBtn = document.getElementById('share-copy-btn');
-          var copyText = document.getElementById('share-copy-text');
-
-          if (waBtn) waBtn.href = "https://api.whatsapp.com/send?text=" + shareText + shareUrl;
-          if (fbBtn) fbBtn.href = "https://www.facebook.com/sharer/sharer.php?u=" + shareUrl;
-          if (xBtn) xBtn.href = "https://twitter.com/intent/tweet?text=" + shareText + "&url=" + shareUrl;
-
-          if (copyBtn) {
-            copyBtn.addEventListener('click', function (e) {
-              e.stopPropagation();
-              var targetUrl = window.location.origin + window.location.pathname;
-              navigator.clipboard.writeText(targetUrl).then(function () {
-                var originalText = copyText ? copyText.innerText : 'Copy Link';
-                if (copyText) copyText.innerText = 'Copied!';
-                copyBtn.style.color = '#25D366';
-                setTimeout(function () {
-                  if (copyText) copyText.innerText = originalText;
-                  copyBtn.style.color = '';
-                }, 2000);
-              }).catch(function () {
-                // Fallback
-              });
-            });
+      if (shareBtn && shareMenu) {
+        shareBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          var isOpen = shareMenu.classList.contains('open');
+          if (isOpen) {
+            shareMenu.classList.remove('open');
+            shareBtn.setAttribute('aria-expanded', 'false');
+            shareMenu.setAttribute('aria-hidden', 'true');
+          } else {
+            shareMenu.classList.add('open');
+            shareBtn.setAttribute('aria-expanded', 'true');
+            shareMenu.setAttribute('aria-hidden', 'false');
           }
+        });
+
+        document.addEventListener('click', function (e) {
+          if (!shareMenu.contains(e.target) && e.target !== shareBtn) {
+            shareMenu.classList.remove('open');
+            shareBtn.setAttribute('aria-expanded', 'false');
+            shareMenu.setAttribute('aria-hidden', 'true');
+          }
+        });
+
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape') {
+            shareMenu.classList.remove('open');
+            shareBtn.setAttribute('aria-expanded', 'false');
+            shareMenu.setAttribute('aria-hidden', 'true');
+          }
+        });
+
+        var waBtn = shareMenu.querySelector('[data-share-platform="whatsapp"]');
+        var fbBtn = shareMenu.querySelector('[data-share-platform="facebook"]');
+        var xBtn = shareMenu.querySelector('[data-share-platform="x"]');
+        var copyBtn = document.getElementById('share-copy-btn');
+        var copyText = document.getElementById('share-copy-text');
+
+        if (waBtn) waBtn.href = "https://api.whatsapp.com/send?text=" + shareText + shareUrl;
+        if (fbBtn) fbBtn.href = "https://www.facebook.com/sharer/sharer.php?u=" + shareUrl;
+        if (xBtn) xBtn.href = "https://twitter.com/intent/tweet?text=" + shareText + "&url=" + shareUrl;
+
+        if (copyBtn) {
+          copyBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            var targetUrl = window.location.origin + window.location.pathname;
+            navigator.clipboard.writeText(targetUrl).then(function () {
+              var originalText = copyText ? copyText.innerText : 'Copy Link';
+              if (copyText) copyText.innerText = 'Copied!';
+              copyBtn.style.color = '#25D366';
+              setTimeout(function () {
+                if (copyText) copyText.innerText = originalText;
+                copyBtn.style.color = '';
+              }, 2000);
+            }).catch(function () {
+              // Fallback
+            });
+          });
         }
+      }
+
+      // ── Mobile Navigation Drawer & Mobile Share ───────────
+      var mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+      var mobileNavDrawer = document.getElementById('mobile-nav-drawer');
+      var mobileNavBackdrop = document.getElementById('mobile-nav-backdrop');
+      var mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+      function openMobileMenu() {
+        if (!mobileMenuToggle || !mobileNavDrawer) return;
+        mobileMenuToggle.setAttribute('aria-expanded', 'true');
+        mobileNavDrawer.classList.add('open');
+        mobileNavDrawer.setAttribute('aria-hidden', 'false');
+        if (mobileNavBackdrop) {
+          mobileNavBackdrop.classList.add('open');
+          mobileNavBackdrop.setAttribute('aria-hidden', 'false');
+        }
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMobileMenu() {
+        if (!mobileMenuToggle || !mobileNavDrawer) return;
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        mobileNavDrawer.classList.remove('open');
+        mobileNavDrawer.setAttribute('aria-hidden', 'true');
+        if (mobileNavBackdrop) {
+          mobileNavBackdrop.classList.remove('open');
+          mobileNavBackdrop.setAttribute('aria-hidden', 'true');
+        }
+        document.body.style.overflow = '';
+      }
+
+      if (mobileMenuToggle && mobileNavDrawer) {
+        mobileMenuToggle.addEventListener('click', function (e) {
+          e.stopPropagation();
+          var isOpen = mobileNavDrawer.classList.contains('open');
+          if (isOpen) {
+            closeMobileMenu();
+          } else {
+            openMobileMenu();
+          }
+        });
+
+        if (mobileNavBackdrop) {
+          mobileNavBackdrop.addEventListener('click', closeMobileMenu);
+        }
+
+        mobileNavLinks.forEach(function (link) {
+          link.addEventListener('click', function () {
+            closeMobileMenu();
+          });
+        });
+
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && mobileNavDrawer.classList.contains('open')) {
+            closeMobileMenu();
+          }
+        });
+
+        window.addEventListener('resize', function () {
+          if (window.innerWidth > 768 && mobileNavDrawer.classList.contains('open')) {
+            closeMobileMenu();
+          }
+        }, { passive: true });
+      }
+
+      // Mobile Share Platform Links
+      var mobileWaBtn = document.querySelector('.mobile-share-btn[data-share-platform="whatsapp"]');
+      var mobileFbBtn = document.querySelector('.mobile-share-btn[data-share-platform="facebook"]');
+      var mobileXBtn = document.querySelector('.mobile-share-btn[data-share-platform="x"]');
+      var mobileCopyBtn = document.getElementById('mobile-share-copy-btn');
+      var mobileCopyText = document.getElementById('mobile-share-copy-text');
+
+      if (mobileWaBtn) mobileWaBtn.href = "https://api.whatsapp.com/send?text=" + shareText + shareUrl;
+      if (mobileFbBtn) mobileFbBtn.href = "https://www.facebook.com/sharer/sharer.php?u=" + shareUrl;
+      if (mobileXBtn) mobileXBtn.href = "https://twitter.com/intent/tweet?text=" + shareText + "&url=" + shareUrl;
+
+      if (mobileCopyBtn) {
+        mobileCopyBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          var targetUrl = window.location.origin + window.location.pathname;
+          function markCopied() {
+            var originalText = mobileCopyText ? mobileCopyText.innerText : 'Copy Link';
+            if (mobileCopyText) mobileCopyText.innerText = 'Copied!';
+            mobileCopyBtn.classList.add('copied');
+            setTimeout(function () {
+              if (mobileCopyText) mobileCopyText.innerText = originalText;
+              mobileCopyBtn.classList.remove('copied');
+            }, 2000);
+          }
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(targetUrl).then(markCopied).catch(function () {
+              markCopied();
+            });
+          } else {
+            markCopied();
+          }
+        });
+      }
     })();
   </script>
 </body>
