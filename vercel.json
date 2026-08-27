@@ -1,13 +1,37 @@
 {
   "rewrites": [
-    { "source": "/old-to-new-nic", "destination": "/old-to-new-nic.html" },
-    { "source": "/nic-from-dob", "destination": "/nic-from-dob.html" },
-    { "source": "/nic-to-birthday", "destination": "/nic-to-birthday.html" },
-    { "source": "/how-nic-works", "destination": "/how-nic-works.html" },
-    { "source": "/excel-nic-formula", "destination": "/excel-nic-formula.html" },
-    { "source": "/nic-check-digit", "destination": "/nic-check-digit.html" },
-    { "source": "/si", "destination": "/si/index.html" },
-    { "source": "/ta", "destination": "/ta/index.html" }
+    {
+      "source": "/old-to-new-nic",
+      "destination": "/old-to-new-nic.html"
+    },
+    {
+      "source": "/nic-from-dob",
+      "destination": "/nic-from-dob.html"
+    },
+    {
+      "source": "/nic-to-birthday",
+      "destination": "/nic-to-birthday.html"
+    },
+    {
+      "source": "/how-nic-works",
+      "destination": "/how-nic-works.html"
+    },
+    {
+      "source": "/excel-nic-formula",
+      "destination": "/excel-nic-formula.html"
+    },
+    {
+      "source": "/nic-check-digit",
+      "destination": "/nic-check-digit.html"
+    },
+    {
+      "source": "/si",
+      "destination": "/si/index.html"
+    },
+    {
+      "source": "/ta",
+      "destination": "/ta/index.html"
+    }
   ],
   "redirects": [
     {
@@ -25,17 +49,30 @@
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), browsing-topics=()" },
-        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
-        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://chalkedwhiningromance.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self'; font-src 'self'; frame-src https://chalkedwhiningromance.com; object-src 'none'; base-uri 'self'; form-action 'self';" }
-      ]
-    },
-    {
-      "source": "/(index\\.html|guidelines\\.html|old-to-new-nic|nic-from-dob|nic-to-birthday|how-nic-works|excel-nic-formula|nic-check-digit|si|si/|ta|ta/|$)",
-      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://chalkedwhiningromance.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self'; font-src 'self'; frame-src https://chalkedwhiningromance.com; object-src 'none'; base-uri 'self'; form-action 'self';"
+        },
         {
           "key": "X-Robots-Tag",
           "value": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
@@ -43,27 +80,30 @@
       ]
     },
     {
-      "source": "/(privacy|policy)\\.html",
+      "source": "/(privacy\\.html|policy\\.html|404\\.html|404)",
       "headers": [
-        { "key": "X-Robots-Tag", "value": "noindex, follow" }
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
       ]
     },
     {
-      "source": "/404(.*)",
+      "source": "/(.*\\.ico)",
       "headers": [
-        { "key": "X-Robots-Tag", "value": "noindex, follow" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
-      "source": "/(.*)\\.ico",
+      "source": "/(.*\\.(png|webp|svg|css|js))",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
-      ]
-    },
-    {
-      "source": "/(.*)\\.(?:png|webp|svg|css|js)",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     }
   ]
