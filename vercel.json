@@ -89,7 +89,7 @@
       ]
     },
     {
-      "source": "/(.*\\.ico)",
+      "source": "/(.*)\\.ico",
       "headers": [
         {
           "key": "Cache-Control",
@@ -98,7 +98,7 @@
       ]
     },
     {
-      "source": "/(.*\\.(png|webp|svg|css|js))",
+      "source": "/(.*)\\.(png|webp|svg|css|js)",
       "headers": [
         {
           "key": "Cache-Control",
