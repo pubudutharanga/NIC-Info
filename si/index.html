@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="si">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+  <!-- Primary Meta Tags -->
+  <title>NIC අංකයෙන් උපන් දිනය — ජාතික හැඳුනුම්පත් decoder | NIC Info</title>
+  <meta name="description"
+    content="ඔබේ ශ්‍රී ලාංකික NIC අංකය ඇතුළු කර උපන් දිනය, වයස සහ ස්ත්‍රී/පුරුෂ භාවය දැනගන්න. පැරණි 9-අංක සහ නව 12-අංක ආකෘති දෙකම සඳහා ක්‍රියා කරයි. නොමිලේ, පෞද්ගලික." />
+  <meta name="author" content="Pubudu Tharanga" />
+
+  <!-- Canonical & hreflang -->
+  <link rel="canonical" href="https://nicinfo.vercel.app/si/" />
+  <link rel="alternate" hreflang="si" href="https://nicinfo.vercel.app/si/" />
+  <link rel="alternate" hreflang="en" href="https://nicinfo.vercel.app/" />
+  <link rel="alternate" hreflang="ta" href="https://nicinfo.vercel.app/ta/" />
+  <link rel="alternate" hreflang="x-default" href="https://nicinfo.vercel.app/" />
+
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#11171C" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#F5F0E8" media="(prefers-color-scheme: light)" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://nicinfo.vercel.app/si/" />
+  <meta property="og:title" content="NIC අංකයෙන් උපන් දිනය — ජාතික හැඳුනුම්පත් decoder" />
+  <meta property="og:description"
+    content="ශ්‍රී ලාංකික NIC අංකයෙන් උපන් දිනය, වයස සහ ස්ත්‍රී/පුරුෂ භාවය බලන්න. නොමිලේ, Browser තුළම ක්‍රියා කරයි." />
+  <meta property="og:image" content="https://nicinfo.vercel.app/og-image.png" />
+  <meta property="og:site_name" content="NIC Info" />
+  <meta property="og:locale" content="si_LK" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:locale:alternate" content="ta_LK" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="NIC අංකයෙන් උපන් දිනය — ජාතික හැඳුනුම්පත් decoder" />
+  <meta name="twitter:description" content="ශ්‍රී ලාංකික NIC අංකයෙන් උපන් දිනය, වයස සහ ස්ත්‍රී/පුරුෂ භාවය බලන්න." />
+  <meta name="twitter:image" content="https://nicinfo.vercel.app/og-image.png" />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+  <link rel="manifest" href="../manifest.json" />
+
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,560;0,9..144,600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../styles.css" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://nicinfo.vercel.app/si/#webapp",
+        "name": "NIC Decoder \u2014 \u0dc3\u0dd2\u0d82\u0dc4\u0dbd",
+        "url": "https://nicinfo.vercel.app/si/",
+        "description": "Sri Lanka NIC number decoder in Sinhala language. Extract date of birth, age and gender from old and new NIC formats.",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "inLanguage": "si",
+        "datePublished": "2026-08-27",
+        "dateModified": "2026-08-27",
+        "author": { "@type": "Person", "name": "Pubudu Tharanga" },
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://nicinfo.vercel.app/si/#faq",
+        "inLanguage": "si",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "NIC \u0d85\u0d82\u0d9a\u0dba\u0dd9\u0db1\u0dca \u0d8a\u0db4\u0db1\u0dca \u0daf\u0dd2\u0db1\u0dba \u0daf\u0dd0\u0db1\u0d9c\u0db1\u0dca\u0db1\u0dda \u0d9a\u0dd9\u0dc3\u0dda\u0daf?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "\u0d8a\u0dc4\u0dad \u0d9a\u0ddc\u0da7\u0dd4\u0dc0\u0da7 NIC \u0d85\u0d82\u0d9a\u0dba \u0d87\u0dad\u0dd4\u0dbd\u0dd4 \u0d9a\u0dbb Decode \u0db6\u0ddc\u0dad\u0dca\u0dad\u0db8 \u0d94\u0db6\u0db1\u0dca\u0db1. \u0d9a\u0dca\u0dc2\u0dab\u0dd2\u0d9a\u0dc0 \u0d8a\u0db4\u0db1\u0dca \u0daf\u0dd2\u0db1\u0dba, \u0dc0\u0dba\u0dc3 \u0dc3\u0dc4 \u0dc3\u0dca\u0dad\u0dca\u0dbb\u0dd3/\u0db4\u0dd4\u0dbb\u0dd4\u0dc2 \u0db7\u0dcf\u0dc0\u0dba \u0dbd\u0dd0\u0db6\u0dda."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "\u0db4\u0dd0\u0dbb\u0dca\u0d82\u0dab\u0dd2 NIC \u0dc3\u0dc4 \u0db1\u0dc0 NIC \u0d85\u0dad\u0dbb \u0dc0\u0dda\u0db1\u0dc3 \u0d9a\u0dd4\u0db8\u0d9a\u0dca\u0daf?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "\u0db4\u0dd0\u0dbb\u0dca\u0d82\u0dab\u0dd2: 9 \u0d89\u0dbd\u0d9a\u0dca\u0d9a\u0db8\u0dca + V/X. \u0db1\u0dc0: 12 \u0d89\u0dbd\u0d9a\u0dca\u0d9a\u0db8\u0dca (2016 \u0dc3\u0dd2\u0da7). \u0db1\u0dc0 \u0d86\u0d9a\u0dd8\u0dad\u0dd2\u0dba\u0dda V/X \u0db1\u0dd0\u0dad; 4-digit \u0dc0\u0dbb\u0dca\u0dc2\u0dba \u0d87\u0dad."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "NIC Info", "item": "https://nicinfo.vercel.app/" },
+          { "@type": "ListItem", "position": 2, "name": "Sinhala NIC Decoder", "item": "https://nicinfo.vercel.app/si/" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Anti-FOUC: prevent flash of wrong theme -->
+  <script>
+    (function () {
+      var stored = localStorage.getItem('nic-theme');
+      if (stored === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      } else if (!stored && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+
+<body>
+  <div class="app-wrapper">
+    <!-- Skip to main content (WCAG 2.4.1) -->
+    <a href="#nic-input" class="skip-to-content">ප්‍රධාන අන්තර්ගතයට යන්න</a>
+
+    <!-- HEADER -->
+    <header class="site-header" id="site-header">
+      <div class="header-inner">
+        <a href="/" class="logo-link" aria-label="NIC Decoder Home">
+          <img src="../nicinfo-logo.webp" alt="NIC Info Logo" class="header-logo" width="56" height="28"
+            fetchpriority="high" decoding="async" />
+        </a>
+        <nav class="header-nav" aria-label="Main Navigation">
+          <a href="#how-it-works">ක්‍රියාවලිය</a>
+          <a href="#faq">FAQ</a>
+          <a href="/guidelines.html">Guidelines</a>
+          <a href="/" style="font-weight:600">English</a>
+          <a href="/ta/">தமிழ்</a>
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light mode"
+            title="Toggle light / dark mode">
+            <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+            <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </button>
+        </nav>
+        <div class="header-mobile-controls">
+          <button class="theme-toggle" id="mobile-theme-toggle" type="button" aria-label="තේමාව මාරු කරන්න"
+            title="Toggle light / dark mode">
+            <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+            <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </button>
+          <button class="mobile-menu-toggle" id="mobile-menu-toggle" type="button" aria-expanded="false"
+            aria-controls="mobile-nav-drawer" aria-label="මෙනුව විවෘත කරන්න">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Drawer -->
+      <div class="mobile-nav-drawer" id="mobile-nav-drawer" aria-hidden="true">
+        <nav class="mobile-nav-links" aria-label="Mobile Navigation">
+          <a href="/si/#how-it-works" class="mobile-nav-link">
+            <span>ක්‍රියාවලිය (How it works)</span>
+            <svg class="mobile-nav-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+          <a href="/old-to-new-nic" class="mobile-nav-link">
+            <span>පැරණි ↔ නව NIC පරිවර්තකය</span>
+            <svg class="mobile-nav-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+          <a href="/nic-from-dob" class="mobile-nav-link">
+            <span>උපන් දිනයෙන් NIC සොයන්න</span>
+            <svg class="mobile-nav-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+          <a href="/si/#faq" class="mobile-nav-link">
+            <span>නිතර අසන ප්‍රශ්න (FAQ)</span>
+            <svg class="mobile-nav-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+          <a href="/guidelines.html" class="mobile-nav-link">
+            <span>භාවිත මාර්ගෝපදේශ (Guidelines)</span>
+            <svg class="mobile-nav-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+        </nav>
+
+        <div class="mobile-nav-divider"></div>
+
+        <!-- Language Selector -->
+        <div class="mobile-lang-row">
+          <span class="mobile-lang-label">භාෂාව (Language)</span>
+          <div class="mobile-lang-pills">
+            <a href="/" class="mobile-lang-pill">English</a>
+            <a href="/si/" class="mobile-lang-pill active">සිංහල</a>
+            <a href="/ta/" class="mobile-lang-pill">தமிழ்</a>
+          </div>
+        </div>
+
+        <div class="mobile-nav-divider"></div>
+
+        <!-- Mobile Share Section -->
+        <div class="mobile-share-section">
+          <div class="mobile-share-title">NIC Info බෙදාගන්න</div>
+          <div class="mobile-share-grid">
+            <a href="#" class="mobile-share-btn" data-share-platform="whatsapp" target="_blank"
+              rel="noopener noreferrer">
+              <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                </path>
+              </svg>
+              <span>WhatsApp</span>
+            </a>
+            <a href="#" class="mobile-share-btn" data-share-platform="facebook" target="_blank"
+              rel="noopener noreferrer">
+              <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+              <span>Facebook</span>
+            </a>
+            <a href="#" class="mobile-share-btn" data-share-platform="x" target="_blank" rel="noopener noreferrer">
+              <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+              <span>X</span>
+            </a>
+            <button type="button" class="mobile-share-btn" id="mobile-share-copy-btn">
+              <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span id="mobile-share-copy-text">Copy Link</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Mobile Backdrop Overlay -->
+      <div class="mobile-nav-backdrop" id="mobile-nav-backdrop" aria-hidden="true"></div>
+    </header>
+
+    <main>
+
+      <!-- HERO -->
+      <section class="hero" id="hero">
+        <div class="hero-empty" id="hero-empty">
+          <p class="hero-eyebrow">ශ්‍රී ලංකා &middot; ජාතික හැඳුනුම්පත</p>
+          <h1 class="hero-title">NIC අංකයෙන් <em>උපන් දිනය</em></h1>
+          <p class="hero-subtitle">ඔබේ NIC අංකය ඇතුළු කර, ක්ෂණිකව උපන් දිනය, වයස සහ ස්ත්‍රී/පුරුෂ භාවය දැනගන්න.</p>
+
+          <div class="input-group" id="input-group">
+            <div class="input-wrapper">
+              <input type="text" id="nic-input" class="nic-input" placeholder="NIC අංකය ඇතුළු කරන්න…" maxlength="12"
+                autocomplete="off" autocorrect="off" autocapitalize="characters" spellcheck="false"
+                aria-label="NIC Number" aria-describedby="nic-error" />
+              <button class="decode-btn" id="decode-btn" aria-label="Decode NIC number" title="Decode NIC"
+                type="button">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M4 10h12M12 6l4 4-4 4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+            <p class="error-message" id="nic-error" role="alert" aria-live="polite">
+              වලංගු NIC අංකයක් ඇතුළු කරන්න (9-digit+V/X හෝ 12-digit).
+            </p>
+            <p class="input-helper">පැරණි සහ නව ආකෘති දෙකම ක්‍රියා කරයි</p>
+          </div>
+        </div>
+
+        <!-- Revealed state -->
+        <div class="hero-revealed" id="hero-revealed" tabindex="-1" aria-live="polite">
+          <div class="decoded-badge animate-fact-0">
+            <span class="decoded-badge__label">Decoded</span>
+            <span class="decoded-badge__divider"></span>
+            <span class="decoded-badge__number" id="decoded-nic-display">199906731234</span>
+          </div>
+          <div class="reveal-rule animate-rule"></div>
+          <div class="result-card">
+            <div class="result-grid result-grid--primary">
+              <div class="result-fact animate-fact-0">
+                <p class="result-fact__label">උපන් දිනය</p>
+                <p class="result-fact__value" id="result-dob">22 ජූනි 1999</p>
+              </div>
+              <div class="result-fact animate-fact-1">
+                <p class="result-fact__label">වයස</p>
+                <p class="result-fact__value" id="result-age">27</p>
+                <p class="result-fact__age-detail" id="result-age-detail"></p>
+              </div>
+              <div class="result-fact animate-fact-2">
+                <p class="result-fact__label">ස්ත්‍රී/පුරුෂ</p>
+                <p class="result-fact__value" id="result-gender">ස්ත්‍රී</p>
+              </div>
+            </div>
+            <div class="result-divider"></div>
+            <div class="result-grid result-grid--secondary">
+              <div class="result-fact result-fact--sm animate-fact-1">
+                <p class="result-fact__label">සතිය</p>
+                <p class="result-fact__value result-fact__value--sm" id="result-weekday">අඟහරුවාදා</p>
+              </div>
+              <div class="result-fact result-fact--sm animate-fact-1">
+                <p class="result-fact__label" id="result-format-label">නව ආකෘතිය</p>
+                <p class="result-fact__value result-fact__value--mono" id="result-format-alt">199906731234</p>
+              </div>
+              <div class="result-fact result-fact--sm animate-fact-2">
+                <p class="result-fact__label">ඡන්ද තත්ත්වය</p>
+                <p class="result-fact__value result-fact__value--sm" id="result-voter">V (Voter)</p>
+              </div>
+              <div class="result-fact result-fact--sm animate-fact-2">
+                <p class="result-fact__label">Day Code</p>
+                <p class="result-fact__value result-fact__value--mono" id="result-day-code">173</p>
+              </div>
+            </div>
+          </div>
+          <div class="decode-another-wrap animate-fact-2">
+            <button class="decode-another-btn" id="decode-another-btn" type="button">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M13 8H3M7 4l-4 4 4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              තවත් Decode කරන්න
+            </button>
+          </div>
+        </div>
+
+        <!-- Adsterra Banner Slot -->
+        <div class="hero-ad-slot hero-ad-slot--inline" aria-label="Advertisement">
+          <script>
+            atOptions = {
+              'key': '26a1ef2b6e466470c96200365f14deff',
+              'format': 'iframe',
+              'height': 50,
+              'width': 320,
+              'params': {}
+            };
+          </script>
+          <script async src="https://chalkedwhiningromance.com/26a1ef2b6e466470c96200365f14deff/invoke.js"></script>
+        </div>
+        <p class="trust-line" style="position:static; transform:none; margin:12px auto 0;">Browser තුළම ක්‍රියා කරයි.
+          Server එකකට නොයවයි.</p>
+      </section>
+
+      <!-- HOW IT WORKS -->
+      <section class="how-it-works" id="how-it-works">
+        <h2 class="section-title">NIC Decode කිරීමේ ක්‍රියාවලිය</h2>
+        <ol class="steps-list">
+          <li class="step-item">
+            <span class="step-number">01</span>
+            <div class="step-content">
+              <h3 class="step-title">NIC අංකය ඇතුළු කරන්න</h3>
+              <p class="step-desc">ඔබේ ශ්‍රී ලාංකික NIC අංකය (9-digit+V/X හෝ 12-digit) ඉහත කොටුවට ඇතුළු කරන්න.</p>
+            </div>
+          </li>
+          <li class="step-item">
+            <span class="step-number">02</span>
+            <div class="step-content">
+              <h3 class="step-title">Decode ඔබන්න</h3>
+              <p class="step-desc">Decode බොත්තම ඔබන්නේ, නැත්නම් Enter ඔබන්න. ක්ෂණිකව ප්‍රතිඵල ලැබේ.</p>
+            </div>
+          </li>
+          <li class="step-item">
+            <span class="step-number">03</span>
+            <div class="step-content">
+              <h3 class="step-title">ප්‍රතිඵල කියවන්න</h3>
+              <p class="step-desc">උපන් දිනය, වයස, ස්ත්‍රී/පුරුෂ භාවය, සතිය සහ NIC ආකෘතිය ලැබේ.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- NIC FORMAT -->
+      <section class="format-section" id="nic-format">
+        <h2 class="section-title">NIC ආකෘති — පැරණි සහ නව</h2>
+        <div class="comparison-wrap">
+
+          <!-- Old Format Card -->
+          <div class="comparison-card comparison-card--old">
+            <div class="comparison-card__header">
+              <h3 class="comparison-card__title">පැරණි ආකෘතිය<br>9 ඉලක්කම් + V/X</h3>
+              <span class="comparison-card__badge comparison-card__badge--old">Old</span>
+            </div>
+            <div class="comparison-card__body">
+              <code class="comparison-card__example">800674321V</code>
+              <ul class="comparison-card__rows">
+                <li class="comparison-card__row">
+                  <span class="comparison-card__row-digits">1–2</span>
+                  <p class="comparison-card__row-desc">උපන් වර්ෂය (YY) — 1900 + YY</p>
+                </li>
+                <li class="comparison-card__row">
+                  <span class="comparison-card__row-digits">3–5</span>
+                  <p class="comparison-card__row-desc">වර්ෂයේ දිනය (001–366 පිරිමි / 501–866 ගැහැනු)</p>
+                </li>
+                <li class="comparison-card__row">
+                  <span class="comparison-card__row-digits">6–9</span>
+                  <p class="comparison-card__row-desc">ලියාපදිංචි අංකය</p>
+                </li>
+                <li class="comparison-card__row">
+                  <span class="comparison-card__row-digits">V/X</span>
+                  <p class="comparison-card__row-desc">V = ඡන්දදායකයා &nbsp;·&nbsp; X = ඡන්ද නොදෙයි</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- New Format Card -->
+          <div class="comparison-card comparison-card--new">
+            <div class="comparison-card__header">
+              <h3 class="comparison-card__title">නව ආකෘතිය<br>12 ඉලක්කම් (2016~)</h3>
+              <span class="comparison-card__badge comparison-card__badge--new">New</span>
+            </div>
+            <div class="comparison-card__body">
+              <code class="comparison-card__example">198006743210</code>
+              <ul class="comparison-card__rows">
+                <li class="comparison-card__row">
+                  <span class="comparison-card__row-digits">1–4</span>
+                  <p class="comparison-card__row-desc">සම්පූර්ණ උපන් වර්ෂය (YYYY)</p>
+                </li>
+                <li class="comparison-card__row">
+                  <span class="comparison-card__row-digits">5–7</span>
+                  <p class="comparison-card__row-desc">වර්ෂයේ දිනය</p>
+                </li>
+                <li class="comparison-card__row">
+                  <span class="comparison-card__row-digits">8–11</span>
+                  <p class="comparison-card__row-desc">ලියාපදිංචි අංකය (0 + serial)</p>
+                </li>
+                <li class="comparison-card__row">
+                  <span class="comparison-card__row-digits">12</span>
+                  <p class="comparison-card__row-desc">Check digit</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- LEADERBOARD AD -->
+      <section class="ad-section-leaderboard" aria-label="Sponsor Advertisement">
+        <div class="ad-slot-728x90">
+          <script>
+            atOptions = {
+              'key': '1d991944a38fcba3be08497212b58c82',
+              'format': 'iframe',
+              'height': 90,
+              'width': 728,
+              'params': {}
+            };
+          </script>
+          <script async src="https://chalkedwhiningromance.com/1d991944a38fcba3be08497212b58c82/invoke.js"></script>
+        </div>
+      </section>
+
+      <!-- NIC TOOLS NAV -->
+      <section class="nic-tools-nav" id="nic-tools">
+        <h2 class="nic-tools-nav__title">NIC මෙවලම්</h2>
+        <div class="nic-tools-nav__grid">
+          <a href="/" class="nic-tools-nav__item">
+            <span class="nic-tools-nav__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+            </span>
+            <span class="nic-tools-nav__label">NIC to DOB (English)</span>
+          </a>
+          <a href="/old-to-new-nic" class="nic-tools-nav__item">
+            <span class="nic-tools-nav__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <polyline points="1 4 1 10 7 10" />
+                <polyline points="23 20 23 14 17 14" />
+                <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15" />
+              </svg>
+            </span>
+            <span class="nic-tools-nav__label">Convert old NIC to new NIC</span>
+          </a>
+          <a href="/nic-from-dob" class="nic-tools-nav__item">
+            <span class="nic-tools-nav__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+              </svg>
+            </span>
+            <span class="nic-tools-nav__label">Find NIC number from birthday</span>
+          </a>
+          <a href="/how-nic-works" class="nic-tools-nav__item">
+            <span class="nic-tools-nav__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+              </svg>
+            </span>
+            <span class="nic-tools-nav__label">How NIC Works</span>
+          </a>
+        </div>
+        <div class="nic-tools-nav__languages">
+          <span class="nic-tools-nav__lang-label">භාෂාව:</span>
+          <a href="/" class="nic-tools-nav__lang">English</a>
+          <a href="/si/" class="nic-tools-nav__lang nic-tools-nav__lang--active">සිංහල</a>
+          <a href="/ta/" class="nic-tools-nav__lang">தமிழ்</a>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="faq-section" id="faq">
+        <h2 class="section-title">නිතර අසන පැණ (FAQ)</h2>
+        <ul class="faq-list" id="faq-list" role="list">
+
+          <li class="faq-item" role="listitem">
+            <button class="faq-trigger" aria-expanded="false" type="button">
+              <span>NIC අංකයෙන් උපන් දිනය දැනගන්නේ කෙසේද?</span>
+              <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2.2" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-body">
+              <p>ඉහත කොටුවට ඔබේ NIC අංකය ඇතුළු කර <strong>Decode</strong> ඔබන්න. ක්ෂණිකව ප්‍රතිඵල ලැබේ — සියලු ගණනය ඔබේ
+                Browser තුළම සිදු වේ.</p>
+            </div>
+          </li>
+
+          <li class="faq-item" role="listitem">
+            <button class="faq-trigger" aria-expanded="false" type="button">
+              <span>පැරණි NIC සහ නව NIC අතර වෙනස කුමක්ද?</span>
+              <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2.2" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-body">
+              <p><strong>පැරණි (Old):</strong> 9 ඉලක්කම් + V/X අකුරක් (10 characters). <strong>නව (New):</strong> 12
+                ඉලක්කම් (2016 සිට නිකුත් කෙරේ). නව ආකෘතියේ V/X නොමැත; 4-digit වර්ෂය ඇත.</p>
+            </div>
+          </li>
+
+          <li class="faq-item" role="listitem">
+            <button class="faq-trigger" aria-expanded="false" type="button">
+              <span>ගැහැනු NIC වල 500 add වෙන්නේ ඇයි?</span>
+              <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2.2" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-body">
+              <p>DRP ක්‍රමය අනුව ස්ත්‍රී NIC වල day-of-year code ට 500 add කෙරේ. උදා: 173→ ගැහැනු = 673. Decode කිරීමේදී
+                500 අඩු කර නිවැරදි දිනය ගනී. පිරිමිට 001–366, ගැහැනුට 501–866.</p>
+            </div>
+          </li>
+
+          <li class="faq-item" role="listitem">
+            <button class="faq-trigger" aria-expanded="false" type="button">
+              <span>V සහ X අකුරු කුමක් ද?</span>
+              <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2.2" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-body">
+              <p><strong>V</strong> = Voter (ඡන්දදායකයා). <strong>X</strong> = Non-voter / ඡන්ද ලේඛනයෙන් නිදහස්
+                (exemption). නව 12-ඉලක්කම් NIC වල V/X නොමැත.</p>
+            </div>
+          </li>
+
+          <li class="faq-item" role="listitem">
+            <button class="faq-trigger" aria-expanded="false" type="button">
+              <span>ඔබ මගේ NIC save කරනවාද?</span>
+              <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2.2" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-body">
+              <p>නැත. Decode සම්පූර්ණයෙන්ම ඔබේ Browser JavaScript ඇසුරෙන් සිදු වේ. Server එකකට දත්ත නොයවයි, logs නැත,
+                cookies නැත.</p>
+            </div>
+          </li>
+
+          <li class="faq-item" role="listitem">
+            <button class="faq-trigger" aria-expanded="false" type="button">
+              <span>NIC calculator සිංහල — මෙය කුමක්ද?</span>
+              <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2.2" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-body">
+              <p>NIC Info — Sinhala decoder හරහා ඔබේ NIC අංකයෙන් උපන් දිනය, වයස, සතිය සහ ස්ත්‍රී/පුරුෂ භාවය ගණනය කෙරේ.
+                Pubudu Tharanga විසින් නිර්මාණය කෙරිණ. DRP සමඟ සම්බන්ධ නොවේ.</p>
+            </div>
+          </li>
+
+          <li class="faq-item" role="listitem">
+            <button class="faq-trigger" aria-expanded="false" type="button">
+              <span>මේ site DRP හෝ රජය සමඟ සම්බන්ධද?</span>
+              <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2.2" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-body">
+              <p>නැත. මෙය ස්වාධීන unofficial මෙවලමකි. ශ්‍රී ලංකා ලියාපදිංචි කිරීම් දෙපාර්තමේන්තුව (DRP) හෝ රජයේ ආයතනයක්
+                සමඟ කිසිදු සම්බන්ධයක් නොමැත.</p>
+            </div>
+          </li>
+
+        </ul>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <a href="/" class="footer-logo-link" aria-label="NIC Decoder Home">
+          <img src="../nicinfo-logo.webp" alt="NIC Info Logo" class="footer-logo" width="72" height="36" loading="lazy"
+            decoding="async" />
+        </a>
+        <p class="footer-description">
+          ශ්‍රී ලාංකික ජාතික හැඳුනුම්පත් (NIC) decode කිරීමේ නිදහස් Browser මෙවලමකි.<br />
+          <span class="last-updated">Last updated: August 2026</span>
+        </p>
+        <div class="footer-tools">
+          <a href="/" class="footer-link">NIC to DOB</a>
+          <span class="footer-divider" aria-hidden="true"></span>
+          <a href="/old-to-new-nic" class="footer-link">Old to New NIC</a>
+          <span class="footer-divider" aria-hidden="true"></span>
+          <a href="/nic-from-dob" class="footer-link">DOB to NIC</a>
+          <span class="footer-divider" aria-hidden="true"></span>
+          <a href="/nic-to-birthday" class="footer-link">NIC to Birthday</a>
+        </div>
+        <div class="footer-languages">
+          <a href="/" class="footer-link">English</a>
+          <span class="footer-divider" aria-hidden="true"></span>
+          <a href="/si/" class="footer-link">සිංහල</a>
+          <span class="footer-divider" aria-hidden="true"></span>
+          <a href="/ta/" class="footer-link">&#2980;&#2990;&#3007;&#2996;&#3021;</a>
+        </div>
+        <div class="footer-nav">
+          <a href="../privacy.html" class="footer-link">Privacy Notice</a>
+          <span class="footer-divider" aria-hidden="true"></span>
+          <a href="../guidelines.html" class="footer-link">Guidelines</a>
+          <span class="footer-divider" aria-hidden="true"></span>
+          <a href="../policy.html" class="footer-link">Policy</a>
+          <span class="footer-divider" aria-hidden="true"></span>
+          <span class="footer-link footer-disclaimer">DRP සමඟ සම්බන්ධ නොවේ</span>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    (function () {
+      // Theme toggle
+      var html = document.documentElement;
+      var themeToggles = document.querySelectorAll('.theme-toggle');
+      var STORAGE_KEY = 'nic-theme';
+
+      function applyTheme(theme) {
+        if (theme === 'light') {
+          html.setAttribute('data-theme', 'light');
+          themeToggles.forEach(function (btn) {
+            btn.setAttribute('aria-label', 'Switch to dark mode');
+          });
+        } else {
+          html.removeAttribute('data-theme');
+          themeToggles.forEach(function (btn) {
+            btn.setAttribute('aria-label', 'Switch to light mode');
+          });
+        }
+      }
+
+      var stored = localStorage.getItem(STORAGE_KEY);
+      if (stored === 'light' || stored === 'dark') {
+        applyTheme(stored);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        applyTheme('light');
+      }
+
+      themeToggles.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var currentlyLight = html.getAttribute('data-theme') === 'light';
+          var next = currentlyLight ? 'dark' : 'light';
+          applyTheme(next);
+          try { localStorage.setItem(STORAGE_KEY, next); } catch (_) { }
+        });
+      });
+
+      // NIC constants
+      var SINHALA_MONTHS = { 1: 'ජනවාරි', 2: 'පෙබරවාරි', 3: 'මාර්තු', 4: 'අප්‍රේල්', 5: 'මැයි', 6: 'ජූනි', 7: 'ජූලි', 8: 'අගෝස්තු', 9: 'සැප්තැම්බර්', 10: 'ඔක්තෝබර්', 11: 'නොවැම්බර්', 12: 'දෙසැම්බර්' };
+      var WEEKDAYS_SI = ['ඉරිදා', 'සඳුදා', 'අඟහරුවාදා', 'බදාදා', 'බ්‍රහස්පතින්දා', 'සිකුරාදා', 'සෙනසුරාදා'];
+      var FEMALE_OFFSET = 500;
+
+      function isLeapYear(y) { return (y % 4 === 0 && y % 100 !== 0) || (y % 400 === 0); }
+      function dayOfYearToDate(doy, year) {
+        var m = [31, isLeapYear(year) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31], cum = 0;
+        for (var i = 0; i < 12; i++) { if (doy <= cum + m[i]) return { month: i + 1, day: doy - cum }; cum += m[i]; }
+        return null;
+      }
+      function calcAge(dob) {
+        var now = new Date(), y = now.getFullYear() - dob.getFullYear(), mo = now.getMonth() - dob.getMonth(), d = now.getDate() - dob.getDate();
+        if (d < 0) { mo--; d += new Date(now.getFullYear(), now.getMonth(), 0).getDate(); }
+        if (mo < 0) { y--; mo += 12; }
+        return { years: y, months: mo, days: d };
+      }
+      function parseNIC(nic) {
+        var n = nic.trim().toUpperCase(), format, year, rawDoy;
+        if (/^\d{9}[VX]$/.test(n)) { format = 'old'; year = 1900 + parseInt(n.substring(0, 2), 10); rawDoy = parseInt(n.substring(2, 5), 10); }
+        else if (/^\d{12}$/.test(n)) { format = 'new'; year = parseInt(n.substring(0, 4), 10); rawDoy = parseInt(n.substring(4, 7), 10); }
+        else return null;
+        var gender = rawDoy > FEMALE_OFFSET ? 'ස්ත්‍රී' : 'පුරුෂ';
+        var doy = rawDoy > FEMALE_OFFSET ? rawDoy - FEMALE_OFFSET : rawDoy;
+        var dateInfo = dayOfYearToDate(doy, year);
+        if (!dateInfo) return null;
+        var dob = new Date(year, dateInfo.month - 1, dateInfo.day);
+        return { birthday: dob, gender: gender, age: calcAge(dob), format: format, year: year, month: dateInfo.month, day: dateInfo.day, dayOfYear: doy, rawDayOfYear: rawDoy };
+      }
+      function convertToNew(nic) { var t = nic.trim(); return '19' + t.substring(0, 2) + t.substring(2, 5) + '0' + t.substring(5, 9); }
+      function convertToOld(nic) { var t = nic.trim(); if (parseInt(t.substring(0, 4), 10) >= 2000) return null; return t.substring(2, 4) + t.substring(4, 7) + t.substring(8, 12) + 'V'; }
+
+      var nicInput = document.getElementById('nic-input'), decodeBtn = document.getElementById('decode-btn'),
+        errorMsg = document.getElementById('nic-error'), heroEmpty = document.getElementById('hero-empty'),
+        heroRevealed = document.getElementById('hero-revealed'), decodedNicDisplay = document.getElementById('decoded-nic-display'),
+        resultDob = document.getElementById('result-dob'), resultAge = document.getElementById('result-age'),
+        resultGender = document.getElementById('result-gender'), decodeAnotherBtn = document.getElementById('decode-another-btn');
+
+      function handleDecode() {
+        var val = nicInput.value.trim(), result = parseNIC(val);
+        if (!result) { nicInput.classList.add('error'); errorMsg.classList.add('visible'); nicInput.setAttribute('aria-invalid', 'true'); return; }
+        nicInput.classList.remove('error'); errorMsg.classList.remove('visible'); nicInput.removeAttribute('aria-invalid');
+        decodedNicDisplay.textContent = val;
+        resultDob.textContent = result.day + ' ' + SINHALA_MONTHS[result.month] + ' ' + result.year;
+        resultAge.textContent = result.age.years;
+        var ad = document.getElementById('result-age-detail');
+        if (ad) ad.textContent = (result.age.months > 0 ? result.age.months + ' මාස ' : '') + (result.age.days > 0 ? result.age.days + ' දිනය' : '');
+        resultGender.textContent = result.gender;
+        var rw = document.getElementById('result-weekday'); if (rw) rw.textContent = WEEKDAYS_SI[new Date(result.year, result.month - 1, result.day).getDay()];
+        var rl = document.getElementById('result-format-label'), ra = document.getElementById('result-format-alt');
+        if (rl && ra) { if (result.format === 'old') { rl.textContent = 'නව ආකෘතිය'; ra.textContent = convertToNew(val); } else { var o = convertToOld(val); rl.textContent = 'පැරණි ආකෘතිය'; ra.textContent = o || 'N/A (2000+ ඉපිද)'; } }
+        var rv = document.getElementById('result-voter');
+        if (rv) rv.textContent = result.format === 'old' ? (val.trim().slice(-1).toUpperCase() === 'V' ? 'V (ඡන්පපායකයා)' : 'X (ඡන්ද නොදෙයි)') : 'N/A (නව ආකෘතිය)';
+        var rd = document.getElementById('result-day-code'); if (rd) rd.textContent = result.rawDayOfYear;
+        heroEmpty.classList.add('hidden'); heroRevealed.classList.add('active');
+        setTimeout(function () { heroRevealed.focus(); }, 80);
+      }
+
+      decodeBtn.addEventListener('click', handleDecode);
+      nicInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') handleDecode(); });
+      decodeAnotherBtn.addEventListener('click', function () {
+        heroRevealed.classList.remove('active'); heroEmpty.classList.remove('hidden');
+        nicInput.classList.remove('error'); errorMsg.classList.remove('visible');
+        nicInput.removeAttribute('aria-invalid'); setTimeout(function () { nicInput.focus(); nicInput.select(); }, 50);
+      });
+
+      // FAQ accordion
+      var faqList = document.getElementById('faq-list');
+      if (faqList) faqList.addEventListener('click', function (e) {
+        var trigger = e.target.closest('.faq-trigger'); if (!trigger) return;
+        var item = trigger.closest('.faq-item'), isOpen = item.classList.contains('open');
+        faqList.querySelectorAll('.faq-item').forEach(function (i) { i.classList.remove('open'); i.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false'); });
+        if (!isOpen) { item.classList.add('open'); trigger.setAttribute('aria-expanded', 'true'); }
+      });
+    })();
+  </script>
+
+  <!-- Global Navigation & Share Controller -->
+  <script src="../navbar.js" defer></script>
+</body>
+
+</html>

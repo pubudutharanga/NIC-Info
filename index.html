@@ -20,8 +20,8 @@
   <link rel="alternate" hreflang="x-default" href="https://nicinfo.vercel.app/" />
 
   <!-- Theme Color -->
-  <meta name="theme-color" content="#0F172A" media="(prefers-color-scheme: dark)" />
-  <meta name="theme-color" content="#F8F5EE" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#11171C" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#F5F0E8" media="(prefers-color-scheme: light)" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
@@ -55,12 +55,22 @@
   <link rel="manifest" href="manifest.json" />
   <link rel="sitemap" type="application/xml" href="sitemap.xml" />
 
-  <!-- Preconnect for external resources -->
-  <link rel="preconnect" href="https://chalkedwhiningromance.com" crossorigin />
-  <link rel="dns-prefetch" href="https://chalkedwhiningromance.com" />
+  <!-- Google Fonts (loaded here to avoid render-blocking @import chain in CSS) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,560;0,9..144,600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" />
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Preconnect for ad network -->
+  <link rel="preconnect" href="https://chalkedwhiningromance.com" crossorigin />
+  <link rel="dns-prefetch" href="https://chalkedwhiningromance.com" />
 
   <!-- Unified JSON-LD Knowledge Graph -->
   <script type="application/ld+json">
@@ -100,7 +110,11 @@
         },
         "founder": {
           "@id": "https://nicinfo.vercel.app/#author"
-        }
+        },
+        "sameAs": [
+          "https://github.com/pubudutharanga/NIC-Info",
+          "https://pubudu-tharanga.vercel.app/"
+        ]
       },
       {
         "@type": "Person",
@@ -108,7 +122,8 @@
         "name": "Pubudu Tharanga",
         "url": "https://pubudu-tharanga.vercel.app/",
         "sameAs": [
-          "https://pubudu-tharanga.vercel.app/"
+          "https://pubudu-tharanga.vercel.app/",
+          "https://github.com/pubudutharanga"
         ]
       },
       {
@@ -129,7 +144,7 @@
         "browserRequirements": "Requires JavaScript. Works in all modern browsers.",
         "inLanguage": "en",
         "datePublished": "2026-01-17",
-        "dateModified": "2026-08-26",
+        "dateModified": "2026-08-27",
         "author": {
           "@id": "https://nicinfo.vercel.app/#author"
         },
@@ -274,38 +289,14 @@
         ]
       },
       {
-        "@type": "HowTo",
-        "@id": "https://nicinfo.vercel.app/#howto",
-        "name": "How to Convert NIC to DOB — Decode a Sri Lankan NIC Number to Find Birthday",
-        "description": "Learn how to convert a NIC number to date of birth (DOB). Extract birthday, age, and gender from a Sri Lankan National Identity Card number using the day-of-year encoding system.",
-        "totalTime": "PT1M",
-        "tool": {
-          "@type": "HowToTool",
-          "name": "NIC Info — Sri Lankan NIC Decoder"
-        },
-        "step": [
-          {
-            "@type": "HowToStep",
-            "position": 1,
-            "name": "Read the birth year",
-            "text": "The first four digits on a new-format card (or first two on an old one) encode the birth year. For example, 1999 from a 12-digit NIC or 90 from a 10-character NIC (meaning 1990).",
-            "url": "https://nicinfo.vercel.app/#how-it-works"
-          },
-          {
-            "@type": "HowToStep",
-            "position": 2,
-            "name": "Decode the day-of-year and gender",
-            "text": "The next three digits are the day of the year — 1 for January 1st, 365 for December 31st. If the number exceeds 366, subtract 500 to get the actual day, which means the cardholder is female. Values 1-366 indicate male, 501-866 indicate female.",
-            "url": "https://nicinfo.vercel.app/#how-it-works"
-          },
-          {
-            "@type": "HowToStep",
-            "position": 3,
-            "name": "Identify the serial number and check digit",
-            "text": "The remaining digits form a serial number assigned at registration. New-format cards (12 digits) end with a numeric check digit. Old-format cards (9 digits + a letter) end with V (voter) or X (non-voter).",
-            "url": "https://nicinfo.vercel.app/#how-it-works"
-          }
-        ]
+        "@type": "WebPage",
+        "@id": "https://nicinfo.vercel.app/#webpage",
+        "name": "NIC to DOB — Sri Lanka NIC Decoder",
+        "url": "https://nicinfo.vercel.app/",
+        "description": "Free Sri Lanka NIC to DOB converter. Instantly find birthday, age and gender from old and new NIC numbers.",
+        "isPartOf": { "@id": "https://nicinfo.vercel.app/#website" },
+        "about": { "@id": "https://nicinfo.vercel.app/#webapp" },
+        "inLanguage": "en"
       },
       {
         "@type": "BreadcrumbList",
@@ -410,6 +401,9 @@
       </svg>
     </div>
 
+    <!-- Skip to main content (WCAG 2.4.1) -->
+    <a href="#nic-input" class="skip-to-content">Skip to NIC decoder</a>
+
     <!-- ═══════════════════════════════════════════════════
          HEADER
          ═══════════════════════════════════════════════════ -->
@@ -417,7 +411,7 @@
       <div class="header-inner">
         <a href="/" class="logo-link" aria-label="NIC Decoder Home">
           <img src="nicinfo-logo.webp" alt="NIC Decoder Logo" class="header-logo" width="56" height="28"
-            decoding="async" />
+            fetchpriority="high" decoding="async" />
         </a>
 
         <!-- Desktop Navigation Links -->
@@ -562,6 +556,18 @@
 
         <div class="mobile-nav-divider"></div>
 
+        <!-- Language Selector -->
+        <div class="mobile-lang-row">
+          <span class="mobile-lang-label">Language</span>
+          <div class="mobile-lang-pills">
+            <a href="/" class="mobile-lang-pill active">English</a>
+            <a href="/si/" class="mobile-lang-pill">සිංහල</a>
+            <a href="/ta/" class="mobile-lang-pill">தமிழ்</a>
+          </div>
+        </div>
+
+        <div class="mobile-nav-divider"></div>
+
         <!-- Mobile Share Section -->
         <div class="mobile-share-section">
           <div class="mobile-share-title">Share NIC Info</div>
@@ -617,18 +623,17 @@
         <div class="hero-empty" id="hero-empty">
           <h1 class="hero-title">Sri Lanka NIC to DOB Converter</h1>
           <p class="hero-subtitle">
-            Free decoder for Sri Lankan NIC numbers &mdash; old 9-digit + V/X and new 12-digit formats.
-            Extract date of birth, age &amp; gender instantly. 100% private, in-browser processing.
+            Free decoder for Sri Lankan NIC numbers &mdash; Extract date of birth, age &amp; gender instantly. 100%
+            private, in-browser processing.
           </p>
-          <p class="trust-disclaimer">Independent tool &middot; Not affiliated with <a href="https://www.drp.gov.lk"
-              target="_blank" rel="noopener noreferrer">DRP</a></p>
 
           <div class="input-group">
-            <label for="nic-input" class="sr-only">Enter your NIC number</label>
+            <label for="nic-input" class="input-eyebrow">National Identity Card Number</label>
             <div class="input-row">
-              <input type="text" id="nic-input" class="nic-input" placeholder="199906731234" autocomplete="off"
-                aria-describedby="nic-error" />
-              <button class="decode-btn" id="decode-btn" aria-label="Decode NIC number" type="button">
+              <input type="text" id="nic-input" class="nic-input" placeholder="e.g. 855420159V or 199906731234"
+                autocomplete="off" aria-describedby="nic-error" />
+              <button class="decode-btn" id="decode-btn" aria-label="Decode NIC number" title="Decode NIC number"
+                type="button">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                   <path d="M4 10h12M12 6l4 4-4 4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
@@ -642,7 +647,7 @@
         </div>
 
         <!-- ── Revealed State ─────────────────────── -->
-        <div class="hero-revealed" id="hero-revealed">
+        <div class="hero-revealed" id="hero-revealed" tabindex="-1" aria-live="polite">
 
           <!-- Decoded badge -->
           <div class="decoded-badge animate-fact-0">
@@ -715,7 +720,7 @@
               'params': {}
             };
           </script>
-          <script src="https://chalkedwhiningromance.com/26a1ef2b6e466470c96200365f14deff/invoke.js"></script>
+          <script async src="https://chalkedwhiningromance.com/26a1ef2b6e466470c96200365f14deff/invoke.js"></script>
         </div>
 
         <!-- Trust line (always visible) -->
@@ -776,7 +781,7 @@
               'params': {}
             };
           </script>
-          <script src="https://chalkedwhiningromance.com/89bf45c2a0844f31cb3eaf8d4601ca48/invoke.js"></script>
+          <script async src="https://chalkedwhiningromance.com/89bf45c2a0844f31cb3eaf8d4601ca48/invoke.js"></script>
         </div>
       </section>
 
@@ -790,8 +795,20 @@
 
           <!-- OLD FORMAT -->
           <div class="format-card">
-            <span class="format-card__badge">OLD · 10 characters</span>
-            <p class="format-card__number">90 &nbsp; 673 &nbsp; 1234 &nbsp; V</p>
+            <div class="format-card__header">
+              <span class="format-card__badge">OLD</span>
+              <span class="format-card__length">10 characters &nbsp;·&nbsp; 9 digits + V or X</span>
+            </div>
+            <div class="format-card__number-wrap">
+              <p class="format-card__number">90 &thinsp; 673 &thinsp; 1234 &thinsp; V</p>
+            </div>
+            <!-- Proportional colour bar: 2 / 3 / 4 / 1 chars -->
+            <div class="format-card__bar" aria-hidden="true">
+              <span class="format-card__bar-chunk format-card__bar-chunk--brass" style="flex:2"></span>
+              <span class="format-card__bar-chunk format-card__bar-chunk--teal" style="flex:3"></span>
+              <span class="format-card__bar-chunk format-card__bar-chunk--muted" style="flex:4"></span>
+              <span class="format-card__bar-chunk format-card__bar-chunk--dim" style="flex:1"></span>
+            </div>
             <div class="format-card__segments">
               <div class="segment segment--brass">
                 <span class="segment__value">90</span>
@@ -817,8 +834,20 @@
 
           <!-- NEW FORMAT -->
           <div class="format-card">
-            <span class="format-card__badge">NEW · 12 digits</span>
-            <p class="format-card__number">1999 &nbsp; 673 &nbsp; 1234 &nbsp; 0</p>
+            <div class="format-card__header">
+              <span class="format-card__badge">NEW</span>
+              <span class="format-card__length">12 digits &nbsp;·&nbsp; since 2016</span>
+            </div>
+            <div class="format-card__number-wrap">
+              <p class="format-card__number">1999 &thinsp; 673 &thinsp; 1234 &thinsp; 0</p>
+            </div>
+            <!-- Proportional colour bar: 4 / 3 / 4 / 1 chars -->
+            <div class="format-card__bar" aria-hidden="true">
+              <span class="format-card__bar-chunk format-card__bar-chunk--brass" style="flex:4"></span>
+              <span class="format-card__bar-chunk format-card__bar-chunk--teal" style="flex:3"></span>
+              <span class="format-card__bar-chunk format-card__bar-chunk--muted" style="flex:4"></span>
+              <span class="format-card__bar-chunk format-card__bar-chunk--dim" style="flex:1"></span>
+            </div>
             <div class="format-card__segments">
               <div class="segment segment--brass">
                 <span class="segment__value">1999</span>
@@ -876,7 +905,8 @@
                   <span>Key Differences</span>
                 </button>
               </div>
-              <span class="matrix-count-badge" id="matrix-count-badge">7 Specifications</span>
+              <span class="matrix-count-badge" id="matrix-count-badge" aria-live="polite" aria-atomic="true">7
+                Specifications</span>
             </div>
 
             <div class="matrix-toolbar__right">
@@ -932,7 +962,7 @@
                 <!-- Row 1: Era -->
                 <tr data-feature="issuance-era" data-diff="true"
                   data-keywords="issuance era period dates timeline years history 1972 2015 2016 present active legacy">
-                  <td>
+                  <th scope="row">
                     <div class="feature-cell">
                       <div class="feature-icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24">
@@ -945,7 +975,7 @@
                         <span class="feature-desc">Active issuance validity period</span>
                       </div>
                     </div>
-                  </td>
+                  </th>
                   <td class="cell-old">
                     <span class="badge-era">1972 &ndash; 2015</span>
                     <span class="tag-status tag-status--legacy">Legacy</span>
@@ -961,7 +991,7 @@
                 <!-- Row 2: Length -->
                 <tr data-feature="total-length" data-diff="true"
                   data-keywords="total length characters digits count numbers 10 12 format alphanumeric numerical">
-                  <td>
+                  <th scope="row">
                     <div class="feature-cell">
                       <div class="feature-icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24">
@@ -974,7 +1004,7 @@
                         <span class="feature-desc">Character &amp; numeral count</span>
                       </div>
                     </div>
-                  </td>
+                  </th>
                   <td class="cell-old">
                     <strong>10 characters</strong>
                     <div class="cell-subtext">9 decimal digits &plus; 1 alphabetic suffix</div>
@@ -988,7 +1018,7 @@
                 <!-- Row 3: Birth Year -->
                 <tr data-feature="birth-year" data-diff="true"
                   data-keywords="birth year syntax century 2 digits 4 digits y2k 1900 2000 millennium mapping">
-                  <td>
+                  <th scope="row">
                     <div class="feature-cell">
                       <div class="feature-icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24">
@@ -1001,7 +1031,7 @@
                         <span class="feature-desc">Century representation</span>
                       </div>
                     </div>
-                  </td>
+                  </th>
                   <td class="cell-old">
                     First <strong>2 digits</strong> (e.g. <code>90</code> = 1990)
                     <div class="cell-subtext">Assumes 1900s century prefix</div>
@@ -1015,7 +1045,7 @@
                 <!-- Row 4: Day & Gender Code -->
                 <tr data-feature="day-code" data-diff="true"
                   data-keywords="day gender code position digits offset 3-5 5-7 calendar days 366 866 integer">
-                  <td>
+                  <th scope="row">
                     <div class="feature-cell">
                       <div class="feature-icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24">
@@ -1028,7 +1058,7 @@
                         <span class="feature-desc">Sequential day-of-year integer</span>
                       </div>
                     </div>
-                  </td>
+                  </th>
                   <td class="cell-old">
                     Digits <strong>3&ndash;5</strong>
                     <div class="cell-subtext">Positions 3, 4, 5 (Day 1&ndash;366 / 501&ndash;866)</div>
@@ -1042,7 +1072,7 @@
                 <!-- Row 5: Gender Formula -->
                 <tr data-feature="gender-formula" data-diff="false"
                   data-keywords="gender formula male female calculation +500 offset women men 501 866 sex">
-                  <td>
+                  <th scope="row">
                     <div class="feature-cell">
                       <div class="feature-icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24">
@@ -1055,7 +1085,7 @@
                         <span class="feature-desc">Day-of-year offset algorithm</span>
                       </div>
                     </div>
-                  </td>
+                  </th>
                   <td class="cell-old">
                     <div class="gender-pill-wrap">
                       <span class="gender-chip gender-chip--male">&#9794; Male: <code>001&ndash;366</code></span>
@@ -1075,7 +1105,7 @@
                 <!-- Row 6: Serial Identifier -->
                 <tr data-feature="serial-identifier" data-diff="true"
                   data-keywords="serial identifier sequence departmental registry numbers 4-digit 5-digit capacity">
-                  <td>
+                  <th scope="row">
                     <div class="feature-cell">
                       <div class="feature-icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24">
@@ -1088,7 +1118,7 @@
                         <span class="feature-desc">Departmental birth-order sequence</span>
                       </div>
                     </div>
-                  </td>
+                  </th>
                   <td class="cell-old">
                     <strong>4-digit sequence</strong>
                     <div class="cell-subtext">Digits 6&ndash;9 (Cap of 9,999 daily births)</div>
@@ -1102,20 +1132,20 @@
                 <!-- Row 7: Suffix Character / Checksum -->
                 <tr data-feature="suffix-checksum" data-diff="true"
                   data-keywords="suffix checksum character letter v x voter non-voter validation check digit integrity">
-                  <td>
+                  <th scope="row">
                     <div class="feature-cell">
                       <div class="feature-icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24">
                           <path
-                            d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
                         </svg>
                       </div>
                       <div class="feature-meta">
                         <span class="feature-name">Suffix / Checksum</span>
-                        <span class="feature-desc">Electoral right or check digit</span>
+                        <span class="feature-desc">Integrity verification mechanism</span>
                       </div>
                     </div>
-                  </td>
+                  </th>
                   <td class="cell-old">
                     <code>V</code> (Voter) or <code>X</code> (Non-voter)
                     <div class="cell-subtext">Terminal alphabetic electoral status flag</div>
@@ -1178,12 +1208,56 @@
       </section>
 
       <!-- ═══════════════════════════════════════════════
-           PARTNERS MARQUEE
+           CIVIC TRUST & PRIVACY GUARANTEE BAR
            ═══════════════════════════════════════════════ -->
-      <section class="partners-marquee" aria-label="Trusted by engineering teams worldwide">
-        <div class="marquee-wrapper">
-          <div class="marquee-track" id="marquee-track">
-            <!-- Populated dynamically via JS for seamless infinite loop -->
+      <section class="civic-trust-bar" aria-label="Privacy and verification standards">
+        <div class="civic-trust-inner">
+          <div class="trust-pillar">
+            <div class="trust-pillar__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <div class="trust-pillar__text">
+              <span class="trust-pillar__title">100% In-Browser</span>
+              <span class="trust-pillar__desc">Zero network transmission</span>
+            </div>
+          </div>
+          <div class="trust-pillar">
+            <div class="trust-pillar__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <div class="trust-pillar__text">
+              <span class="trust-pillar__title">Never Stored</span>
+              <span class="trust-pillar__desc">No logs, databases, or cookies</span>
+            </div>
+          </div>
+          <div class="trust-pillar">
+            <div class="trust-pillar__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+            </div>
+            <div class="trust-pillar__text">
+              <span class="trust-pillar__title">DRP Standards</span>
+              <span class="trust-pillar__desc">1968 Act &amp; 2016 12-digit rules</span>
+            </div>
+          </div>
+          <div class="trust-pillar">
+            <div class="trust-pillar__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <div class="trust-pillar__text">
+              <span class="trust-pillar__title">Instant Processing</span>
+              <span class="trust-pillar__desc">Pure client-side math</span>
+            </div>
           </div>
         </div>
       </section>
@@ -1368,7 +1442,7 @@
               'params': {}
             };
           </script>
-          <script src="https://chalkedwhiningromance.com/1d991944a38fcba3be08497212b58c82/invoke.js"></script>
+          <script async src="https://chalkedwhiningromance.com/1d991944a38fcba3be08497212b58c82/invoke.js"></script>
         </div>
       </section>
 
@@ -1379,27 +1453,63 @@
         <h2 class="nic-tools-nav__title">More NIC Tools</h2>
         <div class="nic-tools-nav__grid">
           <a href="/" class="nic-tools-nav__item nic-tools-nav__item--active">
-            <span class="nic-tools-nav__icon">🔍</span>
+            <span class="nic-tools-nav__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+            </span>
             <span class="nic-tools-nav__label">Decode NIC to DOB</span>
           </a>
           <a href="/old-to-new-nic" class="nic-tools-nav__item">
-            <span class="nic-tools-nav__icon">🔄</span>
-            <span class="nic-tools-nav__label">Old ↔ New NIC</span>
+            <span class="nic-tools-nav__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <polyline points="1 4 1 10 7 10" />
+                <polyline points="23 20 23 14 17 14" />
+                <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15" />
+              </svg>
+            </span>
+            <span class="nic-tools-nav__label">Old to New NIC</span>
           </a>
           <a href="/nic-from-dob" class="nic-tools-nav__item">
-            <span class="nic-tools-nav__icon">📅</span>
+            <span class="nic-tools-nav__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+              </svg>
+            </span>
             <span class="nic-tools-nav__label">DOB to NIC</span>
           </a>
           <a href="/nic-to-birthday" class="nic-tools-nav__item">
-            <span class="nic-tools-nav__icon">🎂</span>
+            <span class="nic-tools-nav__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+              </svg>
+            </span>
             <span class="nic-tools-nav__label">Find Birthday from NIC</span>
           </a>
           <a href="/how-nic-works" class="nic-tools-nav__item">
-            <span class="nic-tools-nav__icon">📖</span>
+            <span class="nic-tools-nav__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+              </svg>
+            </span>
             <span class="nic-tools-nav__label">How NIC Works</span>
           </a>
           <a href="/excel-nic-formula" class="nic-tools-nav__item">
-            <span class="nic-tools-nav__icon">📊</span>
+            <span class="nic-tools-nav__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <line x1="3" y1="9" x2="21" y2="9" />
+                <line x1="3" y1="15" x2="21" y2="15" />
+                <line x1="9" y1="3" x2="9" y2="21" />
+                <line x1="15" y1="3" x2="15" y2="21" />
+              </svg>
+            </span>
             <span class="nic-tools-nav__label">Excel NIC Formula</span>
           </a>
         </div>
@@ -1419,7 +1529,7 @@
     <footer class="site-footer">
       <div class="footer-inner">
         <a href="/" class="footer-logo-link" aria-label="NIC Decoder Home">
-          <img src="nicinfo-logo.webp" alt="NIC Info Logo" class="footer-logo" width="72" height="36"
+          <img src="nicinfo-logo.webp" alt="NIC Info Logo" class="footer-logo" width="72" height="36" loading="lazy"
             decoding="async" />
         </a>
 
@@ -1453,7 +1563,7 @@
         <div class="footer-tools">
           <a href="/" class="footer-link">NIC to DOB</a>
           <span class="footer-divider" aria-hidden="true"></span>
-          <a href="/old-to-new-nic" class="footer-link">Old ↔ New NIC</a>
+          <a href="/old-to-new-nic" class="footer-link">Old to New NIC</a>
           <span class="footer-divider" aria-hidden="true"></span>
           <a href="/nic-from-dob" class="footer-link">DOB to NIC</a>
           <span class="footer-divider" aria-hidden="true"></span>
@@ -1930,14 +2040,16 @@
           showRevealed();
         }
 
-        // ── Decode another ────────────────────────────────
+        // ── Decode another / Edit NIC ──────────────────────
         decodeAnotherBtn.addEventListener('click', function () {
           showEmpty();
-          nicInput.value = '';
           nicInput.classList.remove('error');
           errorMsg.classList.remove('visible');
           nicInput.removeAttribute('aria-invalid');
-          setTimeout(function () { nicInput.focus(); }, 50);
+          setTimeout(function () {
+            nicInput.focus();
+            nicInput.select();
+          }, 50);
         });
 
         // ── State switchers ───────────────────────────────
@@ -1947,6 +2059,11 @@
 
           // Re-trigger animations by cloning the revealed section
           replayAnimations(heroRevealed);
+
+          // Focus management for screen readers and keyboard users (WCAG 2.4.3)
+          setTimeout(function () {
+            heroRevealed.focus();
+          }, 80);
         }
 
         function showEmpty() {
@@ -1998,26 +2115,7 @@
           }
         });
 
-        // ── Infinite Marquee ──────────────────────────────
-        var marqueeTrack = document.getElementById('marquee-track');
-        if (marqueeTrack) {
-          var logos = ["slack", "framer", "netflix", "google", "linkedin", "instagram", "facebook"];
-          // Repeat array 4 times to ensure sufficient track width on widescreen monitors for a flawless loop
-          var repeatedLogos = logos.concat(logos, logos, logos);
-          repeatedLogos.forEach(function (name) {
-            var item = document.createElement('div');
-            item.className = 'marquee-item';
-            var img = document.createElement('img');
-            img.className = 'marquee-logo';
-            img.src = 'https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/companyLogo/' + name + '.svg';
-            img.alt = name.charAt(0).toUpperCase() + name.slice(1) + ' Logo';
-            img.loading = 'lazy';
-            img.decoding = 'async';
-            img.setAttribute('draggable', 'false');
-            item.appendChild(img);
-            marqueeTrack.appendChild(item);
-          });
-        }
+        // ── (Marquee script removed: replaced by authentic civic-trust-bar) ──
 
         // ── Share Dropdown & Web Share Protocols (Desktop) ───
         var shareBtn = document.getElementById('share-toggle-btn');

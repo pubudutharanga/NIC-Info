@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+  <title>How Sri Lanka NIC Number Works — Format, DOB &amp; Gender Explained</title>
+  <meta name="description"
+    content="A complete guide to how Sri Lanka's NIC number encodes date of birth, gender and voter status. Covers old 9-digit and new 12-digit formats, leap years, the day-of-year code, and the check digit. Cite DRP." />
+  <meta name="author" content="Pubudu Tharanga" />
+
+  <link rel="canonical" href="https://nicinfo.vercel.app/how-nic-works" />
+  <link rel="alternate" hreflang="en" href="https://nicinfo.vercel.app/how-nic-works" />
+  <link rel="alternate" hreflang="x-default" href="https://nicinfo.vercel.app/how-nic-works" />
+
+  <meta name="theme-color" content="#11171C" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#F5F0E8" media="(prefers-color-scheme: light)" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://nicinfo.vercel.app/how-nic-works" />
+  <meta property="og:title" content="How Sri Lanka NIC Number Works — Format, DOB &amp; Gender Explained" />
+  <meta property="og:description"
+    content="Complete technical guide: how old and new Sri Lanka NIC numbers encode DOB, gender, voter status and the check digit. With worked examples." />
+  <meta property="og:image" content="https://nicinfo.vercel.app/og-image.png" />
+  <meta property="og:site_name" content="NIC Info" />
+  <meta property="og:locale" content="en_US" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How Sri Lanka NIC Number Works — Full Technical Explainer" />
+  <meta name="twitter:description"
+    content="Old 9-digit and new 12-digit NIC format explained: DOB encoding, gender flag, voter status, leap-year handling, check digit." />
+  <meta name="twitter:image" content="https://nicinfo.vercel.app/og-image.png" />
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,560;0,9..144,600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <link rel="preconnect" href="https://chalkedwhiningromance.com" crossorigin />
+  <link rel="dns-prefetch" href="https://chalkedwhiningromance.com" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://nicinfo.vercel.app/how-nic-works#article",
+        "headline": "How Sri Lanka NIC Number Works — Format, DOB & Gender Explained",
+        "description": "A complete technical guide to how Sri Lanka's National Identity Card number encodes date of birth, gender, voter status and the check digit.",
+        "datePublished": "2026-08-27",
+        "dateModified": "2026-08-27",
+        "inLanguage": "en",
+        "author": { "@type": "Person", "name": "Pubudu Tharanga", "url": "https://pubudu-tharanga.vercel.app/" },
+        "publisher": { "@type": "Organization", "name": "NIC Info", "url": "https://nicinfo.vercel.app/" },
+        "url": "https://nicinfo.vercel.app/how-nic-works",
+        "citation": [
+          { "@type": "WebSite", "name": "Department for Registration of Persons — Sri Lanka", "url": "https://drp.gov.lk/" },
+          { "@type": "WebPage", "name": "National identity card (Sri Lanka) — Wikipedia", "url": "https://en.wikipedia.org/wiki/National_identity_card_(Sri_Lanka)" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://nicinfo.vercel.app/how-nic-works#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does the NIC number encode date of birth?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The NIC uses a day-of-year (DOY) code in positions 3–5 (old format) or 5–7 (new format). DOY 001 = January 1, DOY 060 = February 29 in a leap year, DOY 365 = December 31. Females get +500 added so DOY 501–866 indicates female." }
+          },
+          {
+            "@type": "Question",
+            "name": "How does the NIC encode gender?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Males have a day-of-year code between 001–366. Females have 500 added, giving 501–866. Subtract 500 to get the actual birth day." }
+          },
+          {
+            "@type": "Question",
+            "name": "What does the V or X letter mean in old NIC?",
+            "acceptedAnswer": { "@type": "Answer", "text": "V means the person is registered as a voter. X means they are not registered or have an exemption. The new 12-digit NIC dropped V/X, replacing it with a numeric check digit." }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I convert old NIC to new NIC?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Old format: YYDDDNNNNV. New format: 19YYDDD0NNNN. Expand year to 4 digits (prepend 19), keep the 3-digit DOY, insert a 0 before the 4-digit serial, and drop the V/X. Example: 855420159V → 198554200159." }
+          },
+          {
+            "@type": "Question",
+            "name": "Does the NIC handle leap years correctly?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. DOY 060 represents February 29 in a leap year. If the birth year is not a leap year, DOY 060 should not appear — but older records occasionally contain edge-case errors. NIC Info correctly handles leap years when decoding." }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "NIC Info", "item": "https://nicinfo.vercel.app/" },
+          { "@type": "ListItem", "position": 2, "name": "How NIC Works", "item": "https://nicinfo.vercel.app/how-nic-works" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Anti-FOUC: prevent flash of wrong theme -->
+  <script>
+    (function () {
+      var stored = localStorage.getItem('nic-theme');
+      if (stored === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      } else if (!stored && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+
+<body>
+  <div class="app-wrapper">
+    <!-- Skip to main content (WCAG 2.4.1) -->
+    <a href="#article-content" class="skip-to-content">Skip to article content</a>
+
+    <!-- HEADER -->
+    <header class="site-header" id="site-header">
+      <div class="header-inner">
+        <a href="/" class="logo-link" aria-label="NIC Decoder Home">
+          <img src="nicinfo-logo.webp" alt="NIC Info Logo" class="header-logo" width="56" height="28"
+            fetchpriority="high" decoding="async" />
+        </a>
+        <nav class="header-nav" aria-label="Main Navigation">
+          <a href="/">NIC Decoder</a>
+          <a href="/old-to-new-nic">Old to New NIC</a>
+          <a href="/excel-nic-formula">Excel Formula</a>
+          <a href="guidelines.html">Guidelines</a>
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light mode"
+            title="Toggle light / dark mode">
+            <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+            <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </button>
+        </nav>
+        <div class="header-mobile-controls">
+          <button class="theme-toggle" id="mobile-theme-toggle" type="button" aria-label="Switch to light mode"
+            title="Toggle light / dark mode">
+            <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+            <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </button>
+          <button class="mobile-menu-toggle" id="mobile-menu-toggle" type="button" aria-expanded="false"
+            aria-controls="mobile-nav-drawer" aria-label="Toggle navigation menu">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Drawer -->
+      <div class="mobile-nav-drawer" id="mobile-nav-drawer" aria-hidden="true">
+        <nav class="mobile-nav-links" aria-label="Mobile Navigation">
+          <a href="/" class="mobile-nav-link">
+            <span>NIC to DOB (Decoder)</span>
+            <svg class="mobile-nav-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+          <a href="/old-to-new-nic" class="mobile-nav-link">
+            <span>Old to New NIC</span>
+            <svg class="mobile-nav-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+          <a href="/nic-from-dob" class="mobile-nav-link">
+            <span>DOB to NIC</span>
+            <svg class="mobile-nav-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+          <a href="/nic-to-birthday" class="mobile-nav-link">
+            <span>NIC to Birthday</span>
+            <svg class="mobile-nav-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+          <a href="/how-nic-works" class="mobile-nav-link active" style="color:var(--brass); font-weight:600;">
+            <span>How NIC Works</span>
+            <svg class="mobile-nav-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+          <a href="/excel-nic-formula" class="mobile-nav-link">
+            <span>Excel Formula</span>
+            <svg class="mobile-nav-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+          <a href="guidelines.html" class="mobile-nav-link">
+            <span>Guidelines</span>
+            <svg class="mobile-nav-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+        </nav>
+
+        <div class="mobile-nav-divider"></div>
+
+        <!-- Language Selector -->
+        <div class="mobile-lang-row">
+          <span class="mobile-lang-label">Language</span>
+          <div class="mobile-lang-pills">
+            <a href="/" class="mobile-lang-pill active">English</a>
+            <a href="/si/" class="mobile-lang-pill">සිංහල</a>
+            <a href="/ta/" class="mobile-lang-pill">தமிழ்</a>
+          </div>
+        </div>
+
+        <div class="mobile-nav-divider"></div>
+
+        <!-- Mobile Share Section -->
+        <div class="mobile-share-section">
+          <div class="mobile-share-title">Share NIC Info</div>
+          <div class="mobile-share-grid">
+            <a href="#" class="mobile-share-btn" data-share-platform="whatsapp" target="_blank"
+              rel="noopener noreferrer">
+              <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                </path>
+              </svg>
+              <span>WhatsApp</span>
+            </a>
+            <a href="#" class="mobile-share-btn" data-share-platform="facebook" target="_blank"
+              rel="noopener noreferrer">
+              <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+              <span>Facebook</span>
+            </a>
+            <a href="#" class="mobile-share-btn" data-share-platform="x" target="_blank" rel="noopener noreferrer">
+              <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+              <span>X</span>
+            </a>
+            <button type="button" class="mobile-share-btn" id="mobile-share-copy-btn">
+              <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span id="mobile-share-copy-text">Copy Link</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Mobile Backdrop Overlay -->
+      <div class="mobile-nav-backdrop" id="mobile-nav-backdrop" aria-hidden="true"></div>
+    </header>
+
+    <main id="article-content">
+      <article class="explainer-article">
+
+        <h1>How Sri Lanka's NIC Number Works — Format, DOB &amp; Gender Explained</h1>
+        <p class="article-meta">By Pubudu Tharanga &middot; Last updated August 2026 &middot; Not affiliated with DRP
+        </p>
+
+        <p>
+          Every Sri Lankan citizen receives a National Identity Card (NIC) number from the
+          <a href="https://drp.gov.lk/" target="_blank" rel="noopener noreferrer">Department for Registration of Persons
+            (DRP)</a>.
+          The number is not random — it encodes the holder's date of birth, gender, and voter status
+          using a compact numeric structure defined by DRP. This page explains exactly how it works,
+          covering both the old 9-digit format and the new 12-digit format introduced around 2016.
+        </p>
+
+        <!-- AD after intro -->
+        <div class="hero-ad-slot" aria-label="Advertisement">
+          <script>
+            atOptions = {
+              'key': '26a1ef2b6e466470c96200365f14deff',
+              'format': 'iframe',
+              'height': 50,
+              'width': 320,
+              'params': {}
+            };
+          </script>
+          <script async src="https://chalkedwhiningromance.com/26a1ef2b6e466470c96200365f14deff/invoke.js"></script>
+        </div>
+
+        <h2>1. The Two NIC Formats at a Glance</h2>
+
+        <h3>Old format (10 characters: 9 digits + V/X)</h3>
+        <div class="nic-box">
+          <div class="nic-label">Example old NIC: 906731234V</div>
+          <div class="nic-segments">
+            <div class="seg"><span class="seg-chars">90</span><span class="seg-label">Year (YY)</span></div>
+            <div class="seg"><span class="seg-chars seg-gender">673</span><span class="seg-label">DOY + gender</span>
+            </div>
+            <div class="seg"><span class="seg-chars seg-serial">1234</span><span class="seg-label">Serial</span></div>
+            <div class="seg"><span class="seg-chars seg-suffix">V</span><span class="seg-label">Voter</span></div>
+          </div>
+        </div>
+        <ul>
+          <li><strong>Positions 1–2 (YY):</strong> Last two digits of birth year. Add 1900. So "90" → 1990.</li>
+          <li><strong>Positions 3–5 (DOY):</strong> Day-of-year code (1–366 for males; 501–866 for females). "673" →
+            female, day 673 − 500 = 173 → 22 June.</li>
+          <li><strong>Positions 6–9:</strong> 4-digit serial number unique within that year and DOY group.</li>
+          <li><strong>Position 10 (V/X):</strong> V = voter-registered; X = not registered or exempted.</li>
+        </ul>
+
+        <h3>New format (12 digits, issued from ~2016)</h3>
+        <div class="nic-box">
+          <div class="nic-label">Example new NIC: 199006731234</div>
+          <div class="nic-segments">
+            <div class="seg"><span class="seg-chars">1990</span><span class="seg-label">Full year</span></div>
+            <div class="seg"><span class="seg-chars seg-gender">673</span><span class="seg-label">DOY + gender</span>
+            </div>
+            <div class="seg"><span class="seg-chars seg-serial">0123</span><span class="seg-label">0 + serial</span>
+            </div>
+            <div class="seg"><span class="seg-chars seg-suffix">4</span><span class="seg-label">Check digit</span></div>
+          </div>
+        </div>
+        <ul>
+          <li><strong>Positions 1–4 (YYYY):</strong> Full 4-digit birth year. No ambiguity — works for anyone born in
+            2000 or later.</li>
+          <li><strong>Positions 5–7 (DOY):</strong> Same day-of-year encoding as old format.</li>
+          <li><strong>Positions 8–11:</strong> A leading <code>0</code> followed by the 4-digit serial. The leading 0
+            was inserted to expand the serial space.</li>
+          <li><strong>Position 12:</strong> Check digit (numeric). Voter status (V/X) is no longer encoded.</li>
+        </ul>
+
+        <h2>2. How Date of Birth Is Encoded (Day-of-Year)</h2>
+        <p>
+          Instead of storing month and day separately, DRP stores the <strong>day-of-year (DOY)</strong> —
+          a number from 1 to 366 counting from January 1.
+        </p>
+
+        <table class="formula-table">
+          <thead>
+            <tr>
+              <th>Birth date</th>
+              <th style="text-align:center">DOY (male)</th>
+              <th style="text-align:center">DOY code (female)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>January 1</td>
+              <td style="text-align:center">001</td>
+              <td style="text-align:center">501</td>
+            </tr>
+            <tr>
+              <td>January 31</td>
+              <td style="text-align:center">031</td>
+              <td style="text-align:center">531</td>
+            </tr>
+            <tr>
+              <td>February 28</td>
+              <td style="text-align:center">059</td>
+              <td style="text-align:center">559</td>
+            </tr>
+            <tr>
+              <td>February 29 (leap year)</td>
+              <td style="text-align:center">060</td>
+              <td style="text-align:center">560</td>
+            </tr>
+            <tr>
+              <td>June 22</td>
+              <td style="text-align:center">173</td>
+              <td style="text-align:center">673</td>
+            </tr>
+            <tr>
+              <td>December 31</td>
+              <td style="text-align:center">365 / 366</td>
+              <td style="text-align:center">865 / 866</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          To decode: if <code>DOY &gt; 500</code>, subtract 500 to get the real DOY and mark gender as female.
+          Then convert DOY to a calendar date by walking through month lengths, accounting for leap years.
+        </p>
+
+        <h2>3. Gender Encoding</h2>
+        <p>
+          The DRP uses a binary encoding in the DOY field:
+        </p>
+        <ul>
+          <li><strong>DOY 001–366</strong> → Male</li>
+          <li><strong>DOY 501–866</strong> → Female (actual DOY = encoded − 500)</li>
+        </ul>
+        <p>
+          There is no third option in the official DRP encoding scheme. The NIC number does not
+          explicitly mention gender anywhere; it is implied entirely by whether the DOY field is
+          above or below 500.
+        </p>
+
+        <h2>4. Voter Status (Old Format Only)</h2>
+        <p>
+          The final character of an old-format NIC is either <strong>V</strong> or <strong>X</strong>:
+        </p>
+        <ul>
+          <li><strong>V</strong> — Voter: the person is registered on the electoral roll.</li>
+          <li><strong>X</strong> — Non-voter: not registered, or has a DRP-recognised exemption (e.g., diplomats,
+            certain disabilities).</li>
+        </ul>
+        <p>
+          New 12-digit NICs do not encode voter status. V/X was dropped when the format was redesigned
+          because voter registration is now maintained separately by the Elections Commission.
+        </p>
+
+        <h2>5. Converting Old NIC to New NIC</h2>
+        <p>The conversion formula is straightforward:</p>
+        <div class="nic-box">
+          Old: <strong>YYDDD NNNN V</strong><br />
+          New: <strong>19YY DDD 0NNNN ?</strong> (? = check digit, computed separately)
+        </div>
+        <ol>
+          <li>Prepend <code>19</code> to the 2-digit year (assumes all old NICs are 1900s births).</li>
+          <li>Keep the 3-digit DOY unchanged.</li>
+          <li>Insert a <code>0</code> before the 4-digit serial.</li>
+          <li>Drop the V/X suffix.</li>
+          <li>Append the check digit (the DRP compute this; for online decoding it is usually just provided as-is by the
+            citizen).</li>
+        </ol>
+
+        <div class="worked-example">
+          <strong>Worked example 1: 855420159V → new NIC</strong>
+          YY = 85 → 1985 · DOY = 542 (female, day 42 = February 11) · Serial = 0159<br />
+          New: <code>198554200159</code>
+        </div>
+        <div class="worked-example">
+          <strong>Worked example 2: 906731234V → new NIC</strong>
+          YY = 90 → 1990 · DOY = 673 (female, day 173 = June 22) · Serial = 1234<br />
+          New: <code>199006730123</code> <em>(last digit varies by actual DRP record)</em>
+        </div>
+
+        <p>Note: NICs for people born in 2000 or later were always issued in the 12-digit format.</p>
+
+        <h2>6. Leap Year Handling</h2>
+        <p>
+          A year is a <strong>leap year</strong> if:
+        </p>
+        <ul>
+          <li>It is divisible by 4, <em>and</em></li>
+          <li>It is <em>not</em> divisible by 100, <em>unless</em></li>
+          <li>It is also divisible by 400.</li>
+        </ul>
+        <p>
+          Examples: 1984, 1988, 2000, 2004, 2024 are leap years. 1900, 2100 are not.
+          If DOY = 060 and the year is not a leap year, that is an edge-case in the original DRP record —
+          NIC Info will still attempt to decode it gracefully.
+        </p>
+
+        <h2>7. The Check Digit (New Format)</h2>
+        <p>
+          The 12th digit of a new-format NIC is a check digit. DRP has not published the official checksum algorithm
+          publicly,
+          but community analysis and cross-referencing with DRP data suggests it uses a weighted modulo scheme
+          similar to <a href="https://en.wikipedia.org/wiki/Luhn_algorithm" target="_blank"
+            rel="noopener noreferrer">Luhn</a>.
+          For the purposes of decoding DOB and gender, the check digit is not needed — only digits 1–11 matter.
+        </p>
+
+        <!-- LEADERBOARD AD -->
+        <div class="ad-slot-728x90" aria-label="Advertisement" style="margin:2rem auto;text-align:center">
+          <script>
+            atOptions = {
+              'key': '1d991944a38fcba3be08497212b58c82',
+              'format': 'iframe',
+              'height': 90,
+              'width': 728,
+              'params': {}
+            };
+          </script>
+          <script async src="https://chalkedwhiningromance.com/1d991944a38fcba3be08497212b58c82/invoke.js"></script>
+        </div>
+
+        <h2>8. What the NIC Does NOT Tell You</h2>
+        <ul>
+          <li>Full name or address — not encoded.</li>
+          <li>Province or district of birth — not encoded (sometimes confused with serial range, but DRP has not
+            published a definitive mapping).</li>
+          <li>Current voter status — the V/X in old NICs reflects registration at the <em>time of issue</em>, not
+            current status.</li>
+          <li>Religion, ethnicity, or marital status — none of these are in the number.</li>
+        </ul>
+
+        <h2>9. Frequently Asked Questions</h2>
+
+        <div style="margin-top:1rem">
+          <h3>Can two people have the same NIC number?</h3>
+          <p>No. The DRP assigns a unique 4-digit serial within each year + DOY group, ensuring no two valid NICs are
+            identical. Duplicate NICs that appear in the wild are fraudulent records.</p>
+
+          <h3>Why does the new NIC have a 0 before the serial?</h3>
+          <p>When the old 4-digit serial space was expanded into 5 positions in the new format, a leading <code>0</code>
+            was inserted to pad existing serials. This retains backward compatibility while reserving non-zero values
+            for future expansion.</p>
+
+          <h3>Why do some online tools give wrong DOB for old NICs?</h3>
+          <p>Most bugs come from: (1) not handling leap years correctly, (2) assuming 2-digit year is always 1900s (some
+            NICs issued for late-1990s births round ambiguously), or (3) off-by-one errors when converting DOY 365/366.
+            NIC Info accounts for all three.</p>
+
+          <h3>Is this tool official?</h3>
+          <p>No. This is an independent, unofficial tool by Pubudu Tharanga. For official NIC verification or
+            reissuance, visit <a href="https://drp.gov.lk/" target="_blank" rel="noopener noreferrer">drp.gov.lk</a>.
+          </p>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-box">
+          <p>Try the live decoder — paste any Sri Lankan NIC and get the full breakdown instantly.</p>
+          <a href="/" class="cta-btn">Open NIC to DOB Decoder &rarr;</a>
+        </div>
+
+        <!-- NIC TOOLS NAV -->
+        <section class="nic-tools-nav" id="nic-tools" style="margin:2rem 0">
+          <h2 class="nic-tools-nav__title">More NIC Tools</h2>
+          <div class="nic-tools-nav__grid">
+            <a href="/" class="nic-tools-nav__item">
+              <span class="nic-tools-nav__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="11" cy="11" r="8" />
+                  <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                </svg>
+              </span>
+              <span class="nic-tools-nav__label">Decode NIC to DOB</span>
+            </a>
+            <a href="/old-to-new-nic" class="nic-tools-nav__item">
+              <span class="nic-tools-nav__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <polyline points="1 4 1 10 7 10" />
+                  <polyline points="23 20 23 14 17 14" />
+                  <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15" />
+                </svg>
+              </span>
+              <span class="nic-tools-nav__label">Old to New NIC Converter</span>
+            </a>
+            <a href="/nic-from-dob" class="nic-tools-nav__item">
+              <span class="nic-tools-nav__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                  <line x1="16" y1="2" x2="16" y2="6" />
+                  <line x1="8" y1="2" x2="8" y2="6" />
+                  <line x1="3" y1="10" x2="21" y2="10" />
+                </svg>
+              </span>
+              <span class="nic-tools-nav__label">DOB to NIC Structure</span>
+            </a>
+            <a href="/excel-nic-formula" class="nic-tools-nav__item">
+              <span class="nic-tools-nav__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <line x1="3" y1="9" x2="21" y2="9" />
+                  <line x1="3" y1="15" x2="21" y2="15" />
+                  <line x1="9" y1="3" x2="9" y2="21" />
+                  <line x1="15" y1="3" x2="15" y2="21" />
+                </svg>
+              </span>
+              <span class="nic-tools-nav__label">Excel NIC Formula</span>
+            </a>
+            <a href="/nic-check-digit" class="nic-tools-nav__item nic-tools-nav__item--active">
+              <span class="nic-tools-nav__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <line x1="4" y1="9" x2="20" y2="9" />
+                  <line x1="4" y1="15" x2="20" y2="15" />
+                  <line x1="10" y1="3" x2="8" y2="21" />
+                  <line x1="16" y1="3" x2="14" y2="21" />
+                </svg>
+              </span>
+              <span class="nic-tools-nav__label">NIC Check Digit</span>
+            </a>
+          </div>
+          <div class="nic-tools-nav__languages">
+            <span class="nic-tools-nav__lang-label">Language:</span>
+            <a href="/" class="nic-tools-nav__lang nic-tools-nav__lang--active">English</a>
+            <a href="/si/" class="nic-tools-nav__lang">සිංහල</a>
+            <a href="/ta/" class="nic-tools-nav__lang">தமிழ்</a>
+          </div>
+        </section>
+
+        <!-- References -->
+        <div class="references">
+          <h2>References</h2>
+          <ul>
+            <li><a href="https://drp.gov.lk/" target="_blank" rel="noopener noreferrer">Department for Registration of
+                Persons, Sri Lanka — drp.gov.lk</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/National_identity_card_(Sri_Lanka)" target="_blank"
+                rel="noopener noreferrer">National identity card (Sri Lanka) — Wikipedia</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Luhn_algorithm" target="_blank" rel="noopener noreferrer">Luhn
+                algorithm — Wikipedia</a></li>
+          </ul>
+          <p style="font-size:0.8rem;opacity:0.5;margin-top:1rem">This article is provided for educational purposes. NIC
+            Info is not affiliated with DRP or any government body.</p>
+        </div>
+
+      </article>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <a href="/" class="footer-logo-link" aria-label="NIC Decoder Home">
+          <img src="nicinfo-logo.webp" alt="NIC Info Logo" class="footer-logo" width="72" height="36" loading="lazy"
+            decoding="async" />
+        </a>
+        <p class="footer-description">
+          A free browser tool for decoding Sri Lankan National Identity Card numbers.<br />
+          <span class="last-updated">Last updated: August 2026</span>
+        </p>
+        <div class="footer-tools">
+          <a href="/" class="footer-link">NIC to DOB</a>
+          <span class="footer-divider" aria-hidden="true"></span>
+          <a href="/old-to-new-nic" class="footer-link">Old to New NIC</a>
+          <span class="footer-divider" aria-hidden="true"></span>
+          <a href="/nic-from-dob" class="footer-link">DOB to NIC</a>
+          <span class="footer-divider" aria-hidden="true"></span>
+          <a href="/nic-to-birthday" class="footer-link">NIC to Birthday</a>
+          <span class="footer-divider" aria-hidden="true"></span>
+          <a href="/excel-nic-formula" class="footer-link">Excel Formula</a>
+          <span class="footer-divider" aria-hidden="true"></span>
+          <a href="/nic-check-digit" class="footer-link">Check Digit</a>
+        </div>
+        <div class="footer-languages">
+          <a href="/si/" class="footer-link">සිංහල</a>
+          <span class="footer-divider" aria-hidden="true"></span>
+          <a href="/ta/" class="footer-link">தமிழ்</a>
+        </div>
+        <div class="footer-nav">
+          <a href="privacy.html" class="footer-link">Privacy Notice</a>
+          <span class="footer-divider" aria-hidden="true"></span>
+          <a href="guidelines.html" class="footer-link">Guidelines</a>
+          <span class="footer-divider" aria-hidden="true"></span>
+          <a href="policy.html" class="footer-link">Policy</a>
+          <span class="footer-divider" aria-hidden="true"></span>
+          <span class="footer-link footer-disclaimer">Not affiliated with DRP</span>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    (function () {
+      var html = document.documentElement;
+      var themeToggles = document.querySelectorAll('.theme-toggle');
+      var STORAGE_KEY = 'nic-theme';
+
+      function applyTheme(theme) {
+        if (theme === 'light') {
+          html.setAttribute('data-theme', 'light');
+          themeToggles.forEach(function (btn) {
+            btn.setAttribute('aria-label', 'Switch to dark mode');
+          });
+        } else {
+          html.removeAttribute('data-theme');
+          themeToggles.forEach(function (btn) {
+            btn.setAttribute('aria-label', 'Switch to light mode');
+          });
+        }
+      }
+
+      var stored = localStorage.getItem(STORAGE_KEY);
+      if (stored === 'light' || stored === 'dark') {
+        applyTheme(stored);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        applyTheme('light');
+      }
+
+      themeToggles.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var currentlyLight = html.getAttribute('data-theme') === 'light';
+          var next = currentlyLight ? 'dark' : 'light';
+          applyTheme(next);
+          try { localStorage.setItem(STORAGE_KEY, next); } catch (_) { }
+        });
+      });
+    })();
+  </script>
+
+  <!-- Global Navigation & Share Controller -->
+  <script src="navbar.js" defer></script>
+</body>
+
+</html>

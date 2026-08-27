@@ -6,11 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, follow" />
   <title>Page Not Found — NIC Info</title>
-  <meta name="description" content="The requested page could not be found on NIC Info. Return to the Sri Lankan NIC Decoder home page." />
+  <meta name="description"
+    content="The requested page could not be found on NIC Info. Return to the Sri Lankan NIC Decoder home page." />
 
   <!-- Theme Color -->
-  <meta name="theme-color" content="#0F172A" media="(prefers-color-scheme: dark)" />
-  <meta name="theme-color" content="#F8F5EE" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#11171C" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#F5F0E8" media="(prefers-color-scheme: light)" />
 
   <!-- Favicons -->
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
@@ -19,6 +20,16 @@
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
 
   <!-- Stylesheet -->
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,560;0,9..144,600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" />
+
   <link rel="stylesheet" href="styles.css" />
 
   <!-- Inline theme init -->
@@ -38,10 +49,14 @@
   <div class="page-wrapper">
     <div class="guilloche" aria-hidden="true"></div>
 
+    <!-- Skip to main content (WCAG 2.4.1) -->
+    <a href="#not-found-main" class="skip-to-content">Skip to 404 message</a>
+
     <header class="site-header" id="site-header">
       <div class="header-inner">
         <a href="/" class="logo-link" aria-label="NIC Decoder Home">
-          <img src="/nicinfo-logo.webp" alt="NIC Decoder Logo" class="header-logo" width="56" height="28" decoding="async" />
+          <img src="/nicinfo-logo.webp" alt="NIC Decoder Logo" class="header-logo" width="56" height="28"
+            decoding="async" />
         </a>
         <nav class="header-nav" aria-label="Main Navigation">
           <a href="/#how-it-works">How it works</a>
@@ -49,9 +64,11 @@
           <a href="/#faq">FAQ</a>
           <a href="/guidelines.html">Guidelines</a>
           <!-- Theme toggle -->
-          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light mode" title="Toggle light / dark mode">
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light mode"
+            title="Toggle light / dark mode">
             <!-- Sun icon -->
-            <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <circle cx="12" cy="12" r="5" />
               <line x1="12" y1="1" x2="12" y2="3" />
               <line x1="12" y1="21" x2="12" y2="23" />
@@ -63,7 +80,8 @@
               <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
             </svg>
             <!-- Moon icon -->
-            <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
             </svg>
           </button>
@@ -129,23 +147,35 @@
             </svg>
           </a>
         </nav>
+        <div class="mobile-nav-divider"></div>
+        <!-- Language Selector -->
+        <div class="mobile-lang-row">
+          <span class="mobile-lang-label">Language</span>
+          <div class="mobile-lang-pills">
+            <a href="/" class="mobile-lang-pill active">English</a>
+            <a href="/si/" class="mobile-lang-pill">සිංහල</a>
+            <a href="/ta/" class="mobile-lang-pill">தமிழ்</a>
+          </div>
+        </div>
       </div>
       <!-- Mobile Backdrop Overlay -->
       <div class="mobile-nav-backdrop" id="mobile-nav-backdrop" aria-hidden="true"></div>
     </header>
 
-    <main class="content-wrapper">
+    <main id="not-found-main" class="content-wrapper">
       <section class="hero" id="hero">
         <div class="hero-empty" style="padding: 60px 20px; text-align: center;">
           <span style="font-size: 4rem; font-weight: 800; opacity: 0.2; display: block; margin-bottom: 10px;">404</span>
           <h1 class="hero-title">We couldn't find that page.</h1>
           <p class="hero-subtitle" style="max-width: 480px; margin: 16px auto 32px;">
-            The link you followed may be broken or the page may have been removed. But if you're looking to decode a Sri Lankan NIC number, you're in the right place!
+            The link you followed may be broken or the page may have been removed. But if you're looking to decode a Sri
+            Lankan NIC number, you're in the right place!
           </p>
           <div style="display: flex; justify-content: center;">
             <a href="/" class="decode-another-btn" style="text-decoration: none; padding: 12px 24px;">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <path d="M13 8H3M7 4l-4 4 4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M13 8H3M7 4l-4 4 4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                  stroke-linejoin="round" />
               </svg>
               Back to NIC Decoder
             </a>
@@ -157,13 +187,16 @@
     <footer class="site-footer">
       <div class="footer-inner">
         <a href="/" class="footer-logo-link" aria-label="NIC Decoder Home">
-          <img src="/nicinfo-logo.webp" alt="NIC Info Logo" class="footer-logo" width="72" height="36" decoding="async" />
+          <img src="/nicinfo-logo.webp" alt="NIC Info Logo" class="footer-logo" width="72" height="36" loading="lazy"
+            decoding="async" />
         </a>
         <p class="footer-description">
           A free browser tool for decoding Sri Lankan National Identity Card numbers.
         </p>
         <p class="footer-copyright">
-          Copyright &copy; <script>document.write(new Date().getFullYear())</script> <strong class="footer-brand">NIC Info</strong>. All rights reserved.
+          Copyright &copy;
+          <script>document.write(new Date().getFullYear())</script> <strong class="footer-brand">NIC Info</strong>. All
+          rights reserved.
         </p>
         <div class="footer-nav">
           <a href="/privacy.html" class="footer-link">Privacy Notice</a>
@@ -177,107 +210,108 @@
   </div>
 
   <script>
-    (function () {
-      var html = document.documentElement;
-      var themeToggles = document.querySelectorAll('.theme-toggle');
-      var STORAGE_KEY = 'nic-theme';
-      var header = document.getElementById('site-header');
+      (function () {
+        var html = document.documentElement;
+        var themeToggles = document.querySelectorAll('.theme-toggle');
+        var STORAGE_KEY = 'nic-theme';
+        var header = document.getElementById('site-header');
 
-      function applyTheme(theme) {
-        if (theme === 'light') {
-          html.setAttribute('data-theme', 'light');
-          themeToggles.forEach(function (btn) {
-            btn.setAttribute('aria-label', 'Switch to dark mode');
-          });
-        } else {
-          html.removeAttribute('data-theme');
-          themeToggles.forEach(function (btn) {
-            btn.setAttribute('aria-label', 'Switch to light mode');
-          });
-        }
-      }
-
-      themeToggles.forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          var currentlyLight = html.getAttribute('data-theme') === 'light';
-          var next = currentlyLight ? 'dark' : 'light';
-          localStorage.setItem(STORAGE_KEY, next);
-          applyTheme(next);
-        });
-      });
-
-      window.addEventListener('scroll', function () {
-        if (window.scrollY > 40) {
-          if (header) header.classList.add('scrolled');
-        } else {
-          if (header) header.classList.remove('scrolled');
-        }
-      }, { passive: true });
-
-      // Mobile Navigation Drawer
-      var mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-      var mobileNavDrawer = document.getElementById('mobile-nav-drawer');
-      var mobileNavBackdrop = document.getElementById('mobile-nav-backdrop');
-      var mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-
-      function openMobileMenu() {
-        if (!mobileMenuToggle || !mobileNavDrawer) return;
-        mobileMenuToggle.setAttribute('aria-expanded', 'true');
-        mobileNavDrawer.classList.add('open');
-        mobileNavDrawer.setAttribute('aria-hidden', 'false');
-        if (mobileNavBackdrop) {
-          mobileNavBackdrop.classList.add('open');
-          mobileNavBackdrop.setAttribute('aria-hidden', 'false');
-        }
-        document.body.style.overflow = 'hidden';
-      }
-
-      function closeMobileMenu() {
-        if (!mobileMenuToggle || !mobileNavDrawer) return;
-        mobileMenuToggle.setAttribute('aria-expanded', 'false');
-        mobileNavDrawer.classList.remove('open');
-        mobileNavDrawer.setAttribute('aria-hidden', 'true');
-        if (mobileNavBackdrop) {
-          mobileNavBackdrop.classList.remove('open');
-          mobileNavBackdrop.setAttribute('aria-hidden', 'true');
-        }
-        document.body.style.overflow = '';
-      }
-
-      if (mobileMenuToggle && mobileNavDrawer) {
-        mobileMenuToggle.addEventListener('click', function (e) {
-          e.stopPropagation();
-          var isOpen = mobileNavDrawer.classList.contains('open');
-          if (isOpen) {
-            closeMobileMenu();
+        function applyTheme(theme) {
+          if (theme === 'light') {
+            html.setAttribute('data-theme', 'light');
+            themeToggles.forEach(function (btn) {
+              btn.setAttribute('aria-label', 'Switch to dark mode');
+            });
           } else {
-            openMobileMenu();
+            html.removeAttribute('data-theme');
+            themeToggles.forEach(function (btn) {
+              btn.setAttribute('aria-label', 'Switch to light mode');
+            });
           }
-        });
-
-        if (mobileNavBackdrop) {
-          mobileNavBackdrop.addEventListener('click', closeMobileMenu);
         }
 
-        mobileNavLinks.forEach(function (link) {
-          link.addEventListener('click', function () {
-            closeMobileMenu();
+        themeToggles.forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var currentlyLight = html.getAttribute('data-theme') === 'light';
+            var next = currentlyLight ? 'dark' : 'light';
+            localStorage.setItem(STORAGE_KEY, next);
+            applyTheme(next);
           });
         });
 
-        document.addEventListener('keydown', function (e) {
-          if (e.key === 'Escape' && mobileNavDrawer.classList.contains('open')) {
-            closeMobileMenu();
-          }
-        });
-
-        window.addEventListener('resize', function () {
-          if (window.innerWidth > 768 && mobileNavDrawer.classList.contains('open')) {
-            closeMobileMenu();
+        window.addEventListener('scroll', function () {
+          if (window.scrollY > 40) {
+            if (header) header.classList.add('scrolled');
+          } else {
+            if (header) header.classList.remove('scrolled');
           }
         }, { passive: true });
-      }
-    })();
+
+        // Mobile Navigation Drawer
+        var mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        var mobileNavDrawer = document.getElementById('mobile-nav-drawer');
+        var mobileNavBackdrop = document.getElementById('mobile-nav-backdrop');
+        var mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        function openMobileMenu() {
+          if (!mobileMenuToggle || !mobileNavDrawer) return;
+          mobileMenuToggle.setAttribute('aria-expanded', 'true');
+          mobileNavDrawer.classList.add('open');
+          mobileNavDrawer.setAttribute('aria-hidden', 'false');
+          if (mobileNavBackdrop) {
+            mobileNavBackdrop.classList.add('open');
+            mobileNavBackdrop.setAttribute('aria-hidden', 'false');
+          }
+          document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenu() {
+          if (!mobileMenuToggle || !mobileNavDrawer) return;
+          mobileMenuToggle.setAttribute('aria-expanded', 'false');
+          mobileNavDrawer.classList.remove('open');
+          mobileNavDrawer.setAttribute('aria-hidden', 'true');
+          if (mobileNavBackdrop) {
+            mobileNavBackdrop.classList.remove('open');
+            mobileNavBackdrop.setAttribute('aria-hidden', 'true');
+          }
+          document.body.style.overflow = '';
+        }
+
+        if (mobileMenuToggle && mobileNavDrawer) {
+          mobileMenuToggle.addEventListener('click', function (e) {
+            e.stopPropagation();
+            var isOpen = mobileNavDrawer.classList.contains('open');
+            if (isOpen) {
+              closeMobileMenu();
+            } else {
+              openMobileMenu();
+            }
+          });
+
+          if (mobileNavBackdrop) {
+            mobileNavBackdrop.addEventListener('click', closeMobileMenu);
+          }
+
+          mobileNavLinks.forEach(function (link) {
+            link.addEventListener('click', function () {
+              closeMobileMenu();
+            });
+          });
+
+          document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && mobileNavDrawer.classList.contains('open')) {
+              closeMobileMenu();
+            }
+          });
+
+          window.addEventListener('resize', function () {
+            if (window.innerWidth > 768 && mobileNavDrawer.classList.contains('open')) {
+              closeMobileMenu();
+            }
+          }, { passive: true });
+        }
+      })();
   </script>
 </body>
+
 </html>

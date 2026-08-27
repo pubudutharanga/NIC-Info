@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+  <title>NIC Check Digit — Sri Lanka NIC V vs X, Voter Status &amp; Check Digit Explained</title>
+  <meta name="description"
+    content="What is the check digit in a Sri Lanka NIC? What does V or X mean? Complete guide to old NIC voter status (V/X) and the new 12-digit check digit. Free tool to validate." />
+  <meta name="author" content="Pubudu Tharanga" />
+
+  <link rel="canonical" href="https://nicinfo.vercel.app/nic-check-digit" />
+  <link rel="alternate" hreflang="en" href="https://nicinfo.vercel.app/nic-check-digit" />
+  <link rel="alternate" hreflang="x-default" href="https://nicinfo.vercel.app/nic-check-digit" />
+
+  <meta name="theme-color" content="#11171C" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#F5F0E8" media="(prefers-color-scheme: light)" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://nicinfo.vercel.app/nic-check-digit" />
+  <meta property="og:title" content="NIC Check Digit — Sri Lanka V vs X &amp; Check Digit Explained" />
+  <meta property="og:description"
+    content="Complete guide: old NIC V or X voter status, new NIC 12th digit check, and what they mean. Includes a live validator." />
+  <meta property="og:image" content="https://nicinfo.vercel.app/og-image.png" />
+  <meta property="og:site_name" content="NIC Info" />
+  <meta property="og:locale" content="en_US" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="NIC Check Digit — Sri Lanka V vs X &amp; New NIC 12th Digit" />
+  <meta name="twitter:description"
+    content="What do V and X mean in a Sri Lankan NIC? What is the 12th digit in a new NIC? Full explanation with live validator." />
+  <meta name="twitter:image" content="https://nicinfo.vercel.app/og-image.png" />
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,560;0,9..144,600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <link rel="preconnect" href="https://chalkedwhiningromance.com" crossorigin />
+  <link rel="dns-prefetch" href="https://chalkedwhiningromance.com" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://nicinfo.vercel.app/nic-check-digit#article",
+        "headline": "NIC Check Digit — Sri Lanka NIC V vs X, Voter Status & Check Digit Explained",
+        "description": "Guide to old NIC voter status letter (V or X) and the new 12-digit NIC check digit. Includes live validator.",
+        "datePublished": "2026-08-27",
+        "dateModified": "2026-08-27",
+        "inLanguage": "en",
+        "author": { "@type": "Person", "name": "Pubudu Tharanga", "url": "https://pubudu-tharanga.vercel.app/" },
+        "publisher": { "@type": "Organization", "name": "NIC Info", "url": "https://nicinfo.vercel.app/" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What does V or X mean at the end of an old Sri Lanka NIC?",
+            "acceptedAnswer": { "@type": "Answer", "text": "V means the person was registered as a voter on the electoral roll at the time of NIC issuance. X means they were not registered or had a DRP-recognised exemption. New 12-digit NICs do not carry V or X; voter registration is now maintained separately." }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the 12th digit in a new Sri Lanka NIC?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The 12th digit is a check digit used to detect transcription errors. DRP uses a weighted checksum algorithm. The check digit does not encode personal information — it is a validation mechanism only." }
+          },
+          {
+            "@type": "Question",
+            "name": "Does the NIC check digit use the Luhn algorithm?",
+            "acceptedAnswer": { "@type": "Answer", "text": "DRP has not publicly documented the exact algorithm. Community analysis suggests a weighted modulo scheme similar to Luhn, but the official specification is not published. NIC Info does not claim to verify the check digit independently." }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "NIC Info", "item": "https://nicinfo.vercel.app/" },
+          { "@type": "ListItem", "position": 2, "name": "NIC Check Digit", "item": "https://nicinfo.vercel.app/nic-check-digit" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Anti-FOUC: prevent flash of wrong theme -->
+  <script>
+    (function () {
+      var stored = localStorage.getItem('nic-theme');
+      if (stored === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      } else if (!stored && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+
+<body>
+  <div class="app-wrapper">
+    <!-- Skip to main content (WCAG 2.4.1) -->
+    <a href="#check-digit-article" class="skip-to-content">Skip to check digit guide</a>
+
+    <!-- HEADER -->
+    <header class="site-header" id="site-header">
+      <div class="header-inner">
+        <a href="/" class="logo-link" aria-label="NIC Decoder Home">
+          <img src="nicinfo-logo.webp" alt="NIC Info Logo" class="header-logo" width="56" height="28"
+            fetchpriority="high" decoding="async" />
+        </a>
+        <nav class="header-nav" aria-label="Main Navigation">
+          <a href="/">NIC Decoder</a>
+          <a href="/old-to-new-nic">Old to New NIC</a>
+          <a href="/how-nic-works">How NIC Works</a>
+          <a href="/excel-nic-formula">Excel Formula</a>
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light mode"
+            title="Toggle light / dark mode">
+            <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+            <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </button>
+        </nav>
+        <div class="header-mobile-controls">
+          <button class="theme-toggle" id="mobile-theme-toggle" type="button" aria-label="Switch to light mode"
+            title="Toggle light / dark mode">
+            <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+            <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </button>
+          <button class="mobile-menu-toggle" id="mobile-menu-toggle" type="button" aria-expanded="false"
+            aria-controls="mobile-nav-drawer" aria-label="Toggle navigation menu">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Drawer -->
+      <div class="mobile-nav-drawer" id="mobile-nav-drawer" aria-hidden="true">
+        <nav class="mobile-nav-links" aria-label="Mobile Navigation">
+          <a href="/" class="mobile-nav-link">
+            <span>NIC to DOB (Decoder)</span>
+            <svg class="mobile-nav-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+          <a href="/old-to-new-nic" class="mobile-nav-link">
+            <span>Old to New NIC</span>
+            <svg class="mobile-nav-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+          <a href="/nic-from-dob" class="mobile-nav-link">
+            <span>DOB to NIC</span>
+            <svg class="mobile-nav-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+          <a href="/nic-to-birthday" class="mobile-nav-link">
+            <span>NIC to Birthday</span>
+            <svg class="mobile-nav-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+          <a href="/how-nic-works" class="mobile-nav-link">
+            <span>How NIC Works</span>
+            <svg class="mobile-nav-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+          <a href="/excel-nic-formula" class="mobile-nav-link">
+            <span>Excel Formula</span>
+            <svg class="mobile-nav-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+          <a href="/nic-check-digit" class="mobile-nav-link active" style="color:var(--brass); font-weight:600;">
+            <span>Check Digit</span>
+            <svg class="mobile-nav-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+          <a href="guidelines.html" class="mobile-nav-link">
+            <span>Guidelines</span>
+            <svg class="mobile-nav-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+        </nav>
+
+        <div class="mobile-nav-divider"></div>
+
+        <!-- Language Selector -->
+        <div class="mobile-lang-row">
+          <span class="mobile-lang-label">Language</span>
+          <div class="mobile-lang-pills">
+            <a href="/" class="mobile-lang-pill active">English</a>
+            <a href="/si/" class="mobile-lang-pill">සිංහල</a>
+            <a href="/ta/" class="mobile-lang-pill">தமிழ்</a>
+          </div>
+        </div>
+
+        <div class="mobile-nav-divider"></div>
+
+        <!-- Mobile Share Section -->
+        <div class="mobile-share-section">
+          <div class="mobile-share-title">Share NIC Info</div>
+          <div class="mobile-share-grid">
+            <a href="#" class="mobile-share-btn" data-share-platform="whatsapp" target="_blank"
+              rel="noopener noreferrer">
+              <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                </path>
+              </svg>
+              <span>WhatsApp</span>
+            </a>
+            <a href="#" class="mobile-share-btn" data-share-platform="facebook" target="_blank"
+              rel="noopener noreferrer">
+              <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+              <span>Facebook</span>
+            </a>
+            <a href="#" class="mobile-share-btn" data-share-platform="x" target="_blank" rel="noopener noreferrer">
+              <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+              <span>X</span>
+            </a>
+            <button type="button" class="mobile-share-btn" id="mobile-share-copy-btn">
+              <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span id="mobile-share-copy-text">Copy Link</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Mobile Backdrop Overlay -->
+      <div class="mobile-nav-backdrop" id="mobile-nav-backdrop" aria-hidden="true"></div>
+    </header>
+
+    <main>
+      <article class="explainer-article" id="check-digit-article">
+
+        <h1>NIC Check Digit — Sri Lanka V vs X, Voter Status &amp; New NIC 12th Digit</h1>
+        <p class="article-meta">By Pubudu Tharanga &middot; Last updated August 2026 &middot; Not affiliated with DRP
+        </p>
+
+        <p>
+          Sri Lanka NICs end with either a <strong>V/X letter</strong> (old 9-digit format) or a
+          <strong>numeric check digit</strong> (new 12-digit format). Neither encodes personal information
+          directly — but they serve very different purposes. This page explains both, and includes a
+          quick validator.
+        </p>
+
+        <!-- Ad -->
+        <div class="hero-ad-slot" aria-label="Advertisement">
+          <script>
+            atOptions = {
+              'key': '26a1ef2b6e466470c96200365f14deff',
+              'format': 'iframe',
+              'height': 50,
+              'width': 320,
+              'params': {}
+            };
+          </script>
+          <script async src="https://chalkedwhiningromance.com/26a1ef2b6e466470c96200365f14deff/invoke.js"></script>
+        </div>
+
+        <!-- LIVE VALIDATOR -->
+        <div class="validator-card" id="nic-validator">
+          <h3>Quick NIC Validator</h3>
+          <p style="opacity:0.7;font-size:0.9rem;margin-bottom:1rem">Enter any Sri Lankan NIC to see format, voter
+            status, and check digit position.</p>
+          <div class="validator-input-row">
+            <input type="text" id="val-input" placeholder="e.g. 906731234V or 199006731234" maxlength="12"
+              autocapitalize="characters" spellcheck="false" />
+            <button id="val-btn" type="button">Check</button>
+          </div>
+          <div class="validator-result" id="val-result" aria-live="polite"></div>
+        </div>
+
+        <h2>Part 1: The Old NIC — V and X (Voter Status Letter)</h2>
+
+        <div class="nic-anatomy">
+          <div class="nic-label" style="font-family:sans-serif;font-size:0.72rem;opacity:0.5;margin-bottom:0.6rem">Old
+            NIC anatomy (10 characters)</div>
+          <div class="seg-row">
+            <div class="seg"><span class="seg-chars">90</span><span class="seg-label">Year (YY)</span></div>
+            <div class="seg"><span class="seg-chars">673</span><span class="seg-label">DOY + gender</span></div>
+            <div class="seg"><span class="seg-chars">1234</span><span class="seg-label">Serial</span></div>
+            <div class="seg"><span class="seg-chars seg-v">V</span><span class="seg-label">Voter ✓</span></div>
+          </div>
+          <div class="seg-row" style="margin-top:0.75rem">
+            <div class="seg"><span class="seg-chars">80</span><span class="seg-label">Year (YY)</span></div>
+            <div class="seg"><span class="seg-chars">123</span><span class="seg-label">DOY + gender</span></div>
+            <div class="seg"><span class="seg-chars">5678</span><span class="seg-label">Serial</span></div>
+            <div class="seg"><span class="seg-chars seg-x">X</span><span class="seg-label">Non-voter</span></div>
+          </div>
+        </div>
+
+        <h3>What does V mean?</h3>
+        <p>
+          <strong>V</strong> stands for <em>Voter</em>. A person who was registered on the electoral
+          roll at the time their NIC was issued receives a V suffix. This is the more common ending
+          for old-format NICs.
+        </p>
+
+        <h3>What does X mean?</h3>
+        <p>
+          <strong>X</strong> means the person was <em>not</em> registered as a voter, or held a
+          DRP-recognised exemption. Possible reasons:
+        </p>
+        <ul>
+          <li>Under 18 at time of NIC issuance</li>
+          <li>Diplomatic or foreign resident status</li>
+          <li>Voluntarily not registered (historically possible)</li>
+          <li>Administrative non-registration at time of record creation</li>
+        </ul>
+        <p>
+          X does not mean the person is legally ineligible to vote — it reflects registration status
+          at the specific moment of card issuance, which may be decades old.
+        </p>
+
+        <h3>Can a V become an X or vice versa?</h3>
+        <p>
+          No. The NIC number itself does not change when someone registers or de-registers as a voter.
+          The V/X in an old NIC is permanently fixed at the time of issuance. Current voter registration
+          status is held separately by Sri Lanka's Elections Commission, not in the NIC number.
+        </p>
+
+        <h3>Does the new NIC (12-digit) show voter status?</h3>
+        <p>
+          No. When DRP redesigned the NIC format around 2016, they dropped the V/X suffix entirely.
+          The 12th character of a new NIC is a numeric <strong>check digit</strong>, not a voter flag.
+        </p>
+
+        <h2>Part 2: The New NIC — The 12th Digit (Check Digit)</h2>
+
+        <div class="nic-anatomy">
+          <div class="nic-label" style="font-family:sans-serif;font-size:0.72rem;opacity:0.5;margin-bottom:0.6rem">New
+            NIC anatomy (12 digits)</div>
+          <div class="seg-row">
+            <div class="seg"><span class="seg-chars">1990</span><span class="seg-label">Full year</span></div>
+            <div class="seg"><span class="seg-chars">673</span><span class="seg-label">DOY + gender</span></div>
+            <div class="seg"><span class="seg-chars">0123</span><span class="seg-label">0 + serial</span></div>
+            <div class="seg"><span class="seg-chars seg-check">4</span><span class="seg-label">Check digit</span></div>
+          </div>
+        </div>
+
+        <h3>What is a check digit?</h3>
+        <p>
+          A check digit is a single digit appended to a number to detect transcription errors —
+          for example, someone typing <code>199006731234</code> vs <code>199006713234</code>.
+          A checksum algorithm run over the first 11 digits should produce the 12th digit.
+          If it doesn't, the NIC contains an error.
+        </p>
+
+        <h3>What algorithm does DRP use?</h3>
+        <p>
+          DRP has not publicly published the checksum specification. Community research and
+          comparison with verified NIC pairs suggests a weighted modulo-10 scheme similar to the
+          <a href="https://en.wikipedia.org/wiki/Luhn_algorithm" target="_blank" rel="noopener noreferrer">Luhn
+            algorithm</a>
+          used in credit cards, but with different weights. Because the algorithm is not officially
+          confirmed, NIC Info does not make a pass/fail claim on the check digit — only structural
+          format validation (length and character class) is performed.
+        </p>
+
+        <!-- LEADERBOARD AD -->
+        <div class="ad-slot-728x90" aria-label="Advertisement" style="margin:2rem auto;text-align:center">
+          <script>
+            atOptions = {
+              'key': '1d991944a38fcba3be08497212b58c82',
+              'format': 'iframe',
+              'height': 90,
+              'width': 728,
+              'params': {}
+            };
+          </script>
+          <script async src="https://chalkedwhiningromance.com/1d991944a38fcba3be08497212b58c82/invoke.js"></script>
+        </div>
+
+        <h2>Part 3: FAQ</h2>
+
+        <h3>My NIC ends in X — am I not a Sri Lankan citizen?</h3>
+        <p>X has nothing to do with citizenship. It reflects voter registration status at the time of NIC issuance,
+          which could be years or decades ago. Sri Lankan citizenship and NIC issuance are separate from voter
+          registration.</p>
+
+        <h3>Can I verify whether a NIC is real or fake?</h3>
+        <p>You can verify the structural format (old: 9 digits + V/X; new: 12 digits). Whether a NIC belongs to a real
+          registered person can only be verified by DRP via official channels. NIC Info does not connect to DRP
+          databases.</p>
+
+        <h3>My new NIC has a different last digit from what the converter shows — why?</h3>
+        <p>When converting old → new NIC online, the last digit (check digit) generated is an estimate. The
+          authoritative check digit comes from DRP's database when the actual card is issued. Minor discrepancies are
+          common with online converters.</p>
+
+        <h3>Is there a difference between V and lowercase v?</h3>
+        <p>No. DRP prints uppercase V or X. Some databases store lowercase v. They mean the same thing — treat them as
+          case-insensitive.</p>
+
+        <!-- CTA -->
+        <div class="cta-box">
+          <p>Want the full decode — DOB, age, gender, weekday and voter status all in one place?</p>
+          <a href="/" class="cta-btn">Open NIC to DOB Decoder &rarr;</a>
+        </div>
+
+        <!-- NIC TOOLS NAV -->
+        <section class="nic-tools-nav" id="nic-tools" style="margin:2rem 0">
+          <h2 class="nic-tools-nav__title">More NIC Tools</h2>
+          <div class="nic-tools-nav__grid">
+            <a href="/" class="nic-tools-nav__item">
+              <span class="nic-tools-nav__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="11" cy="11" r="8" />
+                  <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                </svg>
+              </span>
+              <span class="nic-tools-nav__label">Decode NIC to DOB</span>
+            </a>
+            <a href="/old-to-new-nic" class="nic-tools-nav__item">
+              <span class="nic-tools-nav__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <polyline points="1 4 1 10 7 10" />
+                  <polyline points="23 20 23 14 17 14" />
+                  <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15" />
+                </svg>
+              </span>
+              <span class="nic-tools-nav__label">Old &#8596; New NIC Converter</span>
+            </a>
+            <a href="/nic-from-dob" class="nic-tools-nav__item">
+              <span class="nic-tools-nav__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                  <line x1="16" y1="2" x2="16" y2="6" />
+                  <line x1="8" y1="2" x2="8" y2="6" />
+                  <line x1="3" y1="10" x2="21" y2="10" />
+                </svg>
+              </span>
+              <span class="nic-tools-nav__label">DOB to NIC Structure</span>
+            </a>
+            <a href="/how-nic-works" class="nic-tools-nav__item">
+              <span class="nic-tools-nav__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                </svg>
+              </span>
+              <span class="nic-tools-nav__label">How NIC Works</span>
+            </a>
+            <a href="/excel-nic-formula" class="nic-tools-nav__item">
+              <span class="nic-tools-nav__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <line x1="3" y1="9" x2="21" y2="9" />
+                  <line x1="3" y1="15" x2="21" y2="15" />
+                  <line x1="9" y1="3" x2="9" y2="21" />
+                  <line x1="15" y1="3" x2="15" y2="21" />
+                </svg>
+              </span>
+              <span class="nic-tools-nav__label">Excel NIC Formula</span>
+            </a>
+          </div>
+          <div class="nic-tools-nav__languages">
+            <span class="nic-tools-nav__lang-label">Language:</span>
+            <a href="/" class="nic-tools-nav__lang nic-tools-nav__lang--active">English</a>
+            <a href="/si/" class="nic-tools-nav__lang">සිංහල</a>
+            <a href="/ta/" class="nic-tools-nav__lang">தமிழ்</a>
+          </div>
+        </section>
+
+      </article>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <a href="/" class="footer-logo-link" aria-label="NIC Decoder Home">
+          <img src="nicinfo-logo.webp" alt="NIC Info Logo" class="footer-logo" width="72" height="36" loading="lazy"
+            decoding="async" />
+        </a>
+        <p class="footer-description">
+          A free browser tool for decoding Sri Lankan National Identity Card numbers.<br />
+          <span class="last-updated">Last updated: August 2026</span>
+        </p>
+        <div class="footer-tools">
+          <a href="/" class="footer-link">NIC to DOB</a>
+          <span class="footer-divider" aria-hidden="true"></span>
+          <a href="/old-to-new-nic" class="footer-link">Old to New NIC</a>
+          <span class="footer-divider" aria-hidden="true"></span>
+          <a href="/nic-from-dob" class="footer-link">DOB to NIC</a>
+          <span class="footer-divider" aria-hidden="true"></span>
+          <a href="/nic-to-birthday" class="footer-link">NIC to Birthday</a>
+          <span class="footer-divider" aria-hidden="true"></span>
+          <a href="/how-nic-works" class="footer-link">How NIC Works</a>
+          <span class="footer-divider" aria-hidden="true"></span>
+          <a href="/excel-nic-formula" class="footer-link">Excel Formula</a>
+        </div>
+        <div class="footer-languages">
+          <a href="/si/" class="footer-link">සිංහල</a>
+          <span class="footer-divider" aria-hidden="true"></span>
+          <a href="/ta/" class="footer-link">தமிழ்</a>
+        </div>
+        <div class="footer-nav">
+          <a href="privacy.html" class="footer-link">Privacy Notice</a>
+          <span class="footer-divider" aria-hidden="true"></span>
+          <a href="guidelines.html" class="footer-link">Guidelines</a>
+          <span class="footer-divider" aria-hidden="true"></span>
+          <a href="policy.html" class="footer-link">Policy</a>
+          <span class="footer-divider" aria-hidden="true"></span>
+          <span class="footer-link footer-disclaimer">Not affiliated with DRP</span>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    (function () {
+      // Theme
+      var html = document.documentElement;
+      var themeToggles = document.querySelectorAll('.theme-toggle');
+      var STORAGE_KEY = 'nic-theme';
+
+      function applyTheme(theme) {
+        if (theme === 'light') {
+          html.setAttribute('data-theme', 'light');
+          themeToggles.forEach(function (btn) {
+            btn.setAttribute('aria-label', 'Switch to dark mode');
+          });
+        } else {
+          html.removeAttribute('data-theme');
+          themeToggles.forEach(function (btn) {
+            btn.setAttribute('aria-label', 'Switch to light mode');
+          });
+        }
+      }
+
+      var stored = localStorage.getItem(STORAGE_KEY);
+      if (stored === 'light' || stored === 'dark') {
+        applyTheme(stored);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        applyTheme('light');
+      }
+
+      themeToggles.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var currentlyLight = html.getAttribute('data-theme') === 'light';
+          var next = currentlyLight ? 'dark' : 'light';
+          applyTheme(next);
+          try { localStorage.setItem(STORAGE_KEY, next); } catch (_) { }
+        });
+      });
+
+      // Quick validator
+      var valInput = document.getElementById('val-input');
+      var valBtn = document.getElementById('val-btn');
+      var valResult = document.getElementById('val-result');
+
+      function badge(cls, text) { return '<span class="badge ' + cls + '">' + text + '</span>'; }
+
+      function validateNIC(raw) {
+        var n = raw.trim().toUpperCase();
+        if (!n) { valResult.innerHTML = ''; return; }
+
+        if (/^\d{9}[VX]$/.test(n)) {
+          var voter = n.slice(-1) === 'V' ? badge('badge-green', 'V — Voter') : badge('badge-red', 'X — Non-voter');
+          var yy = parseInt(n.substring(0, 2), 10);
+          var year = 1900 + yy;
+          var rawDoy = parseInt(n.substring(2, 5), 10);
+          var gender = rawDoy > 500 ? badge('badge-blue', 'Female') : badge('badge-blue', 'Male');
+          valResult.innerHTML = badge('badge-green', 'Old format (10-char)') + ' ' + gender + ' ' + voter + '<br />' +
+            '<small style="opacity:0.65">Birth year: ' + year + ' &middot; Day-of-year code: ' + rawDoy + ' &middot; Check digit: <em>none (V/X is voter status, not a check digit)</em></small>';
+        } else if (/^\d{12}$/.test(n)) {
+          var year12 = parseInt(n.substring(0, 4), 10);
+          var rawDoy12 = parseInt(n.substring(4, 7), 10);
+          var gender12 = rawDoy12 > 500 ? badge('badge-blue', 'Female') : badge('badge-blue', 'Male');
+          var checkDigit = n.slice(-1);
+          valResult.innerHTML = badge('badge-green', 'New format (12-digit)') + ' ' + gender12 + ' ' + badge('badge-grey', 'No V/X') + '<br />' +
+            '<small style="opacity:0.65">Birth year: ' + year12 + ' &middot; Day-of-year code: ' + rawDoy12 + ' &middot; Check digit (12th): <strong>' + checkDigit + '</strong> (structural only — DRP algorithm not published)</small>';
+        } else {
+          valResult.innerHTML = badge('badge-red', 'Invalid') + ' &mdash; Expected 10 characters (9 digits + V/X) or 12 digits.';
+        }
+      }
+
+      valBtn.addEventListener('click', function () { validateNIC(valInput.value); });
+      valInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') validateNIC(valInput.value); });
+      valInput.addEventListener('input', function () { if (valInput.value.length >= 10) validateNIC(valInput.value); });
+    })();
+  </script>
+
+  <!-- Global Navigation & Share Controller -->
+  <script src="navbar.js" defer></script>
+</body>
+
+</html>

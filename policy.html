@@ -19,14 +19,15 @@
   <link rel="alternate" hreflang="x-default" href="https://nicinfo.vercel.app/policy.html" />
 
   <!-- Theme Color -->
-  <meta name="theme-color" content="#0F172A" media="(prefers-color-scheme: dark)" />
-  <meta name="theme-color" content="#F8F5EE" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#11171C" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#F5F0E8" media="(prefers-color-scheme: light)" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://nicinfo.vercel.app/policy.html" />
   <meta property="og:title" content="Terms of Service & Operating Policy — NIC Info" />
-  <meta property="og:description" content="Official terms of service, operating policies, software warranty disclaimers, and intellectual property rights governing the use of NIC Info." />
+  <meta property="og:description"
+    content="Official terms of service, operating policies, software warranty disclaimers, and intellectual property rights governing the use of NIC Info." />
   <meta property="og:image" content="https://nicinfo.vercel.app/og-image.png" />
   <meta property="og:image:secure_url" content="https://nicinfo.vercel.app/og-image.png" />
   <meta property="og:image:type" content="image/png" />
@@ -41,7 +42,8 @@
   <meta name="twitter:domain" content="nicinfo.vercel.app" />
   <meta name="twitter:url" content="https://nicinfo.vercel.app/policy.html" />
   <meta name="twitter:title" content="Terms of Service & Operating Policy — NIC Info" />
-  <meta name="twitter:description" content="Official terms of service and operating policies governing the use of NIC Info." />
+  <meta name="twitter:description"
+    content="Official terms of service and operating policies governing the use of NIC Info." />
   <meta name="twitter:image" content="https://nicinfo.vercel.app/og-image.png" />
   <meta name="twitter:image:alt" content="NIC Info — Terms of Service & Operating Policy" />
 
@@ -52,6 +54,17 @@
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
   <link rel="manifest" href="manifest.json" />
   <link rel="sitemap" type="application/xml" href="sitemap.xml" />
+
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,560;0,9..144,600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" />
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css" />
@@ -212,6 +225,9 @@
       </svg>
     </div>
 
+    <!-- Skip to main content (WCAG 2.4.1) -->
+    <a href="#policy-content" class="skip-to-content">Skip to terms of service</a>
+
     <!-- ═══════════════════════════════════════════════════
          HEADER
          ═══════════════════════════════════════════════════ -->
@@ -230,33 +246,44 @@
           <a href="guidelines.html">Guidelines</a>
           <!-- Share Dropdown -->
           <div class="share-dropdown-wrapper">
-            <button class="share-btn" id="share-toggle-btn" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Share this website">
+            <button class="share-btn" id="share-toggle-btn" type="button" aria-expanded="false" aria-haspopup="true"
+              aria-label="Share this website">
               <span>Share</span>
-              <svg class="share-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <svg class="share-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </button>
             <div class="share-menu" id="share-menu" role="menu" aria-hidden="true">
-              <a href="#" class="share-menu__item" data-share-platform="whatsapp" role="menuitem" target="_blank" rel="noopener noreferrer">
-                <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+              <a href="#" class="share-menu__item" data-share-platform="whatsapp" role="menuitem" target="_blank"
+                rel="noopener noreferrer">
+                <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                  </path>
                 </svg>
                 <span>WhatsApp</span>
               </a>
-              <a href="#" class="share-menu__item" data-share-platform="facebook" role="menuitem" target="_blank" rel="noopener noreferrer">
-                <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <a href="#" class="share-menu__item" data-share-platform="facebook" role="menuitem" target="_blank"
+                rel="noopener noreferrer">
+                <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
                 </svg>
                 <span>Facebook</span>
               </a>
-              <a href="#" class="share-menu__item" data-share-platform="x" role="menuitem" target="_blank" rel="noopener noreferrer">
+              <a href="#" class="share-menu__item" data-share-platform="x" role="menuitem" target="_blank"
+                rel="noopener noreferrer">
                 <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  <path
+                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                 </svg>
                 <span>X / Twitter</span>
               </a>
               <button type="button" class="share-menu__item" id="share-copy-btn" role="menuitem">
-                <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                   <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                 </svg>
@@ -353,6 +380,18 @@
 
         <div class="mobile-nav-divider"></div>
 
+        <!-- Language Selector -->
+        <div class="mobile-lang-row">
+          <span class="mobile-lang-label">Language</span>
+          <div class="mobile-lang-pills">
+            <a href="/" class="mobile-lang-pill active">English</a>
+            <a href="/si/" class="mobile-lang-pill">සිංහල</a>
+            <a href="/ta/" class="mobile-lang-pill">தமிழ்</a>
+          </div>
+        </div>
+
+        <div class="mobile-nav-divider"></div>
+
         <!-- Mobile Share Section -->
         <div class="mobile-share-section">
           <div class="mobile-share-title">Share NIC Info</div>
@@ -375,8 +414,7 @@
               </svg>
               <span>Facebook</span>
             </a>
-            <a href="#" class="mobile-share-btn" data-share-platform="x" target="_blank"
-              rel="noopener noreferrer">
+            <a href="#" class="mobile-share-btn" data-share-platform="x" target="_blank" rel="noopener noreferrer">
               <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                 <path
                   d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
@@ -399,13 +437,14 @@
     </header>
 
     <!-- ═══════════════════════════════════════════════════
-         MAIN OPERATING POLICY CONTENT
+         MAIN POLICY CONTENT
          ═══════════════════════════════════════════════════ -->
-    <main class="policy-page">
+    <main class="policy-page" id="policy-content">
       <div class="policy-header animate-fade-in">
         <a href="/" class="policy-back-link">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-            <path d="M11 8H5M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M11 8H5M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+              stroke-linejoin="round" />
           </svg>
           Back to NIC Decoder
         </a>
@@ -420,7 +459,8 @@
       <!-- Shield Highlight Callout (Inherited gold signature border & verified contrast) -->
       <div class="policy-badge-shield animate-fact-0">
         <div class="policy-badge-icon" aria-hidden="true">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
             <polyline points="14 2 14 8 20 8" />
             <line x1="16" y1="13" x2="8" y2="13" />
@@ -431,7 +471,10 @@
         <div class="policy-badge-text">
           <h3>Open Access &amp; Transparent Operational Commitment</h3>
           <p>
-            NIC Info is a free, decentralized digital utility engineered solely as an educational and operational analysis assistant. By loading, accessing, or executing this client-side software interface, you signify your unreserved agreement to the operating conditions, copyright terms, and legal warranty disclaimers codified below.
+            NIC Info is a free, decentralized digital utility engineered solely as an educational and operational
+            analysis assistant. By loading, accessing, or executing this client-side software interface, you signify
+            your unreserved agreement to the operating conditions, copyright terms, and legal warranty disclaimers
+            codified below.
           </p>
         </div>
       </div>
@@ -440,10 +483,15 @@
       <section class="policy-section animate-fact-1">
         <h2>1. Acceptance of Terms &amp; Nature of Service</h2>
         <p>
-          This document establishes a binding agreement between visitors (&ldquo;User&rdquo;, &ldquo;Operator&rdquo;, or &ldquo;You&rdquo;) and the leadership of <strong>NIC Info</strong> regarding your utilization of this browser-based analytical interface. Our tool functions without requiring subscription payments, user accounts, or cloud database onboarding.
+          This document establishes a binding agreement between visitors (&ldquo;User&rdquo;, &ldquo;Operator&rdquo;, or
+          &ldquo;You&rdquo;) and the leadership of <strong>NIC Info</strong> regarding your utilization of this
+          browser-based analytical interface. Our tool functions without requiring subscription payments, user accounts,
+          or cloud database onboarding.
         </p>
         <p>
-          If you do not agree with any stipulation within this Terms of Service or our complementary <a href="privacy.html" class="policy-contact-link">Privacy Notice</a>, you must cease accessing this tool and navigate away from the interface immediately.
+          If you do not agree with any stipulation within this Terms of Service or our complementary <a
+            href="privacy.html" class="policy-contact-link">Privacy Notice</a>, you must cease accessing this tool and
+          navigate away from the interface immediately.
         </p>
       </section>
 
@@ -451,11 +499,18 @@
       <section class="policy-section animate-fact-2">
         <h2>2. Intellectual Property &amp; Software Ownership</h2>
         <p>
-          The architecture, graphical design system, custom CSS token styling, dynamic interface scripts, and brand wordmark (&ldquo;NIC Info&rdquo;) embodied on this website represent the intellectual labor of our engineering team, protected under applicable intellectual property laws and international copyright treaties.
+          The architecture, graphical design system, custom CSS token styling, dynamic interface scripts, and brand
+          wordmark (&ldquo;NIC Info&rdquo;) embodied on this website represent the intellectual labor of our engineering
+          team, protected under applicable intellectual property laws and international copyright treaties.
         </p>
         <ul class="policy-list">
-          <li><strong>UI &amp; Code Asset Protections:</strong> While the website is made freely accessible for browser decoding, visitors are not authorized to clone, repackage, commercially redistribute, or monetize our proprietary UI layouts, animations, or styling scripts without explicit written authorization.</li>
-          <li><strong>Public Algorithmic Conventions:</strong> The mathematical parsing routines used to extract dates of birth and gender determinations represent implementations of Sri Lanka's Department for Registration of Persons (DRP) publicly available numbering syntax, which exists in the public domain for civic and organizational utility.</li>
+          <li><strong>UI &amp; Code Asset Protections:</strong> While the website is made freely accessible for browser
+            decoding, visitors are not authorized to clone, repackage, commercially redistribute, or monetize our
+            proprietary UI layouts, animations, or styling scripts without explicit written authorization.</li>
+          <li><strong>Public Algorithmic Conventions:</strong> The mathematical parsing routines used to extract dates
+            of birth and gender determinations represent implementations of Sri Lanka's Department for Registration of
+            Persons (DRP) publicly available numbering syntax, which exists in the public domain for civic and
+            organizational utility.</li>
         </ul>
       </section>
 
@@ -463,12 +518,21 @@
       <section class="policy-section">
         <h2>3. Disclaimer of Warranties (&ldquo;As-Is&rdquo; Provision)</h2>
         <p>
-          To the maximum extent permitted by applicable statutory legislation, this client-side web application is provided on an strictly <strong>&ldquo;AS IS&rdquo;</strong> and <strong>&ldquo;AS AVAILABLE&rdquo;</strong> basis without warranties of any kind, whether express, implied, or statutory.
+          To the maximum extent permitted by applicable statutory legislation, this client-side web application is
+          provided on an strictly <strong>&ldquo;AS IS&rdquo;</strong> and <strong>&ldquo;AS AVAILABLE&rdquo;</strong>
+          basis without warranties of any kind, whether express, implied, or statutory.
         </p>
         <ul class="policy-list">
-          <li><strong>Absence of Official Endorsement:</strong> NIC Info is an independent software engineering initiative designed for public utility. It does NOT constitute an official portal, branch, or affiliate of the Government of Sri Lanka or the Department for Registration of Persons (DRP).</li>
-          <li><strong>No Legal Verification Replacement:</strong> Output metrics generated by our offline calculation algorithm should serve exclusively as syntax guidance and initial date checking. For critical financial underwriting, government identity verification, or courtroom proceedings, organizations must obtain and inspect the physical identity document or consult official government verification channels.</li>
-          <li><strong>No Guarantee of Continuous Uptime:</strong> Because static web hosting relies on global telecommunications infrastructure and third-party CDNs, we make no warranty that interface loading will remain uninterrupted, error-free, or fully accessible across every device network.</li>
+          <li><strong>Absence of Official Endorsement:</strong> NIC Info is an independent software engineering
+            initiative designed for public utility. It does NOT constitute an official portal, branch, or affiliate of
+            the Government of Sri Lanka or the Department for Registration of Persons (DRP).</li>
+          <li><strong>No Legal Verification Replacement:</strong> Output metrics generated by our offline calculation
+            algorithm should serve exclusively as syntax guidance and initial date checking. For critical financial
+            underwriting, government identity verification, or courtroom proceedings, organizations must obtain and
+            inspect the physical identity document or consult official government verification channels.</li>
+          <li><strong>No Guarantee of Continuous Uptime:</strong> Because static web hosting relies on global
+            telecommunications infrastructure and third-party CDNs, we make no warranty that interface loading will
+            remain uninterrupted, error-free, or fully accessible across every device network.</li>
         </ul>
       </section>
 
@@ -476,10 +540,15 @@
       <section class="policy-section">
         <h2>4. Limitation of Liability</h2>
         <p>
-          Under no circumstances—including but not limited to negligence, software incompatibilities, or reliance on generated date calculations—shall the lead developer, site contributors, hosting mirrors (e.g., Vercel), or Content Delivery Networks be held legally or financially responsible for direct, indirect, incidental, consequential, or punitive damages.
+          Under no circumstances—including but not limited to negligence, software incompatibilities, or reliance on
+          generated date calculations—shall the lead developer, site contributors, hosting mirrors (e.g., Vercel), or
+          Content Delivery Networks be held legally or financially responsible for direct, indirect, incidental,
+          consequential, or punitive damages.
         </p>
         <p>
-          This comprehensive liability shield applies to any loss of profits, enterprise data interruption, algorithmic edge-case misinterpretation, or downstream compliance discrepancies arising out of your decision to execute our browser-based utility within your organizational workflows.
+          This comprehensive liability shield applies to any loss of profits, enterprise data interruption, algorithmic
+          edge-case misinterpretation, or downstream compliance discrepancies arising out of your decision to execute
+          our browser-based utility within your organizational workflows.
         </p>
       </section>
 
@@ -487,11 +556,17 @@
       <section class="policy-section">
         <h2>5. Acceptable Use &amp; System Integrity</h2>
         <p>
-          To safeguard our infrastructure and uphold web engineering ethics, visitors agree to adhere strictly to operational etiquette when interacting with our site:
+          To safeguard our infrastructure and uphold web engineering ethics, visitors agree to adhere strictly to
+          operational etiquette when interacting with our site:
         </p>
         <ul class="policy-list">
-          <li><strong>Prohibition of Script Injection &amp; Interference:</strong> Users are prohibited from attempting to deploy malicious automated routines, Distributed Denial of Service (DDoS) requests, or framing techniques designed to disguise our identity tool under deceptive domain branding.</li>
-          <li><strong>Respect for Zero-Retention Principles:</strong> Operators utilizing our interface for organizational checking agree to abide by our foundational data ethics: never attempt to reverse-engineer browser memory states to capture or record unencrypted identification data belonging to external visitors.</li>
+          <li><strong>Prohibition of Script Injection &amp; Interference:</strong> Users are prohibited from attempting
+            to deploy malicious automated routines, Distributed Denial of Service (DDoS) requests, or framing techniques
+            designed to disguise our identity tool under deceptive domain branding.</li>
+          <li><strong>Respect for Zero-Retention Principles:</strong> Operators utilizing our interface for
+            organizational checking agree to abide by our foundational data ethics: never attempt to reverse-engineer
+            browser memory states to capture or record unencrypted identification data belonging to external visitors.
+          </li>
         </ul>
       </section>
 
@@ -499,7 +574,10 @@
       <section class="policy-section">
         <h2>6. Governing Law &amp; Dispute Resolution</h2>
         <p>
-          These operational policies, alongside any claims arising from the execution of our software interface, shall be interpreted, governed, and enforced in accordance with the substantive laws and statutes of the <strong>Democratic Socialist Republic of Sri Lanka</strong>, without giving effect to conflicts of law methodologies or foreign arbitration frameworks.
+          These operational policies, alongside any claims arising from the execution of our software interface, shall
+          be interpreted, governed, and enforced in accordance with the substantive laws and statutes of the
+          <strong>Democratic Socialist Republic of Sri Lanka</strong>, without giving effect to conflicts of law
+          methodologies or foreign arbitration frameworks.
         </p>
       </section>
 
@@ -507,11 +585,15 @@
       <section class="policy-section">
         <h2>7. Administrative Contact &amp; Legal Notices</h2>
         <p>
-          Should you require formal contractual authorization for enterprise integration, licensing permissions for our UI design architecture, or wish to present formal administrative feedback regarding these operating terms, you may communicate directly with our engineering leadership:
+          Should you require formal contractual authorization for enterprise integration, licensing permissions for our
+          UI design architecture, or wish to present formal administrative feedback regarding these operating terms, you
+          may communicate directly with our engineering leadership:
         </p>
         <p>
           <strong>Lead Developer:</strong> Pubudu Tharanga<br />
-          <strong>Developer Portfolio &amp; Direct Channel:</strong> <a href="https://pubudu-tharanga.vercel.app/" target="_blank" rel="noopener noreferrer" class="policy-contact-link">https://pubudu-tharanga.vercel.app/</a>
+          <strong>Developer Portfolio &amp; Direct Channel:</strong> <a href="https://pubudu-tharanga.vercel.app/"
+            target="_blank" rel="noopener noreferrer"
+            class="policy-contact-link">https://pubudu-tharanga.vercel.app/</a>
         </p>
       </section>
     </main>
@@ -522,7 +604,7 @@
     <footer class="site-footer">
       <div class="footer-inner">
         <a href="/" class="footer-logo-link" aria-label="NIC Decoder Home">
-          <img src="nicinfo-logo.webp" alt="NIC Info Logo" class="footer-logo" width="72" height="36"
+          <img src="nicinfo-logo.webp" alt="NIC Info Logo" class="footer-logo" width="72" height="36" loading="lazy"
             decoding="async" />
         </a>
 
@@ -537,12 +619,16 @@
         </p>
 
         <p class="footer-developed">
-          Developed by 
+          Developed by
           <span class="link-preview-wrapper">
-            <a href="https://pubudu-tharanga.vercel.app/" target="_blank" rel="noopener noreferrer" class="developer-link link-preview-trigger">Pubudu Tharanga</a>
+            <a href="https://pubudu-tharanga.vercel.app/" target="_blank" rel="noopener noreferrer"
+              class="developer-link link-preview-trigger">Pubudu Tharanga</a>
             <span class="link-preview-popover" role="tooltip" aria-hidden="true">
               <span class="link-preview-card">
-                <img src="https://image.thum.io/get/width/1280/crop/720/wait/8/noanimate/https://pubudu-tharanga.vercel.app/" alt="Pubudu Tharanga Portfolio Preview" class="link-preview-image" width="320" height="180" loading="lazy" decoding="async" />
+                <img
+                  src="https://image.thum.io/get/width/1280/crop/720/wait/8/noanimate/https://pubudu-tharanga.vercel.app/"
+                  alt="Pubudu Tharanga Portfolio Preview" class="link-preview-image" width="320" height="180"
+                  loading="lazy" decoding="async" />
               </span>
             </span>
           </span>
@@ -564,215 +650,216 @@
        JAVASCRIPT — Theme toggle & interactions
        ═══════════════════════════════════════════════════════ -->
   <script>
-    (function () {
-      var html = document.documentElement;
-      var themeToggles = document.querySelectorAll('.theme-toggle');
-      var STORAGE_KEY = 'nic-theme';
-      var header = document.getElementById('site-header');
+      (function () {
+        var html = document.documentElement;
+        var themeToggles = document.querySelectorAll('.theme-toggle');
+        var STORAGE_KEY = 'nic-theme';
+        var header = document.getElementById('site-header');
 
-      function applyTheme(theme) {
-        if (theme === 'light') {
-          html.setAttribute('data-theme', 'light');
-          themeToggles.forEach(function (btn) {
-            btn.setAttribute('aria-label', 'Switch to dark mode');
-          });
-        } else {
-          html.removeAttribute('data-theme');
-          themeToggles.forEach(function (btn) {
-            btn.setAttribute('aria-label', 'Switch to light mode');
-          });
-        }
-      }
-
-      // Initialize Theme
-      var stored = localStorage.getItem(STORAGE_KEY);
-      if (stored === 'light' || stored === 'dark') {
-        applyTheme(stored);
-      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-        applyTheme('light');
-      }
-
-      themeToggles.forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          var currentlyLight = html.getAttribute('data-theme') === 'light';
-          var next = currentlyLight ? 'dark' : 'light';
-          applyTheme(next);
-          try { localStorage.setItem(STORAGE_KEY, next); } catch (_) { }
-        });
-      });
-
-      window.addEventListener('scroll', function () {
-        if (window.scrollY > 40) {
-          header.classList.add('scrolled');
-        } else {
-          header.classList.remove('scrolled');
-        }
-      }, { passive: true });
-
-      // ── Share Dropdown & Web Share Protocols (Desktop) ───
-      var shareBtn = document.getElementById('share-toggle-btn');
-      var shareMenu = document.getElementById('share-menu');
-      var shareUrl = encodeURIComponent(window.location.origin + window.location.pathname);
-      var shareText = encodeURIComponent("Check out NIC Info - A free browser tool for decoding Sri Lankan National Identity Card numbers and revealing birth dates & gender! ");
-
-      if (shareBtn && shareMenu) {
-        shareBtn.addEventListener('click', function (e) {
-          e.stopPropagation();
-          var isOpen = shareMenu.classList.contains('open');
-          if (isOpen) {
-            shareMenu.classList.remove('open');
-            shareBtn.setAttribute('aria-expanded', 'false');
-            shareMenu.setAttribute('aria-hidden', 'true');
-          } else {
-            shareMenu.classList.add('open');
-            shareBtn.setAttribute('aria-expanded', 'true');
-            shareMenu.setAttribute('aria-hidden', 'false');
-          }
-        });
-
-        document.addEventListener('click', function (e) {
-          if (!shareMenu.contains(e.target) && e.target !== shareBtn) {
-            shareMenu.classList.remove('open');
-            shareBtn.setAttribute('aria-expanded', 'false');
-            shareMenu.setAttribute('aria-hidden', 'true');
-          }
-        });
-
-        document.addEventListener('keydown', function (e) {
-          if (e.key === 'Escape') {
-            shareMenu.classList.remove('open');
-            shareBtn.setAttribute('aria-expanded', 'false');
-            shareMenu.setAttribute('aria-hidden', 'true');
-          }
-        });
-
-        var waBtn = shareMenu.querySelector('[data-share-platform="whatsapp"]');
-        var fbBtn = shareMenu.querySelector('[data-share-platform="facebook"]');
-        var xBtn = shareMenu.querySelector('[data-share-platform="x"]');
-        var copyBtn = document.getElementById('share-copy-btn');
-        var copyText = document.getElementById('share-copy-text');
-
-        if (waBtn) waBtn.href = "https://api.whatsapp.com/send?text=" + shareText + shareUrl;
-        if (fbBtn) fbBtn.href = "https://www.facebook.com/sharer/sharer.php?u=" + shareUrl;
-        if (xBtn) xBtn.href = "https://twitter.com/intent/tweet?text=" + shareText + "&url=" + shareUrl;
-
-        if (copyBtn) {
-          copyBtn.addEventListener('click', function (e) {
-            e.stopPropagation();
-            var targetUrl = window.location.origin + window.location.pathname;
-            navigator.clipboard.writeText(targetUrl).then(function () {
-              var originalText = copyText ? copyText.innerText : 'Copy Link';
-              if (copyText) copyText.innerText = 'Copied!';
-              copyBtn.style.color = '#25D366';
-              setTimeout(function () {
-                if (copyText) copyText.innerText = originalText;
-                copyBtn.style.color = '';
-              }, 2000);
-            }).catch(function () {
-              // Fallback
+        function applyTheme(theme) {
+          if (theme === 'light') {
+            html.setAttribute('data-theme', 'light');
+            themeToggles.forEach(function (btn) {
+              btn.setAttribute('aria-label', 'Switch to dark mode');
             });
-          });
-        }
-      }
-
-      // ── Mobile Navigation Drawer & Mobile Share ───────────
-      var mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-      var mobileNavDrawer = document.getElementById('mobile-nav-drawer');
-      var mobileNavBackdrop = document.getElementById('mobile-nav-backdrop');
-      var mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-
-      function openMobileMenu() {
-        if (!mobileMenuToggle || !mobileNavDrawer) return;
-        mobileMenuToggle.setAttribute('aria-expanded', 'true');
-        mobileNavDrawer.classList.add('open');
-        mobileNavDrawer.setAttribute('aria-hidden', 'false');
-        if (mobileNavBackdrop) {
-          mobileNavBackdrop.classList.add('open');
-          mobileNavBackdrop.setAttribute('aria-hidden', 'false');
-        }
-        document.body.style.overflow = 'hidden';
-      }
-
-      function closeMobileMenu() {
-        if (!mobileMenuToggle || !mobileNavDrawer) return;
-        mobileMenuToggle.setAttribute('aria-expanded', 'false');
-        mobileNavDrawer.classList.remove('open');
-        mobileNavDrawer.setAttribute('aria-hidden', 'true');
-        if (mobileNavBackdrop) {
-          mobileNavBackdrop.classList.remove('open');
-          mobileNavBackdrop.setAttribute('aria-hidden', 'true');
-        }
-        document.body.style.overflow = '';
-      }
-
-      if (mobileMenuToggle && mobileNavDrawer) {
-        mobileMenuToggle.addEventListener('click', function (e) {
-          e.stopPropagation();
-          var isOpen = mobileNavDrawer.classList.contains('open');
-          if (isOpen) {
-            closeMobileMenu();
           } else {
-            openMobileMenu();
+            html.removeAttribute('data-theme');
+            themeToggles.forEach(function (btn) {
+              btn.setAttribute('aria-label', 'Switch to light mode');
+            });
           }
-        });
-
-        if (mobileNavBackdrop) {
-          mobileNavBackdrop.addEventListener('click', closeMobileMenu);
         }
 
-        mobileNavLinks.forEach(function (link) {
-          link.addEventListener('click', function () {
-            closeMobileMenu();
+        // Initialize Theme
+        var stored = localStorage.getItem(STORAGE_KEY);
+        if (stored === 'light' || stored === 'dark') {
+          applyTheme(stored);
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+          applyTheme('light');
+        }
+
+        themeToggles.forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var currentlyLight = html.getAttribute('data-theme') === 'light';
+            var next = currentlyLight ? 'dark' : 'light';
+            applyTheme(next);
+            try { localStorage.setItem(STORAGE_KEY, next); } catch (_) { }
           });
         });
 
-        document.addEventListener('keydown', function (e) {
-          if (e.key === 'Escape' && mobileNavDrawer.classList.contains('open')) {
-            closeMobileMenu();
-          }
-        });
-
-        window.addEventListener('resize', function () {
-          if (window.innerWidth > 768 && mobileNavDrawer.classList.contains('open')) {
-            closeMobileMenu();
+        window.addEventListener('scroll', function () {
+          if (window.scrollY > 40) {
+            header.classList.add('scrolled');
+          } else {
+            header.classList.remove('scrolled');
           }
         }, { passive: true });
-      }
 
-      // Mobile Share Platform Links
-      var mobileWaBtn = document.querySelector('.mobile-share-btn[data-share-platform="whatsapp"]');
-      var mobileFbBtn = document.querySelector('.mobile-share-btn[data-share-platform="facebook"]');
-      var mobileXBtn = document.querySelector('.mobile-share-btn[data-share-platform="x"]');
-      var mobileCopyBtn = document.getElementById('mobile-share-copy-btn');
-      var mobileCopyText = document.getElementById('mobile-share-copy-text');
+        // ── Share Dropdown & Web Share Protocols (Desktop) ───
+        var shareBtn = document.getElementById('share-toggle-btn');
+        var shareMenu = document.getElementById('share-menu');
+        var shareUrl = encodeURIComponent(window.location.origin + window.location.pathname);
+        var shareText = encodeURIComponent("Check out NIC Info - A free browser tool for decoding Sri Lankan National Identity Card numbers and revealing birth dates & gender! ");
 
-      if (mobileWaBtn) mobileWaBtn.href = "https://api.whatsapp.com/send?text=" + shareText + shareUrl;
-      if (mobileFbBtn) mobileFbBtn.href = "https://www.facebook.com/sharer/sharer.php?u=" + shareUrl;
-      if (mobileXBtn) mobileXBtn.href = "https://twitter.com/intent/tweet?text=" + shareText + "&url=" + shareUrl;
+        if (shareBtn && shareMenu) {
+          shareBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            var isOpen = shareMenu.classList.contains('open');
+            if (isOpen) {
+              shareMenu.classList.remove('open');
+              shareBtn.setAttribute('aria-expanded', 'false');
+              shareMenu.setAttribute('aria-hidden', 'true');
+            } else {
+              shareMenu.classList.add('open');
+              shareBtn.setAttribute('aria-expanded', 'true');
+              shareMenu.setAttribute('aria-hidden', 'false');
+            }
+          });
 
-      if (mobileCopyBtn) {
-        mobileCopyBtn.addEventListener('click', function (e) {
-          e.stopPropagation();
-          var targetUrl = window.location.origin + window.location.pathname;
-          function markCopied() {
-            var originalText = mobileCopyText ? mobileCopyText.innerText : 'Copy Link';
-            if (mobileCopyText) mobileCopyText.innerText = 'Copied!';
-            mobileCopyBtn.classList.add('copied');
-            setTimeout(function () {
-              if (mobileCopyText) mobileCopyText.innerText = originalText;
-              mobileCopyBtn.classList.remove('copied');
-            }, 2000);
-          }
-          if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(targetUrl).then(markCopied).catch(function () {
-              markCopied();
+          document.addEventListener('click', function (e) {
+            if (!shareMenu.contains(e.target) && e.target !== shareBtn) {
+              shareMenu.classList.remove('open');
+              shareBtn.setAttribute('aria-expanded', 'false');
+              shareMenu.setAttribute('aria-hidden', 'true');
+            }
+          });
+
+          document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+              shareMenu.classList.remove('open');
+              shareBtn.setAttribute('aria-expanded', 'false');
+              shareMenu.setAttribute('aria-hidden', 'true');
+            }
+          });
+
+          var waBtn = shareMenu.querySelector('[data-share-platform="whatsapp"]');
+          var fbBtn = shareMenu.querySelector('[data-share-platform="facebook"]');
+          var xBtn = shareMenu.querySelector('[data-share-platform="x"]');
+          var copyBtn = document.getElementById('share-copy-btn');
+          var copyText = document.getElementById('share-copy-text');
+
+          if (waBtn) waBtn.href = "https://api.whatsapp.com/send?text=" + shareText + shareUrl;
+          if (fbBtn) fbBtn.href = "https://www.facebook.com/sharer/sharer.php?u=" + shareUrl;
+          if (xBtn) xBtn.href = "https://twitter.com/intent/tweet?text=" + shareText + "&url=" + shareUrl;
+
+          if (copyBtn) {
+            copyBtn.addEventListener('click', function (e) {
+              e.stopPropagation();
+              var targetUrl = window.location.origin + window.location.pathname;
+              navigator.clipboard.writeText(targetUrl).then(function () {
+                var originalText = copyText ? copyText.innerText : 'Copy Link';
+                if (copyText) copyText.innerText = 'Copied!';
+                copyBtn.style.color = '#25D366';
+                setTimeout(function () {
+                  if (copyText) copyText.innerText = originalText;
+                  copyBtn.style.color = '';
+                }, 2000);
+              }).catch(function () {
+                // Fallback
+              });
             });
-          } else {
-            markCopied();
           }
-        });
-      }
-    })();
+        }
+
+        // ── Mobile Navigation Drawer & Mobile Share ───────────
+        var mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        var mobileNavDrawer = document.getElementById('mobile-nav-drawer');
+        var mobileNavBackdrop = document.getElementById('mobile-nav-backdrop');
+        var mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        function openMobileMenu() {
+          if (!mobileMenuToggle || !mobileNavDrawer) return;
+          mobileMenuToggle.setAttribute('aria-expanded', 'true');
+          mobileNavDrawer.classList.add('open');
+          mobileNavDrawer.setAttribute('aria-hidden', 'false');
+          if (mobileNavBackdrop) {
+            mobileNavBackdrop.classList.add('open');
+            mobileNavBackdrop.setAttribute('aria-hidden', 'false');
+          }
+          document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenu() {
+          if (!mobileMenuToggle || !mobileNavDrawer) return;
+          mobileMenuToggle.setAttribute('aria-expanded', 'false');
+          mobileNavDrawer.classList.remove('open');
+          mobileNavDrawer.setAttribute('aria-hidden', 'true');
+          if (mobileNavBackdrop) {
+            mobileNavBackdrop.classList.remove('open');
+            mobileNavBackdrop.setAttribute('aria-hidden', 'true');
+          }
+          document.body.style.overflow = '';
+        }
+
+        if (mobileMenuToggle && mobileNavDrawer) {
+          mobileMenuToggle.addEventListener('click', function (e) {
+            e.stopPropagation();
+            var isOpen = mobileNavDrawer.classList.contains('open');
+            if (isOpen) {
+              closeMobileMenu();
+            } else {
+              openMobileMenu();
+            }
+          });
+
+          if (mobileNavBackdrop) {
+            mobileNavBackdrop.addEventListener('click', closeMobileMenu);
+          }
+
+          mobileNavLinks.forEach(function (link) {
+            link.addEventListener('click', function () {
+              closeMobileMenu();
+            });
+          });
+
+          document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && mobileNavDrawer.classList.contains('open')) {
+              closeMobileMenu();
+            }
+          });
+
+          window.addEventListener('resize', function () {
+            if (window.innerWidth > 768 && mobileNavDrawer.classList.contains('open')) {
+              closeMobileMenu();
+            }
+          }, { passive: true });
+        }
+
+        // Mobile Share Platform Links
+        var mobileWaBtn = document.querySelector('.mobile-share-btn[data-share-platform="whatsapp"]');
+        var mobileFbBtn = document.querySelector('.mobile-share-btn[data-share-platform="facebook"]');
+        var mobileXBtn = document.querySelector('.mobile-share-btn[data-share-platform="x"]');
+        var mobileCopyBtn = document.getElementById('mobile-share-copy-btn');
+        var mobileCopyText = document.getElementById('mobile-share-copy-text');
+
+        if (mobileWaBtn) mobileWaBtn.href = "https://api.whatsapp.com/send?text=" + shareText + shareUrl;
+        if (mobileFbBtn) mobileFbBtn.href = "https://www.facebook.com/sharer/sharer.php?u=" + shareUrl;
+        if (mobileXBtn) mobileXBtn.href = "https://twitter.com/intent/tweet?text=" + shareText + "&url=" + shareUrl;
+
+        if (mobileCopyBtn) {
+          mobileCopyBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            var targetUrl = window.location.origin + window.location.pathname;
+            function markCopied() {
+              var originalText = mobileCopyText ? mobileCopyText.innerText : 'Copy Link';
+              if (mobileCopyText) mobileCopyText.innerText = 'Copied!';
+              mobileCopyBtn.classList.add('copied');
+              setTimeout(function () {
+                if (mobileCopyText) mobileCopyText.innerText = originalText;
+                mobileCopyBtn.classList.remove('copied');
+              }, 2000);
+            }
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(targetUrl).then(markCopied).catch(function () {
+                markCopied();
+              });
+            } else {
+              markCopied();
+            }
+          });
+        }
+      })();
   </script>
 </body>
+
 </html>

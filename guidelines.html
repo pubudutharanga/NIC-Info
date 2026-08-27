@@ -11,7 +11,8 @@
   <title>NIC Decoder Usage Guidelines & Verification Standards — NIC Info</title>
   <meta name="description"
     content="Official technical guide to Sri Lankan NIC number formats. Learn old (9-digit) vs new (12-digit) structure, gender encoding, and conversion protocols." />
-  <meta name="keywords" content="sri lankan nic format, old nic format sri lanka, new nic format 12 digits, nic number structure, nic to dob, nic day of year encoding, nic gender encoding, sri lanka identity card format, nic conversion guide" />
+  <meta name="keywords"
+    content="sri lankan nic format, old nic format sri lanka, new nic format 12 digits, nic number structure, nic to dob, nic day of year encoding, nic gender encoding, sri lanka identity card format, nic conversion guide" />
   <meta name="author" content="Pubudu Tharanga" />
 
   <!-- Canonical & Internationalization -->
@@ -20,14 +21,15 @@
   <link rel="alternate" hreflang="x-default" href="https://nicinfo.vercel.app/guidelines.html" />
 
   <!-- Theme Color -->
-  <meta name="theme-color" content="#0F172A" media="(prefers-color-scheme: dark)" />
-  <meta name="theme-color" content="#F8F5EE" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#11171C" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#F5F0E8" media="(prefers-color-scheme: light)" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://nicinfo.vercel.app/guidelines.html" />
   <meta property="og:title" content="NIC Decoder Usage Guidelines & Verification Standards — NIC Info" />
-  <meta property="og:description" content="Official technical guide to Sri Lankan NIC number formats, old vs new format structure, gender encoding, and conversion protocols." />
+  <meta property="og:description"
+    content="Official technical guide to Sri Lankan NIC number formats, old vs new format structure, gender encoding, and conversion protocols." />
   <meta property="og:image" content="https://nicinfo.vercel.app/og-image.png" />
   <meta property="og:image:secure_url" content="https://nicinfo.vercel.app/og-image.png" />
   <meta property="og:image:type" content="image/png" />
@@ -42,7 +44,8 @@
   <meta name="twitter:domain" content="nicinfo.vercel.app" />
   <meta name="twitter:url" content="https://nicinfo.vercel.app/guidelines.html" />
   <meta name="twitter:title" content="NIC Decoder Usage Guidelines & Verification Standards — NIC Info" />
-  <meta name="twitter:description" content="Official technical specifications and format conversion protocols for decoding Sri Lankan NIC numbers." />
+  <meta name="twitter:description"
+    content="Official technical specifications and format conversion protocols for decoding Sri Lankan NIC numbers." />
   <meta name="twitter:image" content="https://nicinfo.vercel.app/og-image.png" />
   <meta name="twitter:image:alt" content="NIC Info — Usage Guidelines & Verification Standards" />
 
@@ -53,6 +56,17 @@
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
   <link rel="manifest" href="manifest.json" />
   <link rel="sitemap" type="application/xml" href="sitemap.xml" />
+
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,560;0,9..144,600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" />
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css" />
@@ -95,7 +109,7 @@
         "url": "https://nicinfo.vercel.app/guidelines.html",
         "mainEntityOfPage": "https://nicinfo.vercel.app/guidelines.html",
         "datePublished": "2026-01-17",
-        "dateModified": "2026-08-15",
+        "dateModified": "2026-08-27",
         "inLanguage": "en",
         "author": {
           "@id": "https://nicinfo.vercel.app/#author"
@@ -216,6 +230,9 @@
       </svg>
     </div>
 
+    <!-- Skip to main content (WCAG 2.4.1) -->
+    <a href="#guidelines-content" class="skip-to-content">Skip to guidelines</a>
+
     <!-- ═══════════════════════════════════════════════════
          HEADER
          ═══════════════════════════════════════════════════ -->
@@ -223,7 +240,7 @@
       <div class="header-inner">
         <a href="/" class="logo-link" aria-label="NIC Decoder Home">
           <img src="nicinfo-logo.webp" alt="NIC Decoder Logo" class="header-logo" width="56" height="28"
-            decoding="async" />
+            fetchpriority="high" decoding="async" />
         </a>
 
         <!-- Desktop Navigation Links -->
@@ -234,33 +251,44 @@
           <a href="guidelines.html">Guidelines</a>
           <!-- Share Dropdown -->
           <div class="share-dropdown-wrapper">
-            <button class="share-btn" id="share-toggle-btn" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Share this website">
+            <button class="share-btn" id="share-toggle-btn" type="button" aria-expanded="false" aria-haspopup="true"
+              aria-label="Share this website">
               <span>Share</span>
-              <svg class="share-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <svg class="share-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </button>
             <div class="share-menu" id="share-menu" role="menu" aria-hidden="true">
-              <a href="#" class="share-menu__item" data-share-platform="whatsapp" role="menuitem" target="_blank" rel="noopener noreferrer">
-                <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+              <a href="#" class="share-menu__item" data-share-platform="whatsapp" role="menuitem" target="_blank"
+                rel="noopener noreferrer">
+                <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                  </path>
                 </svg>
                 <span>WhatsApp</span>
               </a>
-              <a href="#" class="share-menu__item" data-share-platform="facebook" role="menuitem" target="_blank" rel="noopener noreferrer">
-                <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <a href="#" class="share-menu__item" data-share-platform="facebook" role="menuitem" target="_blank"
+                rel="noopener noreferrer">
+                <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
                 </svg>
                 <span>Facebook</span>
               </a>
-              <a href="#" class="share-menu__item" data-share-platform="x" role="menuitem" target="_blank" rel="noopener noreferrer">
+              <a href="#" class="share-menu__item" data-share-platform="x" role="menuitem" target="_blank"
+                rel="noopener noreferrer">
                 <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  <path
+                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                 </svg>
                 <span>X / Twitter</span>
               </a>
               <button type="button" class="share-menu__item" id="share-copy-btn" role="menuitem">
-                <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                   <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                 </svg>
@@ -357,6 +385,18 @@
 
         <div class="mobile-nav-divider"></div>
 
+        <!-- Language Selector -->
+        <div class="mobile-lang-row">
+          <span class="mobile-lang-label">Language</span>
+          <div class="mobile-lang-pills">
+            <a href="/" class="mobile-lang-pill active">English</a>
+            <a href="/si/" class="mobile-lang-pill">සිංහල</a>
+            <a href="/ta/" class="mobile-lang-pill">தமிழ்</a>
+          </div>
+        </div>
+
+        <div class="mobile-nav-divider"></div>
+
         <!-- Mobile Share Section -->
         <div class="mobile-share-section">
           <div class="mobile-share-title">Share NIC Info</div>
@@ -379,8 +419,7 @@
               </svg>
               <span>Facebook</span>
             </a>
-            <a href="#" class="mobile-share-btn" data-share-platform="x" target="_blank"
-              rel="noopener noreferrer">
+            <a href="#" class="mobile-share-btn" data-share-platform="x" target="_blank" rel="noopener noreferrer">
               <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                 <path
                   d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
@@ -405,11 +444,12 @@
     <!-- ═══════════════════════════════════════════════════
          MAIN GUIDELINES CONTENT
          ═══════════════════════════════════════════════════ -->
-    <main class="policy-page">
+    <main class="policy-page" id="guidelines-content">
       <div class="policy-header animate-fade-in">
         <a href="/" class="policy-back-link">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-            <path d="M11 8H5M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M11 8H5M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+              stroke-linejoin="round" />
           </svg>
           Back to NIC Decoder
         </a>
@@ -424,7 +464,8 @@
       <!-- Shield Highlight Callout (Using verified AAA dark/light contrast) -->
       <div class="policy-badge-shield animate-fact-0">
         <div class="policy-badge-icon" aria-hidden="true">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round">
             <rect x="2" y="5" width="20" height="14" rx="2" />
             <line x1="2" y1="10" x2="22" y2="10" />
             <circle cx="7" cy="15" r="1" />
@@ -434,7 +475,9 @@
         <div class="policy-badge-text">
           <h3>Official Algorithmic Verification &amp; Compliance Framework</h3>
           <p>
-            NIC Info provides mathematically sound cryptographic syntax validation and demographic data extraction in compliance with Sri Lanka's standardized identity numbering system. This document outlines the official format architecture, migration rules between legacy and modern cards, and ethical usage parameters.
+            NIC Info provides mathematically sound cryptographic syntax validation and demographic data extraction in
+            compliance with Sri Lanka's standardized identity numbering system. This document outlines the official
+            format architecture, migration rules between legacy and modern cards, and ethical usage parameters.
           </p>
         </div>
       </div>
@@ -443,7 +486,9 @@
       <section class="policy-section animate-fact-1">
         <h2>1. Number Format Specifications</h2>
         <p>
-          Sri Lankan National Identity Cards follow two official number architectures. Our parsing algorithm instantly detects and distinguishes between legacy printed credentials and modernized digital smart cards without requiring manual formatting selection.
+          Sri Lankan National Identity Cards follow two official number architectures. Our parsing algorithm instantly
+          detects and distinguishes between legacy printed credentials and modernized digital smart cards without
+          requiring manual formatting selection.
         </p>
         <div class="guidelines-grid">
           <div class="guidelines-card">
@@ -452,8 +497,11 @@
               <span class="code-badge">Pre-2016</span>
             </div>
             <p><strong>Example Syntax:</strong> <code>852140123V</code></p>
-            <p><strong>Structure:</strong> Comprises 9 sequential decimal numerals followed by a required terminal control letter (<strong>V</strong> for registered voter or <strong>X</strong> for exceptional status).</p>
-            <p><strong>Year Encoding:</strong> Represents only the last 2 digits of the birth year (e.g., <code>85</code> corresponds to 1985).</p>
+            <p><strong>Structure:</strong> Comprises 9 sequential decimal numerals followed by a required terminal
+              control letter (<strong>V</strong> for registered voter or <strong>X</strong> for exceptional status).</p>
+            <p><strong>Year Encoding:</strong> Represents only the last 2 digits of the birth year (e.g.,
+              <code>85</code> corresponds to 1985).
+            </p>
           </div>
 
           <div class="guidelines-card">
@@ -462,8 +510,11 @@
               <span class="code-badge">Post-2016</span>
             </div>
             <p><strong>Example Syntax:</strong> <code>198521400123</code></p>
-            <p><strong>Structure:</strong> Comprises 12 sequential decimal numerals with all alphabetic suffix characters completely removed.</p>
-            <p><strong>Year Encoding:</strong> Explicitly features the full 4-digit Gregorian birth year (e.g., <code>1985</code>), future-proofing digital database index compatibility.</p>
+            <p><strong>Structure:</strong> Comprises 12 sequential decimal numerals with all alphabetic suffix
+              characters completely removed.</p>
+            <p><strong>Year Encoding:</strong> Explicitly features the full 4-digit Gregorian birth year (e.g.,
+              <code>1985</code>), future-proofing digital database index compatibility.
+            </p>
           </div>
         </div>
       </section>
@@ -472,7 +523,9 @@
       <section class="policy-section animate-fact-2">
         <h2>2. Gender &amp; Day-of-Year Encoding Algorithm</h2>
         <p>
-          Regardless of card generation, digits following the birth year field represent a standardized 3-digit day-of-year numerical integer that encodes both birth date and legal gender according to an explicit numerical shift:
+          Regardless of card generation, digits following the birth year field represent a standardized 3-digit
+          day-of-year numerical integer that encodes both birth date and legal gender according to an explicit numerical
+          shift:
         </p>
         <div class="matrix-card" style="margin: 20px 0 28px;">
           <div class="guidelines-table-wrap">
@@ -489,8 +542,12 @@
                 <tr>
                   <td>
                     <div class="feature-cell">
-                      <div class="feature-icon" style="background: rgba(79, 139, 130, 0.15); color: #67b8ad;" aria-hidden="true">
-                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+                      <div class="feature-icon" style="background: rgba(79, 139, 130, 0.15); color: #67b8ad;"
+                        aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                          <path
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" />
+                        </svg>
                       </div>
                       <div class="feature-meta">
                         <span class="feature-name">Male Citizens</span>
@@ -513,8 +570,12 @@
                 <tr>
                   <td>
                     <div class="feature-cell">
-                      <div class="feature-icon" style="background: rgba(201, 161, 92, 0.15); color: var(--brass);" aria-hidden="true">
-                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+                      <div class="feature-icon" style="background: rgba(201, 161, 92, 0.15); color: var(--brass);"
+                        aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                          <path
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" />
+                        </svg>
                       </div>
                       <div class="feature-meta">
                         <span class="feature-name">Female Citizens</span>
@@ -539,7 +600,9 @@
           </div>
         </div>
         <p>
-          <strong>Leap Year Reconciliation:</strong> According to traditional DRP sequencing conventions, calculations presume a 366-day cycle for indexing purposes. Day integer <code>366</code> (or <code>866</code> for females) corresponds to December 31 in leap year cycles, ensuring mathematical consistency across all annual calendars.
+          <strong>Leap Year Reconciliation:</strong> According to traditional DRP sequencing conventions, calculations
+          presume a 366-day cycle for indexing purposes. Day integer <code>366</code> (or <code>866</code> for females)
+          corresponds to December 31 in leap year cycles, ensuring mathematical consistency across all annual calendars.
         </p>
       </section>
 
@@ -547,16 +610,22 @@
       <section class="policy-section">
         <h2>3. Algorithmic Record Migration (9 to 12 Digits)</h2>
         <p>
-          For system architects, enterprise KYC pipelines, and database administrators upgrading user registries from legacy 9-digit records to standardized 12-digit format, follow this precise 4-step transformation protocol:
+          For system architects, enterprise KYC pipelines, and database administrators upgrading user registries from
+          legacy 9-digit records to standardized 12-digit format, follow this precise 4-step transformation protocol:
         </p>
         <ul class="policy-list">
-          <li><strong>Step 1 (Year Expansion):</strong> Prepend the century identifier <code>19</code> directly preceding the initial 2 digits of the legacy number (applicable for all 20th-century issuances).</li>
-          <li><strong>Step 2 (Date Preservation):</strong> Maintain the sequential 3-digit day and gender integer directly following the expanded year without modification.</li>
-          <li><strong>Step 3 (Zero Insertion):</strong> Insert a single zero (<code>0</code>) immediately preceding the 4-digit serial check number to expand the serial identifier from 4 to 5 decimal digits.</li>
-          <li><strong>Step 4 (Suffix Deprecation):</strong> Strip and discard the terminal control character (<code>V</code> or <code>X</code>).</li>
+          <li><strong>Step 1 (Year Expansion):</strong> Prepend the century identifier <code>19</code> directly
+            preceding the initial 2 digits of the legacy number (applicable for all 20th-century issuances).</li>
+          <li><strong>Step 2 (Date Preservation):</strong> Maintain the sequential 3-digit day and gender integer
+            directly following the expanded year without modification.</li>
+          <li><strong>Step 3 (Zero Insertion):</strong> Insert a single zero (<code>0</code>) immediately preceding the
+            4-digit serial check number to expand the serial identifier from 4 to 5 decimal digits.</li>
+          <li><strong>Step 4 (Suffix Deprecation):</strong> Strip and discard the terminal control character
+            (<code>V</code> or <code>X</code>).</li>
         </ul>
         <p>
-          <em>Transformation Demonstration:</em> Legacy record <code>852140123V</code> successfully converts to digital standard <code>198521400123</code>.
+          <em>Transformation Demonstration:</em> Legacy record <code>852140123V</code> successfully converts to digital
+          standard <code>198521400123</code>.
         </p>
       </section>
 
@@ -564,12 +633,19 @@
       <section class="policy-section">
         <h2>4. Acceptable Usage &amp; Ethics Policy</h2>
         <p>
-          To maintain ethical computing standards and uphold statutory data privacy regulations, all operators utilizing this tool must strictly observe the following acceptable use protocols:
+          To maintain ethical computing standards and uphold statutory data privacy regulations, all operators utilizing
+          this tool must strictly observe the following acceptable use protocols:
         </p>
         <ul class="policy-list">
-          <li><strong>Authorized Processing Only:</strong> Only process National Identity Card credentials belonging to yourself, consenting clients, or individuals undergoing legitimate organizational onboarding and verification workflows.</li>
-          <li><strong>Prohibition of Batch Harvesting:</strong> Automated scraping, scripted dictionary generation, or brute-force sequential parsing for public directory harvesting or unauthorized demographic profiling is explicitly prohibited.</li>
-          <li><strong>Zero Inference Boundary:</strong> Do not attempt to infer socioeconomic status, ethnicity, regional origin, or unrepresented attributes from the serial checksum digits, as these numbers represent solely randomized departmental issuance quotas.</li>
+          <li><strong>Authorized Processing Only:</strong> Only process National Identity Card credentials belonging to
+            yourself, consenting clients, or individuals undergoing legitimate organizational onboarding and
+            verification workflows.</li>
+          <li><strong>Prohibition of Batch Harvesting:</strong> Automated scraping, scripted dictionary generation, or
+            brute-force sequential parsing for public directory harvesting or unauthorized demographic profiling is
+            explicitly prohibited.</li>
+          <li><strong>Zero Inference Boundary:</strong> Do not attempt to infer socioeconomic status, ethnicity,
+            regional origin, or unrepresented attributes from the serial checksum digits, as these numbers represent
+            solely randomized departmental issuance quotas.</li>
         </ul>
       </section>
 
@@ -577,11 +653,13 @@
       <section class="policy-section">
         <h2>5. Technical Consultation &amp; Developer Support</h2>
         <p>
-          For custom KYC software integrations, backend verification API architecture, or clarifying inquiries regarding algorithmic formatting standards, you may contact our engineering leadership directly:
+          For custom KYC software integrations, backend verification API architecture, or clarifying inquiries regarding
+          algorithmic formatting standards, you may contact our engineering leadership directly:
         </p>
         <p>
           <strong>Lead Architect:</strong> Pubudu Tharanga<br />
-          <strong>Developer Portfolio:</strong> <a href="https://pubudu-tharanga.vercel.app/" target="_blank" rel="noopener noreferrer" class="policy-contact-link">https://pubudu-tharanga.vercel.app/</a>
+          <strong>Developer Portfolio:</strong> <a href="https://pubudu-tharanga.vercel.app/" target="_blank"
+            rel="noopener noreferrer" class="policy-contact-link">https://pubudu-tharanga.vercel.app/</a>
         </p>
       </section>
     </main>
@@ -592,12 +670,13 @@
     <footer class="site-footer">
       <div class="footer-inner">
         <a href="/" class="footer-logo-link" aria-label="NIC Decoder Home">
-          <img src="nicinfo-logo.webp" alt="NIC Info Logo" class="footer-logo" width="72" height="36"
+          <img src="nicinfo-logo.webp" alt="NIC Info Logo" class="footer-logo" width="72" height="36" loading="lazy"
             decoding="async" />
         </a>
 
         <p class="footer-description">
           A free browser tool for decoding Sri Lankan National Identity Card numbers.<br />
+          <span class="last-updated">Last updated: August 2026</span>
         </p>
 
         <p class="footer-copyright">
@@ -607,12 +686,16 @@
         </p>
 
         <p class="footer-developed">
-          Developed by 
+          Developed by
           <span class="link-preview-wrapper">
-            <a href="https://pubudu-tharanga.vercel.app/" target="_blank" rel="noopener noreferrer" class="developer-link link-preview-trigger">Pubudu Tharanga</a>
+            <a href="https://pubudu-tharanga.vercel.app/" target="_blank" rel="noopener noreferrer"
+              class="developer-link link-preview-trigger">Pubudu Tharanga</a>
             <span class="link-preview-popover" role="tooltip" aria-hidden="true">
               <span class="link-preview-card">
-                <img src="https://image.thum.io/get/width/1280/crop/720/wait/8/noanimate/https://pubudu-tharanga.vercel.app/" alt="Pubudu Tharanga Portfolio Preview" class="link-preview-image" width="320" height="180" loading="lazy" decoding="async" />
+                <img
+                  src="https://image.thum.io/get/width/1280/crop/720/wait/8/noanimate/https://pubudu-tharanga.vercel.app/"
+                  alt="Pubudu Tharanga Portfolio Preview" class="link-preview-image" width="320" height="180"
+                  loading="lazy" decoding="async" />
               </span>
             </span>
           </span>
@@ -634,215 +717,216 @@
        JAVASCRIPT — Theme toggle & interactions
        ═══════════════════════════════════════════════════════ -->
   <script>
-    (function () {
-      var html = document.documentElement;
-      var themeToggles = document.querySelectorAll('.theme-toggle');
-      var STORAGE_KEY = 'nic-theme';
-      var header = document.getElementById('site-header');
+      (function () {
+        var html = document.documentElement;
+        var themeToggles = document.querySelectorAll('.theme-toggle');
+        var STORAGE_KEY = 'nic-theme';
+        var header = document.getElementById('site-header');
 
-      function applyTheme(theme) {
-        if (theme === 'light') {
-          html.setAttribute('data-theme', 'light');
-          themeToggles.forEach(function (btn) {
-            btn.setAttribute('aria-label', 'Switch to dark mode');
-          });
-        } else {
-          html.removeAttribute('data-theme');
-          themeToggles.forEach(function (btn) {
-            btn.setAttribute('aria-label', 'Switch to light mode');
-          });
-        }
-      }
-
-      // Initialize Theme
-      var stored = localStorage.getItem(STORAGE_KEY);
-      if (stored === 'light' || stored === 'dark') {
-        applyTheme(stored);
-      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-        applyTheme('light');
-      }
-
-      themeToggles.forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          var currentlyLight = html.getAttribute('data-theme') === 'light';
-          var next = currentlyLight ? 'dark' : 'light';
-          applyTheme(next);
-          try { localStorage.setItem(STORAGE_KEY, next); } catch (_) { }
-        });
-      });
-
-      window.addEventListener('scroll', function () {
-        if (window.scrollY > 40) {
-          header.classList.add('scrolled');
-        } else {
-          header.classList.remove('scrolled');
-        }
-      }, { passive: true });
-
-      // ── Share Dropdown & Web Share Protocols (Desktop) ───
-      var shareBtn = document.getElementById('share-toggle-btn');
-      var shareMenu = document.getElementById('share-menu');
-      var shareUrl = encodeURIComponent(window.location.origin + window.location.pathname);
-      var shareText = encodeURIComponent("Check out NIC Info - A free browser tool for decoding Sri Lankan National Identity Card numbers and revealing birth dates & gender! ");
-
-      if (shareBtn && shareMenu) {
-        shareBtn.addEventListener('click', function (e) {
-          e.stopPropagation();
-          var isOpen = shareMenu.classList.contains('open');
-          if (isOpen) {
-            shareMenu.classList.remove('open');
-            shareBtn.setAttribute('aria-expanded', 'false');
-            shareMenu.setAttribute('aria-hidden', 'true');
-          } else {
-            shareMenu.classList.add('open');
-            shareBtn.setAttribute('aria-expanded', 'true');
-            shareMenu.setAttribute('aria-hidden', 'false');
-          }
-        });
-
-        document.addEventListener('click', function (e) {
-          if (!shareMenu.contains(e.target) && e.target !== shareBtn) {
-            shareMenu.classList.remove('open');
-            shareBtn.setAttribute('aria-expanded', 'false');
-            shareMenu.setAttribute('aria-hidden', 'true');
-          }
-        });
-
-        document.addEventListener('keydown', function (e) {
-          if (e.key === 'Escape') {
-            shareMenu.classList.remove('open');
-            shareBtn.setAttribute('aria-expanded', 'false');
-            shareMenu.setAttribute('aria-hidden', 'true');
-          }
-        });
-
-        var waBtn = shareMenu.querySelector('[data-share-platform="whatsapp"]');
-        var fbBtn = shareMenu.querySelector('[data-share-platform="facebook"]');
-        var xBtn = shareMenu.querySelector('[data-share-platform="x"]');
-        var copyBtn = document.getElementById('share-copy-btn');
-        var copyText = document.getElementById('share-copy-text');
-
-        if (waBtn) waBtn.href = "https://api.whatsapp.com/send?text=" + shareText + shareUrl;
-        if (fbBtn) fbBtn.href = "https://www.facebook.com/sharer/sharer.php?u=" + shareUrl;
-        if (xBtn) xBtn.href = "https://twitter.com/intent/tweet?text=" + shareText + "&url=" + shareUrl;
-
-        if (copyBtn) {
-          copyBtn.addEventListener('click', function (e) {
-            e.stopPropagation();
-            var targetUrl = window.location.origin + window.location.pathname;
-            navigator.clipboard.writeText(targetUrl).then(function () {
-              var originalText = copyText ? copyText.innerText : 'Copy Link';
-              if (copyText) copyText.innerText = 'Copied!';
-              copyBtn.style.color = '#25D366';
-              setTimeout(function () {
-                if (copyText) copyText.innerText = originalText;
-                copyBtn.style.color = '';
-              }, 2000);
-            }).catch(function () {
-              // Fallback
+        function applyTheme(theme) {
+          if (theme === 'light') {
+            html.setAttribute('data-theme', 'light');
+            themeToggles.forEach(function (btn) {
+              btn.setAttribute('aria-label', 'Switch to dark mode');
             });
-          });
-        }
-      }
-
-      // ── Mobile Navigation Drawer & Mobile Share ───────────
-      var mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-      var mobileNavDrawer = document.getElementById('mobile-nav-drawer');
-      var mobileNavBackdrop = document.getElementById('mobile-nav-backdrop');
-      var mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-
-      function openMobileMenu() {
-        if (!mobileMenuToggle || !mobileNavDrawer) return;
-        mobileMenuToggle.setAttribute('aria-expanded', 'true');
-        mobileNavDrawer.classList.add('open');
-        mobileNavDrawer.setAttribute('aria-hidden', 'false');
-        if (mobileNavBackdrop) {
-          mobileNavBackdrop.classList.add('open');
-          mobileNavBackdrop.setAttribute('aria-hidden', 'false');
-        }
-        document.body.style.overflow = 'hidden';
-      }
-
-      function closeMobileMenu() {
-        if (!mobileMenuToggle || !mobileNavDrawer) return;
-        mobileMenuToggle.setAttribute('aria-expanded', 'false');
-        mobileNavDrawer.classList.remove('open');
-        mobileNavDrawer.setAttribute('aria-hidden', 'true');
-        if (mobileNavBackdrop) {
-          mobileNavBackdrop.classList.remove('open');
-          mobileNavBackdrop.setAttribute('aria-hidden', 'true');
-        }
-        document.body.style.overflow = '';
-      }
-
-      if (mobileMenuToggle && mobileNavDrawer) {
-        mobileMenuToggle.addEventListener('click', function (e) {
-          e.stopPropagation();
-          var isOpen = mobileNavDrawer.classList.contains('open');
-          if (isOpen) {
-            closeMobileMenu();
           } else {
-            openMobileMenu();
+            html.removeAttribute('data-theme');
+            themeToggles.forEach(function (btn) {
+              btn.setAttribute('aria-label', 'Switch to light mode');
+            });
           }
-        });
-
-        if (mobileNavBackdrop) {
-          mobileNavBackdrop.addEventListener('click', closeMobileMenu);
         }
 
-        mobileNavLinks.forEach(function (link) {
-          link.addEventListener('click', function () {
-            closeMobileMenu();
+        // Initialize Theme
+        var stored = localStorage.getItem(STORAGE_KEY);
+        if (stored === 'light' || stored === 'dark') {
+          applyTheme(stored);
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+          applyTheme('light');
+        }
+
+        themeToggles.forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var currentlyLight = html.getAttribute('data-theme') === 'light';
+            var next = currentlyLight ? 'dark' : 'light';
+            applyTheme(next);
+            try { localStorage.setItem(STORAGE_KEY, next); } catch (_) { }
           });
         });
 
-        document.addEventListener('keydown', function (e) {
-          if (e.key === 'Escape' && mobileNavDrawer.classList.contains('open')) {
-            closeMobileMenu();
-          }
-        });
-
-        window.addEventListener('resize', function () {
-          if (window.innerWidth > 768 && mobileNavDrawer.classList.contains('open')) {
-            closeMobileMenu();
+        window.addEventListener('scroll', function () {
+          if (window.scrollY > 40) {
+            header.classList.add('scrolled');
+          } else {
+            header.classList.remove('scrolled');
           }
         }, { passive: true });
-      }
 
-      // Mobile Share Platform Links
-      var mobileWaBtn = document.querySelector('.mobile-share-btn[data-share-platform="whatsapp"]');
-      var mobileFbBtn = document.querySelector('.mobile-share-btn[data-share-platform="facebook"]');
-      var mobileXBtn = document.querySelector('.mobile-share-btn[data-share-platform="x"]');
-      var mobileCopyBtn = document.getElementById('mobile-share-copy-btn');
-      var mobileCopyText = document.getElementById('mobile-share-copy-text');
+        // ── Share Dropdown & Web Share Protocols (Desktop) ───
+        var shareBtn = document.getElementById('share-toggle-btn');
+        var shareMenu = document.getElementById('share-menu');
+        var shareUrl = encodeURIComponent(window.location.origin + window.location.pathname);
+        var shareText = encodeURIComponent("Check out NIC Info - A free browser tool for decoding Sri Lankan National Identity Card numbers and revealing birth dates & gender! ");
 
-      if (mobileWaBtn) mobileWaBtn.href = "https://api.whatsapp.com/send?text=" + shareText + shareUrl;
-      if (mobileFbBtn) mobileFbBtn.href = "https://www.facebook.com/sharer/sharer.php?u=" + shareUrl;
-      if (mobileXBtn) mobileXBtn.href = "https://twitter.com/intent/tweet?text=" + shareText + "&url=" + shareUrl;
+        if (shareBtn && shareMenu) {
+          shareBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            var isOpen = shareMenu.classList.contains('open');
+            if (isOpen) {
+              shareMenu.classList.remove('open');
+              shareBtn.setAttribute('aria-expanded', 'false');
+              shareMenu.setAttribute('aria-hidden', 'true');
+            } else {
+              shareMenu.classList.add('open');
+              shareBtn.setAttribute('aria-expanded', 'true');
+              shareMenu.setAttribute('aria-hidden', 'false');
+            }
+          });
 
-      if (mobileCopyBtn) {
-        mobileCopyBtn.addEventListener('click', function (e) {
-          e.stopPropagation();
-          var targetUrl = window.location.origin + window.location.pathname;
-          function markCopied() {
-            var originalText = mobileCopyText ? mobileCopyText.innerText : 'Copy Link';
-            if (mobileCopyText) mobileCopyText.innerText = 'Copied!';
-            mobileCopyBtn.classList.add('copied');
-            setTimeout(function () {
-              if (mobileCopyText) mobileCopyText.innerText = originalText;
-              mobileCopyBtn.classList.remove('copied');
-            }, 2000);
-          }
-          if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(targetUrl).then(markCopied).catch(function () {
-              markCopied();
+          document.addEventListener('click', function (e) {
+            if (!shareMenu.contains(e.target) && e.target !== shareBtn) {
+              shareMenu.classList.remove('open');
+              shareBtn.setAttribute('aria-expanded', 'false');
+              shareMenu.setAttribute('aria-hidden', 'true');
+            }
+          });
+
+          document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+              shareMenu.classList.remove('open');
+              shareBtn.setAttribute('aria-expanded', 'false');
+              shareMenu.setAttribute('aria-hidden', 'true');
+            }
+          });
+
+          var waBtn = shareMenu.querySelector('[data-share-platform="whatsapp"]');
+          var fbBtn = shareMenu.querySelector('[data-share-platform="facebook"]');
+          var xBtn = shareMenu.querySelector('[data-share-platform="x"]');
+          var copyBtn = document.getElementById('share-copy-btn');
+          var copyText = document.getElementById('share-copy-text');
+
+          if (waBtn) waBtn.href = "https://api.whatsapp.com/send?text=" + shareText + shareUrl;
+          if (fbBtn) fbBtn.href = "https://www.facebook.com/sharer/sharer.php?u=" + shareUrl;
+          if (xBtn) xBtn.href = "https://twitter.com/intent/tweet?text=" + shareText + "&url=" + shareUrl;
+
+          if (copyBtn) {
+            copyBtn.addEventListener('click', function (e) {
+              e.stopPropagation();
+              var targetUrl = window.location.origin + window.location.pathname;
+              navigator.clipboard.writeText(targetUrl).then(function () {
+                var originalText = copyText ? copyText.innerText : 'Copy Link';
+                if (copyText) copyText.innerText = 'Copied!';
+                copyBtn.style.color = '#25D366';
+                setTimeout(function () {
+                  if (copyText) copyText.innerText = originalText;
+                  copyBtn.style.color = '';
+                }, 2000);
+              }).catch(function () {
+                // Fallback
+              });
             });
-          } else {
-            markCopied();
           }
-        });
-      }
-    })();
+        }
+
+        // ── Mobile Navigation Drawer & Mobile Share ───────────
+        var mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        var mobileNavDrawer = document.getElementById('mobile-nav-drawer');
+        var mobileNavBackdrop = document.getElementById('mobile-nav-backdrop');
+        var mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        function openMobileMenu() {
+          if (!mobileMenuToggle || !mobileNavDrawer) return;
+          mobileMenuToggle.setAttribute('aria-expanded', 'true');
+          mobileNavDrawer.classList.add('open');
+          mobileNavDrawer.setAttribute('aria-hidden', 'false');
+          if (mobileNavBackdrop) {
+            mobileNavBackdrop.classList.add('open');
+            mobileNavBackdrop.setAttribute('aria-hidden', 'false');
+          }
+          document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenu() {
+          if (!mobileMenuToggle || !mobileNavDrawer) return;
+          mobileMenuToggle.setAttribute('aria-expanded', 'false');
+          mobileNavDrawer.classList.remove('open');
+          mobileNavDrawer.setAttribute('aria-hidden', 'true');
+          if (mobileNavBackdrop) {
+            mobileNavBackdrop.classList.remove('open');
+            mobileNavBackdrop.setAttribute('aria-hidden', 'true');
+          }
+          document.body.style.overflow = '';
+        }
+
+        if (mobileMenuToggle && mobileNavDrawer) {
+          mobileMenuToggle.addEventListener('click', function (e) {
+            e.stopPropagation();
+            var isOpen = mobileNavDrawer.classList.contains('open');
+            if (isOpen) {
+              closeMobileMenu();
+            } else {
+              openMobileMenu();
+            }
+          });
+
+          if (mobileNavBackdrop) {
+            mobileNavBackdrop.addEventListener('click', closeMobileMenu);
+          }
+
+          mobileNavLinks.forEach(function (link) {
+            link.addEventListener('click', function () {
+              closeMobileMenu();
+            });
+          });
+
+          document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && mobileNavDrawer.classList.contains('open')) {
+              closeMobileMenu();
+            }
+          });
+
+          window.addEventListener('resize', function () {
+            if (window.innerWidth > 768 && mobileNavDrawer.classList.contains('open')) {
+              closeMobileMenu();
+            }
+          }, { passive: true });
+        }
+
+        // Mobile Share Platform Links
+        var mobileWaBtn = document.querySelector('.mobile-share-btn[data-share-platform="whatsapp"]');
+        var mobileFbBtn = document.querySelector('.mobile-share-btn[data-share-platform="facebook"]');
+        var mobileXBtn = document.querySelector('.mobile-share-btn[data-share-platform="x"]');
+        var mobileCopyBtn = document.getElementById('mobile-share-copy-btn');
+        var mobileCopyText = document.getElementById('mobile-share-copy-text');
+
+        if (mobileWaBtn) mobileWaBtn.href = "https://api.whatsapp.com/send?text=" + shareText + shareUrl;
+        if (mobileFbBtn) mobileFbBtn.href = "https://www.facebook.com/sharer/sharer.php?u=" + shareUrl;
+        if (mobileXBtn) mobileXBtn.href = "https://twitter.com/intent/tweet?text=" + shareText + "&url=" + shareUrl;
+
+        if (mobileCopyBtn) {
+          mobileCopyBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            var targetUrl = window.location.origin + window.location.pathname;
+            function markCopied() {
+              var originalText = mobileCopyText ? mobileCopyText.innerText : 'Copy Link';
+              if (mobileCopyText) mobileCopyText.innerText = 'Copied!';
+              mobileCopyBtn.classList.add('copied');
+              setTimeout(function () {
+                if (mobileCopyText) mobileCopyText.innerText = originalText;
+                mobileCopyBtn.classList.remove('copied');
+              }, 2000);
+            }
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(targetUrl).then(markCopied).catch(function () {
+                markCopied();
+              });
+            } else {
+              markCopied();
+            }
+          });
+        }
+      })();
   </script>
 </body>
+
 </html>

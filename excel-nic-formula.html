@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+  <title>NIC to DOB Excel Formula — Sri Lanka NIC Decode in Excel &amp; Google Sheets</title>
+  <meta name="description"
+    content="Copy-paste Excel and Google Sheets formulas to decode Sri Lankan NIC numbers: extract date of birth, gender and age. Covers old 9-digit and new 12-digit NICs. Free." />
+  <meta name="author" content="Pubudu Tharanga" />
+
+  <link rel="canonical" href="https://nicinfo.vercel.app/excel-nic-formula" />
+  <link rel="alternate" hreflang="en" href="https://nicinfo.vercel.app/excel-nic-formula" />
+  <link rel="alternate" hreflang="x-default" href="https://nicinfo.vercel.app/excel-nic-formula" />
+
+  <meta name="theme-color" content="#11171C" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#F5F0E8" media="(prefers-color-scheme: light)" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://nicinfo.vercel.app/excel-nic-formula" />
+  <meta property="og:title" content="NIC to DOB Excel Formula — Sri Lanka NIC Decode in Excel &amp; Google Sheets" />
+  <meta property="og:description"
+    content="Ready-to-use Excel and Sheets formulas: decode old and new Sri Lanka NIC to date of birth, age and gender. Leap-year safe." />
+  <meta property="og:image" content="https://nicinfo.vercel.app/og-image.png" />
+  <meta property="og:site_name" content="NIC Info" />
+  <meta property="og:locale" content="en_US" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sri Lanka NIC to DOB Excel Formula (Old &amp; New NIC)" />
+  <meta name="twitter:description"
+    content="Copy-paste Excel formulas to decode old and new Sri Lanka NIC numbers — DOB, gender, age. With leap-year fix." />
+  <meta name="twitter:image" content="https://nicinfo.vercel.app/og-image.png" />
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,560;0,9..144,600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <link rel="preconnect" href="https://chalkedwhiningromance.com" crossorigin />
+  <link rel="dns-prefetch" href="https://chalkedwhiningromance.com" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://nicinfo.vercel.app/excel-nic-formula#article",
+        "headline": "NIC to DOB Excel Formula — Sri Lanka NIC Decode in Excel & Google Sheets",
+        "description": "Copy-paste Excel and Google Sheets formulas to decode Sri Lankan NIC numbers: DOB, gender, age. Covers old and new formats.",
+        "datePublished": "2026-08-27",
+        "dateModified": "2026-08-27",
+        "inLanguage": "en",
+        "author": { "@type": "Person", "name": "Pubudu Tharanga", "url": "https://pubudu-tharanga.vercel.app/" },
+        "publisher": { "@type": "Organization", "name": "NIC Info", "url": "https://nicinfo.vercel.app/" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the Excel formula to get DOB from a Sri Lankan NIC?",
+            "acceptedAnswer": { "@type": "Answer", "text": "For old NIC in A1: =DATE(1900+VALUE(LEFT(A1,2)), 1, IF(VALUE(MID(A1,3,3))>500, VALUE(MID(A1,3,3))-500, VALUE(MID(A1,3,3)))). For new NIC in A1: =DATE(VALUE(LEFT(A1,4)), 1, IF(VALUE(MID(A1,5,3))>500, VALUE(MID(A1,5,3))-500, VALUE(MID(A1,5,3)))). Format the result cell as a date." }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I get gender from a Sri Lanka NIC in Excel?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Old NIC: =IF(VALUE(MID(A1,3,3))>500,\"Female\",\"Male\"). New NIC: =IF(VALUE(MID(A1,5,3))>500,\"Female\",\"Male\")." }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "NIC Info", "item": "https://nicinfo.vercel.app/" },
+          { "@type": "ListItem", "position": 2, "name": "Excel NIC Formula", "item": "https://nicinfo.vercel.app/excel-nic-formula" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Anti-FOUC: prevent flash of wrong theme -->
+  <script>
+    (function () {
+      var stored = localStorage.getItem('nic-theme');
+      if (stored === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      } else if (!stored && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+
+<body>
+  <div class="app-wrapper">
+    <!-- Skip to main content (WCAG 2.4.1) -->
+    <a href="#formula-article" class="skip-to-content">Skip to Excel formulas</a>
+
+    <!-- HEADER -->
+    <header class="site-header" id="site-header">
+      <div class="header-inner">
+        <a href="/" class="logo-link" aria-label="NIC Decoder Home">
+          <img src="nicinfo-logo.webp" alt="NIC Info Logo" class="header-logo" width="56" height="28"
+            fetchpriority="high" decoding="async" />
+        </a>
+        <nav class="header-nav" aria-label="Main Navigation">
+          <a href="/">NIC Decoder</a>
+          <a href="/old-to-new-nic">Old to New NIC</a>
+          <a href="/how-nic-works">How NIC Works</a>
+          <a href="guidelines.html">Guidelines</a>
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light mode"
+            title="Toggle light / dark mode">
+            <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+            <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </button>
+        </nav>
+        <div class="header-mobile-controls">
+          <button class="theme-toggle" id="mobile-theme-toggle" type="button" aria-label="Switch to light mode"
+            title="Toggle light / dark mode">
+            <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+            <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </button>
+          <button class="mobile-menu-toggle" id="mobile-menu-toggle" type="button" aria-expanded="false"
+            aria-controls="mobile-nav-drawer" aria-label="Toggle navigation menu">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Drawer -->
+      <div class="mobile-nav-drawer" id="mobile-nav-drawer" aria-hidden="true">
+        <nav class="mobile-nav-links" aria-label="Mobile Navigation">
+          <a href="/" class="mobile-nav-link">
+            <span>NIC to DOB (Decoder)</span>
+            <svg class="mobile-nav-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+          <a href="/old-to-new-nic" class="mobile-nav-link">
+            <span>Old to New NIC</span>
+            <svg class="mobile-nav-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+          <a href="/nic-from-dob" class="mobile-nav-link">
+            <span>DOB to NIC</span>
+            <svg class="mobile-nav-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+          <a href="/nic-to-birthday" class="mobile-nav-link">
+            <span>NIC to Birthday</span>
+            <svg class="mobile-nav-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+          <a href="/how-nic-works" class="mobile-nav-link">
+            <span>How NIC Works</span>
+            <svg class="mobile-nav-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+          <a href="/excel-nic-formula" class="mobile-nav-link active" style="color:var(--brass); font-weight:600;">
+            <span>Excel Formula</span>
+            <svg class="mobile-nav-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+          <a href="guidelines.html" class="mobile-nav-link">
+            <span>Guidelines</span>
+            <svg class="mobile-nav-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+        </nav>
+
+        <div class="mobile-nav-divider"></div>
+
+        <!-- Language Selector -->
+        <div class="mobile-lang-row">
+          <span class="mobile-lang-label">Language</span>
+          <div class="mobile-lang-pills">
+            <a href="/" class="mobile-lang-pill active">English</a>
+            <a href="/si/" class="mobile-lang-pill">සිංහල</a>
+            <a href="/ta/" class="mobile-lang-pill">தமிழ்</a>
+          </div>
+        </div>
+
+        <div class="mobile-nav-divider"></div>
+
+        <!-- Mobile Share Section -->
+        <div class="mobile-share-section">
+          <div class="mobile-share-title">Share NIC Info</div>
+          <div class="mobile-share-grid">
+            <a href="#" class="mobile-share-btn" data-share-platform="whatsapp" target="_blank"
+              rel="noopener noreferrer">
+              <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                </path>
+              </svg>
+              <span>WhatsApp</span>
+            </a>
+            <a href="#" class="mobile-share-btn" data-share-platform="facebook" target="_blank"
+              rel="noopener noreferrer">
+              <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+              <span>Facebook</span>
+            </a>
+            <a href="#" class="mobile-share-btn" data-share-platform="x" target="_blank" rel="noopener noreferrer">
+              <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+              <span>X</span>
+            </a>
+            <button type="button" class="mobile-share-btn" id="mobile-share-copy-btn">
+              <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span id="mobile-share-copy-text">Copy Link</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Mobile Backdrop Overlay -->
+      <div class="mobile-nav-backdrop" id="mobile-nav-backdrop" aria-hidden="true"></div>
+    </header>
+
+    <main>
+      <article class="explainer-article" id="formula-article">
+
+        <h1>NIC to DOB Excel Formula — Sri Lanka NIC Decode in Excel &amp; Google Sheets</h1>
+        <p class="article-meta">By Pubudu Tharanga &middot; Last updated August 2026 &middot; Not affiliated with DRP
+        </p>
+
+        <p>
+          Need to decode hundreds of Sri Lankan NIC numbers in a spreadsheet? These copy-paste formulas
+          work in <strong>Microsoft Excel</strong> and <strong>Google Sheets</strong> for both the old
+          9-digit (+ V/X) and new 12-digit NIC formats. Each formula is leap-year safe.
+        </p>
+        <p>
+          If you only need to decode one NIC at a time, use the <a href="/">online NIC to DOB tool</a>
+          instead — it's faster and handles edge cases automatically.
+        </p>
+
+        <!-- Ad -->
+        <div class="hero-ad-slot" aria-label="Advertisement">
+          <script>
+            atOptions = {
+              'key': '26a1ef2b6e466470c96200365f14deff',
+              'format': 'iframe',
+              'height': 50,
+              'width': 320,
+              'params': {}
+            };
+          </script>
+          <script async src="https://chalkedwhiningromance.com/26a1ef2b6e466470c96200365f14deff/invoke.js"></script>
+        </div>
+
+        <div class="note-box">
+          <strong>Assumption:</strong> NIC is in cell <code>A2</code> as text. Old NICs end in V or X (e.g.
+          <code>906731234V</code>).
+          New NICs are 12 digits (e.g. <code>199006731234</code>). Store NICs as text (prefix cell format with
+          apostrophe
+          or format column as Text) to avoid Excel dropping leading zeros.
+        </div>
+
+        <h2>1. Detect NIC Format (Old or New)</h2>
+        <p>Use this helper first — it tells you whether a cell is old (10 chars) or new (12 digits):</p>
+        <div class="formula-block" id="fb-format">
+          <div class="formula-label">Detect format — Excel &amp; Sheets</div>
+          <button class="copy-btn" onclick="copyFormula('fb-format')">Copy</button>
+          <pre>=IF(LEN(A2)=10,"Old",IF(LEN(A2)=12,"New","Invalid"))</pre>
+        </div>
+
+        <h2>2. Extract Date of Birth</h2>
+
+        <h3>Old NIC (9-digit + V/X) — Date of Birth</h3>
+        <div class="formula-block" id="fb-old-dob">
+          <div class="formula-label">Old NIC DOB — Excel &amp; Sheets</div>
+          <button class="copy-btn" onclick="copyFormula('fb-old-dob')">Copy</button>
+          <pre>=DATE(
+  1900 + VALUE(LEFT(A2, 2)),
+  1,
+  IF(VALUE(MID(A2, 3, 3)) > 500,
+     VALUE(MID(A2, 3, 3)) - 500,
+     VALUE(MID(A2, 3, 3)))
+)</pre>
+        </div>
+        <p>Format the result cell as <strong>Date</strong> (e.g. dd/mm/yyyy). This uses January 1 of the birth year as
+          the base and adds the day-of-year offset.</p>
+
+        <h3>New NIC (12-digit) — Date of Birth</h3>
+        <div class="formula-block" id="fb-new-dob">
+          <div class="formula-label">New NIC DOB — Excel &amp; Sheets</div>
+          <button class="copy-btn" onclick="copyFormula('fb-new-dob')">Copy</button>
+          <pre>=DATE(
+  VALUE(LEFT(A2, 4)),
+  1,
+  IF(VALUE(MID(A2, 5, 3)) > 500,
+     VALUE(MID(A2, 5, 3)) - 500,
+     VALUE(MID(A2, 5, 3)))
+)</pre>
+        </div>
+
+        <h3>Universal formula (works for both old and new)</h3>
+        <div class="formula-block" id="fb-universal-dob">
+          <div class="formula-label">Universal DOB — Excel &amp; Sheets</div>
+          <button class="copy-btn" onclick="copyFormula('fb-universal-dob')">Copy</button>
+          <pre>=IF(LEN(A2)=10,
+  DATE(1900+VALUE(LEFT(A2,2)), 1, IF(VALUE(MID(A2,3,3))>500, VALUE(MID(A2,3,3))-500, VALUE(MID(A2,3,3)))),
+  IF(LEN(A2)=12,
+    DATE(VALUE(LEFT(A2,4)), 1, IF(VALUE(MID(A2,5,3))>500, VALUE(MID(A2,5,3))-500, VALUE(MID(A2,5,3)))),
+    "Invalid NIC")
+)</pre>
+        </div>
+
+        <div class="note-box">
+          <strong>Leap year note:</strong> Excel's <code>DATE(year, 1, day)</code> handles leap years correctly —
+          DATE(1984, 1, 60) returns Feb 29, 1984 because 1984 is a leap year. DATE(1983, 1, 60) returns Mar 1, 1983.
+          No extra leap-year check is needed with the DATE function.
+        </div>
+
+        <h2>3. Extract Gender</h2>
+        <p>If the day-of-year code is &gt; 500, the person is female.</p>
+
+        <h3>Old NIC — Gender</h3>
+        <div class="formula-block" id="fb-old-gender">
+          <div class="formula-label">Old NIC gender</div>
+          <button class="copy-btn" onclick="copyFormula('fb-old-gender')">Copy</button>
+          <pre>=IF(VALUE(MID(A2, 3, 3)) > 500, "Female", "Male")</pre>
+        </div>
+
+        <h3>New NIC — Gender</h3>
+        <div class="formula-block" id="fb-new-gender">
+          <div class="formula-label">New NIC gender</div>
+          <button class="copy-btn" onclick="copyFormula('fb-new-gender')">Copy</button>
+          <pre>=IF(VALUE(MID(A2, 5, 3)) > 500, "Female", "Male")</pre>
+        </div>
+
+        <h3>Universal — Gender</h3>
+        <div class="formula-block" id="fb-universal-gender">
+          <div class="formula-label">Universal gender</div>
+          <button class="copy-btn" onclick="copyFormula('fb-universal-gender')">Copy</button>
+          <pre>=IF(LEN(A2)=10, IF(VALUE(MID(A2,3,3))>500,"Female","Male"),
+ IF(LEN(A2)=12, IF(VALUE(MID(A2,5,3))>500,"Female","Male"), "Invalid"))</pre>
+        </div>
+
+        <!-- LEADERBOARD AD -->
+        <div class="ad-slot-728x90" aria-label="Advertisement" style="margin:2rem auto;text-align:center">
+          <script>
+            atOptions = {
+              'key': '1d991944a38fcba3be08497212b58c82',
+              'format': 'iframe',
+              'height': 90,
+              'width': 728,
+              'params': {}
+            };
+          </script>
+          <script async src="https://chalkedwhiningromance.com/1d991944a38fcba3be08497212b58c82/invoke.js"></script>
+        </div>
+
+        <h2>4. Calculate Age from NIC</h2>
+        <p>Chain the DOB formula with <code>DATEDIF</code>. Assumes DOB is in B2 (use the universal DOB formula above in
+          B2):</p>
+        <div class="formula-block" id="fb-age">
+          <div class="formula-label">Age in years (requires DOB in B2)</div>
+          <button class="copy-btn" onclick="copyFormula('fb-age')">Copy</button>
+          <pre>=DATEDIF(B2, TODAY(), "Y")</pre>
+        </div>
+        <p>Or combine everything into one cell:</p>
+        <div class="formula-block" id="fb-age-combined">
+          <div class="formula-label">Age directly from NIC (old or new) — no helper column</div>
+          <button class="copy-btn" onclick="copyFormula('fb-age-combined')">Copy</button>
+          <pre>=DATEDIF(
+  IF(LEN(A2)=10,
+    DATE(1900+VALUE(LEFT(A2,2)), 1, IF(VALUE(MID(A2,3,3))>500, VALUE(MID(A2,3,3))-500, VALUE(MID(A2,3,3)))),
+    DATE(VALUE(LEFT(A2,4)), 1, IF(VALUE(MID(A2,5,3))>500, VALUE(MID(A2,5,3))-500, VALUE(MID(A2,5,3))))
+  ),
+  TODAY(), "Y"
+)</pre>
+        </div>
+
+        <h2>5. Voter Status (Old NIC Only)</h2>
+        <div class="formula-block" id="fb-voter">
+          <div class="formula-label">Voter status — old NIC only</div>
+          <button class="copy-btn" onclick="copyFormula('fb-voter')">Copy</button>
+          <pre>=IF(LEN(A2)=10, IF(UPPER(RIGHT(A2,1))="V","Voter","Non-voter"), "N/A (new format)")</pre>
+        </div>
+
+        <h2>6. Convert Old NIC to New NIC</h2>
+        <div class="formula-block" id="fb-convert">
+          <div class="formula-label">Old NIC → New NIC (assumes 1900s birth)</div>
+          <button class="copy-btn" onclick="copyFormula('fb-convert')">Copy</button>
+          <pre>="19"&amp;LEFT(A2,2)&amp;MID(A2,3,3)&amp;"0"&amp;MID(A2,6,4)</pre>
+        </div>
+        <p>This gives the 11-digit body; the 12th check digit must come from the official DRP record.</p>
+
+        <h2>7. Full Summary Table</h2>
+        <table class="formula-table">
+          <thead>
+            <tr>
+              <th>Output</th>
+              <th>Old NIC (A2)</th>
+              <th>New NIC (A2)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Date of Birth</td>
+              <td>
+                <code>=DATE(1900+VALUE(LEFT(A2,2)),1,IF(VALUE(MID(A2,3,3))&gt;500,VALUE(MID(A2,3,3))-500,VALUE(MID(A2,3,3))))</code>
+              </td>
+              <td>
+                <code>=DATE(VALUE(LEFT(A2,4)),1,IF(VALUE(MID(A2,5,3))&gt;500,VALUE(MID(A2,5,3))-500,VALUE(MID(A2,5,3))))</code>
+              </td>
+            </tr>
+            <tr>
+              <td>Gender</td>
+              <td><code>=IF(VALUE(MID(A2,3,3))&gt;500,"Female","Male")</code></td>
+              <td><code>=IF(VALUE(MID(A2,5,3))&gt;500,"Female","Male")</code></td>
+            </tr>
+            <tr>
+              <td>Birth Year</td>
+              <td><code>=1900+VALUE(LEFT(A2,2))</code></td>
+              <td><code>=VALUE(LEFT(A2,4))</code></td>
+            </tr>
+            <tr>
+              <td>Day-of-year</td>
+              <td><code>=IF(VALUE(MID(A2,3,3))&gt;500,VALUE(MID(A2,3,3))-500,VALUE(MID(A2,3,3)))</code></td>
+              <td><code>=IF(VALUE(MID(A2,5,3))&gt;500,VALUE(MID(A2,5,3))-500,VALUE(MID(A2,5,3)))</code></td>
+            </tr>
+            <tr>
+              <td>Voter status</td>
+              <td><code>=IF(UPPER(RIGHT(A2,1))="V","Voter","Non-voter")</code></td>
+              <td>N/A</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>8. Google Sheets Notes</h2>
+        <p>All formulas above work identically in Google Sheets. One difference: Sheets uses <strong>commas</strong> as
+          separators in most locales; if your Sheets uses semicolons, replace all <code>,</code> with <code>;</code>.
+        </p>
+        <p>Google Sheets tip: use <code>ARRAYFORMULA</code> to apply to an entire column at once:</p>
+        <div class="formula-block" id="fb-arrayformula">
+          <div class="formula-label">Google Sheets — ARRAYFORMULA for entire column</div>
+          <button class="copy-btn" onclick="copyFormula('fb-arrayformula')">Copy</button>
+          <pre>=ARRAYFORMULA(IF(LEN(A2:A)=10,
+  DATE(1900+VALUE(LEFT(A2:A,2)),1,IF(VALUE(MID(A2:A,3,3))>500,VALUE(MID(A2:A,3,3))-500,VALUE(MID(A2:A,3,3)))),
+  IF(LEN(A2:A)=12,
+    DATE(VALUE(LEFT(A2:A,4)),1,IF(VALUE(MID(A2:A,5,3))>500,VALUE(MID(A2:A,5,3))-500,VALUE(MID(A2:A,5,3)))),
+  "")))</pre>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-box">
+          <p>Only need to decode one NIC? The online tool is faster — no spreadsheet needed.</p>
+          <a href="/" class="cta-btn">Open Free NIC to DOB Decoder &rarr;</a>
+        </div>
+
+        <!-- NIC TOOLS NAV -->
+        <section class="nic-tools-nav" id="nic-tools" style="margin:2rem 0">
+          <h2 class="nic-tools-nav__title">More NIC Tools</h2>
+          <div class="nic-tools-nav__grid">
+            <a href="/" class="nic-tools-nav__item">
+              <span class="nic-tools-nav__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="11" cy="11" r="8" />
+                  <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                </svg>
+              </span>
+              <span class="nic-tools-nav__label">Decode NIC to DOB</span>
+            </a>
+            <a href="/old-to-new-nic" class="nic-tools-nav__item">
+              <span class="nic-tools-nav__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <polyline points="1 4 1 10 7 10" />
+                  <polyline points="23 20 23 14 17 14" />
+                  <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15" />
+                </svg>
+              </span>
+              <span class="nic-tools-nav__label">Old to New NIC Converter</span>
+            </a>
+            <a href="/nic-from-dob" class="nic-tools-nav__item">
+              <span class="nic-tools-nav__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                  <line x1="16" y1="2" x2="16" y2="6" />
+                  <line x1="8" y1="2" x2="8" y2="6" />
+                  <line x1="3" y1="10" x2="21" y2="10" />
+                </svg>
+              </span>
+              <span class="nic-tools-nav__label">DOB to NIC Structure</span>
+            </a>
+            <a href="/how-nic-works" class="nic-tools-nav__item">
+              <span class="nic-tools-nav__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                </svg>
+              </span>
+              <span class="nic-tools-nav__label">How NIC Works</span>
+            </a>
+            <a href="/nic-check-digit" class="nic-tools-nav__item">
+              <span class="nic-tools-nav__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <line x1="4" y1="9" x2="20" y2="9" />
+                  <line x1="4" y1="15" x2="20" y2="15" />
+                  <line x1="10" y1="3" x2="8" y2="21" />
+                  <line x1="16" y1="3" x2="14" y2="21" />
+                </svg>
+              </span>
+              <span class="nic-tools-nav__label">NIC Check Digit</span>
+            </a>
+          </div>
+          <div class="nic-tools-nav__languages">
+            <span class="nic-tools-nav__lang-label">Language:</span>
+            <a href="/" class="nic-tools-nav__lang nic-tools-nav__lang--active">English</a>
+            <a href="/si/" class="nic-tools-nav__lang">සිංහල</a>
+            <a href="/ta/" class="nic-tools-nav__lang">தமிழ்</a>
+          </div>
+        </section>
+
+      </article>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <a href="/" class="footer-logo-link" aria-label="NIC Decoder Home">
+          <img src="nicinfo-logo.webp" alt="NIC Info Logo" class="footer-logo" width="72" height="36" loading="lazy"
+            decoding="async" />
+        </a>
+        <p class="footer-description">
+          A free browser tool for decoding Sri Lankan National Identity Card numbers.<br />
+          <span class="last-updated">Last updated: August 2026</span>
+        </p>
+        <div class="footer-tools">
+          <a href="/" class="footer-link">NIC to DOB</a>
+          <span class="footer-divider" aria-hidden="true"></span>
+          <a href="/old-to-new-nic" class="footer-link">Old to New NIC</a>
+          <span class="footer-divider" aria-hidden="true"></span>
+          <a href="/nic-from-dob" class="footer-link">DOB to NIC</a>
+          <span class="footer-divider" aria-hidden="true"></span>
+          <a href="/nic-to-birthday" class="footer-link">NIC to Birthday</a>
+          <span class="footer-divider" aria-hidden="true"></span>
+          <a href="/how-nic-works" class="footer-link">How NIC Works</a>
+          <span class="footer-divider" aria-hidden="true"></span>
+          <a href="/nic-check-digit" class="footer-link">Check Digit</a>
+        </div>
+        <div class="footer-languages">
+          <a href="/si/" class="footer-link">සිංහල</a>
+          <span class="footer-divider" aria-hidden="true"></span>
+          <a href="/ta/" class="footer-link">தமிழ்</a>
+        </div>
+        <div class="footer-nav">
+          <a href="privacy.html" class="footer-link">Privacy Notice</a>
+          <span class="footer-divider" aria-hidden="true"></span>
+          <a href="guidelines.html" class="footer-link">Guidelines</a>
+          <span class="footer-divider" aria-hidden="true"></span>
+          <a href="policy.html" class="footer-link">Policy</a>
+          <span class="footer-divider" aria-hidden="true"></span>
+          <span class="footer-link footer-disclaimer">Not affiliated with DRP</span>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    (function () {
+      // Theme
+      var html = document.documentElement;
+      var themeToggles = document.querySelectorAll('.theme-toggle');
+      var STORAGE_KEY = 'nic-theme';
+
+      function applyTheme(theme) {
+        if (theme === 'light') {
+          html.setAttribute('data-theme', 'light');
+          themeToggles.forEach(function (btn) {
+            btn.setAttribute('aria-label', 'Switch to dark mode');
+          });
+        } else {
+          html.removeAttribute('data-theme');
+          themeToggles.forEach(function (btn) {
+            btn.setAttribute('aria-label', 'Switch to light mode');
+          });
+        }
+      }
+
+      var stored = localStorage.getItem(STORAGE_KEY);
+      if (stored === 'light' || stored === 'dark') {
+        applyTheme(stored);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        applyTheme('light');
+      }
+
+      themeToggles.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var currentlyLight = html.getAttribute('data-theme') === 'light';
+          var next = currentlyLight ? 'dark' : 'light';
+          applyTheme(next);
+          try { localStorage.setItem(STORAGE_KEY, next); } catch (_) { }
+        });
+      });
+
+      // Copy formula
+      window.copyFormula = function (id) {
+        var block = document.getElementById(id);
+        if (!block) return;
+        var pre = block.querySelector('pre');
+        var text = pre ? pre.textContent : '';
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(text).then(function () {
+            var copyBtn = block.querySelector('.copy-btn');
+            if (copyBtn) { copyBtn.textContent = 'Copied!'; copyBtn.classList.add('copied'); setTimeout(function () { copyBtn.textContent = 'Copy'; copyBtn.classList.remove('copied'); }, 2000); }
+          });
+        }
+      };
+    })();
+  </script>
+
+  <!-- Global Navigation & Share Controller -->
+  <script src="navbar.js" defer></script>
+</body>
+
+</html>
