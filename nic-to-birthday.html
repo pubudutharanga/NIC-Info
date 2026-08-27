@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+    <title>Find Birthday from NIC Number | Sri Lanka NIC to Birthday</title>
+    <meta name="description"
+        content="Enter a Sri Lankan NIC number to find the birthday instantly. Works with old 9-digit and new 12-digit IDs. Shows exact birth date, age, weekday &amp; more. Free." />
+    <meta name="author" content="Pubudu Tharanga" />
+
+    <link rel="canonical" href="https://nicinfo.vercel.app/nic-to-birthday" />
+    <link rel="alternate" hreflang="en" href="https://nicinfo.vercel.app/nic-to-birthday" />
+    <link rel="alternate" hreflang="x-default" href="https://nicinfo.vercel.app/nic-to-birthday" />
+
+    <meta name="theme-color" content="#0F172A" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#F8F5EE" media="(prefers-color-scheme: light)" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nicinfo.vercel.app/nic-to-birthday" />
+    <meta property="og:title" content="Find Birthday from NIC Number | Sri Lanka NIC to Birthday" />
+    <meta property="og:description"
+        content="Enter a Sri Lankan NIC to find the birthday instantly. Old 9-digit and new 12-digit. Free, private." />
+    <meta property="og:image" content="https://nicinfo.vercel.app/og-image.png" />
+    <meta property="og:site_name" content="NIC Info" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Find Birthday from NIC Number | Sri Lanka NIC to Birthday" />
+    <meta name="twitter:description"
+        content="Enter a Sri Lankan NIC to find the birthday. Old &amp; new format. Free, private, in-browser." />
+    <meta name="twitter:image" content="https://nicinfo.vercel.app/og-image.png" />
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="manifest" href="manifest.json" />
+
+    <link rel="preconnect" href="https://chalkedwhiningromance.com" crossorigin />
+    <link rel="dns-prefetch" href="https://chalkedwhiningromance.com" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "@id": "https://nicinfo.vercel.app/nic-to-birthday#webapp",
+          "name": "NIC to Birthday Finder",
+          "url": "https://nicinfo.vercel.app/nic-to-birthday",
+          "description": "Find the exact birthday from a Sri Lankan NIC number. Works with both old 9-digit and new 12-digit formats. Shows date of birth, age, weekday, and gender.",
+          "applicationCategory": "UtilityApplication",
+          "operatingSystem": "Any",
+          "inLanguage": "en",
+          "datePublished": "2026-08-27",
+          "dateModified": "2026-08-27",
+          "author": { "@type": "Person", "name": "Pubudu Tharanga" },
+          "publisher": { "@type": "Organization", "name": "NIC Info", "url": "https://nicinfo.vercel.app/" },
+          "isPartOf": { "@type": "WebSite", "name": "NIC Info", "url": "https://nicinfo.vercel.app/" },
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "LKR" }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://nicinfo.vercel.app/nic-to-birthday#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How do I find someone's birthday from their NIC number?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Every Sri Lankan NIC number encodes the date of birth as a day-of-year code. Enter the NIC in the tool above and it will instantly extract and display the exact birthday. This works for both old 9-digit (e.g. 855420159V) and new 12-digit (e.g. 199906731234) formats."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I find a birthday from both old and new NIC formats?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. The old format (9 digits + V/X) stores the birth year as 2 digits (positions 1-2) and the day-of-year as 3 digits (positions 3-5). The new 12-digit format uses 4 digits for the year (positions 1-4) and 3 for the day (positions 5-7). Both encode the exact same birthday information."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is the birthday in a Sri Lankan NIC always accurate?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The NIC encodes the date of birth as registered with the Department for Registration of Persons (DRP). In rare cases, a citizen may have registered with an incorrect birth date — the NIC will reflect whatever was registered, not necessarily the actual date."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What day of the week was I born?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Enter your NIC number above and the tool will show the weekday of your birth along with the full date. This is calculated mathematically from the decoded date — no external lookup is needed."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "NIC Info", "item": "https://nicinfo.vercel.app/" },
+            { "@type": "ListItem", "position": 2, "name": "Find Birthday from NIC" }
+          ]
+        }
+      ]
+    }
+  </script>
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <div class="guilloche" aria-hidden="true"></div>
+        <div class="background-lines" aria-hidden="true">
+            <svg class="background-lines__svg" viewBox="0 0 1000 600" preserveAspectRatio="none">
+                <path d="M0 300 Q250 250 500 300 T1000 300" stroke="currentColor" fill="none" stroke-width="0.8" />
+                <path d="M0 320 Q250 270 500 320 T1000 320" stroke="currentColor" fill="none" stroke-width="0.6" />
+            </svg>
+        </div>
+
+        <div class="content-wrapper">
+            <header class="site-header" id="site-header">
+                <div class="header-inner">
+                    <a href="/" class="logo-link" aria-label="NIC Info — Home">
+                        <img src="nicinfo-logo.webp" alt="NIC Info Logo" class="header-logo" width="80" height="28"
+                            loading="eager" decoding="async" />
+                    </a>
+                    <nav class="header-nav" aria-label="Primary Navigation">
+                        <a href="/">NIC to DOB</a>
+                        <a href="/old-to-new-nic">Old ↔ New</a>
+                        <a href="/nic-from-dob">DOB to NIC</a>
+                        <a href="guidelines.html">Guidelines</a>
+                    </nav>
+                    <div class="header-mobile-controls">
+                        <button class="theme-toggle" type="button" aria-label="Toggle theme">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="5" />
+                                <line x1="12" y1="1" x2="12" y2="3" />
+                                <line x1="12" y1="21" x2="12" y2="23" />
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                                <line x1="1" y1="12" x2="3" y2="12" />
+                                <line x1="21" y1="12" x2="23" y2="12" />
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <main>
+                <section class="hero" id="converter">
+                    <div class="hero-empty" id="hero-empty">
+                        <h1 class="hero-title">Find Date of Birth from a Sri Lankan NIC</h1>
+                        <p class="hero-subtitle">
+                            Your NIC number hides your birthday. Paste it below — old 9-digit or new 12-digit — and see
+                            your exact date of birth, age, weekday, and gender in one click. Private and in-browser.
+                        </p>
+                        <p class="trust-disclaimer">Independent tool &middot; Not affiliated with <a
+                                href="https://www.drp.gov.lk" target="_blank" rel="noopener noreferrer">DRP</a></p>
+
+                        <div class="input-group">
+                            <label for="nic-input" class="sr-only">Enter NIC number to find birthday</label>
+                            <input type="text" id="nic-input" class="nic-input"
+                                placeholder="e.g. 855420159V or 199906731234" autocomplete="off" inputmode="text"
+                                maxlength="12" aria-describedby="error-msg" />
+                            <button class="decode-btn" id="decode-btn" type="button">Find Birthday</button>
+                        </div>
+                        <p class="error-msg" id="error-msg" role="alert">Please enter a valid Sri Lankan NIC number</p>
+                    </div>
+
+                    <div class="hero-revealed" id="hero-revealed">
+                        <div class="decoded-badge animate-fact-0">
+                            <span class="decoded-badge__label">Birthday Found</span>
+                            <span class="decoded-badge__divider"></span>
+                            <span class="decoded-badge__number" id="decoded-nic-display">855420159V</span>
+                        </div>
+                        <div class="reveal-rule animate-rule"></div>
+
+                        <div class="result-card">
+                            <div class="result-grid result-grid--primary">
+                                <div class="result-fact animate-fact-0">
+                                    <p class="result-fact__label">Birthday</p>
+                                    <p class="result-fact__value" id="result-dob">11 February 1985</p>
+                                </div>
+                                <div class="result-fact animate-fact-1">
+                                    <p class="result-fact__label">Age</p>
+                                    <p class="result-fact__value" id="result-age">41</p>
+                                    <p class="result-fact__age-detail" id="result-age-detail"></p>
+                                </div>
+                                <div class="result-fact animate-fact-2">
+                                    <p class="result-fact__label">Born on a</p>
+                                    <p class="result-fact__value" id="result-weekday">Monday</p>
+                                </div>
+                            </div>
+                            <div class="result-divider"></div>
+                            <div class="result-grid result-grid--secondary">
+                                <div class="result-fact result-fact--sm animate-fact-1">
+                                    <p class="result-fact__label">Gender</p>
+                                    <p class="result-fact__value result-fact__value--sm" id="result-gender">Female</p>
+                                </div>
+                                <div class="result-fact result-fact--sm animate-fact-1">
+                                    <p class="result-fact__label">Day of Year</p>
+                                    <p class="result-fact__value result-fact__value--mono" id="result-day-code">42</p>
+                                </div>
+                                <div class="result-fact result-fact--sm animate-fact-2">
+                                    <p class="result-fact__label" id="result-format-label">New Format</p>
+                                    <p class="result-fact__value result-fact__value--mono" id="result-format-alt">
+                                        198554200159</p>
+                                </div>
+                                <div class="result-fact result-fact--sm animate-fact-2">
+                                    <p class="result-fact__label">Voter Status</p>
+                                    <p class="result-fact__value result-fact__value--sm" id="result-voter">V (Voter)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="decode-another-wrap animate-fact-2">
+                            <button class="decode-another-btn" id="decode-another-btn" type="button">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                                    <path d="M13 8H3M7 4l-4 4 4 4" stroke="currentColor" stroke-width="1.6"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                Try another NIC
+                            </button>
+                            <a href="/" class="decode-another-btn" style="margin-left:8px; text-decoration:none;">Full
+                                NIC Decoder →</a>
+                        </div>
+                    </div>
+
+                    <div class="hero-ad-slot" aria-label="Advertisement">
+                        <script>atOptions = { 'key': '26a1ef2b6e466470c96200365f14deff', 'format': 'iframe', 'height': 50, 'width': 320, 'params': {} };</script>
+                        <script
+                            src="https://chalkedwhiningromance.com/26a1ef2b6e466470c96200365f14deff/invoke.js"></script>
+                    </div>
+                    <p class="trust-line">Runs in your browser. Never stored.</p>
+                </section>
+
+                <!-- HOW IT WORKS — Birthday focused -->
+                <section class="how-it-works" id="how-it-works">
+                    <h2 class="section-title">How Your NIC Number Hides Your Birthday</h2>
+                    <div class="container">
+                        <p class="section-intro">
+                            Every Sri Lankan National Identity Card number — whether it's the old 9-digit format issued
+                            before 2016 or
+                            the current 12-digit format — encodes your exact date of birth using a <strong>day-of-year
+                                code</strong>.
+                            Here's how the tool extracts your birthday from this code.
+                        </p>
+                        <div class="steps-grid">
+                            <div class="step-card">
+                                <div class="step-indicator"><span class="step-number">1</span></div>
+                                <p class="step-text"><strong>Extract the birth year.</strong> Old format: digits 1-2
+                                    give a 2-digit year (e.g. <code>85</code> = 1985). New format: digits 1-4 give the
+                                    full year (e.g. <code>1985</code>).</p>
+                            </div>
+                            <div class="step-card">
+                                <div class="step-indicator"><span class="step-number">2</span></div>
+                                <p class="step-text"><strong>Read the day-of-year code.</strong> The next 3 digits are a
+                                    number from 1 to 866. For males, it's the actual day (1–366). For females, 500 is
+                                    added (501–866). Subtract 500 for females to get the real day number.</p>
+                            </div>
+                            <div class="step-card">
+                                <div class="step-indicator"><span class="step-number">3</span></div>
+                                <p class="step-text"><strong>Convert day number to a calendar date.</strong> Day 42 in
+                                    1985 → count 31 days of January + 11 days of February → <strong>11 February
+                                        1985</strong>. Leap years (366 days) are handled automatically.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- FAQ -->
+                <section class="faq" id="faq">
+                    <h2 class="section-title">NIC to Birthday &mdash; Frequently Asked Questions</h2>
+                    <div class="container">
+                        <div class="faq-list" id="faq-list">
+                            <div class="faq-item">
+                                <button class="faq-trigger" type="button" aria-expanded="false">
+                                    <span class="faq-trigger__text">How do I find someone's birthday from their NIC
+                                        number?</span>
+                                    <span class="faq-trigger__icon" aria-hidden="true">+</span>
+                                </button>
+                                <p class="faq-answer">Every Sri Lankan NIC encodes the date of birth as a day-of-year
+                                    code. Enter the NIC in the tool above and it instantly extracts and displays the
+                                    exact birthday. Works for both old 9-digit (e.g. 855420159V) and new 12-digit (e.g.
+                                    199906731234) formats.</p>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-trigger" type="button" aria-expanded="false">
+                                    <span class="faq-trigger__text">Can I find a birthday from both old and new NIC
+                                        formats?</span>
+                                    <span class="faq-trigger__icon" aria-hidden="true">+</span>
+                                </button>
+                                <p class="faq-answer">Yes. The old format stores the birth year as 2 digits (positions
+                                    1-2) and the day-of-year as 3 digits (positions 3-5). The new 12-digit format uses 4
+                                    digits for the year and 3 for the day. Both encode the exact same birthday
+                                    information — the tool handles both automatically.</p>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-trigger" type="button" aria-expanded="false">
+                                    <span class="faq-trigger__text">Is the birthday in a Sri Lankan NIC always
+                                        accurate?</span>
+                                    <span class="faq-trigger__icon" aria-hidden="true">+</span>
+                                </button>
+                                <p class="faq-answer">The NIC encodes the date of birth as registered with the
+                                    Department for Registration of Persons (DRP). In rare cases, a citizen may have
+                                    registered with an incorrect birth date — the NIC reflects whatever was registered,
+                                    not necessarily the actual date.</p>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-trigger" type="button" aria-expanded="false">
+                                    <span class="faq-trigger__text">What day of the week was I born on?</span>
+                                    <span class="faq-trigger__icon" aria-hidden="true">+</span>
+                                </button>
+                                <p class="faq-answer">Enter your NIC number above and the tool will show the weekday of
+                                    your birth along with the full date. This is calculated mathematically from the
+                                    decoded date — no external service is needed.</p>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-trigger" type="button" aria-expanded="false">
+                                    <span class="faq-trigger__text">Is this the same as the NIC to DOB tool?</span>
+                                    <span class="faq-trigger__icon" aria-hidden="true">+</span>
+                                </button>
+                                <p class="faq-answer">Both tools decode the same information from a NIC number. This
+                                    page is focused specifically on finding the birthday and weekday, while the <a
+                                        href="/">main NIC decoder</a> provides a more comprehensive breakdown including
+                                    format conversion, voter status, and day-of-year code.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Ad -->
+                <section class="ad-section" aria-label="Advertisement">
+                    <div class="ad-slot-728x90">
+                        <script>atOptions = { 'key': '1d991944a38fcba3be08497212b58c82', 'format': 'iframe', 'height': 90, 'width': 728, 'params': {} };</script>
+                        <script
+                            src="https://chalkedwhiningromance.com/1d991944a38fcba3be08497212b58c82/invoke.js"></script>
+                    </div>
+                </section>
+
+                <!-- NIC TOOLS NAV -->
+                <section class="nic-tools-nav" id="nic-tools">
+                    <h2 class="nic-tools-nav__title">More NIC Tools</h2>
+                    <div class="nic-tools-nav__grid">
+                        <a href="/" class="nic-tools-nav__item"><span class="nic-tools-nav__icon">🔍</span><span
+                                class="nic-tools-nav__label">Decode NIC to DOB</span></a>
+                        <a href="/old-to-new-nic" class="nic-tools-nav__item"><span
+                                class="nic-tools-nav__icon">🔄</span><span class="nic-tools-nav__label">Old ↔ New
+                                NIC</span></a>
+                        <a href="/nic-from-dob" class="nic-tools-nav__item"><span
+                                class="nic-tools-nav__icon">📅</span><span class="nic-tools-nav__label">DOB to
+                                NIC</span></a>
+                        <a href="/nic-to-birthday" class="nic-tools-nav__item nic-tools-nav__item--active"><span
+                                class="nic-tools-nav__icon">🎂</span><span class="nic-tools-nav__label">Find Birthday
+                                from NIC</span></a>
+                        <a href="/how-nic-works" class="nic-tools-nav__item"><span
+                                class="nic-tools-nav__icon">📖</span><span class="nic-tools-nav__label">How NIC
+                                Works</span></a>
+                        <a href="/excel-nic-formula" class="nic-tools-nav__item"><span
+                                class="nic-tools-nav__icon">📊</span><span class="nic-tools-nav__label">Excel NIC
+                                Formula</span></a>
+                    </div>
+                    <div class="nic-tools-nav__languages">
+                        <span class="nic-tools-nav__lang-label">Language:</span>
+                        <a href="/" class="nic-tools-nav__lang nic-tools-nav__lang--active">English</a>
+                        <a href="/si/" class="nic-tools-nav__lang">සිංහල</a>
+                        <a href="/ta/" class="nic-tools-nav__lang">தமிழ்</a>
+                    </div>
+                </section>
+            </main>
+
+            <footer class="site-footer">
+                <div class="footer-inner">
+                    <a href="/" class="footer-logo-link" aria-label="NIC Decoder Home">
+                        <img src="nicinfo-logo.webp" alt="NIC Info Logo" class="footer-logo" width="72" height="36"
+                            decoding="async" />
+                    </a>
+                    <p class="footer-description">A free browser tool for decoding Sri Lankan National Identity Card
+                        numbers.<br /><span class="last-updated">Last updated: August 2026</span></p>
+                    <p class="footer-copyright">Copyright &copy;
+                        <script>document.write(new Date().getFullYear())</script> <strong class="footer-brand">NIC
+                            Info</strong>. All rights reserved.
+                    </p>
+                    <p class="footer-developed">Developed by <a href="https://pubudu-tharanga.vercel.app/"
+                            target="_blank" rel="noopener noreferrer" class="developer-link">Pubudu Tharanga</a></p>
+                    <div class="footer-tools">
+                        <a href="/" class="footer-link">NIC to DOB</a><span class="footer-divider"
+                            aria-hidden="true"></span>
+                        <a href="/old-to-new-nic" class="footer-link">Old ↔ New NIC</a><span class="footer-divider"
+                            aria-hidden="true"></span>
+                        <a href="/nic-from-dob" class="footer-link">DOB to NIC</a><span class="footer-divider"
+                            aria-hidden="true"></span>
+                        <a href="/nic-to-birthday" class="footer-link">NIC to Birthday</a>
+                    </div>
+                    <div class="footer-languages">
+                        <a href="/si/" class="footer-link">සිංහල</a><span class="footer-divider"
+                            aria-hidden="true"></span>
+                        <a href="/ta/" class="footer-link">தமிழ்</a>
+                    </div>
+                    <div class="footer-nav">
+                        <a href="privacy.html" class="footer-link">Privacy Notice</a><span class="footer-divider"
+                            aria-hidden="true"></span>
+                        <a href="guidelines.html" class="footer-link">Guidelines</a><span class="footer-divider"
+                            aria-hidden="true"></span>
+                        <a href="policy.html" class="footer-link">Policy</a><span class="footer-divider"
+                            aria-hidden="true"></span>
+                        <span class="footer-link footer-disclaimer">Not affiliated with DRP</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+            (function () {
+                var html = document.documentElement;
+                var themeToggles = document.querySelectorAll('.theme-toggle');
+                var STORAGE_KEY = 'nic-theme';
+                function applyTheme(t) { if (t === 'light') html.setAttribute('data-theme', 'light'); else html.removeAttribute('data-theme'); }
+                var saved = localStorage.getItem(STORAGE_KEY); if (saved) applyTheme(saved);
+                themeToggles.forEach(function (btn) { btn.addEventListener('click', function () { var c = html.getAttribute('data-theme') === 'light' ? 'light' : 'dark'; var n = c === 'dark' ? 'light' : 'dark'; applyTheme(n); localStorage.setItem(STORAGE_KEY, n); }); });
+
+                var header = document.getElementById('site-header');
+                window.addEventListener('scroll', function () { header.classList.toggle('scrolled', window.scrollY > 24); }, { passive: true });
+
+                var MONTH_NAMES = { 1: 'January', 2: 'February', 3: 'March', 4: 'April', 5: 'May', 6: 'June', 7: 'July', 8: 'August', 9: 'September', 10: 'October', 11: 'November', 12: 'December' };
+                var DAYS_IN_MONTH = { 1: 31, 2: 28, 3: 31, 4: 30, 5: 31, 6: 30, 7: 31, 8: 31, 9: 30, 10: 31, 11: 30, 12: 31 };
+                var WEEKDAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                var FEMALE_DAY_OFFSET = 500;
+
+                function isLeapYear(y) { return (y % 4 === 0 && y % 100 !== 0) || (y % 400 === 0); }
+                function validateNIC(nic) { var t = nic.trim(); if (/^\d{9}[VvXx]$/.test(t)) return { isValid: true, format: 'old' }; if (/^\d{12}$/.test(t)) return { isValid: true, format: 'new' }; return { isValid: false, format: null }; }
+                function extractBirthYear(nic, fmt) { return fmt === 'old' ? parseInt(nic.substring(0, 2), 10) + 1900 : parseInt(nic.substring(0, 4), 10); }
+                function extractRawDayOfYear(nic, fmt) { var s = fmt === 'old' ? 2 : 4; return parseInt(nic.substring(s, s + 3), 10); }
+                function getGenderFromDay(rawDay, year) { var day = rawDay > FEMALE_DAY_OFFSET ? rawDay - FEMALE_DAY_OFFSET : rawDay; var maxDay = isLeapYear(year) ? 366 : 365; if (day < 1 || day > maxDay) return null; return rawDay > FEMALE_DAY_OFFSET ? 'Female' : 'Male'; }
+                function nicDayToDate(rawDay, year) { var day = rawDay > FEMALE_DAY_OFFSET ? rawDay - FEMALE_DAY_OFFSET : rawDay; var feb = isLeapYear(year) ? 29 : 28; var cumDays = [0, 31, 31 + feb]; for (var m = 3; m <= 12; m++) cumDays.push(cumDays[m - 1] + DAYS_IN_MONTH[m]); var month = 1; for (var i = 1; i <= 12; i++) { if (day <= cumDays[i]) { month = i; break; } } return { month: month, day: day - cumDays[month - 1] }; }
+                function calculatePreciseAge(by, bm, bd, cy, cm, cd) { var y = cy - by, m = cm - bm, d = cd - bd; if (d < 0) { m--; var pm = cm - 1, py = cy; if (pm === 0) { pm = 12; py--; } d += (pm === 2 && isLeapYear(py)) ? 29 : DAYS_IN_MONTH[pm]; } if (m < 0) { y--; m += 12; } return { years: y, months: m, days: d }; }
+
+                function convertToNew(nic) { var t = nic.trim(); return '19' + t.substring(0, 2) + t.substring(2, 5) + '0' + t.substring(5, 9); }
+                function convertToOld(nic) { var t = nic.trim(); if (parseInt(t.substring(0, 4), 10) >= 2000) return null; return t.substring(2, 4) + t.substring(4, 7) + t.substring(8, 12) + 'V'; }
+                function getVoterStatus(nic, fmt) { if (fmt === 'old') { var s = nic.trim().slice(-1).toUpperCase(); return s === 'V' ? 'V (Voter)' : 'X (Non-voter)'; } return 'N/A (New format)'; }
+                function formatAgeDetail(age) { var p = []; if (age.months > 0) p.push(age.months + ' mo'); if (age.days > 0) p.push(age.days + ' d'); return p.join(' · '); }
+
+                var nicInput = document.getElementById('nic-input');
+                var decodeBtn = document.getElementById('decode-btn');
+                var errorMsg = document.getElementById('error-msg');
+                var heroEmpty = document.getElementById('hero-empty');
+                var heroRevealed = document.getElementById('hero-revealed');
+                var decodeAnotherBtn = document.getElementById('decode-another-btn');
+
+                nicInput.addEventListener('input', function () { nicInput.classList.remove('error'); errorMsg.classList.remove('visible'); nicInput.removeAttribute('aria-invalid'); });
+                nicInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') handleDecode(); });
+                decodeBtn.addEventListener('click', handleDecode);
+
+                function handleDecode() {
+                    var val = nicInput.value.trim();
+                    var v = validateNIC(val);
+                    if (!v.isValid) { nicInput.classList.add('error'); errorMsg.classList.add('visible'); nicInput.setAttribute('aria-invalid', 'true'); return; }
+                    var fmt = v.format, year = extractBirthYear(val, fmt), rawDay = extractRawDayOfYear(val, fmt);
+                    var gender = getGenderFromDay(rawDay, year); if (!gender) { nicInput.classList.add('error'); errorMsg.classList.add('visible'); return; }
+                    var dateInfo = nicDayToDate(rawDay, year); if (!dateInfo) { nicInput.classList.add('error'); errorMsg.classList.add('visible'); return; }
+                    var now = new Date(), age = calculatePreciseAge(year, dateInfo.month, dateInfo.day, now.getFullYear(), now.getMonth() + 1, now.getDate());
+                    var dayOfYear = rawDay > FEMALE_DAY_OFFSET ? rawDay - FEMALE_DAY_OFFSET : rawDay;
+
+                    document.getElementById('decoded-nic-display').textContent = val;
+                    document.getElementById('result-dob').textContent = dateInfo.day + ' ' + MONTH_NAMES[dateInfo.month] + ' ' + year;
+                    document.getElementById('result-age').textContent = age.years;
+                    document.getElementById('result-age-detail').textContent = formatAgeDetail(age);
+                    document.getElementById('result-weekday').textContent = WEEKDAYS[new Date(year, dateInfo.month - 1, dateInfo.day).getDay()];
+                    document.getElementById('result-gender').textContent = gender;
+                    document.getElementById('result-day-code').textContent = dayOfYear;
+                    document.getElementById('result-voter').textContent = getVoterStatus(val, fmt);
+
+                    var fl = document.getElementById('result-format-label'), fa = document.getElementById('result-format-alt');
+                    if (fmt === 'old') { fl.textContent = 'New Format'; fa.textContent = convertToNew(val); }
+                    else { var o = convertToOld(val); fl.textContent = 'Old Format'; fa.textContent = o || 'N/A (2000+)'; }
+
+                    heroEmpty.classList.add('hidden'); heroRevealed.classList.add('active');
+                }
+
+                decodeAnotherBtn.addEventListener('click', function () { heroRevealed.classList.remove('active'); heroEmpty.classList.remove('hidden'); nicInput.value = ''; nicInput.classList.remove('error'); errorMsg.classList.remove('visible'); nicInput.removeAttribute('aria-invalid'); setTimeout(function () { nicInput.focus(); }, 50); });
+
+                var faqList = document.getElementById('faq-list');
+                if (faqList) { faqList.addEventListener('click', function (e) { var trigger = e.target.closest('.faq-trigger'); if (!trigger) return; var item = trigger.closest('.faq-item'); var isOpen = item.classList.contains('open'); faqList.querySelectorAll('.faq-item').forEach(function (fi) { fi.classList.remove('open'); fi.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false'); }); if (!isOpen) { item.classList.add('open'); trigger.setAttribute('aria-expanded', 'true'); } }); }
+            })();
+    </script>
+    <script type="text/javascript" async="async" data-cfasync="false"
+        src="https://chalkedwhiningromance.com/12/fd/92/12fd92f5eaf18ebed8a2692937807133.js"></script>
+    <script type="text/javascript" async="async" data-cfasync="false"
+        src="https://chalkedwhiningromance.com/b0/d8/69/b0d86922a34d96a9992e00a5904f2079.js"></script>
+</body>
+
+</html>

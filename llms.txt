@@ -106,7 +106,7 @@ This tool guarantees complete privacy:
 ## Frequently Asked Questions
 
 ### How do I find my birthday from NIC number?
-Enter your NIC number at [nicinfo.vercel.app](https://nicinfo.vercel.app/). The tool extracts the encoded birth date automatically from the day-of-year digits embedded in the NIC number.
+Enter your NIC number at the [NIC Info decoder](https://nicinfo.vercel.app/). The tool extracts the encoded birth date automatically from the day-of-year digits embedded in the NIC number.
 
 ### Is this tool safe to use?
 Yes, 100% safe. Your NIC never leaves your device. All processing is done locally in your browser using client-side JavaScript.
@@ -130,10 +130,10 @@ Prepend "19" to the 2-digit year, keep the 3-digit day code, insert a "0" before
 This tool decodes details from an NIC number you already have — enter any old (9-digit + V/X) or new (12-digit) Sri Lankan ID number to instantly see the birthday, age, and gender encoded in it. It cannot search for an NIC number using a person's name, as that data is held only by the Department for Registration of Persons.
 
 ### How can I check Sri Lanka ID card details online?
-Visit [nicinfo.vercel.app](https://nicinfo.vercel.app/) and enter any Sri Lankan NIC number (old or new format). The tool runs entirely in your browser and instantly shows the date of birth, gender, and precise age encoded in the NIC number — no registration or downloads required.
+Visit the [NIC Info decoder](https://nicinfo.vercel.app/) and enter any Sri Lankan NIC number (old or new format). The tool runs entirely in your browser and instantly shows the date of birth, gender, and precise age encoded in the NIC number — no registration or downloads required.
 
 ### How do I convert an ID number or NIC to a birthday (DOB)?
-Paste your Sri Lankan NIC number into the decoder at [nicinfo.vercel.app](https://nicinfo.vercel.app/). The tool reads the 3-digit day-of-year code embedded in every NIC — whether it's an old 9-digit card or a new 12-digit card — and converts it to an exact birth date (day, month, year) instantly.
+Paste your Sri Lankan NIC number into the [NIC Info decoder](https://nicinfo.vercel.app/). The tool reads the 3-digit day-of-year code embedded in every NIC — whether it's an old 9-digit card or a new 12-digit card — and converts it to an exact birth date (day, month, year) instantly.
 
 ### Why is 500 added to the day number for female Sri Lankan NICs?
 The Department for Registration of Persons (DRP) uses a 500-day offset as an elegant single-field encoding scheme. A 3-digit number (001 to 366) represents male births directly. Adding 500 produces numbers 501 to 866 for females. This ensures male and female day-code ranges never overlap, enabling instant gender detection and date recovery without requiring an extra character column.

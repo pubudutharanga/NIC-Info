@@ -1,4 +1,52 @@
 {
+  "rewrites": [
+    {
+      "source": "/old-to-new-nic",
+      "destination": "/old-to-new-nic.html"
+    },
+    {
+      "source": "/nic-from-dob",
+      "destination": "/nic-from-dob.html"
+    },
+    {
+      "source": "/nic-to-birthday",
+      "destination": "/nic-to-birthday.html"
+    },
+    {
+      "source": "/how-nic-works",
+      "destination": "/how-nic-works.html"
+    },
+    {
+      "source": "/excel-nic-formula",
+      "destination": "/excel-nic-formula.html"
+    },
+    {
+      "source": "/nic-check-digit",
+      "destination": "/nic-check-digit.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/si/nic-to-birthday",
+      "destination": "/si/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ta/nic-to-birthday",
+      "destination": "/ta/",
+      "statusCode": 301
+    },
+    {
+      "source": "/si/(.*)",
+      "destination": "/si/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ta/(.*)",
+      "destination": "/ta/",
+      "statusCode": 301
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -22,11 +70,20 @@
       ]
     },
     {
-      "source": "/(index\\.html|guidelines\\.html|privacy\\.html|policy\\.html|$)",
+      "source": "/(index\\.html|guidelines\\.html|old-to-new-nic|nic-from-dob|nic-to-birthday|how-nic-works|excel-nic-formula|nic-check-digit|$)",
       "headers": [
         {
           "key": "X-Robots-Tag",
           "value": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        }
+      ]
+    },
+    {
+      "source": "/(privacy|policy)\\.html",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
         }
       ]
     },
