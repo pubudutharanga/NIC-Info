@@ -1,6 +1,10 @@
 {
   "rewrites": [
     {
+      "source": "/ai-assistant",
+      "destination": "/ai-assistant.html"
+    },
+    {
       "source": "/old-to-new-nic",
       "destination": "/old-to-new-nic.html"
     },

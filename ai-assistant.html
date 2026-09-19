@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+  <!-- Primary Meta Tags -->
+  <title>AI NIC Assistant — Smart Sri Lanka NIC Decoder Chat | NIC Info</title>
+  <meta name="description"
+    content="Chat with our AI NIC Assistant to decode Sri Lankan NIC numbers, learn about NIC formats, and get instant birthday, age &amp; gender information. Powered by Gemma 4 AI + local intelligence." />
+  <meta name="author" content="Pubudu Tharanga" />
+
+  <!-- Canonical & Internationalization -->
+  <link rel="canonical" href="https://nicinfo.vercel.app/ai-assistant" />
+  <link rel="alternate" hreflang="en" href="https://nicinfo.vercel.app/ai-assistant" />
+  <link rel="alternate" hreflang="x-default" href="https://nicinfo.vercel.app/ai-assistant" />
+
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#11171C" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#F5F0E8" media="(prefers-color-scheme: light)" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://nicinfo.vercel.app/ai-assistant" />
+  <meta property="og:title" content="AI NIC Assistant — Smart Sri Lanka NIC Decoder Chat" />
+  <meta property="og:description"
+    content="Chat with our AI to decode Sri Lankan NIC numbers. Get birthday, age, gender, zodiac sign &amp; more. Powered by Gemma 4 AI." />
+  <meta property="og:image" content="https://nicinfo.vercel.app/og-image.png" />
+  <meta property="og:site_name" content="NIC Info" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AI NIC Assistant — Smart Sri Lanka NIC Decoder Chat" />
+  <meta name="twitter:description"
+    content="Chat with AI to decode Sri Lankan NIC numbers instantly. Powered by local intelligence + Gemma 4." />
+  <meta name="twitter:image" content="https://nicinfo.vercel.app/og-image.png" />
+
+  <!-- Favicons & Web App Manifest -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,560;0,9..144,600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://nicinfo.vercel.app/ai-assistant#webapp",
+        "name": "AI NIC Assistant — Smart Sri Lanka NIC Decoder Chat",
+        "url": "https://nicinfo.vercel.app/ai-assistant",
+        "description": "AI-powered chat assistant for decoding Sri Lankan NIC numbers. Get birthday, age, gender, zodiac sign and more through natural conversation.",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "All",
+        "inLanguage": "en",
+        "author": {
+          "@type": "Person",
+          "name": "Pubudu Tharanga",
+          "url": "https://pubudu-tharanga.vercel.app/"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://nicinfo.vercel.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "AI Assistant",
+            "item": "https://nicinfo.vercel.app/ai-assistant"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Inline theme init (prevents FOUC) -->
+  <script>
+    (function () {
+      var stored = localStorage.getItem('nic-theme');
+      if (stored === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      } else if (!stored && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+
+<body class="chat-page-body">
+
+  <div class="page-wrapper chat-page-wrapper">
+    <!-- Guilloché background texture (Light mode) -->
+    <div class="guilloche" aria-hidden="true"></div>
+
+    <!-- Animated Background Lines (Dark mode only) -->
+    <div class="background-lines" aria-hidden="true">
+      <svg class="background-lines__svg" viewBox="0 0 1440 800" fill="none" xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="glow-beam-1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#C9A15C" stop-opacity="0" />
+            <stop offset="50%" stop-color="#C9A15C" stop-opacity="1" />
+            <stop offset="100%" stop-color="#C9A15C" stop-opacity="0" />
+          </linearGradient>
+          <linearGradient id="glow-beam-2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#4F8B82" stop-opacity="0" />
+            <stop offset="50%" stop-color="#4F8B82" stop-opacity="1" />
+            <stop offset="100%" stop-color="#4F8B82" stop-opacity="0" />
+          </linearGradient>
+        </defs>
+        <g class="bg-lines-group" stroke="currentColor" stroke-width="1">
+          <path d="M-100,600 C300,550 600,200 900,250 C1200,300 1500,650 1700,500" />
+          <path d="M-100,500 C260,450 560,160 860,190 C1160,220 1460,510 1700,380" />
+          <path d="M-100,400 C220,350 520,120 820,130 C1120,140 1420,370 1700,260" />
+          <path d="M-100,300 C180,250 480,80 780,70 C1080,60 1380,230 1700,140" />
+          <path d="M-100,200 C140,150 440,40 740,10 C1040,-20 1340,90 1700,20" />
+        </g>
+        <g stroke-width="2" fill="none">
+          <path class="beam beam-1" stroke="url(#glow-beam-1)"
+            d="M-100,500 C260,450 560,160 860,190 C1160,220 1460,510 1700,380" />
+          <path class="beam beam-2" stroke="url(#glow-beam-2)"
+            d="M-100,300 C180,250 480,80 780,70 C1080,60 1380,230 1700,140" />
+        </g>
+      </svg>
+    </div>
+
+    <!-- Skip to main content -->
+    <a href="#chat-input" class="skip-to-content">Skip to chat input</a>
+
+    <!-- ═══════════════════════════════════════════════════
+         HEADER
+         ═══════════════════════════════════════════════════ -->
+    <header class="site-header" id="site-header">
+      <div class="header-inner">
+        <a href="/" class="logo-link" aria-label="NIC Decoder Home">
+          <img src="nicinfo-logo.webp" alt="NIC Decoder Logo" class="header-logo" width="56" height="28"
+            fetchpriority="high" decoding="async" />
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="header-nav" aria-label="Main Navigation">
+          <a href="/">NIC Decoder</a>
+          <a href="/ai-assistant" class="nav-active">AI Assistant ✨</a>
+          <a href="guidelines.html">Guidelines</a>
+          <!-- Online status pill -->
+          <span class="chat-status-pill" id="chat-status-pill" aria-live="polite" aria-atomic="true">
+            <span class="chat-status-dot" id="chat-status-dot"></span>
+            <span id="chat-status-label">Online</span>
+          </span>
+          <!-- Theme toggle -->
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light mode"
+            title="Toggle light / dark mode">
+            <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="5" /><line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" /><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" /><line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" /><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+            <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </button>
+        </nav>
+
+        <!-- Mobile Controls -->
+        <div class="header-mobile-controls">
+          <button class="theme-toggle" id="mobile-theme-toggle" type="button" aria-label="Switch to light mode"
+            title="Toggle light / dark mode">
+            <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="5" /><line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" /><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" /><line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" /><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+            <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </button>
+          <a href="/" class="mobile-home-btn" aria-label="Back to NIC Decoder">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+              <polyline points="9 22 9 12 15 12 15 22" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════════════════
+         MAIN CHAT AREA
+         ═══════════════════════════════════════════════════ -->
+    <main class="chat-main" id="chat-main">
+
+      <!-- Welcome State -->
+      <div class="chat-welcome" id="chat-welcome">
+        <div class="chat-welcome__inner">
+          <div class="chat-welcome__icon" aria-hidden="true">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+              <circle cx="24" cy="24" r="22" stroke="var(--brass)" stroke-width="1.5" opacity="0.3" />
+              <circle cx="24" cy="24" r="15" stroke="var(--brass)" stroke-width="1" opacity="0.2" />
+              <path d="M24 8L26.5 18.5H37L28.5 25L31 35.5L24 29L17 35.5L19.5 25L11 18.5H21.5L24 8Z"
+                fill="var(--brass)" opacity="0.85" />
+            </svg>
+          </div>
+          <h1 class="chat-welcome__title">NIC AI Assistant</h1>
+          <p class="chat-welcome__subtitle">
+            Ask me anything about Sri Lankan NIC numbers. I decode NICs instantly and explain everything in plain
+            English.
+          </p>
+          <div class="chat-welcome__badge">
+            <span class="chat-welcome__badge-dot"></span>
+            Powered by local intelligence + Gemma 4 AI
+          </div>
+          <div class="chat-welcome__prompts" id="chat-welcome-prompts">
+            <button class="chat-prompt-card" data-prompt="Decode 941234567V" type="button">
+              <span class="chat-prompt-card__icon">🔍</span>
+              <span class="chat-prompt-card__text">Decode <strong>941234567V</strong></span>
+            </button>
+            <button class="chat-prompt-card" data-prompt="How does Sri Lankan NIC encoding work?" type="button">
+              <span class="chat-prompt-card__icon">📖</span>
+              <span class="chat-prompt-card__text">How does NIC encoding work?</span>
+            </button>
+            <button class="chat-prompt-card" data-prompt="What's the difference between old and new NIC format?"
+              type="button">
+              <span class="chat-prompt-card__icon">⚖️</span>
+              <span class="chat-prompt-card__text">Old vs new NIC format</span>
+            </button>
+            <button class="chat-prompt-card" data-prompt="What does the V or X mean at the end of a NIC?" type="button">
+              <span class="chat-prompt-card__icon">🎯</span>
+              <span class="chat-prompt-card__text">What does V or X mean?</span>
+            </button>
+            <button class="chat-prompt-card" data-prompt="How is gender determined from a NIC number?" type="button">
+              <span class="chat-prompt-card__icon">🧬</span>
+              <span class="chat-prompt-card__text">How is gender encoded?</span>
+            </button>
+            <button class="chat-prompt-card"
+              data-prompt="Decode 199906731234 and tell me everything about this person" type="button">
+              <span class="chat-prompt-card__icon">✨</span>
+              <span class="chat-prompt-card__text">Decode <strong>199906731234</strong></span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Conversation Toolbar (shown after first message) -->
+      <div class="chat-toolbar" id="chat-toolbar" aria-label="Conversation tools">
+        <span class="chat-toolbar__count" id="chat-toolbar-count" aria-live="polite"></span>
+        <div class="chat-toolbar__actions">
+          <button class="chat-toolbar-btn" id="chat-export-btn" type="button"
+            aria-label="Export conversation as Markdown" title="Export conversation">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            Export
+          </button>
+          <button class="chat-toolbar-btn chat-toolbar-btn--danger" id="chat-clear-btn" type="button"
+            aria-label="Clear all messages" title="Clear chat">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="3 6 5 6 21 6" />
+              <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2" />
+            </svg>
+            Clear
+          </button>
+        </div>
+      </div>
+
+      <!-- Chat Messages Viewport -->
+      <div class="chat-viewport" id="chat-viewport" role="log" aria-live="polite" aria-label="Chat conversation">
+        <!-- Messages injected here by JS -->
+
+        <!-- Typing Indicator (inside viewport for correct scroll) -->
+        <div class="chat-typing" id="chat-typing" aria-hidden="true" role="status">
+          <div class="chat-typing__avatar" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 48 48" fill="none">
+              <path d="M24 8L26.5 18.5H37L28.5 25L31 35.5L24 29L17 35.5L19.5 25L11 18.5H21.5L24 8Z"
+                fill="var(--brass)" opacity="0.85" />
+            </svg>
+          </div>
+          <div class="chat-typing__content">
+            <div class="chat-typing__dots" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+            <span class="chat-typing__label" id="chat-typing-label">Thinking…</span>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Scroll-to-Bottom FAB -->
+    <button class="chat-scroll-btn" id="chat-scroll-btn" type="button"
+      aria-label="Scroll to latest messages" title="Scroll to bottom">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polyline points="6 9 12 15 18 9" />
+      </svg>
+      <span class="chat-scroll-btn__badge" id="chat-scroll-badge" aria-label="new messages"></span>
+    </button>
+
+    <!-- ═══════════════════════════════════════════════════
+         INPUT AREA (Bottom-pinned)
+         ═══════════════════════════════════════════════════ -->
+    <div class="chat-input-area" id="chat-input-area">
+      <div class="chat-input-inner">
+        <!-- Suggestion Chips -->
+        <div class="chat-suggestions" id="chat-suggestions" role="group" aria-label="Suggested follow-up questions">
+          <!-- Injected by JS after each response -->
+        </div>
+        <div class="chat-input-row">
+          <textarea class="chat-input" id="chat-input" placeholder="Ask about any Sri Lankan NIC number…"
+            rows="1" maxlength="1000" aria-label="Type your message" autocomplete="off"
+            autocorrect="off" spellcheck="true"></textarea>
+          <button class="chat-send-btn" id="chat-send-btn" type="button" aria-label="Send message"
+            title="Send (Enter)" disabled>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="22" y1="2" x2="11" y2="13" />
+              <polygon points="22 2 15 22 11 13 2 9 22 2" />
+            </svg>
+          </button>
+        </div>
+        <div class="chat-input-footer">
+          <span class="chat-privacy-badge">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+            NIC decoded locally — never sent to servers
+          </span>
+          <span class="chat-char-count" id="chat-char-count" aria-live="polite"></span>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /.chat-page-wrapper -->
+
+  <!-- AI Engine (must load before Chat UI script) -->
+  <script src="ai-engine.js"></script>
+
+  <!-- ═══════════════════════════════════════════════════
+       CHAT UI CONTROLLER — 2026 Enhanced
+       ═══════════════════════════════════════════════════ -->
+  <script>
+  (function () {
+    'use strict';
+
+    /* ════════════════════════════════════════════════════
+       ELEMENTS
+       ════════════════════════════════════════════════════ */
+    var elWelcome      = document.getElementById('chat-welcome');
+    var elViewport     = document.getElementById('chat-viewport');
+    var elTyping       = document.getElementById('chat-typing');
+    var elTypingLabel  = document.getElementById('chat-typing-label');
+    var elInput        = document.getElementById('chat-input');
+    var elSendBtn      = document.getElementById('chat-send-btn');
+    var elSuggestions  = document.getElementById('chat-suggestions');
+    var elCharCount    = document.getElementById('chat-char-count');
+    var elToolbar      = document.getElementById('chat-toolbar');
+    var elToolbarCount = document.getElementById('chat-toolbar-count');
+    var elExportBtn    = document.getElementById('chat-export-btn');
+    var elClearBtn     = document.getElementById('chat-clear-btn');
+    var elScrollBtn    = document.getElementById('chat-scroll-btn');
+    var elScrollBadge  = document.getElementById('chat-scroll-badge');
+    var elStatusPill   = document.getElementById('chat-status-pill');
+    var elStatusLabel  = document.getElementById('chat-status-label');
+    var elHeader       = document.getElementById('site-header');
+    var promptCards    = document.querySelectorAll('.chat-prompt-card');
+
+    /* ════════════════════════════════════════════════════
+       STATE
+       ════════════════════════════════════════════════════ */
+    var history       = [];   // [{role, text, nicCards?, source?, timestamp}]
+    var isProcessing  = false;
+    var lastUserMsg   = null; // for retry
+    var isScrolledUp  = false;
+    var unreadCount   = 0;
+    var cancelStream  = null; // function to cancel active stream
+
+    /* ════════════════════════════════════════════════════
+       THEME
+       ════════════════════════════════════════════════════ */
+    var html        = document.documentElement;
+    var themeToggles = document.querySelectorAll('.theme-toggle');
+
+    function applyTheme(t) {
+      if (t === 'light') {
+        html.setAttribute('data-theme', 'light');
+        themeToggles.forEach(function (b) { b.setAttribute('aria-label', 'Switch to dark mode'); });
+      } else {
+        html.removeAttribute('data-theme');
+        themeToggles.forEach(function (b) { b.setAttribute('aria-label', 'Switch to light mode'); });
+      }
+    }
+
+    (function () {
+      var stored = localStorage.getItem('nic-theme');
+      if (stored === 'light' || stored === 'dark') { applyTheme(stored); }
+      else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) { applyTheme('light'); }
+    })();
+
+    themeToggles.forEach(function (b) {
+      b.addEventListener('click', function () {
+        var next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+        applyTheme(next);
+        try { localStorage.setItem('nic-theme', next); } catch (_) {}
+      });
+    });
+
+    /* ════════════════════════════════════════════════════
+       HEADER SCROLL
+       ════════════════════════════════════════════════════ */
+    window.addEventListener('scroll', function () {
+      elHeader.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    /* ════════════════════════════════════════════════════
+       ONLINE / OFFLINE STATUS
+       ════════════════════════════════════════════════════ */
+    function updateOnlineStatus() {
+      var online = navigator.onLine;
+      if (elStatusPill) elStatusPill.classList.toggle('chat-status-pill--offline', !online);
+      if (elStatusLabel) elStatusLabel.textContent = online ? 'Online' : 'Offline Mode';
+    }
+    updateOnlineStatus();
+    window.addEventListener('online', updateOnlineStatus);
+    window.addEventListener('offline', updateOnlineStatus);
+
+    /* ════════════════════════════════════════════════════
+       SCROLL-TO-BOTTOM FAB
+       ════════════════════════════════════════════════════ */
+    elViewport.addEventListener('scroll', onViewportScroll, { passive: true });
+
+    function onViewportScroll() {
+      var dist = elViewport.scrollHeight - elViewport.scrollTop - elViewport.clientHeight;
+      isScrolledUp = dist > 120;
+      if (elScrollBtn) elScrollBtn.classList.toggle('visible', isScrolledUp);
+      if (!isScrolledUp) {
+        unreadCount = 0;
+        updateScrollBadge();
+      }
+    }
+
+    function updateScrollBadge() {
+      if (!elScrollBadge) return;
+      if (unreadCount > 0) {
+        elScrollBadge.textContent = unreadCount > 9 ? '9+' : String(unreadCount);
+        elScrollBadge.classList.add('visible');
+      } else {
+        elScrollBadge.textContent = '';
+        elScrollBadge.classList.remove('visible');
+      }
+    }
+
+    if (elScrollBtn) {
+      elScrollBtn.addEventListener('click', function () { scrollToBottom(true); });
+    }
+
+    function scrollToBottom(smooth) {
+      requestAnimationFrame(function () {
+        elViewport.scrollTo({
+          top: elViewport.scrollHeight,
+          behavior: smooth ? 'smooth' : 'instant'
+        });
+      });
+    }
+
+    /* ════════════════════════════════════════════════════
+       CONVERSATION TOOLBAR
+       ════════════════════════════════════════════════════ */
+    function updateToolbar() {
+      var userCount = history.filter(function (m) { return m.role === 'user'; }).length;
+      if (elToolbar) elToolbar.classList.toggle('visible', userCount > 0);
+      if (elToolbarCount) {
+        elToolbarCount.textContent = userCount + (userCount === 1 ? ' message' : ' messages');
+      }
+    }
+
+    if (elExportBtn) {
+      elExportBtn.addEventListener('click', exportConversation);
+    }
+
+    if (elClearBtn) {
+      elClearBtn.addEventListener('click', function () {
+        if (!history.length) return;
+        if (!confirm('Clear this conversation? This cannot be undone.')) return;
+        clearAll();
+      });
+    }
+
+    function clearAll() {
+      if (cancelStream) { cancelStream(); cancelStream = null; }
+      // Remove all messages (keep typing indicator)
+      Array.from(elViewport.children).forEach(function (el) {
+        if (!el.classList.contains('chat-typing')) el.remove();
+      });
+      history = [];
+      lastUserMsg = null;
+      window.NICEngine.clearSession();
+      showWelcome();
+      elSuggestions.innerHTML = '';
+      elSuggestions.classList.remove('visible');
+      updateToolbar();
+      elInput.focus();
+    }
+
+    function exportConversation() {
+      if (!history.length) return;
+      var lines = [
+        '# NIC AI Assistant — Conversation Export',
+        '# Exported: ' + new Date().toLocaleString(),
+        '', '---', ''
+      ];
+      history.forEach(function (msg) {
+        lines.push((msg.role === 'user' ? '## You' : '## AI Assistant') + '\n' + msg.text);
+        lines.push('');
+      });
+      var blob = new Blob([lines.join('\n')], { type: 'text/markdown; charset=utf-8' });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = 'nic-chat-' + new Date().toISOString().slice(0, 10) + '.md';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+    }
+
+    /* ════════════════════════════════════════════════════
+       WELCOME STATE HELPERS
+       ════════════════════════════════════════════════════ */
+    function showWelcome() {
+      elWelcome.style.display = '';
+      elViewport.style.display = 'none';
+    }
+
+    function hideWelcome() {
+      elWelcome.style.display = 'none';
+      elViewport.style.display = 'flex';
+    }
+
+    /* ════════════════════════════════════════════════════
+       SESSION PERSISTENCE
+       ════════════════════════════════════════════════════ */
+    function restoreSession() {
+      var session = window.NICEngine.loadSession();
+      if (!session || !session.history || !session.history.length) return;
+
+      history = session.history;
+      hideWelcome();
+
+      // Restore banner
+      var banner = document.createElement('div');
+      banner.className = 'chat-restore-banner';
+      banner.setAttribute('aria-label', 'Conversation restored from previous session');
+      banner.innerHTML =
+        '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>' +
+        ' Conversation restored from ' + relativeTime(session.savedAt);
+      elViewport.insertBefore(banner, elTyping);
+
+      // Render all stored messages
+      history.forEach(function (msg) { renderStoredMessage(msg); });
+
+      updateToolbar();
+      requestAnimationFrame(function () {
+        elViewport.scrollTop = elViewport.scrollHeight;
+      });
+    }
+
+    function renderStoredMessage(msg) {
+      var msgEl = document.createElement('div');
+      msgEl.className = 'chat-message chat-message--' + msg.role;
+      if (msg.timestamp) msgEl.setAttribute('data-timestamp', msg.timestamp);
+
+      if (msg.role === 'user') {
+        msgEl.innerHTML =
+          '<div class="chat-message__content">' +
+            '<div class="chat-message__text">' + escapeHTML(msg.text) + '</div>' +
+            (msg.timestamp ? '<time class="chat-message__time" data-ts="' + msg.timestamp + '">' + relativeTime(msg.timestamp) + '</time>' : '') +
+          '</div>';
+      } else {
+        var nicCardsHTML = (msg.nicCards || []).map(buildNICCardHTML).join('');
+        var sourceTag = buildSourceTag(msg.source || 'ai');
+        var ts = msg.timestamp || Date.now();
+        msgEl.innerHTML = buildAssistantShell(nicCardsHTML, renderMarkdown(msg.text), sourceTag, ts);
+        wireAssistantHandlers(msgEl, msg.text, msg.nicCards || []);
+      }
+
+      elViewport.insertBefore(msgEl, elTyping);
+    }
+
+    /* ════════════════════════════════════════════════════
+       ENHANCED MARKDOWN RENDERER
+       ════════════════════════════════════════════════════ */
+    function renderMarkdown(raw) {
+      var text = String(raw || '');
+      var codeBlocks = [];
+
+      // 1. Extract fenced code blocks (protect from further processing)
+      text = text.replace(/```(\w*)\n?([\s\S]*?)```/g, function (_, lang, code) {
+        var i = codeBlocks.length;
+        codeBlocks.push({ lang: lang || 'text', code: code.trim() });
+        return '\x00CB' + i + '\x00';
+      });
+
+      // 2. Inline formatting
+      text = text
+        .replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>')
+        .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\*([^*\n]+?)\*/g, '<em>$1</em>')
+        .replace(/`([^`\n]+?)`/g, '<code>$1</code>');
+
+      // 3. Headers
+      text = text
+        .replace(/^### (.+)$/gm, '<h4>$1</h4>')
+        .replace(/^## (.+)$/gm, '<h3>$1</h3>')
+        .replace(/^# (.+)$/gm, '<h2>$1</h2>');
+
+      // 4. Blockquotes
+      text = text.replace(/^> (.+)$/gm, '<blockquote>$1</blockquote>');
+
+      // 5. Horizontal rules
+      text = text.replace(/^---+$/gm, '<hr>');
+
+      // 6. Ordered lists
+      text = text.replace(/((?:^\d+\. .+$\n?)+)/gm, function (block) {
+        var items = block.trim().split('\n').map(function (l) {
+          return '<li>' + l.replace(/^\d+\. /, '') + '</li>';
+        });
+        return '<ol>' + items.join('') + '</ol>';
+      });
+
+      // 7. Unordered lists
+      text = text.replace(/((?:^[-*] .+$\n?)+)/gm, function (block) {
+        var items = block.trim().split('\n').map(function (l) {
+          return '<li>' + l.replace(/^[-*] /, '') + '</li>';
+        });
+        return '<ul>' + items.join('') + '</ul>';
+      });
+
+      // 8. Paragraphs (group non-block lines)
+      var BLOCK_START = /^<(h[2-4]|ul|ol|blockquote|hr|div|pre)|\x00CB/;
+      var paras = [];
+      var buf = [];
+
+      text.split('\n\n').forEach(function (chunk) {
+        var t = chunk.trim();
+        if (!t) return;
+        if (BLOCK_START.test(t)) {
+          if (buf.length) { paras.push('<p>' + buf.join(' ') + '</p>'); buf = []; }
+          paras.push(t);
+        } else {
+          paras.push('<p>' + t.replace(/\n/g, '<br>') + '</p>');
+        }
+      });
+      if (buf.length) paras.push('<p>' + buf.join(' ') + '</p>');
+      text = paras.join('\n');
+
+      // 9. Restore code blocks
+      codeBlocks.forEach(function (blk, i) {
+        var escaped = blk.code.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        var encodedCode = encodeURIComponent(blk.code);
+        var html =
+          '<div class="chat-code-block">' +
+            '<div class="chat-code-block__header">' +
+              '<span class="chat-code-block__lang">' + escapeHTML(blk.lang) + '</span>' +
+              '<button class="chat-code-block__copy" type="button" data-code="' + encodedCode + '" aria-label="Copy code">' +
+                '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>' +
+                ' Copy' +
+              '</button>' +
+            '</div>' +
+            '<pre><code>' + escaped + '</code></pre>' +
+          '</div>';
+        text = text.replace('\x00CB' + i + '\x00', html);
+      });
+
+      return text;
+    }
+
+    /* ════════════════════════════════════════════════════
+       NIC CARD HTML
+       ════════════════════════════════════════════════════ */
+    function buildNICCardHTML(r) {
+      return (
+        '<div class="chat-nic-card">' +
+          '<div class="chat-nic-card__header">' +
+            '<span class="chat-nic-card__badge">' + (r.format === 'old' ? 'OLD' : 'NEW') + ' FORMAT</span>' +
+            '<span class="chat-nic-card__nic">' + escapeHTML(r.nic) + '</span>' +
+          '</div>' +
+          '<div class="chat-nic-card__grid">' +
+            '<div class="chat-nic-card__fact"><span class="chat-nic-card__label">Date of Birth</span><span class="chat-nic-card__value">' + escapeHTML(r.dob) + '</span></div>' +
+            '<div class="chat-nic-card__fact"><span class="chat-nic-card__label">Age</span><span class="chat-nic-card__value">' + escapeHTML(r.ageText) + '</span></div>' +
+            '<div class="chat-nic-card__fact"><span class="chat-nic-card__label">Gender</span><span class="chat-nic-card__value">' + escapeHTML(r.gender) + '</span></div>' +
+            '<div class="chat-nic-card__fact"><span class="chat-nic-card__label">Weekday</span><span class="chat-nic-card__value">' + escapeHTML(r.weekday) + '</span></div>' +
+            '<div class="chat-nic-card__fact"><span class="chat-nic-card__label">Zodiac</span><span class="chat-nic-card__value">' + r.zodiac.symbol + ' ' + escapeHTML(r.zodiac.name) + '</span></div>' +
+            '<div class="chat-nic-card__fact"><span class="chat-nic-card__label">Generation</span><span class="chat-nic-card__value">' + escapeHTML(r.generation) + '</span></div>' +
+          '</div>' +
+          '<div class="chat-nic-card__footer">' +
+            '<span class="chat-nic-card__detail">' + escapeHTML(r.altFormatLabel) + ': <code>' + escapeHTML(r.altFormat) + '</code></span>' +
+            '<span class="chat-nic-card__detail">Day Code: <code>' + r.dayOfYear + '</code></span>' +
+            '<span class="chat-nic-card__detail">Voter: ' + escapeHTML(r.voterStatus) + '</span>' +
+          '</div>' +
+        '</div>'
+      );
+    }
+
+    /* ════════════════════════════════════════════════════
+       SOURCE TAG + ASSISTANT SHELL HTML
+       ════════════════════════════════════════════════════ */
+    function buildSourceTag(source) {
+      if (source === 'hybrid')
+        return '<span class="chat-source-tag"><span class="chat-source-dot chat-source-dot--local"></span>Local + AI</span>';
+      if (source === 'local')
+        return '<span class="chat-source-tag"><span class="chat-source-dot chat-source-dot--local"></span>Local Engine</span>';
+      return '<span class="chat-source-tag"><span class="chat-source-dot chat-source-dot--ai"></span>Gemma 4 AI</span>';
+    }
+
+    function buildAssistantShell(nicCardsHTML, textHTML, sourceTag, ts) {
+      return (
+        '<div class="chat-message__avatar" aria-hidden="true">' +
+          '<svg width="20" height="20" viewBox="0 0 48 48" fill="none"><path d="M24 8L26.5 18.5H37L28.5 25L31 35.5L24 29L17 35.5L19.5 25L11 18.5H21.5L24 8Z" fill="var(--brass)" opacity="0.85"/></svg>' +
+        '</div>' +
+        '<div class="chat-message__content">' +
+          nicCardsHTML +
+          '<div class="chat-message__text">' + textHTML + '</div>' +
+          '<div class="chat-message__meta">' +
+            sourceTag +
+            '<div class="chat-reaction-bar" role="group" aria-label="Rate this response">' +
+              '<button class="chat-reaction-btn" type="button" aria-label="Helpful" title="Helpful" data-reaction="up">' +
+                '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/><path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>' +
+              '</button>' +
+              '<button class="chat-reaction-btn" type="button" aria-label="Not helpful" title="Not helpful" data-reaction="down">' +
+                '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3H10z"/><path d="M17 2h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"/></svg>' +
+              '</button>' +
+            '</div>' +
+            '<time class="chat-message__time" data-ts="' + ts + '">' + relativeTime(ts) + '</time>' +
+            '<button class="chat-copy-btn" type="button" aria-label="Copy response" title="Copy response">' +
+              '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>' +
+            '</button>' +
+          '</div>' +
+        '</div>'
+      );
+    }
+
+    /* ════════════════════════════════════════════════════
+       WIRE HANDLERS (copy, code copy, reactions, timestamps)
+       ════════════════════════════════════════════════════ */
+    function wireAssistantHandlers(msgEl, plainText, nicCards) {
+      // Copy whole message
+      var copyBtn = msgEl.querySelector('.chat-copy-btn');
+      if (copyBtn) {
+        copyBtn.addEventListener('click', function () {
+          var toCopy = plainText;
+          if (nicCards && nicCards.length) {
+            toCopy = nicCards.map(function (c) {
+              return 'NIC: ' + c.nic + '\nDOB: ' + c.dob + '\nGender: ' + c.gender + '\nAge: ' + c.ageText;
+            }).join('\n\n') + '\n\n' + plainText;
+          }
+          navigator.clipboard.writeText(toCopy).then(function () {
+            copyBtn.classList.add('copied');
+            setTimeout(function () { copyBtn.classList.remove('copied'); }, 2000);
+          }).catch(function () {});
+        });
+      }
+
+      // Code block copy buttons (wired after full markdown render)
+      wireCodeCopyHandlers(msgEl);
+
+      // Reactions
+      var reactionBtns = msgEl.querySelectorAll('.chat-reaction-btn');
+      reactionBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var wasActive = btn.classList.contains('active');
+          reactionBtns.forEach(function (b) { b.classList.remove('active'); });
+          if (!wasActive) btn.classList.add('active');
+        });
+      });
+
+      // Live timestamp updates
+      var timeEl = msgEl.querySelector('time[data-ts]');
+      if (timeEl) {
+        var ts = Number(timeEl.getAttribute('data-ts'));
+        setInterval(function () { timeEl.textContent = relativeTime(ts); }, 60000);
+      }
+    }
+
+    function wireCodeCopyHandlers(container) {
+      container.querySelectorAll('.chat-code-block__copy').forEach(function (btn) {
+        // avoid double-binding
+        if (btn.dataset.wired) return;
+        btn.dataset.wired = 'true';
+        btn.addEventListener('click', function () {
+          var code = decodeURIComponent(btn.getAttribute('data-code') || '');
+          navigator.clipboard.writeText(code).then(function () {
+            btn.innerHTML =
+              '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Copied!';
+            btn.classList.add('copied');
+            setTimeout(function () {
+              btn.innerHTML =
+                '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy';
+              btn.classList.remove('copied');
+            }, 2000);
+          }).catch(function () {});
+        });
+      });
+    }
+
+    /* ════════════════════════════════════════════════════
+       ADD MESSAGE TO VIEWPORT
+       ════════════════════════════════════════════════════ */
+    function addMessage(role, plainText, nicCards, source, ts) {
+      hideWelcome();
+      var timestamp = ts || Date.now();
+
+      var msgEl = document.createElement('div');
+      msgEl.className = 'chat-message chat-message--' + role;
+      msgEl.setAttribute('data-timestamp', timestamp);
+
+      if (role === 'user') {
+        msgEl.innerHTML =
+          '<div class="chat-message__content">' +
+            '<div class="chat-message__text">' + escapeHTML(plainText) + '</div>' +
+            '<time class="chat-message__time" data-ts="' + timestamp + '">' + relativeTime(timestamp) + '</time>' +
+          '</div>';
+      } else {
+        var nicHTML = (nicCards || []).map(buildNICCardHTML).join('');
+        var src = buildSourceTag(source || 'ai');
+        // Empty text — will be filled by streaming
+        msgEl.innerHTML = buildAssistantShell(nicHTML, '', src, timestamp);
+        wireAssistantHandlers(msgEl, plainText, nicCards || []);
+      }
+
+      // Insert before typing indicator
+      elViewport.insertBefore(msgEl, elTyping);
+
+      if (isScrolledUp && role === 'assistant') {
+        unreadCount++;
+        updateScrollBadge();
+      } else {
+        scrollToBottom();
+      }
+
+      return msgEl;
+    }
+
+    /* ════════════════════════════════════════════════════
+       STREAMING TYPEWRITER — fills .chat-message__text
+       ════════════════════════════════════════════════════ */
+    function streamIntoMessage(msgEl, fullText, onComplete) {
+      var textEl = msgEl.querySelector('.chat-message__text');
+      if (!textEl) { if (onComplete) onComplete(); return; }
+
+      // Initial cursor
+      textEl.innerHTML = '<span class="chat-stream-cursor" aria-hidden="true"></span>';
+
+      var accumulated = '';
+      var aborted = false;
+
+      var cancel = window.NICEngine.simulateStream(
+        fullText,
+        function onChunk(chunk) {
+          if (aborted) return;
+          accumulated += chunk;
+          // Quick preview render (bold + code only — fast)
+          var preview = accumulated
+            .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+            .replace(/`([^`]+)`/g, '<code>$1</code>');
+          textEl.innerHTML = '<p>' + preview + '</p><span class="chat-stream-cursor" aria-hidden="true"></span>';
+          if (!isScrolledUp) scrollToBottom();
+        },
+        function onDone(wasAborted) {
+          if (!wasAborted && !aborted) {
+            // Final full markdown render
+            textEl.innerHTML = renderMarkdown(fullText);
+            wireCodeCopyHandlers(textEl);
+          }
+          cancelStream = null;
+          if (onComplete) onComplete();
+        }
+      );
+
+      cancelStream = function () {
+        aborted = true;
+        cancel();
+        // Show final render immediately on cancel
+        textEl.innerHTML = renderMarkdown(fullText);
+        wireCodeCopyHandlers(textEl);
+        cancelStream = null;
+        if (onComplete) onComplete();
+      };
+    }
+
+    /* ════════════════════════════════════════════════════
+       TYPING INDICATOR
+       ════════════════════════════════════════════════════ */
+    function showTyping(phase) {
+      elTyping.setAttribute('aria-hidden', 'false');
+      elTyping.classList.add('visible');
+      if (elTypingLabel) elTypingLabel.textContent = phase || 'Thinking…';
+      if (!isScrolledUp) scrollToBottom();
+    }
+
+    function setTypingPhase(phase) {
+      if (elTypingLabel) elTypingLabel.textContent = phase;
+    }
+
+    function hideTyping() {
+      elTyping.setAttribute('aria-hidden', 'true');
+      elTyping.classList.remove('visible');
+    }
+
+    /* ════════════════════════════════════════════════════
+       SUGGESTION CHIPS
+       ════════════════════════════════════════════════════ */
+    function showSuggestions(list) {
+      elSuggestions.innerHTML = '';
+      list.forEach(function (text) {
+        var chip = document.createElement('button');
+        chip.className = 'chat-suggestion-chip';
+        chip.type = 'button';
+        chip.textContent = text;
+        chip.addEventListener('click', function () {
+          elInput.value = text;
+          elInput.dispatchEvent(new Event('input'));
+          sendMessage();
+        });
+        elSuggestions.appendChild(chip);
+      });
+      elSuggestions.classList.add('visible');
+    }
+
+    function hideSuggestions() {
+      elSuggestions.classList.remove('visible');
+    }
+
+    /* ════════════════════════════════════════════════════
+       ERROR BUBBLE WITH RETRY
+       ════════════════════════════════════════════════════ */
+    function addError(errText, retryFn) {
+      var errEl = document.createElement('div');
+      errEl.className = 'chat-message chat-message--error';
+      errEl.innerHTML =
+        '<div class="chat-error-bubble">' +
+          '<svg class="chat-error-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>' +
+          '<span>' + escapeHTML(errText) + '</span>' +
+          (retryFn ? '<button class="chat-retry-btn" type="button">Retry</button>' : '') +
+        '</div>';
+
+      if (retryFn) {
+        errEl.querySelector('.chat-retry-btn').addEventListener('click', function () {
+          errEl.remove();
+          retryFn();
+        });
+      }
+
+      elViewport.insertBefore(errEl, elTyping);
+      scrollToBottom();
+    }
+
+    /* ════════════════════════════════════════════════════
+       UTILITY
+       ════════════════════════════════════════════════════ */
+    function escapeHTML(str) {
+      var d = document.createElement('div');
+      d.textContent = String(str == null ? '' : str);
+      return d.innerHTML;
+    }
+
+    function relativeTime(ts) {
+      var diff = (Date.now() - ts) / 1000;
+      if (diff < 10)     return 'just now';
+      if (diff < 60)     return Math.floor(diff) + 's ago';
+      if (diff < 3600)   return Math.floor(diff / 60) + 'm ago';
+      if (diff < 86400)  return Math.floor(diff / 3600) + 'h ago';
+      return new Date(ts).toLocaleDateString();
+    }
+
+    /* ════════════════════════════════════════════════════
+       INPUT AREA — auto-expand, char counter, keyboard
+       ════════════════════════════════════════════════════ */
+    elInput.addEventListener('input', function () {
+      this.style.height = 'auto';
+      this.style.height = Math.min(this.scrollHeight, 140) + 'px';
+      elSendBtn.disabled = this.value.trim().length === 0;
+      var len = this.value.length;
+      if (len > 800) {
+        elCharCount.textContent = len + '/1000';
+        elCharCount.classList.add('visible');
+      } else {
+        elCharCount.textContent = '';
+        elCharCount.classList.remove('visible');
+      }
+    });
+
+    elSendBtn.addEventListener('click', sendMessage);
+
+    elInput.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        sendMessage();
+      } else if (e.key === 'Escape') {
+        this.value = '';
+        this.style.height = 'auto';
+        elSendBtn.disabled = true;
+        elCharCount.textContent = '';
+        elCharCount.classList.remove('visible');
+        this.blur();
+      }
+    });
+
+    promptCards.forEach(function (card) {
+      card.addEventListener('click', function () {
+        var prompt = card.getAttribute('data-prompt');
+        if (prompt) {
+          elInput.value = prompt;
+          elInput.dispatchEvent(new Event('input'));
+          sendMessage();
+        }
+      });
+    });
+
+    /* ════════════════════════════════════════════════════
+       MAIN SEND
+       ════════════════════════════════════════════════════ */
+    async function sendMessage() {
+      var text = elInput.value.trim();
+      if (!text || isProcessing) return;
+
+      isProcessing = true;
+      elSendBtn.disabled = true;
+      lastUserMsg = text;
+
+      // Haptic feedback (mobile)
+      if (navigator.vibrate) navigator.vibrate(8);
+
+      // Clear input
+      elInput.value = '';
+      elInput.style.height = 'auto';
+      elCharCount.textContent = '';
+      elCharCount.classList.remove('visible');
+      hideSuggestions();
+
+      var userTs = Date.now();
+
+      // Add user message
+      addMessage('user', text, [], null, userTs);
+      history.push({ role: 'user', text: text, timestamp: userTs });
+
+      // Phase 1 — thinking
+      showTyping('Thinking\u2026');
+
+      try {
+        // Show NIC-specific phase if NICs detected
+        var nics = window.NICEngine.extractNICs(text);
+        if (nics.length > 0) {
+          setTypingPhase('Decoding NIC locally\u2026');
+          await sleep(350);
+          setTypingPhase('Generating response\u2026');
+        }
+
+        var result = await window.NICEngine.processMessage(text, history);
+
+        hideTyping();
+
+        // Add assistant message shell (empty text, streams in below)
+        var msgEl = addMessage('assistant', '', result.nicCards, result.source, Date.now());
+
+        // Stream narrative text in word-by-word
+        await streamPromise(msgEl, result.narrative);
+
+        // Push to history
+        var aTs = Date.now();
+        history.push({
+          role: 'assistant',
+          text: result.narrative,
+          nicCards: result.nicCards,
+          source: result.source,
+          timestamp: aTs
+        });
+
+        window.NICEngine.saveSession(history);
+        updateToolbar();
+
+        if (result.suggestions && result.suggestions.length) {
+          showSuggestions(result.suggestions);
+        }
+
+      } catch (err) {
+        hideTyping();
+        var errMsg = err.message === 'timeout'
+          ? 'Request timed out. NIC data decoded locally — AI narrative unavailable.'
+          : (navigator.onLine ? 'Something went wrong. Please try again.' : 'You appear to be offline. NIC decoding works locally.');
+
+        var capturedMsg = lastUserMsg;
+        addError(errMsg, function () {
+          elInput.value = capturedMsg || '';
+          elInput.dispatchEvent(new Event('input'));
+          sendMessage();
+        });
+      }
+
+      isProcessing = false;
+      elSendBtn.disabled = elInput.value.trim().length === 0;
+      elInput.focus();
+    }
+
+    // Wrap streaming in a Promise so sendMessage can await it
+    function streamPromise(msgEl, text) {
+      return new Promise(function (resolve) {
+        streamIntoMessage(msgEl, text, resolve);
+      });
+    }
+
+    function sleep(ms) {
+      return new Promise(function (resolve) { setTimeout(resolve, ms); });
+    }
+
+    /* ════════════════════════════════════════════════════
+       TIMESTAMP REFRESH (every 30s)
+       ════════════════════════════════════════════════════ */
+    setInterval(function () {
+      document.querySelectorAll('time[data-ts]').forEach(function (el) {
+        el.textContent = relativeTime(Number(el.getAttribute('data-ts')));
+      });
+    }, 30000);
+
+    /* ════════════════════════════════════════════════════
+       INIT
+       ════════════════════════════════════════════════════ */
+    restoreSession();
+    setTimeout(function () { elInput.focus(); }, 300);
+
+  })();
+  </script>
+
+</body>
+
+</html>

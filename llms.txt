@@ -5,6 +5,7 @@
 ## Links
 
 - [NIC Info — Sri Lankan NIC Decoder](https://nicinfo.vercel.app/) — Main application & NIC decoder tool
+- [AI NIC Assistant](https://nicinfo.vercel.app/ai-assistant) — AI-powered chat interface for NIC decoding & questions
 - [Usage Guidelines & Verification Standards](https://nicinfo.vercel.app/guidelines.html) — NIC format specifications & conversion protocols
 - [Privacy Notice & Data Protection](https://nicinfo.vercel.app/privacy.html) — Zero-data retention policy
 - [Terms of Service & Operating Policy](https://nicinfo.vercel.app/policy.html) — Terms of use
@@ -152,6 +153,25 @@ NIC format specifications are based on the official numbering scheme defined by 
 
 Developed by [Pubudu Tharanga](https://pubudu-tharanga.vercel.app), Software Developer based in Sri Lanka.
 
+## AI NIC Assistant
+
+The [AI NIC Assistant](https://nicinfo.vercel.app/ai-assistant) is an AI-powered chat interface that allows users to ask questions about Sri Lankan NIC numbers in natural language. It uses a hybrid dual-engine architecture:
+
+- **Local NIC Engine**: NIC numbers are always decoded client-side in the browser with zero latency. The local engine handles NIC detection, parsing, format conversion, age calculation, gender determination, and zodiac sign mapping — all without any server communication.
+- **Gemma 4 AI**: For conversational responses, explanations, and context enrichment, the assistant uses Google's Gemma 4 model via a secure server-side API proxy. The AI provides natural language explanations, fun facts, historical context, and detailed answers about NIC formats.
+
+### Privacy Note
+NIC numbers are decoded locally and never sent to any AI service. Only the conversational context (questions and responses) is processed by the AI model.
+
+### Capabilities
+- Decode any Sri Lankan NIC number (old and new format) via natural language
+- Batch decode multiple NIC numbers in a single message
+- Format conversion (old to new, new to old) with explanations
+- Zodiac sign, generation, and weekday information from decoded NICs
+- Detailed explanations of NIC encoding, gender determination, check digits
+- Comparison of old vs new NIC formats
+- Graceful offline fallback using local engine only
+
 ## Disclaimer
 
 This tool is for informational and educational purposes only. It is not affiliated with, endorsed by, or connected to the Department for Registration of Persons or any other Sri Lankan government body. For official documents and services, please contact the [DRP](https://www.drp.gov.lk).
@@ -162,4 +182,4 @@ This tool is for informational and educational purposes only. It is not affiliat
 **Developer**: [pubudu-tharanga.vercel.app](https://pubudu-tharanga.vercel.app)
 **Source Code**: [github.com/pubudutharanga/NIC-Info](https://github.com/pubudutharanga/NIC-Info)
 
-**Last Updated**: August 2026
+**Last Updated**: September 2026
