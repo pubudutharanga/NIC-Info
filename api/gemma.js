@@ -4,7 +4,7 @@
  * API key is stored in Vercel environment variables — never exposed to the client.
  */
 
-const GEMMA_MODEL = 'gemma-4-12b-it';
+const GEMMA_MODEL = 'gemma-4-26b-a4b-it';
 const API_BASE = 'https://generativelanguage.googleapis.com/v1beta/models';
 
 const SYSTEM_PROMPT = `You are the NIC Info AI Assistant — a friendly, concise expert on Sri Lankan National Identity Cards (NICs). You help users understand NIC formats, interpret decoded NIC data, and learn about Sri Lanka's identity system.
