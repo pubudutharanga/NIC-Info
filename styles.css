@@ -5197,6 +5197,12 @@ table.formula-table th {
   flex-shrink: 0;
 }
 
+.chat-prompt-card__text {
+  min-width: 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
 .chat-prompt-card__text strong {
   color: var(--brass);
   font-family: 'IBM Plex Mono', monospace;
@@ -5812,8 +5818,24 @@ table.formula-table th {
     display: flex;
   }
 
+  .chat-welcome {
+    padding: 1.25rem 1rem;
+  }
+
   .chat-welcome__prompts {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .chat-prompt-card {
+    padding: 0.625rem 0.75rem;
+    font-size: 0.8rem;
+    gap: 0.5rem;
+    border-radius: 10px;
+  }
+
+  .chat-prompt-card__icon {
+    font-size: 1rem;
   }
 
   .chat-message__content {
@@ -5845,17 +5867,39 @@ table.formula-table th {
 }
 
 @media (max-width: 480px) {
+  .chat-welcome {
+    padding: 0.85rem 0.75rem;
+  }
+
+  .chat-welcome__icon {
+    margin-bottom: 0.75rem;
+  }
+
   .chat-welcome__title {
-    font-size: 1.4rem;
+    font-size: 1.35rem;
+    margin-bottom: 0.35rem;
   }
 
   .chat-welcome__subtitle {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
+    margin-bottom: 0.85rem;
+    line-height: 1.45;
+  }
+
+  .chat-welcome__prompts {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.45rem;
   }
 
   .chat-prompt-card {
-    padding: 0.65rem 0.85rem;
-    font-size: 0.8rem;
+    padding: 0.5rem 0.6rem;
+    font-size: 0.76rem;
+    gap: 0.4rem;
+    border-radius: 10px;
+  }
+
+  .chat-prompt-card__icon {
+    font-size: 0.95rem;
   }
 }
 
