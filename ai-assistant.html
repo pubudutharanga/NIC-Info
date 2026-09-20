@@ -171,10 +171,10 @@
           <a href="/">NIC Decoder</a>
           <a href="/ai-assistant" class="nav-active">AI Assistant ✨</a>
           <a href="guidelines.html">Guidelines</a>
-          <!-- Online status pill -->
-          <span class="chat-status-pill" id="chat-status-pill" aria-live="polite" aria-atomic="true">
-            <span class="chat-status-dot" id="chat-status-dot"></span>
-            <span id="chat-status-label">Online</span>
+          <!-- Online status pill (desktop) -->
+          <span class="chat-status-pill" id="chat-status-pill" data-chat-status-pill aria-live="polite" aria-atomic="true">
+            <span class="chat-status-dot" id="chat-status-dot" data-chat-status-dot></span>
+            <span id="chat-status-label" data-chat-status-label>Online</span>
           </span>
           <!-- Theme toggle -->
           <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light mode"
@@ -196,6 +196,11 @@
 
         <!-- Mobile Controls -->
         <div class="header-mobile-controls">
+          <!-- Online status pill (mobile) -->
+          <span class="chat-status-pill" data-chat-status-pill aria-live="polite" aria-atomic="true">
+            <span class="chat-status-dot" data-chat-status-dot></span>
+            <span data-chat-status-label>Online</span>
+          </span>
           <button class="theme-toggle" id="mobile-theme-toggle" type="button" aria-label="Switch to light mode"
             title="Toggle light / dark mode">
             <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -459,8 +464,12 @@
        ════════════════════════════════════════════════════ */
     function updateOnlineStatus() {
       var online = navigator.onLine;
-      if (elStatusPill) elStatusPill.classList.toggle('chat-status-pill--offline', !online);
-      if (elStatusLabel) elStatusLabel.textContent = online ? 'Online' : 'Offline Mode';
+      document.querySelectorAll('[data-chat-status-pill]').forEach(function (pill) {
+        pill.classList.toggle('chat-status-pill--offline', !online);
+      });
+      document.querySelectorAll('[data-chat-status-label]').forEach(function (label) {
+        label.textContent = online ? 'Online' : 'Offline Mode';
+      });
     }
     updateOnlineStatus();
     window.addEventListener('online', updateOnlineStatus);
@@ -633,7 +642,9 @@
        ENHANCED MARKDOWN RENDERER
        ════════════════════════════════════════════════════ */
     function renderMarkdown(raw) {
-      var text = String(raw || '');
+      var text = String(raw || '')
+        .replace(/<(thought|think|reasoning|scratchpad)>[\s\S]*?<\/\1>/gi, '')
+        .replace(/<\|channel\|?>thought[\s\S]*?<\|?channel\|?>/gi, '');
       var codeBlocks = [];
 
       // 1. Extract fenced code blocks (protect from further processing)
@@ -670,10 +681,10 @@
         return '<ol>' + items.join('') + '</ol>';
       });
 
-      // 7. Unordered lists
-      text = text.replace(/((?:^[-*] .+$\n?)+)/gm, function (block) {
+      // 7. Unordered lists (supporting -, *, and •)
+      text = text.replace(/((?:^[-*•] .+$\n?)+)/gm, function (block) {
         var items = block.trim().split('\n').map(function (l) {
-          return '<li>' + l.replace(/^[-*] /, '') + '</li>';
+          return '<li>' + l.replace(/^[-*•] /, '') + '</li>';
         });
         return '<ul>' + items.join('') + '</ul>';
       });

@@ -1,0 +1,14 @@
+# Environment variables (Google AI / Vercel API Keys)
+.env
+.env.local
+.env.*.local
+
+# Dependencies
+node_modules/
+
+# Vercel
+.vercel/
+
+# OS metadata
+.DS_Store
+Thumbs.db

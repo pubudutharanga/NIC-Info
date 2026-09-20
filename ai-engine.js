@@ -257,7 +257,12 @@
       }
 
       var data = await response.json();
-      return { text: data.text || '', source: 'gemma4' };
+      var rawText = (data.text || '')
+        .replace(/<(thought|think|reasoning|scratchpad)>[\s\S]*?<\/\1>/gi, '')
+        .replace(/<\|channel\|?>thought[\s\S]*?<\|?channel\|?>/gi, '')
+        .trim();
+
+      return { text: rawText, source: data.source || 'gemma4' };
     } catch (err) {
       clearTimeout(timeoutId);
       if (err.name === 'AbortError') {
@@ -344,11 +349,40 @@
     // 2. Build context for API
     var context = nicResults.length > 0 ? buildDecodeContext(nicResults) : '';
 
-    // 3. Build message history for API
-    var apiMessages = conversationHistory.slice(-10).map(function (msg) {
-      return { role: msg.role, text: msg.text };
-    });
-    apiMessages.push({ role: 'user', text: userMessage });
+    // 3. Build sanitized message history for API without duplicating the user message
+    var apiMessages = [];
+    var rawHistory = (conversationHistory || []).slice(-10);
+
+    for (var i = 0; i < rawHistory.length; i++) {
+      var item = rawHistory[i];
+      if (!item || !item.text) continue;
+      var role = (item.role === 'assistant' || item.role === 'model') ? 'assistant' : 'user';
+      var text = String(item.text).trim();
+      if (!text) continue;
+
+      if (apiMessages.length > 0 && apiMessages[apiMessages.length - 1].role === role) {
+        apiMessages[apiMessages.length - 1].text += '\n' + text;
+      } else {
+        apiMessages.push({ role: role, text: text });
+      }
+    }
+
+    var cleanUserMsg = String(userMessage || '').trim();
+    if (cleanUserMsg) {
+      if (apiMessages.length === 0) {
+        apiMessages.push({ role: 'user', text: cleanUserMsg });
+      } else {
+        var lastMsg = apiMessages[apiMessages.length - 1];
+        if (lastMsg.role === 'user') {
+          // If the last message in history is not yet the exact user message, merge it
+          if (lastMsg.text !== cleanUserMsg) {
+            lastMsg.text += '\n' + cleanUserMsg;
+          }
+        } else {
+          apiMessages.push({ role: 'user', text: cleanUserMsg });
+        }
+      }
+    }
 
     // 4. Try Gemma 4 API
     var narrative = '';
