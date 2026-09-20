@@ -5803,8 +5803,9 @@ table.formula-table th {
 
 @media (max-width: 768px) {
   .chat-page-body .site-header:not(:has(.mobile-menu-toggle)) .header-nav,
+  .chat-page-body .site-header .header-nav,
   .chat-page-body .header-nav {
-    display: none;
+    display: none !important;
   }
 
   .chat-page-body .mobile-home-btn {
