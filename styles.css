@@ -5126,22 +5126,15 @@ table.formula-table th {
 }
 
 .chat-welcome__logo {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  object-fit: cover;
+  width: 56px;
+  height: 56px;
   display: block;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25), 0 0 0 2px rgba(201, 161, 92, 0.4);
-  transition: transform 250ms ease, box-shadow 250ms ease;
+  object-fit: contain;
+  transition: transform 250ms ease;
 }
 
 .chat-welcome__icon:hover .chat-welcome__logo {
   transform: scale(1.06);
-  box-shadow: 0 6px 24px rgba(201, 161, 92, 0.4), 0 0 0 3px rgba(201, 161, 92, 0.65);
-}
-
-[data-theme="light"] .chat-welcome__logo {
-  box-shadow: 0 4px 16px rgba(26, 20, 16, 0.12), 0 0 0 2px rgba(160, 120, 48, 0.45);
 }
 
 .chat-welcome__title {
