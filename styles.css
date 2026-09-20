@@ -5118,8 +5118,30 @@ table.formula-table th {
 }
 
 .chat-welcome__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 1.25rem;
   animation: chatPulse 3s ease-in-out infinite;
+}
+
+.chat-welcome__logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25), 0 0 0 2px rgba(201, 161, 92, 0.4);
+  transition: transform 250ms ease, box-shadow 250ms ease;
+}
+
+.chat-welcome__icon:hover .chat-welcome__logo {
+  transform: scale(1.06);
+  box-shadow: 0 6px 24px rgba(201, 161, 92, 0.4), 0 0 0 3px rgba(201, 161, 92, 0.65);
+}
+
+[data-theme="light"] .chat-welcome__logo {
+  box-shadow: 0 4px 16px rgba(26, 20, 16, 0.12), 0 0 0 2px rgba(160, 120, 48, 0.45);
 }
 
 .chat-welcome__title {
@@ -5144,12 +5166,31 @@ table.formula-table th {
   align-items: center;
   gap: 0.5rem;
   font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
   color: var(--text-muted);
   background: var(--border-subtle);
   border: 1px solid var(--border-moderate);
   padding: 0.35rem 0.85rem;
   border-radius: 100px;
   margin-bottom: 1.75rem;
+  transition: all 200ms ease;
+}
+
+.chat-welcome__badge:hover {
+  border-color: var(--brass);
+  color: var(--text-secondary);
+}
+
+[data-theme="light"] .chat-welcome__badge {
+  background: rgba(26, 20, 16, 0.04);
+  border-color: rgba(26, 20, 16, 0.12);
+  color: var(--text-secondary);
+}
+
+[data-theme="light"] .chat-welcome__badge:hover {
+  border-color: var(--brass);
+  color: var(--text-primary);
 }
 
 .chat-welcome__badge-dot {
@@ -5157,6 +5198,7 @@ table.formula-table th {
   height: 6px;
   border-radius: 50%;
   background: var(--teal);
+  box-shadow: 0 0 6px var(--teal);
   animation: chatDotPulse 2s ease-in-out infinite;
 }
 
@@ -5875,6 +5917,11 @@ table.formula-table th {
     margin-bottom: 0.75rem;
   }
 
+  .chat-welcome__logo {
+    width: 50px;
+    height: 50px;
+  }
+
   .chat-welcome__title {
     font-size: 1.35rem;
     margin-bottom: 0.35rem;
@@ -5882,8 +5929,14 @@ table.formula-table th {
 
   .chat-welcome__subtitle {
     font-size: 0.82rem;
-    margin-bottom: 0.85rem;
+    margin-bottom: 0.65rem;
     line-height: 1.45;
+  }
+
+  .chat-welcome__badge {
+    margin-bottom: 1rem;
+    font-size: 0.72rem;
+    padding: 0.28rem 0.75rem;
   }
 
   .chat-welcome__prompts {
