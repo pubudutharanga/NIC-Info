@@ -1799,13 +1799,15 @@ select.dob-input {
   padding: 0 clamp(8px, 2vw, 16px);
 }
 
-.result-fact__value--sm {
+.result-fact__value--sm,
+.result-fact__value.result-fact__value--sm {
   font-size: clamp(16px, 3vw, 22px);
 }
 
-.result-fact__value--mono {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: clamp(14px, 2.5vw, 18px);
+.result-fact__value--mono,
+.result-fact__value.result-fact__value--mono {
+  font-family: 'IBM Plex Mono', monospace !important;
+  font-size: clamp(12px, 1.8vw, 16px) !important;
   letter-spacing: 0.04em;
 }
 

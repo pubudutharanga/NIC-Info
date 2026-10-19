@@ -5,6 +5,8 @@
 ## Links
 
 - [NIC Info — Sri Lankan NIC Decoder](https://nicinfo.vercel.app/) — Main application & NIC decoder tool
+- [Sri Lanka ID Card Check Online](https://nicinfo.vercel.app/id-number-check) — Verify format, check ID number details, voter status & conversion
+- [NIC Age Calculator Sri Lanka](https://nicinfo.vercel.app/nic-age-calculator) — Exact age in years/months/days, total days lived & birthday countdown
 - [AI NIC Assistant](https://nicinfo.vercel.app/ai-assistant) — AI-powered chat interface for NIC decoding & questions
 - [Usage Guidelines & Verification Standards](https://nicinfo.vercel.app/guidelines.html) — NIC format specifications & conversion protocols
 - [Privacy Notice & Data Protection](https://nicinfo.vercel.app/privacy.html) — Zero-data retention policy

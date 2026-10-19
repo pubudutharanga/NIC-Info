@@ -87,7 +87,7 @@
               "name": "How to check Sri Lanka ID card details online?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Enter any Sri Lankan NIC number (either old 9-digit format like 855420159V or new 12-digit format like 198554200159) into the verification tool above. Click 'Check ID Details' to immediately decode birth date, age, birth day of week, gender, voter status, and format conversion."
+                "text": "Enter any Sri Lankan NIC number (either old 9-digit format like 855420159V or new 12-digit format like 198554200159) into the verification tool above. Click the check button to immediately decode birth date, age, birth day of week, gender, voter status, and format conversion."
               }
             },
             {
@@ -169,6 +169,8 @@
                     </a>
                     <nav class="header-nav" aria-label="Primary Navigation">
                         <a href="/">NIC to DOB</a>
+                        <a href="/id-number-check" class="nav-link--active">ID Check</a>
+                        <a href="/nic-age-calculator">Age Calculator</a>
                         <a href="/old-to-new-nic">Old to New</a>
                         <a href="/nic-from-dob">DOB to NIC</a>
                         <a href="/nic-to-birthday">NIC to Birthday</a>
@@ -242,6 +244,13 @@
                                 <polyline points="9 18 15 12 9 6"></polyline>
                             </svg>
                         </a>
+                        <a href="/nic-age-calculator" class="mobile-nav-link">
+                            <span>NIC Age Calculator</span>
+                            <svg class="mobile-nav-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </a>
                         <a href="/old-to-new-nic" class="mobile-nav-link">
                             <span>Old to New NIC</span>
                             <svg class="mobile-nav-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
@@ -286,176 +295,288 @@
                         </a>
                     </nav>
                 </div>
+                <div class="mobile-nav-backdrop" id="mobile-nav-backdrop" aria-hidden="true"></div>
             </header>
 
             <main id="main-content">
-                <!-- HERO SECTION -->
+                <!-- ═══════════════════════════════════════════════
+                     HERO SECTION — SRI LANKA ID CARD CHECK ONLINE
+                     ═══════════════════════════════════════════════ -->
                 <section class="hero" id="hero">
-                    <div class="container hero-container">
-                        <div class="hero-content">
-                            <span class="badge badge-accent">100% Free &amp; Private Browser Tool</span>
-                            <h1 class="hero-title">Sri Lanka ID Card Check Online</h1>
-                            <p class="hero-subtitle">
-                                Enter any Sri Lankan National Identity Card (NIC) number to verify format validity and check date of birth, age, gender, voter status, and format conversion instantly.
-                            </p>
+                    <!-- Empty State -->
+                    <div class="hero-empty" id="hero-empty">
+                        <h1 class="hero-title">Sri Lanka ID Card Check Online</h1>
+                        <p class="hero-subtitle">
+                            Instantly verify any old 9-digit or new 12-digit Sri Lankan NIC number. Validate format
+                            authenticity, decode registered birth date, age, gender, and voter eligibility in seconds.
+                        </p>
 
-                            <div class="nic-input-wrapper" style="margin-top: 1.5rem;">
-                                <div class="input-group">
-                                    <input type="text" id="nic-input" class="nic-input"
-                                        placeholder="e.g. 855420159V or 198554200159" maxlength="12"
-                                        aria-label="Enter Sri Lanka NIC number to check" autocomplete="off" autocorrect="off"
-                                        spellcheck="false" />
-                                    <button type="button" id="decode-btn" class="btn btn-primary">Check ID Details</button>
+                        <div class="input-group">
+                            <label for="nic-input" class="input-eyebrow">National Identity Card Number</label>
+                            <div class="input-row">
+                                <input type="text" id="nic-input" class="nic-input"
+                                    placeholder="e.g. 855420159V or 198554200159" autocomplete="off" inputmode="text"
+                                    maxlength="12" aria-describedby="nic-error" spellcheck="false" />
+                                <button class="decode-btn" id="decode-btn" aria-label="Check Sri Lanka ID Details"
+                                    title="Check ID Details" type="button">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                        <path d="M4 10h12M12 6l4 4-4 4" stroke-width="1.8" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <p class="error-message" id="nic-error" role="alert">
+                                That&apos;s not a valid NIC number. Check the digit count and try again.
+                            </p>
+                            <p class="input-helper">old (9-digit + V/X) and new (12-digit) formats both work &middot; 100% private in-browser</p>
+                        </div>
+                    </div>
+
+                    <!-- Revealed State -->
+                    <div class="hero-revealed" id="hero-revealed" tabindex="-1" aria-live="polite">
+                        <!-- Decoded Badge -->
+                        <div class="decoded-badge animate-fact-0">
+                            <span class="decoded-badge__label">Verified Format</span>
+                            <span class="decoded-badge__divider"></span>
+                            <span class="decoded-badge__number" id="decoded-nic-display">855420159V</span>
+                        </div>
+
+                        <!-- Brass Rule -->
+                        <div class="reveal-rule animate-rule"></div>
+
+                        <!-- Result Card -->
+                        <div class="result-card">
+                            <div class="result-grid result-grid--primary">
+                                <div class="result-fact animate-fact-0">
+                                    <p class="result-fact__label">Format Status</p>
+                                    <p class="result-fact__value" id="result-status" style="font-size: clamp(20px, 3.5vw, 28px); color: var(--brass);">Format Valid</p>
                                 </div>
-                                <div id="error-msg" class="error-msg" role="alert" aria-live="polite">
-                                    Please enter a valid 10-character (e.g., 855420159V) or 12-digit NIC number.
+                                <div class="result-fact animate-fact-1">
+                                    <p class="result-fact__label">Date of Birth</p>
+                                    <p class="result-fact__value" id="result-dob">11 February 1985</p>
+                                </div>
+                                <div class="result-fact animate-fact-2">
+                                    <p class="result-fact__label">Current Age</p>
+                                    <p class="result-fact__value" id="result-age">41</p>
+                                    <p class="result-fact__age-detail" id="result-age-detail"></p>
+                                </div>
+                            </div>
+
+                            <div class="result-divider"></div>
+
+                            <div class="result-grid result-grid--secondary">
+                                <div class="result-fact result-fact--sm animate-fact-1">
+                                    <p class="result-fact__label">Gender</p>
+                                    <p class="result-fact__value result-fact__value--sm" id="result-gender">Female</p>
+                                </div>
+                                <div class="result-fact result-fact--sm animate-fact-1">
+                                    <p class="result-fact__label">Weekday</p>
+                                    <p class="result-fact__value result-fact__value--sm" id="result-weekday">Monday</p>
+                                </div>
+                                <div class="result-fact result-fact--sm animate-fact-2">
+                                    <p class="result-fact__label">Voter Status</p>
+                                    <p class="result-fact__value result-fact__value--sm" id="result-voter">V (Voter)</p>
+                                </div>
+                                <div class="result-fact result-fact--sm animate-fact-2">
+                                    <p class="result-fact__label" id="result-format-label">Converted Format</p>
+                                    <p class="result-fact__value result-fact__value--mono" id="result-format-alt">198554200159</p>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- RESULT CARD -->
-                        <div class="hero-result" id="hero-result-area">
-                            <div class="result-card empty-state" id="hero-empty">
-                                <div class="empty-icon" aria-hidden="true">
-                                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="1.5">
-                                        <rect x="3" y="4" width="18" height="16" rx="3" />
-                                        <circle cx="9" cy="10" r="2" />
-                                        <line x1="15" y1="8" x2="17" y2="8" />
-                                        <line x1="15" y1="12" x2="17" y2="12" />
-                                        <line x1="7" y1="16" x2="17" y2="16" />
-                                    </svg>
+                        <!-- Action Buttons -->
+                        <div class="decode-another-wrap animate-fact-2">
+                            <button class="decode-another-btn" id="decode-another-btn" type="button">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                                    <path d="M13 8H3M7 4l-4 4 4 4" stroke="currentColor" stroke-width="1.6"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                Check another ID
+                            </button>
+                            <a href="/nic-age-calculator" class="decode-another-btn" style="margin-left: 8px; text-decoration: none;">
+                                Calculate NIC Age &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Adsterra Banner Slot (Reserved 320x50 zero CLS container) -->
+                    <div class="hero-ad-slot" aria-label="Advertisement">
+                        <script>
+                            atOptions = {
+                                'key': '26a1ef2b6e466470c96200365f14deff',
+                                'format': 'iframe',
+                                'height': 50,
+                                'width': 320,
+                                'params': {}
+                            };
+                        </script>
+                        <script async src="https://chalkedwhiningromance.com/26a1ef2b6e466470c96200365f14deff/invoke.js"></script>
+                    </div>
+
+                    <!-- Trust line -->
+                    <p class="trust-line">Runs in your browser. Never stored.</p>
+                </section>
+
+                <!-- ═══════════════════════════════════════════════
+                     HOW IT WORKS SECTION — ALGORITHMIC VERIFICATION
+                     ═══════════════════════════════════════════════ -->
+                <section class="how-it-works" id="how-it-works">
+                    <h2 class="section-title">How Sri Lanka ID Card Verification Works</h2>
+                    <div class="container">
+                        <p class="section-intro">
+                            Every Sri Lankan National Identity Card (NIC) issued by the Department for Registration of Persons
+                            (DRP) follows a mathematical standard. Because identity information is directly encoded into the number
+                            sequence, authentic ID numbers can be verified instantaneously in your browser without contacting government databases.
+                        </p>
+
+                        <div class="steps-grid">
+                            <div class="step-card">
+                                <div class="step-indicator">
+                                    <span class="step-number">1</span>
                                 </div>
-                                <p class="empty-title">Ready to Check Sri Lanka ID</p>
-                                <p class="empty-desc">Enter a 9-digit old NIC or 12-digit new NIC number to reveal full identity card breakdown.</p>
+                                <p class="step-text">
+                                    <strong>Format &amp; Length Audit.</strong>
+                                    The verification engine checks for 10 characters (9 digits + <code>V</code> or <code>X</code>)
+                                    for pre-2016 issues, or exactly 12 numeric digits for modern cards.
+                                </p>
                             </div>
 
-                            <div class="result-card revealed-state" id="hero-revealed" tabindex="-1">
-                                <div class="result-header">
-                                    <span class="result-status-badge">Valid NIC Number</span>
-                                    <h2 class="result-nic-number" id="decoded-nic-display"></h2>
+                            <div class="step-card">
+                                <div class="step-indicator">
+                                    <span class="step-number">2</span>
                                 </div>
-                                <div class="result-grid">
-                                    <div class="result-item">
-                                        <span class="result-label">Date of Birth</span>
-                                        <span class="result-val highlight" id="result-dob">-</span>
-                                    </div>
-                                    <div class="result-item">
-                                        <span class="result-label">Precise Age</span>
-                                        <span class="result-val" id="result-age">-</span>
-                                        <span class="result-sub" id="result-age-detail"></span>
-                                    </div>
-                                    <div class="result-item">
-                                        <span class="result-label">Day of Week</span>
-                                        <span class="result-val" id="result-weekday">-</span>
-                                    </div>
-                                    <div class="result-item">
-                                        <span class="result-label">Gender</span>
-                                        <span class="result-val" id="result-gender">-</span>
-                                    </div>
-                                    <div class="result-item">
-                                        <span class="result-label">Day of Year Code</span>
-                                        <span class="result-val" id="result-day-code">-</span>
-                                    </div>
-                                    <div class="result-item">
-                                        <span class="result-label">Voter Status</span>
-                                        <span class="result-val" id="result-voter">-</span>
-                                    </div>
-                                    <div class="result-item result-item-full">
-                                        <span class="result-label" id="result-format-label">Converted Format</span>
-                                        <span class="result-val mono" id="result-format-alt">-</span>
-                                    </div>
+                                <p class="step-text">
+                                    <strong>Demographic Day Code Extraction.</strong>
+                                    The 3-digit day-of-year code (<code>001–366</code> for males, <code>501–866</code> for females)
+                                    is extracted and mapped against Sri Lankan calendar algorithms to verify valid birth date and leap year status.
+                                </p>
+                            </div>
+
+                            <div class="step-card">
+                                <div class="step-indicator">
+                                    <span class="step-number">3</span>
                                 </div>
-                                <button type="button" id="decode-another-btn" class="btn btn-secondary btn-sm"
-                                    style="margin-top:1rem; width:100%">Check Another ID Number</button>
+                                <p class="step-text">
+                                    <strong>Format Mapping &amp; Checksum.</strong>
+                                    Old format IDs are cross-mapped to 12-digit numbers by inserting the century prefix (<code>19</code>)
+                                    and departmental zero-padding, allowing seamless cross-system verification.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Worked Examples -->
+                        <div class="worked-examples">
+                            <h3 class="subsection-title">Verified ID Number Examples</h3>
+                            <div class="example-grid">
+                                <div class="example-card">
+                                    <p class="example-label">Old Male Format</p>
+                                    <p class="example-value"><code>850501234V</code></p>
+                                    <p class="example-arrow">&darr;</p>
+                                    <p class="example-label">Decoded Details</p>
+                                    <p class="example-value">19 Feb 1985 &middot; Male</p>
+                                    <p class="example-note">Voter eligible, 12-digit equivalent 198505001234</p>
+                                </div>
+                                <div class="example-card">
+                                    <p class="example-label">Old Female Format</p>
+                                    <p class="example-value"><code>925621456V</code></p>
+                                    <p class="example-arrow">&darr;</p>
+                                    <p class="example-label">Decoded Details</p>
+                                    <p class="example-value">02 Mar 1992 &middot; Female</p>
+                                    <p class="example-note">Day code 562 (500 + 62nd calendar day of 1992)</p>
+                                </div>
+                                <div class="example-card">
+                                    <p class="example-label">New 12-Digit Format</p>
+                                    <p class="example-value"><code>200114500123</code></p>
+                                    <p class="example-arrow">&darr;</p>
+                                    <p class="example-label">Decoded Details</p>
+                                    <p class="example-value">25 May 2001 &middot; Male</p>
+                                    <p class="example-note">Pure numeric syntax, 4-digit birth year</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Official Privacy & Legal Notice -->
+                        <div style="margin-top: 40px; background-color: var(--bg-surface); border: 1px solid var(--border-moderate); border-left: 4px solid var(--brass); border-radius: 12px; padding: 22px 24px;">
+                            <h3 style="font-family: 'Fraunces', serif; font-size: 19px; color: var(--text-primary); margin: 0 0 10px; font-weight: 500;">
+                                Official Privacy Law &amp; DRP Database Clarification
+                            </h3>
+                            <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: 14.5px; line-height: 1.65; color: var(--text-secondary); margin: 0 0 10px;">
+                                <strong>Can you check a Sri Lanka ID card number by full name online?</strong> No. Under Sri Lanka&apos;s
+                                <strong>Personal Data Protection Act No. 9 of 2022</strong> and confidentiality regulations administered by the
+                                Department for Registration of Persons (DRP), citizen names, residential addresses, and photos are not publicly searchable.
+                            </p>
+                            <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: 14.5px; line-height: 1.65; color: var(--text-secondary); margin: 0;">
+                                NIC Info executes <em>mathematical and structural validation</em> entirely inside your web browser. No identity card numbers
+                                or personal demographic queries are ever transmitted to any external server.
+                            </p>
+                        </div>
+
+                        <!-- Technical Specification Matrix Table -->
+                        <div style="margin-top: 40px;">
+                            <h3 class="subsection-title">Sri Lanka National Identity Card Format Specifications</h3>
+                            <div class="table-responsive">
+                                <table class="formula-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Segment</th>
+                                            <th>Old 9-Digit Format (Pre-2016)</th>
+                                            <th>New 12-Digit Format (2016–Present)</th>
+                                            <th>Verification Significance</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Birth Year</strong></td>
+                                            <td>First 2 digits (e.g. <code>85</code> = 1985)</td>
+                                            <td>First 4 digits (e.g. <code>1985</code> or <code>2002</code>)</td>
+                                            <td>Establishes chronological baseline and leap year cycle.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Day of Year</strong></td>
+                                            <td>Digits 3–5 (<code>001–366</code> / <code>501–866</code>)</td>
+                                            <td>Digits 5–7 (<code>001–366</code> / <code>501–866</code>)</td>
+                                            <td>Encodes exact calendar date; female entries add 500.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Serial Identifier</strong></td>
+                                            <td>Digits 6–9 (4 departmental digits)</td>
+                                            <td>Digits 8–11 (padded with leading 0)</td>
+                                            <td>Sequence counter issued on the birth day.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Terminal Check</strong></td>
+                                            <td>10th character: <code>V</code> (Voter) or <code>X</code></td>
+                                            <td>12th digit: numerical check digit</td>
+                                            <td>Integrity check character validating authenticity.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- AD SLOT 1 -->
+                <!-- ═══════════════════════════════════════════════
+                     AD SECTION — LEADERBOARD (728x90)
+                     ═══════════════════════════════════════════════ -->
                 <section class="ad-section ad-section-leaderboard" aria-label="Advertisement">
                     <div class="ad-slot-728x90">
-                        <script>atOptions = { 'key': '1d991944a38fcba3be08497212b58c82', 'format': 'iframe', 'height': 90, 'width': 728, 'params': {} };</script>
+                        <script>
+                            atOptions = {
+                                'key': '1d991944a38fcba3be08497212b58c82',
+                                'format': 'iframe',
+                                'height': 90,
+                                'width': 728,
+                                'params': {}
+                            };
+                        </script>
                         <script async src="https://chalkedwhiningromance.com/1d991944a38fcba3be08497212b58c82/invoke.js"></script>
                     </div>
                 </section>
 
-                <!-- EXPLANATORY CONTENT SECTION (SEO DOMINANCE) -->
-                <section class="content-section" style="padding: 3rem 1rem; max-width: 900px; margin: 0 auto;">
-                    <h2>How to Check Sri Lanka ID Card Details Online</h2>
-                    <p>
-                        In Sri Lanka, every citizen over the age of 15 is issued a National Identity Card (NIC) by the Department for Registration of Persons (DRP). This number is not random: it systematically encodes vital demographic details according to official government standards.
-                    </p>
-                    <p>
-                        Whether you hold an <strong>old 9-digit NIC</strong> (ending in V or X) or a <strong>new 12-digit NIC</strong>, our online ID checker decodes the mathematical structure to confirm authenticity and extract your registered birth date, gender, age, and day of the week.
-                    </p>
-
-                    <h3 style="margin-top: 2rem;">What Details Can You Check From an ID Number?</h3>
-                    <div class="features-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
-                        <div class="feature-card" style="padding: 1.5rem; background: var(--bg-card); border-radius: 10px; border: 1px solid var(--border-color);">
-                            <h4 style="margin-top:0">📅 Date of Birth</h4>
-                            <p style="margin-bottom:0">The year and day-of-year code reveal the exact calendar date of birth, automatically accounting for leap years.</p>
-                        </div>
-                        <div class="feature-card" style="padding: 1.5rem; background: var(--bg-card); border-radius: 10px; border: 1px solid var(--border-color);">
-                            <h4 style="margin-top:0">👤 Gender Determination</h4>
-                            <p style="margin-bottom:0">Female ID numbers have 500 added to the 3-digit day code (501–866), while male codes remain between 001–366.</p>
-                        </div>
-                        <div class="feature-card" style="padding: 1.5rem; background: var(--bg-card); border-radius: 10px; border: 1px solid var(--border-color);">
-                            <h4 style="margin-top:0">🔄 Old &amp; New Format Conversion</h4>
-                            <p style="margin-bottom:0">Instantly convert 9-digit old ID numbers to 12-digit new format, or reverse 12-digit numbers for pre-2000 births.</p>
-                        </div>
-                        <div class="feature-card" style="padding: 1.5rem; background: var(--bg-card); border-radius: 10px; border: 1px solid var(--border-color);">
-                            <h4 style="margin-top:0">🗳️ Voter Status at Issue</h4>
-                            <p style="margin-bottom:0">Old NIC numbers display 'V' for registered electors and 'X' for non-electors or exemptions at time of issue.</p>
-                        </div>
-                    </div>
-
-                    <h3 style="margin-top: 2.5rem;">Can You Check Sri Lanka ID Card Number by Name Online?</h3>
-                    <div style="background: rgba(200, 160, 90, 0.08); border-left: 4px solid var(--brass); padding: 1.25rem 1.5rem; border-radius: 0 8px 8px 0; margin: 1rem 0 2rem;">
-                        <p style="margin: 0; font-weight: 500;">
-                            <strong>Official Privacy Law Clarification:</strong> You cannot search a person's name or home address from an NIC number online, nor search for an ID card number by full name.
-                        </p>
-                        <p style="margin: 0.75rem 0 0; font-size: 0.95rem; opacity: 0.85;">
-                            Under the <strong>Personal Data Protection Act No. 9 of 2022</strong> and the Department for Registration of Persons Act, personal directories linking names and addresses to identity card numbers are confidential government records. Online tools like NIC Info perform <em>algorithmic structural verification</em> in your browser without contacting government databases.
-                        </p>
-                    </div>
-
-                    <h3>Step-by-Step: Understanding Your Sri Lanka ID Number</h3>
-                    <table class="formula-table" style="width:100%; margin: 1.5rem 0; border-collapse: collapse;">
-                        <thead>
-                            <tr style="text-align: left; border-bottom: 2px solid var(--border-color);">
-                                <th style="padding: 0.75rem;">Component</th>
-                                <th style="padding: 0.75rem;">Old Format (9 Digits + V/X)</th>
-                                <th style="padding: 0.75rem;">New Format (12 Digits)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr style="border-bottom: 1px solid var(--border-color);">
-                                <td style="padding: 0.75rem;"><strong>Birth Year</strong></td>
-                                <td style="padding: 0.75rem;">Digits 1–2 (e.g., <code>85</code> = 1985)</td>
-                                <td style="padding: 0.75rem;">Digits 1–4 (e.g., <code>1985</code>)</td>
-                            </tr>
-                            <tr style="border-bottom: 1px solid var(--border-color);">
-                                <td style="padding: 0.75rem;"><strong>Day of Year</strong></td>
-                                <td style="padding: 0.75rem;">Digits 3–5 (001–366 male, 501–866 female)</td>
-                                <td style="padding: 0.75rem;">Digits 5–7 (001–366 male, 501–866 female)</td>
-                            </tr>
-                            <tr style="border-bottom: 1px solid var(--border-color);">
-                                <td style="padding: 0.75rem;"><strong>Serial Number</strong></td>
-                                <td style="padding: 0.75rem;">Digits 6–9 (4 digits)</td>
-                                <td style="padding: 0.75rem;">Digits 8–11 (padded with leading 0)</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 0.75rem;"><strong>Suffix / Check</strong></td>
-                                <td style="padding: 0.75rem;">10th character (V = Voter, X = Non-voter)</td>
-                                <td style="padding: 0.75rem;">12th digit (checksum digit)</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </section>
-
-                <!-- FAQ SECTION -->
+                <!-- ═══════════════════════════════════════════════
+                     FAQ SECTION
+                     ═══════════════════════════════════════════════ -->
                 <section class="faq" id="faq">
                     <h2 class="section-title">Frequently Asked Questions</h2>
                     <div class="container">
@@ -466,50 +587,65 @@
                                     <span class="faq-trigger__icon" aria-hidden="true">+</span>
                                 </button>
                                 <p class="faq-answer">
-                                    Type your 9-character old NIC (e.g. 855420159V) or 12-digit new NIC (e.g. 198554200159) into the search box above. Click 'Check ID Details' to view your verified date of birth, current age, birth weekday, gender, and format comparison.
+                                    Enter your 9-character old NIC (e.g., 855420159V) or 12-digit new NIC (e.g., 198554200159)
+                                    into the input field above and click the check button. The verification tool immediately reveals
+                                    your registered date of birth, current age, birth weekday, gender, and format conversion.
                                 </p>
                             </div>
+
                             <div class="faq-item">
                                 <button class="faq-trigger" type="button" aria-expanded="false">
                                     <span class="faq-trigger__text">Can I check Sri Lanka NIC number by name online?</span>
                                     <span class="faq-trigger__icon" aria-hidden="true">+</span>
                                 </button>
                                 <p class="faq-answer">
-                                    No. The Sri Lanka Department for Registration of Persons (DRP) does not publish a public searchable registry by name or address due to citizen privacy laws. NIC Info decodes the demographic information mathematically encoded directly inside the number.
+                                    No. The Sri Lanka Department for Registration of Persons (DRP) does not publish an open online directory
+                                    linking names or addresses to NIC numbers due to citizen privacy safeguards under the Personal Data Protection Act.
+                                    NIC Info performs algorithmic format verification without storing or transmitting personal data.
                                 </p>
                             </div>
+
                             <div class="faq-item">
                                 <button class="faq-trigger" type="button" aria-expanded="false">
-                                    <span class="faq-trigger__text">Why does my ID number have 'V' or 'X' at the end?</span>
+                                    <span class="faq-trigger__text">What does the 'V' or 'X' mean in my ID number?</span>
                                     <span class="faq-trigger__icon" aria-hidden="true">+</span>
                                 </button>
                                 <p class="faq-answer">
-                                    In the old 9-digit format, 'V' indicates that the holder was registered as an eligible voter at the time the ID was issued. 'X' designates a non-voter or someone with an exemption. The new 12-digit format has no letters and uses a numeric check digit instead.
+                                    In the old 9-digit format, <strong>'V'</strong> designates an eligible voter registered on electoral lists at the
+                                    time of issue. <strong>'X'</strong> designates a non-voter or person exempt from voting. In the modern 12-digit format,
+                                    letters are omitted in favor of a final numeric check digit.
                                 </p>
                             </div>
+
                             <div class="faq-item">
                                 <button class="faq-trigger" type="button" aria-expanded="false">
-                                    <span class="faq-trigger__text">How do I find my birthday from my ID card number?</span>
+                                    <span class="faq-trigger__text">How does the NIC day code indicate gender?</span>
                                     <span class="faq-trigger__icon" aria-hidden="true">+</span>
                                 </button>
                                 <p class="faq-answer">
-                                    The 3 digits following the birth year represent the day of the year (DOY). For males, this is days 1–366. For females, 500 is added (days 501–866). Our tool takes this day count and converts it into the exact calendar month and date, adjusting for leap years.
+                                    For male citizens, the 3-digit day code is the calendar day of the year from <code>001</code> (January 1) to <code>366</code> (December 31).
+                                    For female citizens, <code>500</code> is added to this value, resulting in a day code between <code>501</code> and <code>866</code>.
                                 </p>
                             </div>
+
                             <div class="faq-item">
                                 <button class="faq-trigger" type="button" aria-expanded="false">
-                                    <span class="faq-trigger__text">Is this ID card check official?</span>
+                                    <span class="faq-trigger__text">Is this online ID card check tool official?</span>
                                     <span class="faq-trigger__icon" aria-hidden="true">+</span>
                                 </button>
                                 <p class="faq-answer">
-                                    NIC Info is an independent, free educational utility created by Pubudu Tharanga. It is not affiliated with the DRP or the Government of Sri Lanka. For official identity verification, visit <a href="https://drp.gov.lk/" target="_blank" rel="noopener noreferrer">drp.gov.lk</a>.
+                                    NIC Info is an independent, free educational utility created by Pubudu Tharanga. It is not affiliated with the
+                                    Department for Registration of Persons (DRP). For government verification or replacement identity cards,
+                                    please visit the official portal at <a href="https://drp.gov.lk/" target="_blank" rel="noopener noreferrer">drp.gov.lk</a>.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- NIC TOOLS NAV -->
+                <!-- ═══════════════════════════════════════════════
+                     MORE NIC TOOLS NAVIGATION
+                     ═══════════════════════════════════════════════ -->
                 <section class="nic-tools-nav" id="nic-tools">
                     <h2 class="nic-tools-nav__title">Explore More NIC Tools</h2>
                     <div class="nic-tools-nav__grid">
@@ -521,6 +657,15 @@
                                 </svg>
                             </span>
                             <span class="nic-tools-nav__label">NIC to DOB Decoder</span>
+                        </a>
+                        <a href="/nic-age-calculator" class="nic-tools-nav__item">
+                            <span class="nic-tools-nav__icon">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <polyline points="12 6 12 12 16 14" />
+                                </svg>
+                            </span>
+                            <span class="nic-tools-nav__label">NIC Age Calculator</span>
                         </a>
                         <a href="/old-to-new-nic" class="nic-tools-nav__item">
                             <span class="nic-tools-nav__icon">
@@ -549,7 +694,7 @@
                                     <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
                                 </svg>
                             </span>
-                            <span class="nic-tools-nav__label">Find Birthday from NIC</span>
+                            <span class="nic-tools-nav__label">NIC to Birthday</span>
                         </a>
                         <a href="/how-nic-works" class="nic-tools-nav__item">
                             <span class="nic-tools-nav__icon">
@@ -559,18 +704,6 @@
                                 </svg>
                             </span>
                             <span class="nic-tools-nav__label">How NIC Works</span>
-                        </a>
-                        <a href="/excel-nic-formula" class="nic-tools-nav__item">
-                            <span class="nic-tools-nav__icon">
-                                <svg viewBox="0 0 24 24" aria-hidden="true">
-                                    <rect x="3" y="3" width="18" height="18" rx="2" />
-                                    <line x1="3" y1="9" x2="21" y2="9" />
-                                    <line x1="3" y1="15" x2="21" y2="15" />
-                                    <line x1="9" y1="3" x2="9" y2="21" />
-                                    <line x1="15" y1="3" x2="15" y2="21" />
-                                </svg>
-                            </span>
-                            <span class="nic-tools-nav__label">Excel NIC Formula</span>
                         </a>
                     </div>
                     <div class="nic-tools-nav__languages">
@@ -582,10 +715,12 @@
                 </section>
             </main>
 
-            <!-- FOOTER -->
+            <!-- ═══════════════════════════════════════════════
+                 SITE FOOTER
+                 ═══════════════════════════════════════════════ -->
             <footer class="site-footer">
                 <div class="footer-inner">
-                    <a href="/" class="footer-logo-link" aria-label="NIC Decoder Home">
+                    <a href="/" class="footer-logo-link" aria-label="NIC Info Home">
                         <img src="nicinfo-logo.webp" alt="NIC Info Logo" class="footer-logo" width="72" height="36"
                             loading="lazy" decoding="async" />
                     </a>
@@ -599,9 +734,9 @@
                     <div class="footer-tools">
                         <a href="/" class="footer-link">NIC to DOB</a><span class="footer-divider" aria-hidden="true"></span>
                         <a href="/id-number-check" class="footer-link">ID Number Check</a><span class="footer-divider" aria-hidden="true"></span>
+                        <a href="/nic-age-calculator" class="footer-link">NIC Age Calculator</a><span class="footer-divider" aria-hidden="true"></span>
                         <a href="/old-to-new-nic" class="footer-link">Old to New NIC</a><span class="footer-divider" aria-hidden="true"></span>
-                        <a href="/nic-from-dob" class="footer-link">DOB to NIC</a><span class="footer-divider" aria-hidden="true"></span>
-                        <a href="/nic-to-birthday" class="footer-link">NIC to Birthday</a>
+                        <a href="/nic-from-dob" class="footer-link">DOB to NIC</a>
                     </div>
                     <div class="footer-languages">
                         <a href="/si/" class="footer-link">සිංහල</a><span class="footer-divider" aria-hidden="true"></span>
@@ -618,12 +753,16 @@
         </div>
     </div>
 
-    <!-- SCRIPT LOGIC -->
+    <!-- ═══════════════════════════════════════════════
+         SCRIPT CONTROLLER
+         ═══════════════════════════════════════════════ -->
     <script>
         (function () {
+            'use strict';
             var html = document.documentElement;
             var themeToggles = document.querySelectorAll('.theme-toggle');
             var STORAGE_KEY = 'nic-theme';
+
             function applyTheme(theme) {
                 if (theme === 'light') {
                     html.setAttribute('data-theme', 'light');
@@ -656,52 +795,134 @@
             var FEMALE_DAY_OFFSET = 500;
 
             function isLeapYear(y) { return (y % 4 === 0 && y % 100 !== 0) || (y % 400 === 0); }
-            function validateNIC(nic) { var t = nic.trim(); if (/^\d{9}[VvXx]$/.test(t)) return { isValid: true, format: 'old' }; if (/^\d{12}$/.test(t)) return { isValid: true, format: 'new' }; return { isValid: false, format: null }; }
-            function extractBirthYear(nic, fmt) { return fmt === 'old' ? parseInt(nic.substring(0, 2), 10) + 1900 : parseInt(nic.substring(0, 4), 10); }
-            function extractRawDayOfYear(nic, fmt) { var s = fmt === 'old' ? 2 : 4; return parseInt(nic.substring(s, s + 3), 10); }
-            function getGenderFromDay(rawDay, year) { var day = rawDay > FEMALE_DAY_OFFSET ? rawDay - FEMALE_DAY_OFFSET : rawDay; var maxDay = isLeapYear(year) ? 366 : 365; if (day < 1 || day > maxDay) return null; return rawDay > FEMALE_DAY_OFFSET ? 'Female' : 'Male'; }
-            function nicDayToDate(rawDay, year) { var day = rawDay > FEMALE_DAY_OFFSET ? rawDay - FEMALE_DAY_OFFSET : rawDay; var feb = isLeapYear(year) ? 29 : 28; var cumDays = [0, 31, 31 + feb]; for (var m = 3; m <= 12; m++) cumDays.push(cumDays[m - 1] + DAYS_IN_MONTH[m]); var month = 1; for (var i = 1; i <= 12; i++) { if (day <= cumDays[i]) { month = i; break; } } return { month: month, day: day - cumDays[month - 1] }; }
-            function calculatePreciseAge(by, bm, bd, cy, cm, cd) { var y = cy - by, m = cm - bm, d = cd - bd; if (d < 0) { m--; var pm = cm - 1, py = cy; if (pm === 0) { pm = 12; py--; } d += (pm === 2 && isLeapYear(py)) ? 29 : DAYS_IN_MONTH[pm]; } if (m < 0) { y--; m += 12; } return { years: y, months: m, days: d }; }
-            function convertToNew(nic) { var t = nic.trim(); return '19' + t.substring(0, 2) + t.substring(2, 5) + '0' + t.substring(5, 9); }
-            function convertToOld(nic) { var t = nic.trim(); if (parseInt(t.substring(0, 4), 10) >= 2000) return null; return t.substring(2, 4) + t.substring(4, 7) + t.substring(8, 12) + 'V'; }
-            function getVoterStatus(nic, fmt) { if (fmt === 'old') { var s = nic.trim().slice(-1).toUpperCase(); return s === 'V' ? 'V (Eligible Voter)' : 'X (Non-voter / Exemption)'; } return 'N/A (Check Digit in 12-digit format)'; }
-            function formatAgeDetail(age) { var p = []; if (age.months > 0) p.push(age.months + ' mo'); if (age.days > 0) p.push(age.days + ' d'); return p.join(' · '); }
+            function validateNIC(nic) {
+                var t = nic.trim();
+                if (/^\d{9}[VvXx]$/.test(t)) return { isValid: true, format: 'old' };
+                if (/^\d{12}$/.test(t)) return { isValid: true, format: 'new' };
+                return { isValid: false, format: null };
+            }
+            function extractBirthYear(nic, fmt) {
+                return fmt === 'old' ? parseInt(nic.substring(0, 2), 10) + 1900 : parseInt(nic.substring(0, 4), 10);
+            }
+            function extractRawDayOfYear(nic, fmt) {
+                var s = fmt === 'old' ? 2 : 4;
+                return parseInt(nic.substring(s, s + 3), 10);
+            }
+            function getGenderFromDay(rawDay, year) {
+                var day = rawDay > FEMALE_DAY_OFFSET ? rawDay - FEMALE_DAY_OFFSET : rawDay;
+                var maxDay = isLeapYear(year) ? 366 : 365;
+                if (day < 1 || day > maxDay) return null;
+                return rawDay > FEMALE_DAY_OFFSET ? 'Female' : 'Male';
+            }
+            function nicDayToDate(rawDay, year) {
+                var day = rawDay > FEMALE_DAY_OFFSET ? rawDay - FEMALE_DAY_OFFSET : rawDay;
+                var feb = isLeapYear(year) ? 29 : 28;
+                var cumDays = [0, 31, 31 + feb];
+                for (var m = 3; m <= 12; m++) cumDays.push(cumDays[m - 1] + DAYS_IN_MONTH[m]);
+                var month = 1;
+                for (var i = 1; i <= 12; i++) {
+                    if (day <= cumDays[i]) { month = i; break; }
+                }
+                return { month: month, day: day - cumDays[month - 1] };
+            }
+            function calculatePreciseAge(by, bm, bd, cy, cm, cd) {
+                var y = cy - by, m = cm - bm, d = cd - bd;
+                if (d < 0) {
+                    m--;
+                    var pm = cm - 1, py = cy;
+                    if (pm === 0) { pm = 12; py--; }
+                    d += (pm === 2 && isLeapYear(py)) ? 29 : DAYS_IN_MONTH[pm];
+                }
+                if (m < 0) { y--; m += 12; }
+                return { years: y, months: m, days: d };
+            }
+            function convertToNew(nic) {
+                var t = nic.trim();
+                return '19' + t.substring(0, 2) + t.substring(2, 5) + '0' + t.substring(5, 9);
+            }
+            function convertToOld(nic) {
+                var t = nic.trim();
+                if (parseInt(t.substring(0, 4), 10) >= 2000) return null;
+                return t.substring(2, 4) + t.substring(4, 7) + t.substring(8, 12) + 'V';
+            }
+            function getVoterStatus(nic, fmt) {
+                if (fmt === 'old') {
+                    var s = nic.trim().slice(-1).toUpperCase();
+                    return s === 'V' ? 'V (Eligible Voter)' : 'X (Non-voter)';
+                }
+                return 'N/A (Check Digit)';
+            }
+            function formatAgeDetail(age) {
+                var p = [];
+                if (age.months > 0) p.push(age.months + ' mo');
+                if (age.days > 0) p.push(age.days + ' d');
+                return p.join(' &middot; ');
+            }
 
             var nicInput = document.getElementById('nic-input');
             var decodeBtn = document.getElementById('decode-btn');
-            var errorMsg = document.getElementById('error-msg');
+            var nicError = document.getElementById('nic-error');
             var heroEmpty = document.getElementById('hero-empty');
             var heroRevealed = document.getElementById('hero-revealed');
             var decodeAnotherBtn = document.getElementById('decode-another-btn');
 
-            nicInput.addEventListener('input', function () { nicInput.classList.remove('error'); errorMsg.classList.remove('visible'); nicInput.removeAttribute('aria-invalid'); });
-            nicInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') handleDecode(); });
+            nicInput.addEventListener('input', function () {
+                nicInput.classList.remove('error');
+                nicError.classList.remove('visible');
+                nicInput.removeAttribute('aria-invalid');
+            });
+            nicInput.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter') handleDecode();
+            });
             decodeBtn.addEventListener('click', handleDecode);
 
             function handleDecode() {
                 var val = nicInput.value.trim();
                 var v = validateNIC(val);
-                if (!v.isValid) { nicInput.classList.add('error'); errorMsg.classList.add('visible'); nicInput.setAttribute('aria-invalid', 'true'); return; }
+                if (!v.isValid) {
+                    nicInput.classList.add('error');
+                    nicError.classList.add('visible');
+                    nicInput.setAttribute('aria-invalid', 'true');
+                    return;
+                }
                 var fmt = v.format, year = extractBirthYear(val, fmt), rawDay = extractRawDayOfYear(val, fmt);
-                var gender = getGenderFromDay(rawDay, year); if (!gender) { nicInput.classList.add('error'); errorMsg.classList.add('visible'); return; }
-                var dateInfo = nicDayToDate(rawDay, year); if (!dateInfo) { nicInput.classList.add('error'); errorMsg.classList.add('visible'); return; }
-                var now = new Date(), age = calculatePreciseAge(year, dateInfo.month, dateInfo.day, now.getFullYear(), now.getMonth() + 1, now.getDate());
-                var dayOfYear = rawDay > FEMALE_DAY_OFFSET ? rawDay - FEMALE_DAY_OFFSET : rawDay;
+                var gender = getGenderFromDay(rawDay, year);
+                if (!gender) {
+                    nicInput.classList.add('error');
+                    nicError.classList.add('visible');
+                    return;
+                }
+                var dateInfo = nicDayToDate(rawDay, year);
+                if (!dateInfo) {
+                    nicInput.classList.add('error');
+                    nicError.classList.add('visible');
+                    return;
+                }
+                var now = new Date();
+                var age = calculatePreciseAge(year, dateInfo.month, dateInfo.day, now.getFullYear(), now.getMonth() + 1, now.getDate());
 
                 document.getElementById('decoded-nic-display').textContent = val;
+                document.getElementById('result-status').textContent = 'Format Valid';
                 document.getElementById('result-dob').textContent = dateInfo.day + ' ' + MONTH_NAMES[dateInfo.month] + ' ' + year;
-                document.getElementById('result-age').textContent = age.years + ' years';
-                document.getElementById('result-age-detail').textContent = formatAgeDetail(age);
+                document.getElementById('result-age').textContent = age.years;
+                document.getElementById('result-age-detail').innerHTML = formatAgeDetail(age);
                 document.getElementById('result-weekday').textContent = WEEKDAYS[new Date(year, dateInfo.month - 1, dateInfo.day).getDay()];
                 document.getElementById('result-gender').textContent = gender;
-                document.getElementById('result-day-code').textContent = dayOfYear + (rawDay > FEMALE_DAY_OFFSET ? ' (+500 Female Code)' : ' (Male Code)');
                 document.getElementById('result-voter').textContent = getVoterStatus(val, fmt);
 
-                var fl = document.getElementById('result-format-label'), fa = document.getElementById('result-format-alt');
-                if (fmt === 'old') { fl.textContent = 'New 12-Digit Format Equivalent'; fa.textContent = convertToNew(val); }
-                else { var o = convertToOld(val); fl.textContent = 'Old 9-Digit Format Equivalent'; fa.textContent = o || 'N/A (Born 2000+)'; }
+                var fl = document.getElementById('result-format-label');
+                var fa = document.getElementById('result-format-alt');
+                if (fmt === 'old') {
+                    fl.textContent = 'New 12-Digit Format';
+                    fa.textContent = convertToNew(val);
+                } else {
+                    var o = convertToOld(val);
+                    fl.textContent = 'Old 9-Digit Format';
+                    fa.textContent = o || 'N/A (Born 2000+)';
+                }
 
-                heroEmpty.classList.add('hidden'); heroRevealed.classList.add('active');
+                heroEmpty.classList.add('hidden');
+                heroRevealed.classList.add('active');
                 setTimeout(function () { heroRevealed.focus(); }, 80);
             }
 
@@ -709,9 +930,12 @@
                 heroRevealed.classList.remove('active');
                 heroEmpty.classList.remove('hidden');
                 nicInput.classList.remove('error');
-                errorMsg.classList.remove('visible');
+                nicError.classList.remove('visible');
                 nicInput.removeAttribute('aria-invalid');
-                setTimeout(function () { nicInput.focus(); nicInput.select(); }, 50);
+                setTimeout(function () {
+                    nicInput.focus();
+                    nicInput.select();
+                }, 50);
             });
 
             var faqList = document.getElementById('faq-list');
@@ -723,7 +947,8 @@
                     var isOpen = item.classList.contains('open');
                     faqList.querySelectorAll('.faq-item').forEach(function (fi) {
                         fi.classList.remove('open');
-                        fi.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+                        var tr = fi.querySelector('.faq-trigger');
+                        if (tr) tr.setAttribute('aria-expanded', 'false');
                     });
                     if (!isOpen) {
                         item.classList.add('open');

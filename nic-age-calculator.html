@@ -65,7 +65,7 @@
         {
           "@type": "WebApplication",
           "@id": "https://nicinfo.vercel.app/nic-age-calculator#webapp",
-          "name": "NIC Age Calculator Sri Lanka — Date of Birth & Age Calculator",
+          "name": "NIC Age Calculator Sri Lanka — Exact Age & Birthday from NIC",
           "url": "https://nicinfo.vercel.app/nic-age-calculator",
           "description": "Calculate exact age in years, months, and days, next birthday countdown, and birth date from any Sri Lankan NIC number.",
           "applicationCategory": "UtilityApplication",
@@ -104,6 +104,14 @@
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Yes, both 9-digit old NICs (e.g., 901234567V) and 12-digit new NICs (e.g., 199012304567) are fully supported with instant calculations."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How accurate is the age calculation?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The calculation is 100% mathematically exact, accounting for calendar leap years, variable days in each month, and female +500 day-of-year offsets."
               }
             }
           ]
@@ -154,9 +162,11 @@
                     <nav class="header-nav" aria-label="Primary Navigation">
                         <a href="/">NIC to DOB</a>
                         <a href="/id-number-check">ID Check</a>
+                        <a href="/nic-age-calculator" class="nav-link--active">Age Calculator</a>
                         <a href="/old-to-new-nic">Old to New</a>
                         <a href="/nic-from-dob">DOB to NIC</a>
                         <a href="/nic-to-birthday">NIC to Birthday</a>
+                        <a href="guidelines.html">Guidelines</a>
                         <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light mode"
                             title="Toggle light / dark mode">
                             <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none"
@@ -203,193 +213,476 @@
                         </button>
                         <button class="mobile-menu-toggle" id="mobile-menu-toggle" type="button" aria-expanded="false"
                             aria-controls="mobile-nav-drawer" aria-label="Toggle navigation menu">
-                            <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
                         </button>
                     </div>
                 </div>
 
                 <div class="mobile-nav-drawer" id="mobile-nav-drawer" aria-hidden="true">
                     <nav class="mobile-nav-links" aria-label="Mobile Navigation">
-                        <a href="/" class="mobile-nav-link"><span>NIC to DOB (Decoder)</span></a>
-                        <a href="/nic-age-calculator" class="mobile-nav-link active"><span>NIC Age Calculator</span></a>
-                        <a href="/id-number-check" class="mobile-nav-link"><span>ID Number Check</span></a>
-                        <a href="/old-to-new-nic" class="mobile-nav-link"><span>Old to New NIC</span></a>
-                        <a href="/nic-from-dob" class="mobile-nav-link"><span>DOB to NIC</span></a>
-                        <a href="/nic-to-birthday" class="mobile-nav-link"><span>NIC to Birthday</span></a>
-                        <a href="/how-nic-works" class="mobile-nav-link"><span>How NIC Works</span></a>
+                        <a href="/" class="mobile-nav-link">
+                            <span>NIC to DOB (Decoder)</span>
+                            <svg class="mobile-nav-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </a>
+                        <a href="/nic-age-calculator" class="mobile-nav-link active">
+                            <span>NIC Age Calculator</span>
+                            <svg class="mobile-nav-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </a>
+                        <a href="/id-number-check" class="mobile-nav-link">
+                            <span>ID Number Check Online</span>
+                            <svg class="mobile-nav-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </a>
+                        <a href="/old-to-new-nic" class="mobile-nav-link">
+                            <span>Old to New NIC</span>
+                            <svg class="mobile-nav-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </a>
+                        <a href="/nic-from-dob" class="mobile-nav-link">
+                            <span>DOB to NIC</span>
+                            <svg class="mobile-nav-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </a>
+                        <a href="/nic-to-birthday" class="mobile-nav-link">
+                            <span>NIC to Birthday</span>
+                            <svg class="mobile-nav-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </a>
+                        <a href="/how-nic-works" class="mobile-nav-link">
+                            <span>How NIC Works</span>
+                            <svg class="mobile-nav-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </a>
+                        <a href="/excel-nic-formula" class="mobile-nav-link">
+                            <span>Excel Formula</span>
+                            <svg class="mobile-nav-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </a>
+                        <a href="guidelines.html" class="mobile-nav-link">
+                            <span>Guidelines</span>
+                            <svg class="mobile-nav-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </a>
                     </nav>
                 </div>
+                <div class="mobile-nav-backdrop" id="mobile-nav-backdrop" aria-hidden="true"></div>
             </header>
 
             <main id="main-content">
+                <!-- ═══════════════════════════════════════════════
+                     HERO SECTION — SRI LANKA NIC AGE CALCULATOR
+                     ═══════════════════════════════════════════════ -->
                 <section class="hero" id="hero">
-                    <div class="container hero-container">
-                        <div class="hero-content">
-                            <span class="badge badge-accent">Instant Birthday &amp; Age Calculator</span>
-                            <h1 class="hero-title">Sri Lanka NIC Age Calculator</h1>
-                            <p class="hero-subtitle">
-                                Enter your Sri Lankan NIC number to calculate your precise age in years, months, and days, total days lived, and countdown to your next birthday.
-                            </p>
+                    <!-- Empty State -->
+                    <div class="hero-empty" id="hero-empty">
+                        <h1 class="hero-title">Sri Lanka NIC Age Calculator</h1>
+                        <p class="hero-subtitle">
+                            Enter any Sri Lankan NIC number — old 9-digit or new 12-digit — to calculate your exact age
+                            down to the day, next birthday countdown, and total days lived. Private &amp; in-browser.
+                        </p>
 
-                            <div class="nic-input-wrapper" style="margin-top: 1.5rem;">
-                                <div class="input-group">
-                                    <input type="text" id="nic-input" class="nic-input"
-                                        placeholder="e.g. 921450123V or 199214500123" maxlength="12"
-                                        aria-label="Enter Sri Lanka NIC number to calculate age" autocomplete="off" />
-                                    <button type="button" id="decode-btn" class="btn btn-primary">Calculate Age</button>
+                        <div class="input-group">
+                            <label for="nic-input" class="input-eyebrow">National Identity Card Number</label>
+                            <div class="input-row">
+                                <input type="text" id="nic-input" class="nic-input"
+                                    placeholder="e.g. 921450123V or 199214500123" autocomplete="off" inputmode="text"
+                                    maxlength="12" aria-describedby="nic-error" spellcheck="false" />
+                                <button class="decode-btn" id="decode-btn" aria-label="Calculate Age from NIC"
+                                    title="Calculate Age" type="button">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                        <path d="M4 10h12M12 6l4 4-4 4" stroke-width="1.8" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <p class="error-message" id="nic-error" role="alert">
+                                That&apos;s not a valid NIC number. Check the digit count and try again.
+                            </p>
+                            <p class="input-helper">calculates years, months &amp; days &middot; 100% private in-browser</p>
+                        </div>
+                    </div>
+
+                    <!-- Revealed State -->
+                    <div class="hero-revealed" id="hero-revealed" tabindex="-1" aria-live="polite">
+                        <!-- Decoded Badge -->
+                        <div class="decoded-badge animate-fact-0">
+                            <span class="decoded-badge__label">Age Calculated</span>
+                            <span class="decoded-badge__divider"></span>
+                            <span class="decoded-badge__number" id="decoded-nic-display">921450123V</span>
+                        </div>
+
+                        <!-- Brass Rule -->
+                        <div class="reveal-rule animate-rule"></div>
+
+                        <!-- Result Card -->
+                        <div class="result-card">
+                            <div class="result-grid result-grid--primary">
+                                <div class="result-fact animate-fact-0">
+                                    <p class="result-fact__label">Exact Age</p>
+                                    <p class="result-fact__value" id="result-age">34</p>
+                                    <p class="result-fact__age-detail" id="result-age-detail">5 months &middot; 12 days</p>
                                 </div>
-                                <div id="error-msg" class="error-msg" role="alert" aria-live="polite">
-                                    Please enter a valid 10-character (e.g., 921450123V) or 12-digit NIC number.
+                                <div class="result-fact animate-fact-1">
+                                    <p class="result-fact__label">Next Birthday In</p>
+                                    <p class="result-fact__value" id="result-next-bday" style="color: var(--brass);">142 days</p>
+                                    <p class="result-fact__age-detail" id="result-next-bday-detail">Sunday &middot; 24 May</p>
+                                </div>
+                                <div class="result-fact animate-fact-2">
+                                    <p class="result-fact__label">Date of Birth</p>
+                                    <p class="result-fact__value" id="result-dob">24 May 1992</p>
+                                </div>
+                            </div>
+
+                            <div class="result-divider"></div>
+
+                            <div class="result-grid result-grid--secondary">
+                                <div class="result-fact result-fact--sm animate-fact-1">
+                                    <p class="result-fact__label">Born on a</p>
+                                    <p class="result-fact__value result-fact__value--sm" id="result-weekday">Sunday</p>
+                                </div>
+                                <div class="result-fact result-fact--sm animate-fact-1">
+                                    <p class="result-fact__label">Total Days Lived</p>
+                                    <p class="result-fact__value result-fact__value--mono" id="result-days-lived">12,568</p>
+                                </div>
+                                <div class="result-fact result-fact--sm animate-fact-2">
+                                    <p class="result-fact__label">Gender</p>
+                                    <p class="result-fact__value result-fact__value--sm" id="result-gender">Male</p>
+                                </div>
+                                <div class="result-fact result-fact--sm animate-fact-2">
+                                    <p class="result-fact__label">Day of Year Code</p>
+                                    <p class="result-fact__value result-fact__value--mono" id="result-day-code">145</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="hero-result" id="hero-result-area">
-                            <div class="result-card empty-state" id="hero-empty">
-                                <div class="empty-icon" aria-hidden="true">
-                                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                        <circle cx="12" cy="12" r="10" />
-                                        <polyline points="12 6 12 12 16 14" />
-                                    </svg>
+                        <!-- Action Buttons -->
+                        <div class="decode-another-wrap animate-fact-2">
+                            <button class="decode-another-btn" id="decode-another-btn" type="button">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                                    <path d="M13 8H3M7 4l-4 4 4 4" stroke="currentColor" stroke-width="1.6"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                Calculate another age
+                            </button>
+                            <a href="/id-number-check" class="decode-another-btn" style="margin-left: 8px; text-decoration: none;">
+                                Check ID Details &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Adsterra Banner Slot (Reserved 320x50 zero CLS container) -->
+                    <div class="hero-ad-slot" aria-label="Advertisement">
+                        <script>
+                            atOptions = {
+                                'key': '26a1ef2b6e466470c96200365f14deff',
+                                'format': 'iframe',
+                                'height': 50,
+                                'width': 320,
+                                'params': {}
+                            };
+                        </script>
+                        <script async src="https://chalkedwhiningromance.com/26a1ef2b6e466470c96200365f14deff/invoke.js"></script>
+                    </div>
+
+                    <!-- Trust line -->
+                    <p class="trust-line">Runs in your browser. Never stored.</p>
+                </section>
+
+                <!-- ═══════════════════════════════════════════════
+                     HOW IT WORKS SECTION — TEMPORAL CALCULATION
+                     ═══════════════════════════════════════════════ -->
+                <section class="how-it-works" id="how-it-works">
+                    <h2 class="section-title">How We Calculate Exact Age From an ID Card</h2>
+                    <div class="container">
+                        <p class="section-intro">
+                            Your National Identity Card number contains your exact birth day code set by the Department for Registration of Persons (DRP).
+                            By parsing this embedded metadata and comparing it against the active calendar date, our algorithm computes your exact age in
+                            years, months, and days without external data lookups.
+                        </p>
+
+                        <div class="steps-grid">
+                            <div class="step-card">
+                                <div class="step-indicator">
+                                    <span class="step-number">1</span>
                                 </div>
-                                <p class="empty-title">Ready to Calculate Age</p>
-                                <p class="empty-desc">Enter any Sri Lankan NIC number above to calculate your exact age and birthday breakdown.</p>
+                                <p class="step-text">
+                                    <strong>Birth Year Parsing.</strong>
+                                    For 9-digit old NICs, the first 2 digits represent the birth year in the 1900s (e.g. <code>92</code> = 1992).
+                                    For 12-digit new NICs, all four digits of the century are explicitly encoded (e.g. <code>1992</code> or <code>2004</code>).
+                                </p>
                             </div>
 
-                            <div class="result-card revealed-state" id="hero-revealed" tabindex="-1">
-                                <div class="result-header">
-                                    <span class="result-status-badge">Age Calculation Complete</span>
-                                    <h2 class="result-nic-number" id="decoded-nic-display"></h2>
+                            <div class="step-card">
+                                <div class="step-indicator">
+                                    <span class="step-number">2</span>
                                 </div>
-                                <div class="result-grid">
-                                    <div class="result-item result-item-full">
-                                        <span class="result-label">Precise Current Age</span>
-                                        <span class="result-val highlight" id="result-age" style="font-size:1.6rem">-</span>
-                                        <span class="result-sub" id="result-age-detail" style="font-size:1rem; opacity:0.9"></span>
-                                    </div>
-                                    <div class="result-item">
-                                        <span class="result-label">Date of Birth</span>
-                                        <span class="result-val" id="result-dob">-</span>
-                                    </div>
-                                    <div class="result-item">
-                                        <span class="result-label">Born On A</span>
-                                        <span class="result-val" id="result-weekday">-</span>
-                                    </div>
-                                    <div class="result-item">
-                                        <span class="result-label">Days to Next Birthday</span>
-                                        <span class="result-val" id="result-next-bday" style="color:var(--gold)">-</span>
-                                    </div>
-                                    <div class="result-item">
-                                        <span class="result-label">Approx Total Days Lived</span>
-                                        <span class="result-val" id="result-days-lived">-</span>
-                                    </div>
-                                    <div class="result-item">
-                                        <span class="result-label">Gender</span>
-                                        <span class="result-val" id="result-gender">-</span>
-                                    </div>
-                                    <div class="result-item">
-                                        <span class="result-label">Day-of-Year Code</span>
-                                        <span class="result-val" id="result-day-code">-</span>
-                                    </div>
+                                <p class="step-text">
+                                    <strong>Day of Year Translation.</strong>
+                                    Digits 3–5 (old format) or 5–7 (new format) encode the day of the year (<code>001–366</code>).
+                                    Female codes have <code>500</code> added (<code>501–866</code>). The engine subtracts 500 when applicable
+                                    and converts the ordinal number into calendar month and date.
+                                </p>
+                            </div>
+
+                            <div class="step-card">
+                                <div class="step-indicator">
+                                    <span class="step-number">3</span>
                                 </div>
-                                <button type="button" id="decode-another-btn" class="btn btn-secondary btn-sm"
-                                    style="margin-top:1rem; width:100%">Calculate Another NIC</button>
+                                <p class="step-text">
+                                    <strong>Exact Calendar Delta &amp; Countdown.</strong>
+                                    Today&apos;s date is subtracted from the birth date adjusting for leap year rules and varying month lengths.
+                                    The engine also computes the total days lived and the remaining countdown to your upcoming birthday.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Worked Examples -->
+                        <div class="worked-examples">
+                            <h3 class="subsection-title">Age Calculation Breakdown Examples</h3>
+                            <div class="example-grid">
+                                <div class="example-card">
+                                    <p class="example-label">Old NIC (Male)</p>
+                                    <p class="example-value"><code>921450123V</code></p>
+                                    <p class="example-arrow">&darr;</p>
+                                    <p class="example-label">Birthday &amp; Age</p>
+                                    <p class="example-value">24 May 1992</p>
+                                    <p class="example-note">Day 145 &middot; Male &middot; Live next birthday countdown</p>
+                                </div>
+                                <div class="example-card">
+                                    <p class="example-label">Old NIC (Female)</p>
+                                    <p class="example-value"><code>885420159V</code></p>
+                                    <p class="example-arrow">&darr;</p>
+                                    <p class="example-label">Birthday &amp; Age</p>
+                                    <p class="example-value">11 Feb 1988</p>
+                                    <p class="example-note">Day code 542 (Leap year 1988, 500 + 42nd day)</p>
+                                </div>
+                                <div class="example-card">
+                                    <p class="example-label">New NIC (Post-2000)</p>
+                                    <p class="example-value"><code>200420001234</code></p>
+                                    <p class="example-arrow">&darr;</p>
+                                    <p class="example-label">Birthday &amp; Age</p>
+                                    <p class="example-value">18 Jul 2004</p>
+                                    <p class="example-note">Full 4-digit century &middot; Exact days lived calculation</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sri Lanka Legal Age Milestones Table -->
+                        <div style="margin-top: 40px;">
+                            <h3 class="subsection-title">Sri Lanka Civic &amp; Legal Age Milestones Verified by NIC</h3>
+                            <div class="table-responsive">
+                                <table class="formula-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Age Threshold</th>
+                                            <th>Legal Significance in Sri Lanka</th>
+                                            <th>Relevant NIC Verification</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>15 – 16 Years</strong></td>
+                                            <td>Eligibility to apply for a Sri Lankan National Identity Card (DRP).</td>
+                                            <td>Initial issuance; voter code marked 'X' if non-elector at issue.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>18 Years</strong></td>
+                                            <td>Full legal adult majority, universal suffrage voting rights, driving license eligibility.</td>
+                                            <td>Eligible for electoral register; voter code qualifies for 'V'.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>21 Years</strong></td>
+                                            <td>Commercial contracting, bank credit facilities, corporate directorships.</td>
+                                            <td>NIC serves as primary Know Your Customer (KYC) proof of age.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>55 / 60 Years</strong></td>
+                                            <td>Government and private sector retirement, EPF and ETF benefit withdrawal qualification.</td>
+                                            <td>Official birth date on NIC determines exact benefit eligibility date.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </section>
 
+                <!-- ═══════════════════════════════════════════════
+                     AD SECTION — LEADERBOARD (728x90)
+                     ═══════════════════════════════════════════════ -->
                 <section class="ad-section ad-section-leaderboard" aria-label="Advertisement">
                     <div class="ad-slot-728x90">
-                        <script>atOptions = { 'key': '1d991944a38fcba3be08497212b58c82', 'format': 'iframe', 'height': 90, 'width': 728, 'params': {} };</script>
+                        <script>
+                            atOptions = {
+                                'key': '1d991944a38fcba3be08497212b58c82',
+                                'format': 'iframe',
+                                'height': 90,
+                                'width': 728,
+                                'params': {}
+                            };
+                        </script>
                         <script async src="https://chalkedwhiningromance.com/1d991944a38fcba3be08497212b58c82/invoke.js"></script>
                     </div>
                 </section>
 
-                <!-- EDUCATIONAL CONTENT -->
-                <section class="content-section" style="padding: 3rem 1rem; max-width: 900px; margin: 0 auto;">
-                    <h2>How Does the Sri Lanka NIC Age Calculator Work?</h2>
-                    <p>
-                        Every Sri Lankan National Identity Card number encodes the holder's exact birth year and birth day of year. This online NIC age calculator uses that built-in formula to compute your age in years, months, and days based on the current calendar date.
-                    </p>
-
-                    <h3 style="margin-top: 2rem;">Age Calculation Formula from NIC</h3>
-                    <p>
-                        Depending on whether your NIC is the old 9-digit format or new 12-digit format, the algorithm parses the values as follows:
-                    </p>
-                    <ul>
-                        <li><strong>Birth Year:</strong> For old NICs, the first 2 digits represent the year of the 1900s (e.g., <code>92</code> = 1992). For new 12-digit NICs, the first 4 digits represent the full year (e.g., <code>1992</code> or <code>2004</code>).</li>
-                        <li><strong>Day of Year (DOY):</strong> Digits 3–5 (old format) or digits 5–7 (new format) specify the sequential day of the year (001 = January 1, 365 = December 31). If the number is greater than 500, it indicates female gender and 500 is subtracted to reveal the real day code.</li>
-                        <li><strong>Precise Difference:</strong> The calculated birthday is subtracted from today's date, adjusting for leap years, month length differences, and calendar shifts to provide down-to-the-day accuracy.</li>
-                    </ul>
-
-                    <h3 style="margin-top: 2rem;">Why Use This Calculator?</h3>
-                    <p>
-                        When applying for passports, insurance policies, pension schemes, driving licenses, or bank accounts in Sri Lanka, official forms often require your exact age and birth date as registered in your National Identity Card. This tool verifies what DRP records indicate without guesswork.
-                    </p>
-                </section>
-
+                <!-- ═══════════════════════════════════════════════
+                     FAQ SECTION
+                     ═══════════════════════════════════════════════ -->
                 <section class="faq" id="faq">
                     <h2 class="section-title">Frequently Asked Questions</h2>
                     <div class="container">
                         <div class="faq-list" id="faq-list">
                             <div class="faq-item">
                                 <button class="faq-trigger" type="button" aria-expanded="false">
-                                    <span class="faq-trigger__text">How accurate is this NIC age calculation?</span>
+                                    <span class="faq-trigger__text">How to calculate age from a Sri Lanka NIC number?</span>
                                     <span class="faq-trigger__icon" aria-hidden="true">+</span>
                                 </button>
                                 <p class="faq-answer">
-                                    The calculation is mathematically 100% accurate based on the day code embedded in your National Identity Card by the Department for Registration of Persons (DRP).
+                                    Enter your 10-character old NIC (e.g. 921450123V) or 12-digit new NIC (e.g. 199214500123)
+                                    into the input box above and click the button. The calculator extracts the embedded birth year and
+                                    day code, decodes your calendar birth date, and calculates your exact age in years, months, and days.
                                 </p>
                             </div>
+
                             <div class="faq-item">
                                 <button class="faq-trigger" type="button" aria-expanded="false">
-                                    <span class="faq-trigger__text">Can this calculator tell me what day of the week I was born?</span>
+                                    <span class="faq-trigger__text">Can this calculator find my next birthday countdown?</span>
                                     <span class="faq-trigger__icon" aria-hidden="true">+</span>
                                 </button>
                                 <p class="faq-answer">
-                                    Yes! Once your NIC is entered, the tool determines the weekday (Monday, Tuesday, etc.) of your birth.
+                                    Yes! Once your NIC is entered, the tool calculates the exact number of days remaining until your
+                                    upcoming birthday and displays the weekday on which it will fall.
                                 </p>
                             </div>
+
                             <div class="faq-item">
                                 <button class="faq-trigger" type="button" aria-expanded="false">
-                                    <span class="faq-trigger__text">Does it work for children born after 2000?</span>
+                                    <span class="faq-trigger__text">Does this NIC calculator work for people born after 2000?</span>
                                     <span class="faq-trigger__icon" aria-hidden="true">+</span>
                                 </button>
                                 <p class="faq-answer">
-                                    Yes. All citizens born after 2000 have the new 12-digit NIC format starting with 20 (e.g., 2005...). The calculator seamlessly extracts the year 2000+ without ambiguity.
+                                    Yes. All citizens born after 2000 hold the 12-digit format starting with the 4-digit birth year (e.g., 2004...).
+                                    The calculator handles 21st-century dates and leap years with 100% precision.
+                                </p>
+                            </div>
+
+                            <div class="faq-item">
+                                <button class="faq-trigger" type="button" aria-expanded="false">
+                                    <span class="faq-trigger__text">How accurate is the age calculation?</span>
+                                    <span class="faq-trigger__icon" aria-hidden="true">+</span>
+                                </button>
+                                <p class="faq-answer">
+                                    The calculation is mathematically exact. It uses true Gregorian calendar logic, adjusting for leap years
+                                    and variable month lengths, guaranteeing precision down to the exact day.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </section>
 
+                <!-- ═══════════════════════════════════════════════
+                     MORE NIC TOOLS NAVIGATION
+                     ═══════════════════════════════════════════════ -->
                 <section class="nic-tools-nav" id="nic-tools">
-                    <h2 class="nic-tools-nav__title">More NIC Utilities</h2>
+                    <h2 class="nic-tools-nav__title">Explore More NIC Tools</h2>
                     <div class="nic-tools-nav__grid">
                         <a href="/" class="nic-tools-nav__item">
-                            <span class="nic-tools-nav__icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+                            <span class="nic-tools-nav__icon">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <circle cx="11" cy="11" r="8" />
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                                </svg>
+                            </span>
                             <span class="nic-tools-nav__label">NIC to DOB Decoder</span>
                         </a>
                         <a href="/id-number-check" class="nic-tools-nav__item">
-                            <span class="nic-tools-nav__icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><line x1="15" y1="8" x2="17" y2="8"/></svg></span>
+                            <span class="nic-tools-nav__icon">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <rect x="3" y="4" width="18" height="16" rx="3" />
+                                    <circle cx="9" cy="10" r="2" />
+                                    <line x1="15" y1="8" x2="17" y2="8" />
+                                    <line x1="15" y1="12" x2="17" y2="12" />
+                                    <line x1="7" y1="16" x2="17" y2="16" />
+                                </svg>
+                            </span>
                             <span class="nic-tools-nav__label">ID Number Check</span>
                         </a>
                         <a href="/old-to-new-nic" class="nic-tools-nav__item">
-                            <span class="nic-tools-nav__icon"><svg viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><polyline points="23 20 23 14 17 14"/></svg></span>
+                            <span class="nic-tools-nav__icon">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <polyline points="1 4 1 10 7 10" />
+                                    <polyline points="23 20 23 14 17 14" />
+                                    <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15" />
+                                </svg>
+                            </span>
                             <span class="nic-tools-nav__label">Old to New NIC</span>
                         </a>
                         <a href="/nic-from-dob" class="nic-tools-nav__item">
-                            <span class="nic-tools-nav__icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/></svg></span>
+                            <span class="nic-tools-nav__icon">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                    <line x1="16" y1="2" x2="16" y2="6" />
+                                    <line x1="8" y1="2" x2="8" y2="6" />
+                                    <line x1="3" y1="10" x2="21" y2="10" />
+                                </svg>
+                            </span>
                             <span class="nic-tools-nav__label">DOB to NIC</span>
                         </a>
+                        <a href="/nic-to-birthday" class="nic-tools-nav__item">
+                            <span class="nic-tools-nav__icon">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                                </svg>
+                            </span>
+                            <span class="nic-tools-nav__label">NIC to Birthday</span>
+                        </a>
+                        <a href="/how-nic-works" class="nic-tools-nav__item">
+                            <span class="nic-tools-nav__icon">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                                </svg>
+                            </span>
+                            <span class="nic-tools-nav__label">How NIC Works</span>
+                        </a>
+                    </div>
+                    <div class="nic-tools-nav__languages">
+                        <span class="nic-tools-nav__lang-label">Language:</span>
+                        <a href="/" class="nic-tools-nav__lang nic-tools-nav__lang--active">English</a>
+                        <a href="/si/" class="nic-tools-nav__lang">සිංහල</a>
+                        <a href="/ta/" class="nic-tools-nav__lang">தமிழ்</a>
                     </div>
                 </section>
             </main>
 
+            <!-- ═══════════════════════════════════════════════
+                 SITE FOOTER
+                 ═══════════════════════════════════════════════ -->
             <footer class="site-footer">
                 <div class="footer-inner">
-                    <a href="/" class="footer-logo-link" aria-label="NIC Decoder Home">
+                    <a href="/" class="footer-logo-link" aria-label="NIC Info Home">
                         <img src="nicinfo-logo.webp" alt="NIC Info Logo" class="footer-logo" width="72" height="36"
                             loading="lazy" decoding="async" />
                     </a>
@@ -422,11 +715,16 @@
         </div>
     </div>
 
+    <!-- ═══════════════════════════════════════════════
+         SCRIPT CONTROLLER
+         ═══════════════════════════════════════════════ -->
     <script>
         (function () {
+            'use strict';
             var html = document.documentElement;
             var themeToggles = document.querySelectorAll('.theme-toggle');
             var STORAGE_KEY = 'nic-theme';
+
             function applyTheme(theme) {
                 if (theme === 'light') {
                     html.setAttribute('data-theme', 'light');
@@ -436,6 +734,7 @@
                     themeToggles.forEach(function (btn) { btn.setAttribute('aria-label', 'Switch to light mode'); });
                 }
             }
+
             var stored = localStorage.getItem(STORAGE_KEY);
             if (stored === 'light' || stored === 'dark') { applyTheme(stored); }
             else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) { applyTheme('light'); }
@@ -458,57 +757,132 @@
             var FEMALE_DAY_OFFSET = 500;
 
             function isLeapYear(y) { return (y % 4 === 0 && y % 100 !== 0) || (y % 400 === 0); }
-            function validateNIC(nic) { var t = nic.trim(); if (/^\d{9}[VvXx]$/.test(t)) return { isValid: true, format: 'old' }; if (/^\d{12}$/.test(t)) return { isValid: true, format: 'new' }; return { isValid: false, format: null }; }
-            function extractBirthYear(nic, fmt) { return fmt === 'old' ? parseInt(nic.substring(0, 2), 10) + 1900 : parseInt(nic.substring(0, 4), 10); }
-            function extractRawDayOfYear(nic, fmt) { var s = fmt === 'old' ? 2 : 4; return parseInt(nic.substring(s, s + 3), 10); }
-            function getGenderFromDay(rawDay, year) { var day = rawDay > FEMALE_DAY_OFFSET ? rawDay - FEMALE_DAY_OFFSET : rawDay; var maxDay = isLeapYear(year) ? 366 : 365; if (day < 1 || day > maxDay) return null; return rawDay > FEMALE_DAY_OFFSET ? 'Female' : 'Male'; }
-            function nicDayToDate(rawDay, year) { var day = rawDay > FEMALE_DAY_OFFSET ? rawDay - FEMALE_DAY_OFFSET : rawDay; var feb = isLeapYear(year) ? 29 : 28; var cumDays = [0, 31, 31 + feb]; for (var m = 3; m <= 12; m++) cumDays.push(cumDays[m - 1] + DAYS_IN_MONTH[m]); var month = 1; for (var i = 1; i <= 12; i++) { if (day <= cumDays[i]) { month = i; break; } } return { month: month, day: day - cumDays[month - 1] }; }
-            function calculatePreciseAge(by, bm, bd, cy, cm, cd) { var y = cy - by, m = cm - bm, d = cd - bd; if (d < 0) { m--; var pm = cm - 1, py = cy; if (pm === 0) { pm = 12; py--; } d += (pm === 2 && isLeapYear(py)) ? 29 : DAYS_IN_MONTH[pm]; } if (m < 0) { y--; m += 12; } return { years: y, months: m, days: d }; }
+            function validateNIC(nic) {
+                var t = nic.trim();
+                if (/^\d{9}[VvXx]$/.test(t)) return { isValid: true, format: 'old' };
+                if (/^\d{12}$/.test(t)) return { isValid: true, format: 'new' };
+                return { isValid: false, format: null };
+            }
+            function extractBirthYear(nic, fmt) {
+                return fmt === 'old' ? parseInt(nic.substring(0, 2), 10) + 1900 : parseInt(nic.substring(0, 4), 10);
+            }
+            function extractRawDayOfYear(nic, fmt) {
+                var s = fmt === 'old' ? 2 : 4;
+                return parseInt(nic.substring(s, s + 3), 10);
+            }
+            function getGenderFromDay(rawDay, year) {
+                var day = rawDay > FEMALE_DAY_OFFSET ? rawDay - FEMALE_DAY_OFFSET : rawDay;
+                var maxDay = isLeapYear(year) ? 366 : 365;
+                if (day < 1 || day > maxDay) return null;
+                return rawDay > FEMALE_DAY_OFFSET ? 'Female' : 'Male';
+            }
+            function nicDayToDate(rawDay, year) {
+                var day = rawDay > FEMALE_DAY_OFFSET ? rawDay - FEMALE_DAY_OFFSET : rawDay;
+                var feb = isLeapYear(year) ? 29 : 28;
+                var cumDays = [0, 31, 31 + feb];
+                for (var m = 3; m <= 12; m++) cumDays.push(cumDays[m - 1] + DAYS_IN_MONTH[m]);
+                var month = 1;
+                for (var i = 1; i <= 12; i++) {
+                    if (day <= cumDays[i]) { month = i; break; }
+                }
+                return { month: month, day: day - cumDays[month - 1] };
+            }
+            function calculatePreciseAge(by, bm, bd, cy, cm, cd) {
+                var y = cy - by, m = cm - bm, d = cd - bd;
+                if (d < 0) {
+                    m--;
+                    var pm = cm - 1, py = cy;
+                    if (pm === 0) { pm = 12; py--; }
+                    d += (pm === 2 && isLeapYear(py)) ? 29 : DAYS_IN_MONTH[pm];
+                }
+                if (m < 0) { y--; m += 12; }
+                return { years: y, months: m, days: d };
+            }
+            function formatAgeDetail(age) {
+                var p = [];
+                if (age.months > 0) p.push(age.months + ' mo');
+                if (age.days > 0) p.push(age.days + ' d');
+                return p.length > 0 ? p.join(' &middot; ') : 'exact birthday today!';
+            }
 
             var nicInput = document.getElementById('nic-input');
             var decodeBtn = document.getElementById('decode-btn');
-            var errorMsg = document.getElementById('error-msg');
+            var nicError = document.getElementById('nic-error');
             var heroEmpty = document.getElementById('hero-empty');
             var heroRevealed = document.getElementById('hero-revealed');
             var decodeAnotherBtn = document.getElementById('decode-another-btn');
 
-            nicInput.addEventListener('input', function () { nicInput.classList.remove('error'); errorMsg.classList.remove('visible'); nicInput.removeAttribute('aria-invalid'); });
-            nicInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') handleDecode(); });
+            nicInput.addEventListener('input', function () {
+                nicInput.classList.remove('error');
+                nicError.classList.remove('visible');
+                nicInput.removeAttribute('aria-invalid');
+            });
+            nicInput.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter') handleDecode();
+            });
             decodeBtn.addEventListener('click', handleDecode);
 
             function handleDecode() {
                 var val = nicInput.value.trim();
                 var v = validateNIC(val);
-                if (!v.isValid) { nicInput.classList.add('error'); errorMsg.classList.add('visible'); nicInput.setAttribute('aria-invalid', 'true'); return; }
+                if (!v.isValid) {
+                    nicInput.classList.add('error');
+                    nicError.classList.add('visible');
+                    nicInput.setAttribute('aria-invalid', 'true');
+                    return;
+                }
                 var fmt = v.format, year = extractBirthYear(val, fmt), rawDay = extractRawDayOfYear(val, fmt);
-                var gender = getGenderFromDay(rawDay, year); if (!gender) { nicInput.classList.add('error'); errorMsg.classList.add('visible'); return; }
-                var dateInfo = nicDayToDate(rawDay, year); if (!dateInfo) { nicInput.classList.add('error'); errorMsg.classList.add('visible'); return; }
-                var now = new Date(), age = calculatePreciseAge(year, dateInfo.month, dateInfo.day, now.getFullYear(), now.getMonth() + 1, now.getDate());
+                var gender = getGenderFromDay(rawDay, year);
+                if (!gender) {
+                    nicInput.classList.add('error');
+                    nicError.classList.add('visible');
+                    return;
+                }
+                var dateInfo = nicDayToDate(rawDay, year);
+                if (!dateInfo) {
+                    nicInput.classList.add('error');
+                    nicError.classList.add('visible');
+                    return;
+                }
+
+                var now = new Date();
+                var currentYear = now.getFullYear();
+                var currentMonth = now.getMonth() + 1;
+                var currentDay = now.getDate();
+
+                var age = calculatePreciseAge(year, dateInfo.month, dateInfo.day, currentYear, currentMonth, currentDay);
                 var dayOfYear = rawDay > FEMALE_DAY_OFFSET ? rawDay - FEMALE_DAY_OFFSET : rawDay;
 
-                // Next birthday calculation
-                var nextBday = new Date(now.getFullYear(), dateInfo.month - 1, dateInfo.day);
-                if (nextBday < now) {
-                    nextBday.setFullYear(now.getFullYear() + 1);
+                // Next birthday countdown calculation
+                var nextBday = new Date(currentYear, dateInfo.month - 1, dateInfo.day);
+                var todayMidnight = new Date(currentYear, currentMonth - 1, currentDay);
+                if (nextBday < todayMidnight) {
+                    nextBday.setFullYear(currentYear + 1);
                 }
-                var diffMs = nextBday - now;
-                var daysUntilBday = Math.ceil(diffMs / (1000 * 60 * 60 * 24));
+                var diffMs = nextBday.getTime() - todayMidnight.getTime();
+                var daysUntilBday = Math.round(diffMs / (1000 * 60 * 60 * 24));
+
+                var nextBdayDayOfWeek = WEEKDAYS[nextBday.getDay()];
+                var nextBdayString = daysUntilBday === 0 ? 'Today!' : (daysUntilBday === 1 ? 'Tomorrow!' : daysUntilBday + ' days');
+                var nextBdayDetail = daysUntilBday === 0 ? 'Happy Birthday!' : nextBdayDayOfWeek + ' &middot; ' + dateInfo.day + ' ' + MONTH_NAMES[dateInfo.month].substring(0, 3) + ' ' + nextBday.getFullYear();
 
                 // Total days lived
                 var birthDateObj = new Date(year, dateInfo.month - 1, dateInfo.day);
-                var totalDaysLived = Math.floor((now - birthDateObj) / (1000 * 60 * 60 * 24));
+                var totalDaysLived = Math.max(0, Math.floor((todayMidnight.getTime() - birthDateObj.getTime()) / (1000 * 60 * 60 * 24)));
 
                 document.getElementById('decoded-nic-display').textContent = val;
+                document.getElementById('result-age').textContent = age.years;
+                document.getElementById('result-age-detail').innerHTML = formatAgeDetail(age);
+                document.getElementById('result-next-bday').textContent = nextBdayString;
+                document.getElementById('result-next-bday-detail').innerHTML = nextBdayDetail;
                 document.getElementById('result-dob').textContent = dateInfo.day + ' ' + MONTH_NAMES[dateInfo.month] + ' ' + year;
-                document.getElementById('result-age').textContent = age.years + ' Years Old';
-                document.getElementById('result-age-detail').textContent = age.years + ' years, ' + age.months + ' months, ' + age.days + ' days';
                 document.getElementById('result-weekday').textContent = WEEKDAYS[birthDateObj.getDay()];
-                document.getElementById('result-next-bday').textContent = daysUntilBday === 0 ? 'Today is your birthday! 🎉' : daysUntilBday + ' days remaining';
-                document.getElementById('result-days-lived').textContent = totalDaysLived.toLocaleString() + ' days';
+                document.getElementById('result-days-lived').textContent = totalDaysLived.toLocaleString();
                 document.getElementById('result-gender').textContent = gender;
                 document.getElementById('result-day-code').textContent = dayOfYear;
 
-                heroEmpty.classList.add('hidden'); heroRevealed.classList.add('active');
+                heroEmpty.classList.add('hidden');
+                heroRevealed.classList.add('active');
                 setTimeout(function () { heroRevealed.focus(); }, 80);
             }
 
@@ -516,9 +890,12 @@
                 heroRevealed.classList.remove('active');
                 heroEmpty.classList.remove('hidden');
                 nicInput.classList.remove('error');
-                errorMsg.classList.remove('visible');
+                nicError.classList.remove('visible');
                 nicInput.removeAttribute('aria-invalid');
-                setTimeout(function () { nicInput.focus(); nicInput.select(); }, 50);
+                setTimeout(function () {
+                    nicInput.focus();
+                    nicInput.select();
+                }, 50);
             });
 
             var faqList = document.getElementById('faq-list');
@@ -530,9 +907,13 @@
                     var isOpen = item.classList.contains('open');
                     faqList.querySelectorAll('.faq-item').forEach(function (fi) {
                         fi.classList.remove('open');
-                        fi.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+                        var tr = fi.querySelector('.faq-trigger');
+                        if (tr) tr.setAttribute('aria-expanded', 'false');
                     });
-                    if (!isOpen) { item.classList.add('open'); trigger.setAttribute('aria-expanded', 'true'); }
+                    if (!isOpen) {
+                        item.classList.add('open');
+                        trigger.setAttribute('aria-expanded', 'true');
+                    }
                 });
             }
         })();
