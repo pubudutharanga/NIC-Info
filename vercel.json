@@ -29,6 +29,14 @@
       "destination": "/nic-check-digit.html"
     },
     {
+      "source": "/id-number-check",
+      "destination": "/id-number-check.html"
+    },
+    {
+      "source": "/nic-age-calculator",
+      "destination": "/nic-age-calculator.html"
+    },
+    {
       "source": "/si",
       "destination": "/si/index.html"
     },

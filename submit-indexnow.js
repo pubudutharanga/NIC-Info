@@ -8,6 +8,8 @@ const data = JSON.stringify({
     "https://nicinfo.vercel.app/",
     "https://nicinfo.vercel.app/si/",
     "https://nicinfo.vercel.app/ta/",
+    "https://nicinfo.vercel.app/id-number-check",
+    "https://nicinfo.vercel.app/nic-age-calculator",
     "https://nicinfo.vercel.app/old-to-new-nic",
     "https://nicinfo.vercel.app/nic-from-dob",
     "https://nicinfo.vercel.app/nic-to-birthday",

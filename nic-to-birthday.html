@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
-    <title>Find Birthday from NIC Number | Sri Lanka NIC to Birthday</title>
+    <title>Find Birthday from ID Number — NIC to Birthday Converter Sri Lanka (Free)</title>
     <meta name="description"
-        content="Enter a Sri Lankan NIC number to find the birthday instantly. Works with old 9-digit and new 12-digit IDs. Shows exact birth date, age, weekday &amp; more. Free." />
+        content="Enter any Sri Lankan NIC number to find the birthday instantly. Free ID number to birthday converter — works with old 9-digit & new 12-digit NIC formats. Shows exact birth date, age, weekday & gender. No download needed." />
     <meta name="author" content="Pubudu Tharanga" />
 
     <link rel="canonical" href="https://nicinfo.vercel.app/nic-to-birthday" />
@@ -20,16 +20,16 @@
 
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://nicinfo.vercel.app/nic-to-birthday" />
-    <meta property="og:title" content="Find Birthday from NIC Number | Sri Lanka NIC to Birthday" />
+    <meta property="og:title" content="Find Birthday from ID Number — NIC to Birthday Converter Sri Lanka" />
     <meta property="og:description"
-        content="Enter a Sri Lankan NIC to find the birthday instantly. Old 9-digit and new 12-digit. Free, private." />
+        content="Free tool to find birthday from any Sri Lankan NIC number. ID number to birthday converter for old & new formats. Instant, private, in-browser." />
     <meta property="og:image" content="https://nicinfo.vercel.app/og-image.png" />
     <meta property="og:site_name" content="NIC Info" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Find Birthday from NIC Number | Sri Lanka NIC to Birthday" />
+    <meta name="twitter:title" content="Find Birthday from ID Number — NIC to Birthday Sri Lanka" />
     <meta name="twitter:description"
-        content="Enter a Sri Lankan NIC to find the birthday. Old &amp; new format. Free, private, in-browser." />
+        content="Free ID number to birthday converter for Sri Lanka. Enter any NIC number, get exact birthday, age & gender instantly." />
     <meta name="twitter:image" content="https://nicinfo.vercel.app/og-image.png" />
 
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
@@ -61,14 +61,14 @@
         {
           "@type": "WebApplication",
           "@id": "https://nicinfo.vercel.app/nic-to-birthday#webapp",
-          "name": "NIC to Birthday Finder",
+          "name": "Find Birthday from ID Number — NIC to Birthday Converter Sri Lanka",
           "url": "https://nicinfo.vercel.app/nic-to-birthday",
           "description": "Find the exact birthday from a Sri Lankan NIC number. Works with both old 9-digit and new 12-digit formats. Shows date of birth, age, weekday, and gender.",
           "applicationCategory": "UtilityApplication",
           "operatingSystem": "Any",
           "inLanguage": "en",
-          "datePublished": "2026-08-27",
-          "dateModified": "2026-08-27",
+          "datePublished": "2026-01-17",
+          "dateModified": "2026-10-19",
           "author": { "@type": "Person", "name": "Pubudu Tharanga" },
           "publisher": { "@type": "Organization", "name": "NIC Info", "url": "https://nicinfo.vercel.app/" },
           "isPartOf": { "@type": "WebSite", "name": "NIC Info", "url": "https://nicinfo.vercel.app/" },
@@ -78,6 +78,14 @@
           "@type": "FAQPage",
           "@id": "https://nicinfo.vercel.app/nic-to-birthday#faq",
           "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How to find birthday from ID number in Sri Lanka?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "To find a birthday from a Sri Lankan ID number, enter the NIC number in the converter above. In old 9-digit NICs (e.g., 855420159V), digits 1-2 give the birth year (1985) and digits 3-5 give the day of year (542, minus 500 for female = day 42 = February 11). In new 12-digit NICs (e.g., 198554200159), digits 1-4 give the 4-digit year and digits 5-7 give the day of year."
+              }
+            },
             {
               "@type": "Question",
               "name": "How do I find someone's birthday from their NIC number?",
@@ -92,6 +100,14 @@
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Yes. The old format (9 digits + V/X) stores the birth year as 2 digits (positions 1-2) and the day-of-year as 3 digits (positions 3-5). The new 12-digit format uses 4 digits for the year (positions 1-4) and 3 for the day (positions 5-7). Both encode the exact same birthday information."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do I calculate age from my Sri Lankan NIC?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "When you enter your NIC number into this tool, it automatically calculates your precise age in years, months, and days based on today's date, along with the day of the week you were born."
               }
             },
             {
@@ -116,7 +132,7 @@
           "@type": "BreadcrumbList",
           "itemListElement": [
             { "@type": "ListItem", "position": 1, "name": "NIC Info", "item": "https://nicinfo.vercel.app/" },
-            { "@type": "ListItem", "position": 2, "name": "Find Birthday from NIC" }
+            { "@type": "ListItem", "position": 2, "name": "Find Birthday from ID Number", "item": "https://nicinfo.vercel.app/nic-to-birthday" }
           ]
         }
       ]
@@ -604,7 +620,7 @@
                             loading="lazy" decoding="async" />
                     </a>
                     <p class="footer-description">A free browser tool for decoding Sri Lankan National Identity Card
-                        numbers.<br /><span class="last-updated">Last updated: August 2026</span></p>
+                        numbers.<br /><span class="last-updated">Last updated: October 2026</span></p>
                     <p class="footer-copyright">Copyright &copy;
                         <script>document.write(new Date().getFullYear())</script> <strong class="footer-brand">NIC
                             Info</strong>. All rights reserved.
@@ -749,10 +765,23 @@
                 if (faqList) { faqList.addEventListener('click', function (e) { var trigger = e.target.closest('.faq-trigger'); if (!trigger) return; var item = trigger.closest('.faq-item'); var isOpen = item.classList.contains('open'); faqList.querySelectorAll('.faq-item').forEach(function (fi) { fi.classList.remove('open'); fi.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false'); }); if (!isOpen) { item.classList.add('open'); trigger.setAttribute('aria-expanded', 'true'); } }); }
             })();
     </script>
-    <script type="text/javascript" async="async" data-cfasync="false"
-        src="https://chalkedwhiningromance.com/12/fd/92/12fd92f5eaf18ebed8a2692937807133.js"></script>
-    <script type="text/javascript" async="async" data-cfasync="false"
-        src="https://chalkedwhiningromance.com/b0/d8/69/b0d86922a34d96a9992e00a5904f2079.js"></script>
+    <!-- Deferred Ad Units for CWV Optimization -->
+    <script>
+      (function() {
+        function loadAdScript(src) {
+          var s = document.createElement('script');
+          s.type = 'text/javascript';
+          s.async = true;
+          s.setAttribute('data-cfasync', 'false');
+          s.src = src;
+          document.body.appendChild(s);
+        }
+        setTimeout(function() {
+          loadAdScript('https://chalkedwhiningromance.com/12/fd/92/12fd92f5eaf18ebed8a2692937807133.js');
+          loadAdScript('https://chalkedwhiningromance.com/b0/d8/69/b0d86922a34d96a9992e00a5904f2079.js');
+        }, 3000);
+      })();
+    </script>
     <!-- Global Navigation & Share Controller -->
     <script src="navbar.js" defer></script>
 </body>
